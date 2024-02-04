@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DungeonIcon
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 4
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 21482b0bc40cae8499fa8524a8c720ad, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 48be2566125c99f408d1edb1fe94395f, type: 3}
+  - {fileID: 21300000, guid: 2a71b3179f5457543a5a9c7350b48202, type: 3}
+  - {fileID: 21300000, guid: 02b7044775078d14e9605e2757b0f577, type: 3}
+  - {fileID: 21300000, guid: 8895e70838f61ab409fc1170c2cf99e6, type: 3}
+  - {fileID: 21300000, guid: fc75d7592a423e94d97149ebdd62b085, type: 3}
+  - {fileID: 21300000, guid: debae3a982d9e4941848393ff738248e, type: 3}
+  - {fileID: 21300000, guid: 528ea1bb42c85e041b661f46f920bc0a, type: 3}
+  - {fileID: 21300000, guid: dd7829bbb47842b4ca8040f5f2bcaccd, type: 3}
+  - {fileID: 21300000, guid: 1c72f05cd20d52c4e877b977437c9b89, type: 3}
+  - {fileID: 21300000, guid: 26b256cc7af5b944e90bfa47245007e8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Dungeon_4
+  - Dungeon_7
+  - 56f0e9c4b8d969a2
+  - Dungeon_5
+  - Dungeon_3
+  - Dungeon_2
+  - Dungeon_0
+  - Dungeon_1
+  - Dungeon_6
+  - Dungeon_-1
+  m_RenderDataMap: {}
+  m_Tag: DungeonIcon
+  m_IsVariant: 0

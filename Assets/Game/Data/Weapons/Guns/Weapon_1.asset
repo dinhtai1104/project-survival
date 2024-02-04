@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2e125832d9629439bf6e9b54ed4f1c, type: 3}
+  m_Name: Weapon_1
+  m_EditorClassIdentifier: 
+  id: 1
+  title: gun_0_1
+  baseDamage: 65
+  fireRate: 5
+  magSize: 8
+  reloadTime: 1.5
+  range: 10
+  bulletVelocity: 50
+  currentBulletInMag: 0
+  lastTrigger: 0
+  knockBack: 0
+  knockBackTime: 0.2
+  skipTags: []
+  character: {fileID: 0}
+  icon: gun0_1
+  mainTexture: gun0_1
+  overrideDamage: -1
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  fireSFXs:
+  - {fileID: 8300000, guid: 0f2284a7118552240a55c6a0d92c522b, type: 3}
+  - {fileID: 8300000, guid: 4e5ecb624b948a6499f11a6e6a9ba10a, type: 3}
+  bulletRef:
+    m_AssetGUID: 1d808cb7d59d56a40a9e51ea937b0d5a
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  weaponRef:
+    m_AssetGUID: 9a8d3385fa509664c90049afea064870
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  minY: -0.05
+  maxY: 0.05
+  burstCount: 1
+  burstDelay: 0.2
+  burstSpread: -1
+  burstOffset: 0
+  soundDelay: 0.2
+  bulletBounce: 0
+  shakeAtFirst: 0
+  attachedWeapons: []
+  weaponHandler: {fileID: 0}

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation10
+  m_EditorClassIdentifier: 
+  m_GroupName: Duplicate Asset Isolation10
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5d850fe996cadc348b1f7a5c781fff3b
+  m_SerializeEntries:
+  - m_GUID: eabf3f63726517745906135e4cfcf3c3
+    m_Address: Smoke_10
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4cfc31cebab72d94b81520447bff191a
+    m_Address: SFX_FireMagic_7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80b28055fbe691d40a33386784756421
+    m_Address: AB_IceSmoke_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b71f060104791640a31136e522cf6cd
+    m_Address: poison_smoke_green
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5040c657a7abfc54796ba9b006df0f51
+    m_Address: ABHDR_Smoke 1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2c2e6e16a5696a4e99cfb557e54c0ee
+    m_Address: MysticDeathExplosionOnly
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3510118b98620ec419da46662329e15d, type: 2}
+    - {fileID: 11400000, guid: 45cb0f5f66e83e4419981c003380accc, type: 2}

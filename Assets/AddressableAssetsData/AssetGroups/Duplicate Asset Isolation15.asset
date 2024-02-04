@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation15
+  m_EditorClassIdentifier: 
+  m_GroupName: Duplicate Asset Isolation15
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a1b5a11cd37c40b4dad38d7c596cfddc
+  m_SerializeEntries:
+  - m_GUID: dbf02de632611bc4cbf0fceac0869b53
+    m_Address: Assets/Game/Materials/Coin.physicsMaterial2D
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 822f5df091770a04d914fa8fa2c627cb
+    m_Address: Assets/Game/Textures/Game/Character Tag/playertag.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55eef2ae219d50c428878bd85ab52751
+    m_Address: Assets/Game/VFX_Hung/Textures/7001_SmallRocks_2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e8e811a595a7d640846d14595df91c6
+    m_Address: Assets/Game/VFX_Hung/Textures/Ice_Bullet 1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d65809bed1ffc4478fb3fa262750763
+    m_Address: Assets/Game/VFX_Hung/Textures/Gradient_01_X_Edgemasked.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7bb9f40e0f490344a6d149eb533d7f6
+    m_Address: Assets/Game/VFX_Hung/Textures/7001_Rocks_1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b93a298012bd6040937caedb1968b06
+    m_Address: Assets/Game/VFX_Hung/Materials/Add_Portal_2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9591afcdec9968641a3f968ba8fa315c
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_1/boss_7_1_Material.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 03163080ef050154c9febb5ba4a7eac1
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_1/boss_7_1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72c56e3be28d7e64698756d4963adfdb
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_1/boss_7_1_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b213b46ba45f5a641b1268114b69eea3
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_1/boss_7_1.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8bc8a83a8d20034f8997bf2ced205cd
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_1/boss_7_1_Atlas.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 938aecd4d8c6c7348a4eea05d1c1dc85
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_1/boss_7_1.atlas.txt
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1967374a4e65d943b4a1104f1a0f55a
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_3/boss_7_3_Material.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39992efde4f3c0e4b9be232d72749530
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_3/boss_7_3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c2a603bebf2a9944b6e73acfacdeea3
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_3/boss_7_3_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b45a759e51f56a242805d07422669f10
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_3/boss_7_3_Atlas.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 36a260ef6198e5747ba7618223dd278d
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_3/boss_7_3.atlas.txt
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cae2b30cb853c64cb5cc0538bf41079
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_7_3/boss_7_3.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85deaa18affbd274f9c8d0041abee0b7
+    m_Address: Assets/Game/VFX_Hung/Textures/Trail65.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1a112cd3d7532945b783787984c862a
+    m_Address: Assets/Game/VFX_Hung/Materials/Add_Smoke 2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 4cee56116e84e464bbf9c8dab74f7e80, type: 2}
+    - {fileID: 11400000, guid: 18b43699538608649a925fae3e581640, type: 2}

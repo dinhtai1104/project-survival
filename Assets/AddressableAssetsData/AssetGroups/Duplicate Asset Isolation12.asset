@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation12
+  m_EditorClassIdentifier: 
+  m_GroupName: Duplicate Asset Isolation12
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b39bd851f9f937144869d8d9ce916b73
+  m_SerializeEntries:
+  - m_GUID: c8fabc3143370bf458d90c3ef3c5b896
+    m_Address: bg_merge
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0903620fd68873f43988a0f2e05c97bd
+    m_Address: Bloody Debris Overlay V3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85bbbf876d972244f81bb3062a06baaa
+    m_Address: ice_tree_branch_03_1_exp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a3c62e83e4fc3c4ea4fb367d7108ab8
+    m_Address: UITest_Ice 1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a99cd023d5c58c5479f5f0acffbc39b0
+    m_Address: gradient_circle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8069d0d6bd433f145b5dc1d3d2c256ce
+    m_Address: Projectile_Mask_01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd718ccc65572b94fbe37e16eb64ccf2
+    m_Address: AB_WaterSplash_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0e7f30355df00084cbca4e154c8b5ee2
+    m_Address: generic_splash_big_1_sheet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a19e1a25df1e10e45b34be158135ae70
+    m_Address: shield
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b328811569b94ca4ea35b64fc0dfeda8
+    m_Address: Add_Shield 3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37b647393953bdb4cbe068a5674d1df8
+    m_Address: shield_sheet_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29e3f2ff9b009524ba63fe7aa67e9700
+    m_Address: Leaf_sheet_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 115fea66a6e71704baf9109ac03f480f
+    m_Address: Add_UI_GlowBurst
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6edbe8e46db7719429c85025b5f6bebc
+    m_Address: AB_Leaf_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 27faecb5ea29eff448d466b022e5cee3, type: 2}
+    - {fileID: 11400000, guid: cedef9fa053131c4da981029e4189b6d, type: 2}

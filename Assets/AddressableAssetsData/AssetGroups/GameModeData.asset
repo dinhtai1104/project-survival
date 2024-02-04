@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: GameModeData
+  m_EditorClassIdentifier: 
+  m_GroupName: GameModeData
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9000573703b82456ebd07bd591bd4c92
+  m_SerializeEntries:
+  - m_GUID: 253cca513948c2f40a36c1554f89a359
+    m_Address: GameModeData_DungeonEvent
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc5faf0271eb14841a4ebdd9a6e874a5
+    m_Address: GameModeData_Training
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4d0dc54374a46348b16bc2475809430
+    m_Address: GameModeData_Tutorial
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: faa5d2c4fa7fdb84891c490ead562fc6
+    m_Address: GameModeData_Normal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 4aed954a3504a42968682d0e26ee0ed6, type: 2}
+    - {fileID: 11400000, guid: 86f6f601c16ea471d824f406fd9e7586, type: 2}

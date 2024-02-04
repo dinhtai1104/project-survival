@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HotSaleHero
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 4
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 7c40657f3fc3cc8459f87cc4c9df3a55, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2830ed114290370488c2ad1c41a9e081, type: 3}
+  - {fileID: 21300000, guid: 6c22a52387a0945488c326228579c653, type: 3}
+  - {fileID: 21300000, guid: e6454c146dac15b42828bfbf62224a9c, type: 3}
+  - {fileID: 21300000, guid: e49e08542f810c24db1a05a4b1d104ac, type: 3}
+  - {fileID: 21300000, guid: d3e5d8658f96e6c45ad9d0387c003bca, type: 3}
+  - {fileID: 21300000, guid: 1f40c5164fcb0174c8eba512211e3f13, type: 3}
+  - {fileID: 21300000, guid: 862236c6863bb1642aa36343a5664b5e, type: 3}
+  - {fileID: 21300000, guid: 1f380998f6210d44f84905b6398568bc, type: 3}
+  - {fileID: 21300000, guid: d2317c6d0b5a27847aba4605ebb2110a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Bg_CowboyHero
+  - Bg_NinjaHero
+  - Bg_EvilHero
+  - Bg_PoisonHero
+  - Bg_RocketHero
+  - Bg_ShinigamiHero
+  - Bg_AngelHero
+  - Bg_JumpHero
+  - Bg_FrozenHero
+  m_RenderDataMap: {}
+  m_Tag: HotSaleHero
+  m_IsVariant: 0

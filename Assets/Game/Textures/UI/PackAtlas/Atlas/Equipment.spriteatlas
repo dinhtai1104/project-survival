@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Equipment
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 65
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 4
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 8c44d4a72c8d6d645b6447a6f86975bf, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8f7c7e102cc5f504b8b095ec1912e474, type: 3}
+  - {fileID: 21300000, guid: 8f1b93c04d15e4f4ab5e3758785c0c29, type: 3}
+  - {fileID: 21300000, guid: cd4b9f512c1274d4ca4dc78721762ff4, type: 3}
+  - {fileID: 21300000, guid: 390f7fc1e2ee84046b8a6607eb95b6e0, type: 3}
+  - {fileID: 21300000, guid: 44339c3211ab9c7428f7da4a58b442ef, type: 3}
+  - {fileID: 21300000, guid: f1a4e3525ca6b4b4f9d875f1ab67ce6c, type: 3}
+  - {fileID: 21300000, guid: 8701ff622d934c246942e0a2894a565c, type: 3}
+  - {fileID: 21300000, guid: 51162a9226ce4c74d8caae7ddc6c2f28, type: 3}
+  - {fileID: 21300000, guid: 5b3ccdc23415f7742a846d23fd648e51, type: 3}
+  - {fileID: 21300000, guid: faf6b903118cf224f9d0e76f445e98b9, type: 3}
+  - {fileID: 21300000, guid: cc783b630208b0e42ac0d6c3df679aae, type: 3}
+  - {fileID: 21300000, guid: d604de83a95439a4cbf0111e750a2828, type: 3}
+  - {fileID: 21300000, guid: eda6581469f11e5468dee0e0ace392da, type: 3}
+  - {fileID: 21300000, guid: d1859a14679efcc47babc6c48743b497, type: 3}
+  - {fileID: 21300000, guid: fb0a41757f5ec9c48ac462587c6661ac, type: 3}
+  - {fileID: 21300000, guid: 5d14e2a548fe2a94f9f9783efef48f8c, type: 3}
+  - {fileID: 21300000, guid: 75e082b5351a9ad41be6911ac2c1f56a, type: 3}
+  - {fileID: 21300000, guid: fee4fec59582e9f4584a1882d9881876, type: 3}
+  - {fileID: 21300000, guid: 3ff9f42612332714f87f9680882860a3, type: 3}
+  - {fileID: 21300000, guid: f12bee2665faa9e43b3ef5ac24d3813d, type: 3}
+  - {fileID: 21300000, guid: 286cf817631751742900da44c83a434b, type: 3}
+  - {fileID: 21300000, guid: a3475177bf629f84ea8732c0d72cebb4, type: 3}
+  - {fileID: 21300000, guid: 068319e7f5e5a024885bbb53fc6022c2, type: 3}
+  - {fileID: 21300000, guid: 4deff3882b02fd747a5e64bdf95a8345, type: 3}
+  - {fileID: 21300000, guid: 700a47199ccb2db4d891924cda8b0c07, type: 3}
+  - {fileID: 21300000, guid: 2a4352f9b92b51549954af792b2d9dc4, type: 3}
+  - {fileID: 21300000, guid: eb2acb2b2a3f3bd419ccb60a414ed4f8, type: 3}
+  - {fileID: 21300000, guid: be76e56badd0f2b4fa12926478417a77, type: 3}
+  - {fileID: 21300000, guid: 5d2ca19bfbaffb045b4e626ad5d172d7, type: 3}
+  - {fileID: 21300000, guid: 314754bb4bbca95409b1946e848df677, type: 3}
+  - {fileID: 21300000, guid: 786807bba7c44f1489c155218c590516, type: 3}
+  - {fileID: 21300000, guid: 8eb01bebbc628264a82fbd5095df33f1, type: 3}
+  - {fileID: 21300000, guid: 46cd9febb193c644db718475b0c8bfe7, type: 3}
+  - {fileID: 21300000, guid: 36d2883cdb98c2e4c9ca4d32f6f688c4, type: 3}
+  - {fileID: 21300000, guid: 0ed7d54cbf3e188479779c23164c7947, type: 3}
+  - {fileID: 21300000, guid: 9a7d6c5cfa22bf7469c7befe50b70bdb, type: 3}
+  - {fileID: 21300000, guid: 9110b99ca7efd0e4bbb0cdbc60d78003, type: 3}
+  - {fileID: 21300000, guid: 4a4c59dc26e95474bb56de5f83fd96f8, type: 3}
+  - {fileID: 21300000, guid: 1a94712df646b7a4396175b98083d311, type: 3}
+  - {fileID: 21300000, guid: 3787c0bdd4773ca4eb7abd4d8849a32c, type: 3}
+  - {fileID: 21300000, guid: 4b23cabde0c3e814ba534fc0fdc8057c, type: 3}
+  - {fileID: 21300000, guid: 39973fcd8ec0e034fb064f2d80bd287c, type: 3}
+  - {fileID: 21300000, guid: 20e3dc8ee7472f14482030dc11fee4ce, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 3
+  - bone_necklace
+  - pirate_necklace
+  - FireGun
+  - IcyGun
+  - bazooka_drone
+  - bone_helmet
+  - Boomerang 1
+  - RifleGun
+  - assasin_boot
+  - samurai_armor
+  - 1
+  - hunter_boot
+  - assasin_necklace
+  - speed_drone
+  - pirate_boot
+  - samurai_boot
+  - Kunai
+  - 0
+  - 4
+  - assasin_armor
+  - 7
+  - hunter_necklace
+  - assasin_helmet
+  - RailGun
+  - SharkGun
+  - GatlingGun
+  - Boomerang
+  - hunter_helmet
+  - 2
+  - heal_drone
+  - timecontrol_drone
+  - 5
+  - gatlinggun_drone
+  - ElectricBalliasta
+  - samurai_helmet
+  - bone_armor
+  - hunter_armor
+  - bone_boot
+  - pirate_helmet
+  - pirate_armor
+  - -1
+  - samurai_necklace
+  m_RenderDataMap: {}
+  m_Tag: Equipment
+  m_IsVariant: 0

@@ -1,0 +1,14 @@
+HeroChest.png
+size:790,534
+filter:Linear,Linear
+pma:true
+Group 33 copy
+bounds:543,20,512,245
+offsets:2,2,516,248
+rotate:90
+Layer 45
+bounds:2,259,539,273
+offsets:1,1,541,275
+Layer 46
+bounds:2,2,530,255
+offsets:0,0,530,256

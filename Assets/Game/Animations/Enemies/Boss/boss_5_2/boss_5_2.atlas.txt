@@ -1,0 +1,100 @@
+boss_5_2.png
+size:1527,1047
+filter:Linear,Linear
+pma:true
+scale:0.5
+-1/Ellipse 12
+bounds:858,28,192,125
+-1/Ellipse 13
+bounds:2,326,321,361
+-1/Ellipse 14 copy 2
+bounds:244,41,87,72
+rotate:90
+-1/Ellipse 14
+bounds:244,41,87,72
+rotate:90
+-1/Ellipse 14 copy
+bounds:244,41,87,72
+rotate:90
+-1/Layer 1
+bounds:580,385,660,318
+rotate:90
+-1/Layer 10
+bounds:1351,418,142,170
+rotate:90
+-1/Layer 11
+bounds:573,125,258,283
+offsets:0,1,259,284
+rotate:90
+-1/Layer 12
+bounds:1052,2,171,151
+-1/Layer 13
+bounds:858,155,283,228
+offsets:0,1,283,230
+-1/Layer 14
+bounds:1119,879,166,255
+rotate:90
+-1/Layer 15
+bounds:546,335,25,56
+offsets:0,1,26,58
+-1/Layer 16
+bounds:546,2,152,121
+-1/Layer 17
+bounds:1376,881,164,131
+rotate:90
+-1/Layer 18
+bounds:1351,562,159,154
+rotate:90
+-1/Layer 192 - Smart Object Group
+bounds:2,14,240,310
+-1/Layer 197 copy
+bounds:244,229,77,95
+-1/Layer 198 copy
+bounds:700,26,97,115
+offsets:1,0,99,115
+rotate:90
+-1/Layer 2
+bounds:1435,295,87,121
+offsets:0,0,88,121
+-1/Layer 20
+bounds:900,416,403,221
+offsets:1,0,405,221
+-1/Layer 201 copy
+bounds:1143,203,211,290
+offsets:1,1,213,291
+rotate:90
+-1/Layer 3
+bounds:244,130,74,97
+-1/Layer 4
+bounds:817,54,69,33
+offsets:1,0,71,34
+rotate:90
+-1/Layer 5
+bounds:244,5,43,34
+offsets:1,1,45,36
+-1/Layer 6
+bounds:1119,688,189,192
+rotate:90
+-1/Layer 7
+bounds:1225,43,300,158
+-1/Layer 8
+bounds:325,393,294,242
+offsets:1,0,295,243
+rotate:90
+-1/Layer 9
+bounds:2,689,576,356
+-1/Layer_1937
+bounds:1313,723,154,177
+rotate:90
+-1/Rounded Rectangle 1 copy1
+bounds:900,639,406,217
+offsets:0,0,406,218
+rotate:90
+-1/Rounded Rectangle 1 copy2
+bounds:325,11,380,219
+offsets:1,1,382,220
+rotate:90
+shadow
+bounds:1305,467,219,44
+offsets:10,1,239,48
+rotate:90

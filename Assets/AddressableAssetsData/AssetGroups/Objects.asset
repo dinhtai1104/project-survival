@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Objects
+  m_EditorClassIdentifier: 
+  m_GroupName: Objects
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d727b2d3637201f42908941913fc6c4c
+  m_SerializeEntries:
+  - m_GUID: 1a9e5129a44713a4d92639cd0fda5975
+    m_Address: BuffPortal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8fb8708ec7b3d4c46b07668a2dc90b34
+    m_Address: NormalPortal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d7c4c2eb3eb0a74b84aa3801f8249ea
+    m_Address: HealthOrb
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9a7f580c3e7e7a74c8db315633a6631b, type: 2}
+    - {fileID: 11400000, guid: 967a3850432a87f4082f2174d3b85416, type: 2}

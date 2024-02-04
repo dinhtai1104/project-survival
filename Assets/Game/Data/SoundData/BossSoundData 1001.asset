@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef29ba8191fbb34198ff46d28e89819, type: 3}
+  m_Name: BossSoundData 1001
+  m_EditorClassIdentifier: Assembly-CSharp::Character/CharacterSoundData
+  hurtSFXs: []
+  dieSFXs:
+  - {fileID: 8300000, guid: e307e70269f44b2409eb9abd3bd94e24, type: 3}
+  - {fileID: 8300000, guid: 4f63888f0011c434ebbd1cf22aa08522, type: 3}
+  - {fileID: 8300000, guid: 3059ebb3d89e82144b3a3ac5a621eb14, type: 3}
+  - {fileID: 8300000, guid: 78b6d466a27c15f428d09397aa8ad6ea, type: 3}
+  landSFXs: []
+  jumpSFXs: []
+  startSFXs:
+  - {fileID: 8300000, guid: f91b89b27bc045745b8456bcf5f6162c, type: 3}
+  - {fileID: 8300000, guid: 6a4b29f98b990dd4e9cb78e796a3fe2f, type: 3}
+  - {fileID: 8300000, guid: cfbf323fa539d314eac535d68c0a8ce2, type: 3}
+  - {fileID: 8300000, guid: 6459539f43cb42442b01b82c17f00689, type: 3}
+  - {fileID: 8300000, guid: d4b16383d682b7f44bc6000a081f0350, type: 3}
+  - {fileID: 8300000, guid: c67c239a1f7ee9842ac1223a6ef71ac9, type: 3}
+  appearSFXs: []
+  engageSFXs:
+  - {fileID: 8300000, guid: 2b5d7358ce28e5d468f8a33bd671411e, type: 3}
+  - {fileID: 8300000, guid: 3dc5d47540d06a541a96250a76668b48, type: 3}
+  getHitSFXs:
+  - {fileID: 8300000, guid: ecbe7955795327f4e844ca4569cbccbd, type: 3}
+  - {fileID: 8300000, guid: 947448ebd52c6aa448f35feafa5550ee, type: 3}
+  - {fileID: 8300000, guid: 1320d4fb43aca1448b57a380c29cd5ff, type: 3}
+  - {fileID: 8300000, guid: dc6bfcf9899fa8041b9478d65736cf6b, type: 3}
+  - {fileID: 8300000, guid: 93209be44fffca448b0eaa3aeaf92c9e, type: 3}
+  getHitArmorSFXs: []
+  growSFXs:
+  - {fileID: 8300000, guid: f7f1ae312a1de404586ee2814af52957, type: 3}
+  - {fileID: 8300000, guid: d42a7b41cbc811d41a09bc409035f3ce, type: 3}
+  - {fileID: 8300000, guid: 87607749e312ab844b7543732eb66d3c, type: 3}
+  - {fileID: 8300000, guid: 6d07a45441d2b2a4fba0cf648c6d00fd, type: 3}

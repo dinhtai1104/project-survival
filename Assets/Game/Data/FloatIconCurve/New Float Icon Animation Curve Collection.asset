@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aacb3c0857e1564d995b2edc930e81a, type: 3}
+  m_Name: New Float Icon Animation Curve Collection
+  m_EditorClassIdentifier: 
+  moveOffsetCurve:
+  - serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -13.735724
+      outSlope: -2.436506
+      tangentMode: 1
+      weightedMode: 2
+      inWeight: 0
+      outWeight: 0.16330613
+    - serializedVersion: 3
+      time: 30.172913
+      value: -41.88389
+      inSlope: -0.1222057
+      outSlope: -0.1222057
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.6277871
+      outWeight: 0.3176935
+    - serializedVersion: 3
+      time: 99.84595
+      value: 0
+      inSlope: 1.4465195
+      outSlope: 19.338448
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.24730854
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  - serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.15384674
+      value: 0
+      inSlope: -13.735724
+      outSlope: 3.3279438
+      tangentMode: 1
+      weightedMode: 2
+      inWeight: 0
+      outWeight: 0.16384542
+    - serializedVersion: 3
+      time: 36.522404
+      value: 49.767136
+      inSlope: 0.0955713
+      outSlope: 0.0955713
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.67316204
+      outWeight: 0.5230479
+    - serializedVersion: 3
+      time: 99.84595
+      value: 0
+      inSlope: -1.5408741
+      outSlope: 19.338448
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.14575449
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d864b94c3607349bffb99b8833ceb4, type: 3}
+  m_Name: New Punch From Sky Behaviour 8002
+  m_EditorClassIdentifier: 
+  active: 0
+  punchPrefab: {fileID: 6951102213613454483, guid: 34d15a3132fe9b945b34dd666549c9b4, type: 3}
+  predict: {fileID: 6951102213613454483, guid: 29aaeb9ce095327469ae3dee40636389, type: 3}
+  cooldown:
+    ConfigKey: '[{0}]Skill_1_Cooldown'
+    DefaultValue: 
+  punchPosY:
+    ConfigKey: 
+    DefaultValue: 20
+  punchSize:
+    ConfigKey: '[{0}]Skill_1_Punch_Size'
+    DefaultValue: 
+  punchDmg:
+    ConfigKey: '[{0}]Skill_1_Punch_Dmg'
+    DefaultValue: 
+  punchVelocity:
+    ConfigKey: '[{0}]Skill_1_Punch_Velocity'
+    DefaultValue: 
+  punchNumber:
+    ConfigKey: '[{0}]Skill_1_Punch_Number'
+    DefaultValue: 
+  punchDelay:
+    ConfigKey: '[{0}]Skill_1_Punch_Delay'
+    DefaultValue: 
+  predictDelayBeforeShot:
+    ConfigKey: 
+    DefaultValue: 0.5
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256

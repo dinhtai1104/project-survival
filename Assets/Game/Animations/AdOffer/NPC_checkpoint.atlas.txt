@@ -1,0 +1,26 @@
+NPC_checkpoint.png
+size:1185,631
+filter:Linear,Linear
+pma:true
+Group 1/bell
+bounds:1088,337,95,202
+Group 1/f_cloark
+bounds:934,284,152,255
+Group 1/f_cloark_2
+bounds:918,24,152,255
+Group 1/f_head
+bounds:2,2,627,684
+rotate:90
+Group 1/f_leg
+bounds:688,8,79,154
+rotate:90
+Group 1/icon
+bounds:688,89,228,190
+Group 1/sub_bell
+bounds:1072,13,269,108
+rotate:90
+Group 1/sub_cloark
+bounds:688,281,244,258
+shadow
+bounds:688,541,437,88
+offsets:20,2,477,95

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893c11410f6cbfd4d9d2e8e3c8e80852, type: 3}
+  m_Name: Enemy4003 Skill1 Shooter
+  m_EditorClassIdentifier: 
+  id: 0
+  title: 
+  baseDamage: 10
+  DamageMultiplier:
+    ConfigKey: '[Enemy4003]Skill_1_Damage'
+    DefaultValue: 1
+  damageMultiplier: 0
+  fireRate: 100
+  range: 50
+  lastTrigger: 0
+  bulletVelocity: 1
+  BulletVelocityConfig:
+    ConfigKey: '[Enemy4003]Skill_1_MinBullet_Velocity'
+    DefaultValue: 5
+  knockBack: 0
+  knockBackTime: 0
+  character: {fileID: 0}
+  icon: 
+  mainTexture: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  _weaponPassives: []
+  _supportWeapons: []
+  fireStartSFX: {fileID: 8300000, guid: 73023b35b8614ed42b8ca81f2ecc873e, type: 3}
+  fireSFXs:
+  - {fileID: 8300000, guid: adc3fa55432f7f7488470b96fac536a5, type: 3}
+  bulletRefs:
+  - m_AssetGUID: f38e4f44c2ffd624491f95c8d2bc403b
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  shootPatterns:
+  - {fileID: 11400000, guid: 9bb63cc1be585ee46b3057f2acc7589e, type: 2}
+  eventTriggerShot: 0
+  followTarget: 0
+  muzzleEffectRef:
+    m_AssetGUID: 7168d17a3181c444aa4b02fe3464a537
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  preTriggerEffectRef:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

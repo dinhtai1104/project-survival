@@ -1,0 +1,850 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Effect
+  m_EditorClassIdentifier: 
+  m_GroupName: Effect
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 544082bdf522ac14cb02e58e5c82ffb7
+  m_SerializeEntries:
+  - m_GUID: 1a8dc92a9801675418f2db9b22df26f4
+    m_Address: VFX_SmokeJumpTouchGround
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce92f7bc291ddaa4fb12e9c49d3aa324
+    m_Address: VFX_BulletImpact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bce4cdfe24d0a8141823e682712f6d47
+    m_Address: VFX_LandJump
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9708b7aaa3c31964a80af24d794c2741
+    m_Address: VFX_Heal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96bcadcf92a9da74990759c2757ca2ae
+    m_Address: VFX_GetHit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 009687a07757efb48b32b5bacad68295
+    m_Address: VFX_CharacterDead
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7621c250345792f4a8134aedc1a8eec8
+    m_Address: VFX_SmokeJump
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9ad7a120be6ccb4d87216ba283a3bba
+    m_Address: VFX_MoveOnGround
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f48ba3300a02642478d1b4f3bf3fa615
+    m_Address: VFX_StartMove
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06ed591fa5026d343b8fd7802f6ee6e2
+    m_Address: VFX_DoubleJump
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58b745c8cfc473f45a7e12e55081513a
+    m_Address: VFX_BattleEffectText
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91619c6461d164a46a257167114ba5e1
+    m_Address: VFX_Rocket_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39a46a929ba6aea4583e798cc1d78d1f
+    m_Address: VFX_Enemy0_HeadButt
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93282b6a52ed4aa4fa888ad952017b31
+    m_Address: VFX_Enemy1_Split
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06860935374a8e1418e6318ebb730c8b
+    m_Address: VFX_Enemy2_Impact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70804e211a4461546bb16f9e9c7f824e
+    m_Address: VFX_Boss10_LazerEnd
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f9f8022b35105f4d83871487f996c74
+    m_Address: VFX_Boss10_Jump
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4609c0b85e3c0e74585b035781d325fd
+    m_Address: VFX_Boss10_GuitarStrum
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 022c0a8c1e2865e40b0d62341265b121
+    m_Address: VFX_Boss10_LazerStart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b32c41e4a35e8634cad5817c78bcbfe7
+    m_Address: VFX_Boss10_OnLand
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0a92bacb646b054a8fd1b893ca96e8d
+    m_Address: VFX_Boss20_Skill2_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa4b535c71bf4a54e8a4890dedbd7f7c
+    m_Address: VFX_Boss30_Skill2_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6aae2c7202ea5904f9534c0f8479c218
+    m_Address: VFX_Boss30_Skill3_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99acbb27e63df60459e10e48b5cec2da
+    m_Address: VFX_Train_Explode
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b035a5f653534940babde3f89a25d7e
+    m_Address: VFX_Boss20_Skill1_OnLand
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 517309e159472694ea24c654f6b86cee
+    m_Address: VFX_Boss10_Skill3_Charge
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 808a6e08659d0c04994be5e2dd9d26ea
+    m_Address: VFX_Boss13_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6633428da490bd409293195d1c0cd41
+    m_Address: VFX_IncreaseDamage
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 998dcc5564a97cb49871527a51fb8f6b
+    m_Address: SlashEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0e41c2ab4c4789d41b6e682f603956b5
+    m_Address: VFX_Boss30_Skill1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 74ce5745064528846bc10bef714714b8
+    m_Address: VFX_Character_Immune
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf44dcf317e086f40bd240956b598e4b
+    m_Address: VFX_Gate_Distortion_Phase4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77a7c108857b8d34c99fa419ef1e64d1
+    m_Address: VFX_Gate_Idle_Phase2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0515eafdb88500b41911cc413d29024e
+    m_Address: VFX_Gate_Idle_Phase3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e254a0e3f436f641bdf098a8b1e7891
+    m_Address: VFX_Gate_TeleportCharacter
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b1f52d8bd6dee347b6407449d4c5f35
+    m_Address: VFX_UI_Distortion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13a34a728d04d3c4a901d053ce92c0bb
+    m_Address: VFX_Lotus_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b5f0dbf3b144c947bca78599938b127
+    m_Address: VFX_Lotus_Phase1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fc70c9b5d7c59443827e1af79706318
+    m_Address: VFX_Lotus_Phase2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b05902d762365b4489a5f790a4b82401
+    m_Address: VFX_Lotus_Phase2_Loop
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0983ef30f3951e445aa851300ebe6a60
+    m_Address: VFX_Boss20_Skill1_Jump
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 487973f12cae7074bb0a47a8a190edb7
+    m_Address: VFX_Boss20_Skill1_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a9f723e4e1de624a96805b7e93271a0
+    m_Address: VFX_EnemyShared_Death
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc1c4294142c50e44b91f3644246e086
+    m_Address: VFX_Boss20_Spin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ded6236a9fe2e446b5a84c22e3b1b28
+    m_Address: bretto_smoke_3_grey_sheet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1779e6fcad27b0346a52eed3d8ec616f
+    m_Address: VFX_Boss_3001_Death
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7168d17a3181c444aa4b02fe3464a537
+    m_Address: VFX_Boss3002_Skill1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 885f8ba068b49b04c9b40d341a7529be
+    m_Address: VFX_BazookaDrone_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 95da9ba50aa97c244a688988345e2ab0
+    m_Address: VFX_Player_HealDrone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc7f7c2e3f504d44fbd61607d474cbcf
+    m_Address: VFX_Player_SpeedDrone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72bc32a24be148c48a0578deac31246b
+    m_Address: Assets/Game/VFX_Hung/Materials/Add_Trail 6.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d69e88cd0200ac94584d62be5c2c4df1
+    m_Address: VFX_ElectricBall_Impact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c025b9ae544a4bf47b5567eb24e7fd57
+    m_Address: VFX_SharkGun_Explode
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6cbc7592e9bcce498cc60daf478b0c7
+    m_Address: VFX_ImpactGround
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8c87889e4512524eb1f67f9ce67c7b9
+    m_Address: VFX_Coin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f4f31a8d4ed0c3418cb1bd1f3e23409
+    m_Address: VFX_CoinCollect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ea3bb0d53f47794480849beb2b0618f
+    m_Address: VFX_CoinBoss
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb64c80b749c8c04fb08f40a35e20dbd
+    m_Address: Enemy22_Bullet_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 81b851de0c0cfc94fa135c359b6d94e6
+    m_Address: VFX_Boss4001_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f3566dffe658ff498d62b82ebd754a1
+    m_Address: VFX_Boss_4001_Death
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 490149767c2031c49b0fa4de4769db14
+    m_Address: VFX_Boss4002_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64670a3b99d210e47809f965dc94af48
+    m_Address: VFX_Boss4012_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3aaf672e7418d0468d30c7c45425382
+    m_Address: VFX_Boss3001_Skill1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 448eb33b99843414a80aec54846f0048
+    m_Address: VFX_Boss3003_Skill2_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47ce526131a1897419bfae97b8b5c7ab
+    m_Address: VFX_Boss3003_Skill1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 772fadfbfada126439ae60f1a03767d7
+    m_Address: VFX_Boss3003_Skill2_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b04daa8235da81e4c95ee4b5fc4b4b6b
+    m_Address: VFX_Player_LevelUp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b8c07018cca1f543b7895f16973f02b
+    m_Address: VFX_Enemy1005_Skill1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e0d6eb106ae3f34e8f49488c75b0a98
+    m_Address: VFX_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2de9d49973e1fb44fb3116482352cbb2
+    m_Address: VFX_GetHit_GatlingGun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91fed3ec1bfc84d4fbc1ae398f26a21d
+    m_Address: Enemy17_Bullet_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96bb562a36f3ee14c95d67cd551453ce
+    m_Address: VFX_Enemy16_Charge
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eaa26a063b46062479456ce6912ed230
+    m_Address: VFX_Enemy16_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f3603d88c4fe354ab266ac3c8a1438a
+    m_Address: Enemy23_Bullet_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6b45cf11568af042939e4d8678af5dd
+    m_Address: VFX_Enemy22_Charge
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54103475c9153294ea69efa921eaa521
+    m_Address: VFX_Enemy3001_Impact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aac206145937d2540bd10c11ba908af7
+    m_Address: VFX_SpawnEnemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a76493da51fc0143931faaf7576357e
+    m_Address: VFX_Enemy3003_Impact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f0855377a5761745a1d547fd26d6858
+    m_Address: VFX_Enemy3003_Impact_Small
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3cbbea1ff3bb305409e01cc104340355
+    m_Address: VFX_UIFloat_Icon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f6ba4d35823c6942a663ef03865e25b
+    m_Address: VFX_UIFloat_Icon_MiniBoss_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb040d151c3349a439e74164a76d7eb5
+    m_Address: VFX_UIFloat_Icon_MiniBoss_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b327385a600e69448c1c893a95a9d32
+    m_Address: VFX_UIFloat_Icon_MiniBoss_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2044aa67d4791014697adf248dc2b640
+    m_Address: DisableEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bbac81ef69f51d44eb03c5ac8470f6da
+    m_Address: VFX_Enemy4003_Skill2_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 022b05083c901db46b8ad0aa3133cec3
+    m_Address: VFX_DmgBuff
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 447b0a659ab299f4d81183e8d411b983
+    m_Address: VFX_Enemy4003_Skill2_Prepare
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c99dd232147a3d94489cbdc06c512f25
+    m_Address: VFX_Boss5001_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9060ef4d9fdeb049955e3b1b6413e13
+    m_Address: VFX_Boss5001_Skill_2_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5dc7b336f7acdd4ca8ef70a2d24293e
+    m_Address: VFX_Enemy5002_Skill1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85c27e16a51335445b2dc8c7a159e1ce
+    m_Address: VFX_Enemy5002_Skill1_Prepare
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2e026c43610fd649bb1f7ad439eb93e
+    m_Address: VFX_Enemy5002_Skill2_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee724cd1f6819814ab97fda311db9845
+    m_Address: VFX_Boss_4002_Death
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10932d536f7efc14993c34b21e7475d3
+    m_Address: VFX_SelfDestruct_Bullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8093fbc80a805654c95dd63f71b9de5a
+    m_Address: VFX_Impact_Blood 2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a57b08e8171d8443894974196a13451
+    m_Address: Eff
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62a469b7ec82bda43aa9598a2c544b32
+    m_Address: VFX_Revive
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c1355073c4285a458c1d4e205827de1
+    m_Address: Assets/Game/VFX_Hung/Materials/AB_Leaf_2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63f8cfdf92bd5af4081847e62620191d
+    m_Address: Assets/Game/VFX_Hung/Materials/AB_Lava.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17badd9423d04b34a8ce1b3c3ade6e8c
+    m_Address: Assets/Game/VFX_Hung/Materials/AB_Bat.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ba1879e5a0348048b574879ae3e947a
+    m_Address: Assets/Game/VFX_Hung/Materials/Add_Lotus_3.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c0ecfe2300841146adfe72acab3f89b
+    m_Address: Assets/Game/VFX_Hung/Textures/Lotus_1_white.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aaf40f1cabed20e4280f8fe5d8f3d5d5
+    m_Address: VFX_BuffHeal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af27ef821b7fb9c4d9130843e0c2c437
+    m_Address: VFX_Enemy24_Bullet_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 596d74d861088ae479c5c350a6dc5640
+    m_Address: VFX_Enemy_6001_Penguin_Skill1_Explode
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b6b33068006aa84fb68cfd28c759c5b
+    m_Address: VFX_Enemy6002_Skill2_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a8c50a9b69d2214baa2968090589a1f
+    m_Address: VFX_Enemy6002_Skill1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5275b21934a0a434ea80e91e01e36871
+    m_Address: VFX_Enemy6023_MuzzleAttack
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a91011fcabc6dd46b7bed6d33c16365
+    m_Address: VFX_6003_Heal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6658158ef51270d438e7516e50c751a5
+    m_Address: VFX_6023_HealMuzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ecd1a5144f75df4c8da04dcf970872a
+    m_Address: VFX_6003_Summon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc4616806f1745c46ad17c2514957121
+    m_Address: VFX_Buff56_DroneRestoreSkill
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 748b35625d725674484ca4e659a61af9
+    m_Address: VFX_Buff51_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56b831effbe5b484bafa6605d43f4821
+    m_Address: VFX_ElectricballMuzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf3725c0d831dc2448e69dbe81cb41aa
+    m_Address: VFX_Enemy_6002_BigBullet_Skill2_Explode
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6411f7bdb634cda4680bd4ffef5a7f51
+    m_Address: VFX_Buff58_BuffDmg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10c31724cfd3c514a818522e9bd05f09
+    m_Address: FreezeEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1b046b20567fc8449fd6cb3a57f6a63
+    m_Address: VFX_Buff49_FreezeBlood
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed66a7b08c46d1c4ab2b8a24d6b7a57a
+    m_Address: VFX_IceBall_Explode
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e378a9f136cc7441bfc16539d8063c4
+    m_Address: D7_Enemy23_Bullet_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b75ea9e910905fb4dbbe8d5017680b09
+    m_Address: VFX_Ice_Broken
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d751e3c419f7a24ba6534a637993b4e
+    m_Address: VFX_SpawnEnemy6001_Skill2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8510c52fba6ea54eb97e99a5a217d98
+    m_Address: VFX_SpawnEnemy6001_Skill1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e5ac6cc0c2d73442a187f5c81ec09a7
+    m_Address: VFX_Enemy44_Egg_Explode
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6855d67f893f711409f709169d58ac21
+    m_Address: VFX_Enemy45_Egg_Explode
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 326e131c973bfcd468f1177ce86b2829
+    m_Address: VFX_Enemy45_Death
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f0d0420fd50bfb4795418462e8c96cb
+    m_Address: VFX_StoneImpact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d50f65ab45dfe43458cbdb84a4814212
+    m_Address: VFX_Buff52_Ice Bullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9fe0afb1fc15ac1408e99f3c649660e9
+    m_Address: VFX_Buff51_Ice Meteos
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe29142f359f06849abee8c670131262
+    m_Address: VFX_Enemy6021_Skill1_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b024e85a99a11eb45892fe36bb14ffed
+    m_Address: VFX_Buff52_impact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 032061da71998c943b3625cad4489999
+    m_Address: VFX_Buff57_BuffCrit_LOOP
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 846783a6568481e48bbbc4732708c9d5
+    m_Address: VFX_Buff53_impact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b64b4751a2ae254a985c468d0bf244b
+    m_Address: 'VFX_Buff55_Explosion '
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c94d1283f0192042bf2143a28010837
+    m_Address: VFX_Buff54_impact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f2e5e596436c1d4581a4db2e9118c5b
+    m_Address: VFX_Buff55_Electric Meteos
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c4208998f3e05aa45be310cb62ceeddc
+    m_Address: VFX_Buff50_ShadowVanish
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61a81f3e8be39144d81f891a07d3ccf4
+    m_Address: VFX_Buff50_ShadowAppear
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f78895cbe25844408256168738199c7
+    m_Address: VFX_Buff53_KnockBackBullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2ed5e7019040994cb363fcbd2c116c6
+    m_Address: VFX_Boss7001_Skill2_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf3f35c8586717b44bf192211ec8fc7a
+    m_Address: VFX_Enemy6003_Skill3_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6399ae07701921c4e8f4288cf153e888
+    m_Address: VFX_Enemy7003_Skill2_Prepare
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 247b756e57b3f83469ab5930785193ce
+    m_Address: VFX_Enemy7003_Skill2_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf5b2b0135154424aa13f5a9e4999575
+    m_Address: VFX_Enemy7003_Skill1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4acc66660e435384eafd82f67e1544a6
+    m_Address: VFX_Enemy7003_Skill3_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 550dd912488e44a4cad032357d573802
+    m_Address: VFX_Enemy7003_Skill3_Prepare
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9559832b8af8ec342badcc5dc0ab7538
+    m_Address: VFX_Enemy7003_Skill3_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7cef22a7b402794ca7d7fc9828ac0f3
+    m_Address: VFX_Enemy7003_Skill1_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6136436b53e5b94458f599343b0342e4
+    m_Address: VFX_Enemy7032_Explode
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7de56cca58834e9458a018bdb1433c55
+    m_Address: VFX_7022_Skill_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13a9a80b83bfd554bb725a7fadec73a8
+    m_Address: VFX_StoneImpact_7022
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f269fe3d23dbfdc4da1f6b6aa9f31af8
+    m_Address: VFX_Boss8002_Skill2_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1d89fd7319f7854a9fabaf5394176c8
+    m_Address: VFX_Enemy8002_Skill1_Impact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd4a8b229a32a0846a4f389fb50a5940
+    m_Address: VFX_Enemy8002_Summon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7ab0ef030f153a45b6345126dfc6214
+    m_Address: VFX_Enemy8003_Skill_1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85b3cb2efdeb32d4082461cb6ba6bc0c
+    m_Address: VFX_Enemy9002_Summon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd27f4d3d6311f24ea1dd406d567c832
+    m_Address: VFX_Enemy8001_Skill1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23587ff04c7d8bb49a09182dd0427765
+    m_Address: VFX_Enemy10011_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4f49cce2fc2bf243bccdb66d8ca28e0
+    m_Address: VFX_Enemy10001_Skill_3_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f007b9b316fee84f986a8cb414b3a59
+    m_Address: VFX_Enemy10003_Explode
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e45199e7feffba645a2302999d247196
+    m_Address: VFX_Enemy9003_Skill_1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4ca24bb3f9f46341b7474d5af104655
+    m_Address: VFX_Enemy9003_Skill_2_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 920a8f4ec63c8f24f8419eb01c1b6eca
+    m_Address: VFX_Enemy9003_Skill_3_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3be96c929297528408df166718f307ff
+    m_Address: VFX_Enemy10002_Skill_1_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3849a2e23158f047a37d91da7092091
+    m_Address: VFX_Enemy10002_Skill_2_Muzzle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 4c7ac988e415fa242afd58556a852cc1, type: 2}
+    - {fileID: 11400000, guid: 1b7ec950f6f86dd4c98e33cd8e31507b, type: 2}

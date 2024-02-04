@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b127ee54ecfb0942940d0bdc3cc05a5, type: 3}
+  m_Name: Weapon_IcyGun
+  m_EditorClassIdentifier: 
+  id: 0
+  title: 
+  baseDamage: 0
+  fireRate: 0
+  range: 10
+  lastTrigger: 0
+  knockBack: 0
+  knockBackTime: 0.2
+  character: {fileID: 0}
+  icon: 
+  mainTexture: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  _weaponPassives:
+  - m_AssetGUID: e2006e483da7b094b92ffad221ad00bb
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  fireSFXs: []
+  bulletRef:
+    m_AssetGUID: c93b163230ab6f84588a2d6ff63a81d3
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  weaponRef:
+    m_AssetGUID: 4c1c631c331cde3489bde3d7a83fb2e7
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  minY: -0.05
+  maxY: 0.05
+  bulletVelocity: 50
+  burstCount: 1
+  burstDelay: 0.2
+  burstSpread: -1
+  burstOffset: 0
+  soundDelay: 0.2
+  soundVolumn: 0.45
+  shootPatterns:
+  - {fileID: 11400000, guid: 00fb2fc51e385b345821a612716793de, type: 2}
+  attachedWeapons: []
+  weaponObj: {fileID: 0}

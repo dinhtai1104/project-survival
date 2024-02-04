@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23f08d2ae4cba14087c1ed36193d82b, type: 3}
+  m_Name: Enemy_Common
+  m_EditorClassIdentifier: 
+  mBehaviorSource:
+    behaviorName: Enemy_Common
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(548.596,-16.010788)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,148.048828)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"InitAction","NodeData":{"Offset":"(-121.363625,118.181885)"},"ID":2,"Name":"Init
+        Action","Instant":true,"SharedActorActor":{"Type":"SharedActor","Name":"Actor","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(120,118.181808)"},"ID":3,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-3.9039917,139.247223)"},"ID":4,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-9.507063,142.705154)"},"ID":5,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"HasSkillCast","NodeData":{"Offset":"(-59.7443848,151.2763)"},"ID":6,"Name":"Has
+        Skill Cast","Instant":true,"SharedActorActor":{"Type":"SharedActor","Name":"Actor","IsShared":true},"CheckTypecheck":"Time","Int32count":1},{"Type":"CastRandomSkill","NodeData":{"Offset":"(142.636353,139.371582)"},"ID":7,"Name":"Cast
+        Random Skill","Instant":true,"SharedActorHuman":{"Type":"SharedActor","Name":"Actor","IsShared":true},"Int32Index":0},{"Type":"HasAnySkillFinishVer2","NodeData":{"Offset":"(374.695068,145.636185)"},"ID":8,"Name":"Has
+        Any Skill Finish Ver 2","Instant":true,"SharedActorActor":{"Type":"SharedActor","Name":"Actor","IsShared":true},"Int32Index":0,"CheckTypecheck":"Forever","Int32count":1}]}]}]}]},"DetachedTasks":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(770,820)","Comment":"Skill
+        3"},"ID":9,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"HasSkill","NodeData":{"Offset":"(-143.007111,130)"},"ID":10,"Name":"Has
+        Skill","Instant":true,"Int32Index":3,"SharedActorActor":{"Type":"SharedActor","Name":"Actor","IsShared":true},"CheckTypecheck":"Time","Int32count":1},{"Type":"SkillAction","NodeData":{"Offset":"(0,130)"},"ID":11,"Name":"Skill
+        Action","Instant":true,"SharedActorHuman":{"Type":"SharedActor","Name":"Actor","IsShared":true},"Int32Index":3},{"Type":"HasSkillCompleted","NodeData":{"Offset":"(139.091309,128.636353)"},"ID":12,"Name":"Has
+        Skill Completed","Instant":true,"SharedActorActor":{"Type":"SharedActor","Name":"Actor","IsShared":true},"Int32Index":3,"CheckTypecheck":"Forever","Int32count":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-150,820)","Comment":"Skill
+        1"},"ID":13,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"HasSkill","NodeData":{"Offset":"(-146.327209,154.9892)"},"ID":14,"Name":"Has
+        Skill","Instant":true,"Int32Index":1,"SharedActorActor":{"Type":"SharedActor","Name":"Actor","IsShared":true},"CheckTypecheck":"Time","Int32count":1},{"Type":"SkillAction","NodeData":{"Offset":"(1.5960083,148.9892)"},"ID":15,"Name":"Skill
+        Action","Instant":true,"SharedActorHuman":{"Type":"SharedActor","Name":"Actor","IsShared":true},"Int32Index":1},{"Type":"HasSkillCompleted","NodeData":{"Offset":"(140.4591,154.583618)"},"ID":16,"Name":"Has
+        Skill Completed","Instant":true,"SharedActorActor":{"Type":"SharedActor","Name":"Actor","IsShared":true},"Int32Index":1,"CheckTypecheck":"Forever","Int32count":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(320,830)","Comment":"Skill
+        2"},"ID":17,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"HasSkill","NodeData":{"Offset":"(-162.832291,140)"},"ID":18,"Name":"Has
+        Skill","Instant":true,"Int32Index":2,"SharedActorActor":{"Type":"SharedActor","Name":"Actor","IsShared":true},"CheckTypecheck":"Time","Int32count":1},{"Type":"SkillAction","NodeData":{"Offset":"(-10,130)"},"ID":19,"Name":"Skill
+        Action","Instant":true,"SharedActorHuman":{"Type":"SharedActor","Name":"Actor","IsShared":true},"Int32Index":2},{"Type":"HasSkillCompleted","NodeData":{"Offset":"(129.091064,128.636353)"},"ID":20,"Name":"Has
+        Skill Completed","Instant":true,"SharedActorActor":{"Type":"SharedActor","Name":"Actor","IsShared":true},"Int32Index":2,"CheckTypecheck":"Forever","Int32count":1}]}],"Variables":[{"Type":"SharedActor","Name":"Actor","IsShared":true}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 1.7.3

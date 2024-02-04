@@ -1,0 +1,22 @@
+﻿public enum EAchievement
+{
+    ClearDungeon = 0,
+    OwnHeroPoison = 1,
+    OwnHeroFrozen = 2,
+    OwnHeroNinja = 3,
+    OwnHeroJump = 4,
+    OwnHeroRocket = 5,
+    OwnHeroShinigami = 6,
+    OwnHeroCowboy = 7,
+    OwnHeroAngel = 8,
+    OwnHeroEvil = 9,
+    HeroLevel = 10,
+    AccountLevel = 11,
+    UpgradeEquipmentLevel = 12,
+    WatchAds = 13,
+    OpenChestSilver = 14,
+    OpenChestGolden = 15,
+    OpenChestHero = 16,
+    KillEnemy = 17,
+    KillBoss = 18,
+}

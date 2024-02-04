@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef29ba8191fbb34198ff46d28e89819, type: 3}
+  m_Name: BossSoundData
+  m_EditorClassIdentifier: Assembly-CSharp::Character/CharacterSoundData
+  hurtSFXs:
+  - {fileID: 8300000, guid: ce85222482690e24e862d9b3d57caeac, type: 3}
+  - {fileID: 8300000, guid: 0e149a7c72d162e40b765b7c41a444bd, type: 3}
+  - {fileID: 8300000, guid: 76698b72118fe0a4185bb4ac7c01ac7e, type: 3}
+  dieSFXs:
+  - {fileID: 8300000, guid: 6db83fcfb9d5e204a975eaff48249e84, type: 3}
+  - {fileID: 8300000, guid: d790a75e4d43f584a9ff0c65930ba585, type: 3}
+  - {fileID: 8300000, guid: 34aea7bde6af6c249b7da61f23358ca2, type: 3}
+  - {fileID: 8300000, guid: 4b7207cc4598e874eae526b847eac324, type: 3}
+  landSFXs: []
+  jumpSFXs: []
+  startSFXs:
+  - {fileID: 8300000, guid: 85f9b21965b8e72458e73ec9438ff680, type: 3}
+  appearSFXs: []
+  engageSFXs:
+  - {fileID: 0}
+  getHitSFXs:
+  - {fileID: 8300000, guid: ecbe7955795327f4e844ca4569cbccbd, type: 3}
+  - {fileID: 8300000, guid: 947448ebd52c6aa448f35feafa5550ee, type: 3}
+  - {fileID: 8300000, guid: 1320d4fb43aca1448b57a380c29cd5ff, type: 3}
+  - {fileID: 8300000, guid: dc6bfcf9899fa8041b9478d65736cf6b, type: 3}
+  - {fileID: 8300000, guid: 93209be44fffca448b0eaa3aeaf92c9e, type: 3}
+  - {fileID: 8300000, guid: 9714a6e34c689d441a0afc8dda5ef3d7, type: 3}
+  - {fileID: 8300000, guid: c6f9c04d3366d1f4ca474fea2be4cea8, type: 3}
+  - {fileID: 8300000, guid: c9ea53537467d7442b9ab6b9a520dde9, type: 3}
+  - {fileID: 8300000, guid: 6d6c402fac6d6b24f844348def9abedf, type: 3}
+  getHitArmorSFXs: []
+  vehicleChargeSFX: {fileID: 0}
+  vehicleLaunchSFX: {fileID: 0}

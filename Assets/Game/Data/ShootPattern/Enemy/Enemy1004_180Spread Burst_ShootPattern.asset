@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e3306758e73fd45b8681acef1c58b6, type: 3}
+  m_Name: Enemy1004_180Spread Burst_ShootPattern
+  m_EditorClassIdentifier: 
+  emitters: []
+  _bulletCount: 3
+  _spreadAngle: 0
+  _loop: 1
+  _loopSpacing: 0
+  _spreadRadius: 0
+  _pitch: 0
+  _bulletPerEmitter: 1
+  _emitOffset: 0
+  _rotation: -40
+  useDirectFacing: 0
+  centerOnMiddleBullet: 0
+  bulletSize:
+    ConfigKey: '[Enemy_1004]Skill_1_Bullet_Size'
+    DefaultValue: 1
+  totalBulletPerLoop:
+    ConfigKey: '[Enemy_1004]Skill_1_Bullet'
+    DefaultValue: 8
+  emitSpacingTime:
+    ConfigKey: '[Enemy_1004]Bullet_Between_Time'
+    DefaultValue: 0
+  SpreadAngle:
+    ConfigKey: '[Enemy_1004]Bullet_Angle'
+    DefaultValue: 10
+  DelayShootEachBullet:
+    ConfigKey: 
+    DefaultValue: 

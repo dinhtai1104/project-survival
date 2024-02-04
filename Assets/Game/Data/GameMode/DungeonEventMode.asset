@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309a3dcc759e19449b4808f74f91d542, type: 3}
+  m_Name: DungeonEventMode
+  m_EditorClassIdentifier: 
+  gameMode: 3
+  title: Dungeon Event
+  gameController:
+    m_AssetGUID: 0d8ba220bcb92d94483aab24c9fc8b64
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  worldBackGrounds:
+  - id: 0
+    worldColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
+    backGrounds:
+    - backGroundRefs:
+      - m_AssetGUID: 7b9d39e0209cb5c41be17debb61b33c8
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - backGroundRefs:
+      - m_AssetGUID: c10f649a118f57e429e2bccab2ad5414
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - backGroundRefs:
+      - m_AssetGUID: 122eba1912e472e4d9c0fb39405ba325
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - backGroundRefs:
+      - m_AssetGUID: 7b9d39e0209cb5c41be17debb61b33c8
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+  - id: 1
+    worldColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
+    backGrounds:
+    - backGroundRefs:
+      - m_AssetGUID: bdf54b65ced071d45a51182689001e4e
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - backGroundRefs:
+      - m_AssetGUID: 5adb3696d1182b74ab603d35afb925e1
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - backGroundRefs:
+      - m_AssetGUID: bdf54b65ced071d45a51182689001e4e
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - backGroundRefs:
+      - m_AssetGUID: bdf54b65ced071d45a51182689001e4e
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+  - id: 2
+    worldColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
+    backGrounds:
+    - backGroundRefs:
+      - m_AssetGUID: 00f8a6d281738e94c98231c05ab0d6ef
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - backGroundRefs:
+      - m_AssetGUID: 42dde92a9d5b13744a3626f6f754e40f
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - backGroundRefs:
+      - m_AssetGUID: 00f8a6d281738e94c98231c05ab0d6ef
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - backGroundRefs:
+      - m_AssetGUID: 00f8a6d281738e94c98231c05ab0d6ef
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0

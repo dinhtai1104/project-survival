@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Bullet
+  - Item
+  - MainCanvas
+  - Platform
+  - Ground
+  - Enemy
+  - Drone
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Projectile
+  - Ground
+  - Platform
+  - Enemy
+  - Portal
+  - EnemyFly
+  - Block
+  - 
+  - 
+  - Collectable
+  - Collector
+  - HitBox
+  - DistortEffect
+  - Drone
+  - Chest
+  - Object
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 2681027719
+    locked: 0
+  - name: Front
+    uniqueID: 2144219535
+    locked: 0

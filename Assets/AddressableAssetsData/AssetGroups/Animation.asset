@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Animation
+  m_EditorClassIdentifier: 
+  m_GroupName: Animation
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 210e82f4fdefb264094c49131de77685
+  m_SerializeEntries:
+  - m_GUID: 2843e608da87b8c42ac413e0727dc702
+    m_Address: Assets/Game/Animations/Enemies/Normal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 669916409fada7a4c867c280619f5764
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_1_1/boss_1_1_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 061f7643dc3949b40be975dab9c37114
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_1_2/boss_1_2_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3df7318fce747947b0bdd1d8e616ffd
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_1_3/boss_1_3_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72495489b5b940b48b5e08186e84b94c
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_2_1/boss_2_1_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51fda8b20761cbc4885a907bccb1aa6b
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_2_2/boss_2_2_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43aa601854b7f1f45a271a2f09cdb9bd
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_2_3/boss_2_3_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65603ce9206234b4691bebc05e701b94
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_3_1/boss_3_1_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f3c719615707374db5a34bbe25c637c
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_3_2/boss_3_2_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 294b4f8cba4c97b45ab6d69c82c98e2f
+    m_Address: Assets/Game/Animations/Enemies/Boss/boss_3_3/boss_3_3_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 75789175a525f0f47970481dc46f9f85, type: 2}
+    - {fileID: 11400000, guid: 19f8d9d374632e54d92d19e30b964fdb, type: 2}

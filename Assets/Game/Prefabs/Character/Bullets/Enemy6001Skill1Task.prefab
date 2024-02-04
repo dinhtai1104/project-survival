@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2550899985076692844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2550899985076692845}
+  - component: {fileID: 2550899985076692835}
+  - component: {fileID: 2550899985076692834}
+  m_Layer: 0
+  m_Name: Enemy6001Skill1Task
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2550899985076692845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2550899985076692844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2550899985076692835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2550899985076692844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f645bb8b56daba42a6cb440e634fbec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2550899985076692834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2550899985076692844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8aa63f3b444724bbc44dfde4f6a8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penguinPrefab: {fileID: 586013376303987061, guid: 52f84036de019e34ab8e597faf8b8fbc, type: 3}
+  penguinSize:
+    ConfigKey: '[Enemy6001]Skill_1_SizePenguin'
+    DefaultValue: 1
+  penguinVelocity:
+    ConfigKey: '[Enemy6001]Skill_1_SpeedMove'
+    DefaultValue: 20
+  penguinDmg:
+    ConfigKey: '[Enemy6001]Skill_1_DmgExplosion'
+    DefaultValue: 1
+  penguinReflect:
+    ConfigKey: 
+    DefaultValue: 0
+  penguinNumber:
+    ConfigKey: '[Enemy6001]Skill_1_NumberPenguin'
+    DefaultValue: 3
+  penguinMoveSpeedInCharge:
+    ConfigKey: '[Enemy6001]Skill_1_SpeedInCharge'
+    DefaultValue: 40
+  penguinReleaseEachAngle:
+    ConfigKey: '[Enemy6001]Skill_1_ReleaseEachAngel'
+    DefaultValue: 270
+  elipseObject: {fileID: 0}
+  VFX_Spawn: VFX_SpawnEnemy6001_Skill1

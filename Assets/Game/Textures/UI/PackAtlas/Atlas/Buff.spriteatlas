@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Buff
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 65
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: a6dd8b7525078444297afdc31f56c691, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: f9d4a2403f205f54bae59e8e03237d6e, type: 3}
+  - {fileID: 21300000, guid: c8558b50dfe8c8e4c8778db09685cc16, type: 3}
+  - {fileID: 21300000, guid: f93336b0308e5ce438640eb45ec23bab, type: 3}
+  - {fileID: 21300000, guid: 6b49f6e010e94be40bd37928b5385cf3, type: 3}
+  - {fileID: 21300000, guid: 45f6ca51986125c4a8c3a2d7d7397bf1, type: 3}
+  - {fileID: 21300000, guid: 5a3d56f149ec93f4da18a2c93327ee50, type: 3}
+  - {fileID: 21300000, guid: 1ba88772e7ae0f14a810416d72b600e1, type: 3}
+  - {fileID: 21300000, guid: d4543ca2db23ddf4aaaf3de331523f03, type: 3}
+  - {fileID: 21300000, guid: 027745d2ec748be44a7f9d8777d75547, type: 3}
+  - {fileID: 21300000, guid: eabcc043dda2a834f9fa7c6a15173de1, type: 3}
+  - {fileID: 21300000, guid: 7bb31d932688bce4d9366bcfe4341e22, type: 3}
+  - {fileID: 21300000, guid: 652268e35fe9667409eb57d62cb871d6, type: 3}
+  - {fileID: 21300000, guid: 0c564824b0da1ff4ebc4e061d01fbbec, type: 3}
+  - {fileID: 21300000, guid: ac6aa7542325f2e4f8fc77ded03148e5, type: 3}
+  - {fileID: 21300000, guid: 5e8b95b46f9c82240a1cc54d7e2d1d2c, type: 3}
+  - {fileID: 21300000, guid: b2dbb9b46d0015e488fa7e0970782803, type: 3}
+  - {fileID: 21300000, guid: 3ace67e4f3ae99e40ba7d3c5030937b2, type: 3}
+  - {fileID: 21300000, guid: 01ef69e41194a4e4d9fdaf1df06fa40c, type: 3}
+  - {fileID: 21300000, guid: d5065725b178afa459f972f054bcf98b, type: 3}
+  - {fileID: 21300000, guid: f8c8955535f54464e99ea113c94ecd50, type: 3}
+  - {fileID: 21300000, guid: 8c4cb665677bc6f44b595aaf7f0cedb1, type: 3}
+  - {fileID: 21300000, guid: cf9f1ed5b14a4704dadfde62cb4f6baf, type: 3}
+  - {fileID: 21300000, guid: 6ba94ed54af5ded4bad6072982209f6a, type: 3}
+  - {fileID: 21300000, guid: d12b83e5ad4cf444497355377e311523, type: 3}
+  - {fileID: 21300000, guid: 2e7a5026430919748971f8598cfc7e6a, type: 3}
+  - {fileID: 21300000, guid: 10694e46db85d3e44a1fb69dc5414bc0, type: 3}
+  - {fileID: 21300000, guid: 796b5396aceff744582adef3f09546e3, type: 3}
+  - {fileID: 21300000, guid: 555628b679d1d964e93a44898583c22d, type: 3}
+  - {fileID: 21300000, guid: faacaef628dee7e4c8bc61cb5788c90c, type: 3}
+  - {fileID: 21300000, guid: 95977b7783a448e4b9119973b27420b0, type: 3}
+  - {fileID: 21300000, guid: 2e5316c7a1fa83b42af9497221678bbf, type: 3}
+  - {fileID: 21300000, guid: 67faa538748ea2b4a9f5aca02400eb35, type: 3}
+  - {fileID: 21300000, guid: 12c6fbe86e04c06499460a930ae89de3, type: 3}
+  - {fileID: 21300000, guid: 25ffd1093391cec4491657eceb4b02d1, type: 3}
+  - {fileID: 21300000, guid: 865f26496d544dc4e95d15954c518deb, type: 3}
+  - {fileID: 21300000, guid: 8956a60a62e6f0c4b803dfac5f60fb95, type: 3}
+  - {fileID: 21300000, guid: 07ebea6af84a29246adce00c926a338b, type: 3}
+  - {fileID: 21300000, guid: 6fc1fb6a77ebd4845bde3e8d3e6238b5, type: 3}
+  - {fileID: 21300000, guid: 5a067e7a08024cb4f8ea32bf2324ac1f, type: 3}
+  - {fileID: 21300000, guid: ba34838b1f26978429bac6c13c18a781, type: 3}
+  - {fileID: 21300000, guid: 7ea1af9bf52f80c4da9c99175e19afdc, type: 3}
+  - {fileID: 21300000, guid: 440c77cbfb04f0f4a88b4d3cec96a298, type: 3}
+  - {fileID: 21300000, guid: b911ceeb1efbc9b4680625150f0c92d2, type: 3}
+  - {fileID: 21300000, guid: 68c74f1c1a0928f43be9e53fad3b29f8, type: 3}
+  - {fileID: 21300000, guid: db269f5dde1e4784b8296f03256c810b, type: 3}
+  - {fileID: 21300000, guid: 13fb4e7d991d58c40969b7345258e418, type: 3}
+  - {fileID: 21300000, guid: fdcbab4ef2080a540b17cd4a7e2a4219, type: 3}
+  - {fileID: 21300000, guid: 16ff88beb24e8394ea8e3a3e55618eda, type: 3}
+  - {fileID: 21300000, guid: 6dd987ce26287f548855ed01fae597a4, type: 3}
+  - {fileID: 21300000, guid: efdd103f2ad52f846bfbbe293143e549, type: 3}
+  - {fileID: 21300000, guid: c3be48cf7bfcef342a0d3a2e22e30070, type: 3}
+  - {fileID: 21300000, guid: 9a0706fff5a2ff9428adf448304b0f33, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 5_flame_attack
+  - 32_band_aid
+  - 42_gun_heal
+  - 19_spring_shoes
+  - 41_heal
+  - 1_speed_up
+  - 37_bubble_shield
+  - 16_attack_plus
+  - 6_freeze_attack
+  - 48_ricochet
+  - 38_hp_boost
+  - 15_focus_fire
+  - 29_statue
+  - 3_crit_up
+  - 18_ninja
+  - 4_poison_attack
+  - 13_extra_life
+  - 12_mental_power
+  - 0_attack_up
+  - 53_ knockback_bullet
+  - 46_flamethrower
+  - 9_better_armor
+  - 50_ice_shadow
+  - 49__freeze_blood
+  - 56_time_skip
+  - 31_head_shot
+  - 17_slow_time
+  - 43_gun_up
+  - 34_stress
+  - 45_wall_climb
+  - 35_vampire
+  - 25_death_blast
+  - 21_double_shoot
+  - 11_berserk
+  - 20_piercing_ammo
+  - 52_ice_bullet
+  - 36_revenge
+  - 26_assassin
+  - 28_triple_jump
+  - 23_bouncing_ammo
+  - 2_fast_hand
+  - 22_double_barrel
+  - 55_electric_meteos
+  - 10_dodge_master
+  - 51_ice_meteos
+  - 39_split_shoot
+  - 24_back_fire
+  - 33_field_medic
+  - 44_tiny_one
+  - 30_treasure
+  - 14_parachute
+  - 54_electric_bullet
+  m_RenderDataMap: {}
+  m_Tag: Buff
+  m_IsVariant: 0

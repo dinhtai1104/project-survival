@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef29ba8191fbb34198ff46d28e89819, type: 3}
+  m_Name: BossSoundData 5002
+  m_EditorClassIdentifier: Assembly-CSharp::Character/CharacterSoundData
+  hurtSFXs: []
+  dieSFXs:
+  - {fileID: 8300000, guid: edffd6aa670c2db4c9ab5032322149be, type: 3}
+  - {fileID: 8300000, guid: bacd538e9600098409d479169f098f86, type: 3}
+  landSFXs: []
+  jumpSFXs: []
+  startSFXs:
+  - {fileID: 8300000, guid: 15b137176f928a5449d7178d8e958d3b, type: 3}
+  appearSFXs: []
+  engageSFXs: []
+  getHitSFXs:
+  - {fileID: 8300000, guid: 9714a6e34c689d441a0afc8dda5ef3d7, type: 3}
+  - {fileID: 8300000, guid: c6f9c04d3366d1f4ca474fea2be4cea8, type: 3}
+  - {fileID: 8300000, guid: c9ea53537467d7442b9ab6b9a520dde9, type: 3}
+  - {fileID: 8300000, guid: 6d6c402fac6d6b24f844348def9abedf, type: 3}
+  getHitArmorSFXs: []
+  growSFXs:
+  - {fileID: 8300000, guid: 15b137176f928a5449d7178d8e958d3b, type: 3}

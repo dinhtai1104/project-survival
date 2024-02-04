@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc64d5bfc631e8b49b8836670357d7ba, type: 3}
+  m_Name: New Merge Gun Data SO
+  m_EditorClassIdentifier: 
+  items:
+  - level: 0
+    id: Gun_0_0
+    category: 0
+    icon: gun0_0
+  - level: 1
+    id: Gun_0_1
+    category: 0
+    icon: gun0_1
+  - level: 2
+    id: Gun_0_2
+    category: 0
+    icon: gun0_2
+  - level: 3
+    id: Gun_1_0
+    category: 0
+    icon: gun1_0
+  - level: 4
+    id: Gun_1_1
+    category: 0
+    icon: gun1_1
+  - level: 5
+    id: Gun_1_2
+    category: 0
+    icon: gun1_2
+  - level: 6
+    id: Gun_2_0
+    category: 0
+    icon: gun2_0
+  - level: 7
+    id: Gun_2_1
+    category: 0
+    icon: gun2_1
+  - level: 8
+    id: Gun_2_2
+    category: 0
+    icon: gun2_2
+  - level: 9
+    id: Gun_3_0
+    category: 0
+    icon: gun3_0
+  - level: 10
+    id: Gun_3_1
+    category: 0
+    icon: gun3_1
+  - level: 11
+    id: Gun_3_2
+    category: 0
+    icon: gun3_2
+  - level: 12
+    id: Gun_4_0
+    category: 0
+    icon: gun4_0
+  - level: 13
+    id: Gun_4_1
+    category: 0
+    icon: gun4_1
+  - level: 14
+    id: Gun_4_2
+    category: 0
+    icon: gun4_2
+  - level: 15
+    id: Gun_5_0
+    category: 0
+    icon: gun5_0
+  - level: 16
+    id: Gun_5_1
+    category: 0
+    icon: gun5_1
+  - level: 17
+    id: Gun_5_2
+    category: 0
+    icon: gun5_2

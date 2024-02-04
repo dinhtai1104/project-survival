@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Gun
+  m_EditorClassIdentifier: 
+  m_GroupName: Gun
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 482eee99577044a41930a65913020612
+  m_SerializeEntries:
+  - m_GUID: 984c6d82448330845b306ff876d4a409
+    m_Address: Weapon_17
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee1cd73004e32014fa54265ef561e2db
+    m_Address: Weapon_16
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af6a0c6ca7eb8dd41afa8ce4b2aafce3
+    m_Address: Weapon_15
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f6c9b6901587c44788eab0eff7d881f
+    m_Address: Weapon_14
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4c68a6d2557dfd4db96b924764b3636
+    m_Address: Weapon_13
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c79b1dd0603ba8438172ca96ba863d6
+    m_Address: Weapon_12
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe872905c88a0db44b7b6e9cd46f0abc
+    m_Address: Weapon_11
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a566bf1dfb7824d4cb54747090a589ff
+    m_Address: Weapon_10
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8b7804381012564bb9ebc5a1ed95087
+    m_Address: Weapon_9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71bd56ddd9332e946b0320912d2b74f2
+    m_Address: Weapon_8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a6e877a1a532944c8ab138eda3461be
+    m_Address: Weapon_7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3699918bc8b71134dad11ac2a3e29433
+    m_Address: Weapon_6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0bf06deb22d91242a5db450ec586758
+    m_Address: Weapon_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02a691fa5b1bbbd41b497a7e0e0ce24f
+    m_Address: Weapon_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4676e10b453b1b4a9017f4c0bae8383
+    m_Address: Weapon_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5d5fe95cd9778743a2e153102c27447
+    m_Address: Weapon_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 292ddf6139d8b42468d2505c4a5fee95
+    m_Address: Weapon_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f72ce2a60fa77a4ca738d8f20fc719a
+    m_Address: Weapon_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29dc0840d358e7f4fa5a8d24d79ffa24
+    m_Address: MiniLauncher
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0275acc35f54954591d7478d404d80b
+    m_Address: Weapons
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80cceb0f0c5b68946848ed076212bc6a
+    m_Address: Bullets
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f4ee3738fb3f604f92591d89faf98c0
+    m_Address: Weapon_Boomerang
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e292daee16553954cbd27b8212c7bfbd
+    m_Address: Weapon_ElectricBalliasta
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5a55503baac6e84f8b87c717cdcde7b
+    m_Address: Weapon_FireGun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c89b7f9999be9ee458d3b82d31b740cb
+    m_Address: Weapon_GatlingGun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34e4411479e464a449dec238e43dfada
+    m_Address: Weapon_SharkGun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9dd38bcd5004e84c84fd56225e849b6
+    m_Address: Weapon_IcyGun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ed38a0f85747314aaf5738fb88fbcf7
+    m_Address: Weapon_RailGun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ccbe1a71e3bc074dbf25075fefed3fa
+    m_Address: Weapon_RifleGun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed7cc1fa5ac85484fbb735998b9b0d26
+    m_Address: Weapon_Kunai
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1e543c263407ff4eb9535dba1596500
+    m_Address: Assets/Game/Prefabs/GameObjects/LaserEye.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 14c6f4a8bd37329419917060b4aee8e8, type: 2}
+    - {fileID: 11400000, guid: 52d11135661fc3048ac1a8a756039c46, type: 2}

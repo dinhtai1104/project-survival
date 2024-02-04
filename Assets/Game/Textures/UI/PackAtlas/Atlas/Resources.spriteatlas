@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Resources
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 4
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 4
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2fb05c9b5744dd848b69046102207229, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a9e51d40a74c39749931aebada5a58f1, type: 3}
+  - {fileID: 21300000, guid: 9bc9e4c032d8db94fad56c4142db5bd2, type: 3}
+  - {fileID: 21300000, guid: 8d973fe0664ad4d439e4f81096bae002, type: 3}
+  - {fileID: 21300000, guid: 7960ffa2109c4354880370a4e5520e2c, type: 3}
+  - {fileID: 21300000, guid: 24cd58c29220f534191f4805d27212f8, type: 3}
+  - {fileID: 21300000, guid: 422b6be2ab938b24fa1988cd4f4a40bc, type: 3}
+  - {fileID: 21300000, guid: 5ae6e16331bef544889c0ac39c8551a8, type: 3}
+  - {fileID: 21300000, guid: 05dbfa93e806fc54a92d53244e6f0e92, type: 3}
+  - {fileID: 21300000, guid: 07e6aec483ca4514f853e49301db837b, type: 3}
+  - {fileID: 21300000, guid: 25026ed49499a534897deae81d559599, type: 3}
+  - {fileID: 21300000, guid: acb7d1065f907f94ca3d5bb322a1c24a, type: 3}
+  - {fileID: 21300000, guid: 862bb226ebc6a4743aee8471e50fc03c, type: 3}
+  - {fileID: 21300000, guid: 1ea387366d9bb1a41b8524413a26814e, type: 3}
+  - {fileID: 21300000, guid: b40968969328e3f4781749050dfeaab9, type: 3}
+  - {fileID: 21300000, guid: 1a903eb6bbd3ce84991c067c60c6ae8d, type: 3}
+  - {fileID: 21300000, guid: a96a388705b7cbc4299db8b476bf9450, type: 3}
+  - {fileID: 21300000, guid: be02abc76aaa81f498035de96f4b805e, type: 3}
+  - {fileID: 21300000, guid: db30c9e71d1af404482048ffa880423a, type: 3}
+  - {fileID: 21300000, guid: 025e8908fbbb59442acb24b6a1e662ad, type: 3}
+  - {fileID: 21300000, guid: 35be8da82f421b44baed1a7fc27cb07f, type: 3}
+  - {fileID: 21300000, guid: 629080d8db014dd4cb9a55c4d49848b7, type: 3}
+  - {fileID: 21300000, guid: e947d9d94b043ee4f95f93b26f307d0a, type: 3}
+  - {fileID: 21300000, guid: 51997cfabdd0e934991a7c828b2537b4, type: 3}
+  - {fileID: 21300000, guid: 03f5e91ba0bc8794cb99e43c0cf0e1b3, type: 3}
+  - {fileID: 21300000, guid: 90e1b67b8b51c7d4ca8f337e83de7222, type: 3}
+  - {fileID: 21300000, guid: 2e5c7b2c763c1954fa13fe86d834b996, type: 3}
+  - {fileID: 21300000, guid: c5b30d3ceab710b46b0738b9f091728c, type: 3}
+  - {fileID: 21300000, guid: e0eda84cf28045341b4a584e79ea17e6, type: 3}
+  - {fileID: 21300000, guid: 6c76c4ecad7494d459bb0b4f9147e288, type: 3}
+  - {fileID: 21300000, guid: b6831f2defdb6b94c897866a26ee5792, type: 3}
+  - {fileID: 21300000, guid: 0f76976da08c0a544b1a8b8e5a6961ff, type: 3}
+  - {fileID: 21300000, guid: 4ac10a8df1282c14a85eb010a037a1f5, type: 3}
+  - {fileID: 21300000, guid: 370ad8fde44881f4c97af646f1455689, type: 3}
+  - {fileID: 21300000, guid: d1576c9e7fac2a44abe3fe9dadc31aaf, type: 3}
+  - {fileID: 21300000, guid: 044746fee7a6eae4b81389770d11498c, type: 3}
+  - {fileID: 21300000, guid: f400e07fad840ee49ab886b0e8446f3e, type: 3}
+  - {fileID: 21300000, guid: 54acd9dfa8a09384988a0fa42dba51e1, type: 3}
+  - {fileID: 21300000, guid: 8bbb64ef5e617b8458fa5f04ceec465b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - EvilHero
+  - JumpHero
+  - HeroStoneRdFragment
+  - DroneFragment
+  - Gold
+  - HelmetFragment
+  - NinjaHero
+  - RocketHero
+  - FrozenStone
+  - stone
+  - FrozenHero
+  - BootFragment
+  - 'HelmetFragment '
+  - PoisonStone
+  - GoldenKey
+  - MainWpFragment
+  - HeroKey
+  - Exp
+  - ReviveCard
+  - AngelHero
+  - WeaponStone
+  - SilverKey
+  - BaseStone
+  - CowboyHero
+  - PoisonHero
+  - PigCoin
+  - DarkStone
+  - Energy
+  - Gem
+  - LightStone
+  - EquipmentRdFragment
+  - NecklaceFragment
+  - DailyQuestMedal
+  - ShinigamiHero
+  - HeroRdFragment
+  - NormalHero
+  - NecklaceFragmen
+  - ArmorFragment
+  m_RenderDataMap: {}
+  m_Tag: Resources
+  m_IsVariant: 0

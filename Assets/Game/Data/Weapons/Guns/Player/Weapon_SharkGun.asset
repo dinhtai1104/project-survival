@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b6bd843d00be36458c4c0f43b8bb90f, type: 3}
+  m_Name: Weapon_SharkGun
+  m_EditorClassIdentifier: 
+  id: 0
+  title: 
+  baseDamage: 0
+  fireRate: 0
+  range: 10
+  lastTrigger: 0
+  knockBack: 0
+  knockBackTime: 0.2
+  character: {fileID: 0}
+  icon: 
+  mainTexture: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  _weaponPassives:
+  - m_AssetGUID: d8a8cb10857868a48aba35005b1c8ce2
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _supportWeapons: []
+  fireSFXs: []
+  bulletRef:
+    m_AssetGUID: 5e2f1e561dc810d4082be75533aaa82c
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  weaponRef:
+    m_AssetGUID: d61456bf3e078974d87e3f0be606452f
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  minY: -0.05
+  maxY: 0.05
+  bulletVelocity: 50
+  burstCount: 1
+  burstDelay: 0.2
+  burstSpread: -1
+  burstOffset: 0
+  soundDelay: 0.2
+  soundVolumn: 0.45
+  shootPatterns:
+  - {fileID: 11400000, guid: eb8f26b85d3daef4984a2fad072c09e8, type: 2}
+  attachedWeapons: []
+  weaponObj: {fileID: 0}
+  aoe_RadiusExplosion:
+    ConfigKey: '[SharkGun]aoe_RadiusExplosion'
+    DefaultValue: 
+  aoe_DmgExplosionMul:
+    ConfigKey: '[SharkGun]aoe_DmgExplosionMul'
+    DefaultValue: 
+  epic_aoe_RadiusExplosion:
+    ConfigKey: '[SharkGun]epic_aoe_RadiusExplosion'
+    DefaultValue: 
+  legendary_aoe_HoleDuration:
+    ConfigKey: '[SharkGun]legendary_aoe_HoleDuration'
+    DefaultValue: 

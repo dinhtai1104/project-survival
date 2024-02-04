@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Drone
+  m_EditorClassIdentifier: 
+  m_GroupName: Drone
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 09935d7ee85f7e64aa5674d5cc4ee331
+  m_SerializeEntries:
+  - m_GUID: fe908db2b5be5ca4fa9484b84024cd64
+    m_Address: Drone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23c1f1958555caa44abfe899a3ddee43
+    m_Address: BazookaDrone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0303f7e1ac423994faf4781f08b264b8
+    m_Address: GatlingDrone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c3d041ed88493e46974e1ea207e8dc3
+    m_Address: HealDrone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21a11c6f715c9bf4fb98c886746ad998
+    m_Address: SpeedDrone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68a5c5d91f1ba434e8d353ad382ca41e
+    m_Address: TimeDrone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 94e396950e8268744a49c133edd0a957, type: 2}
+    - {fileID: 11400000, guid: aeefd1c50fe515a4d9c87bada28093e7, type: 2}

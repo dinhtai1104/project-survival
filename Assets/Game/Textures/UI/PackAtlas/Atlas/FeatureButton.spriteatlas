@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FeatureButton
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 4
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 50fa08c5fff0f7a4181d8a4c91e10d4e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c1ce7f806fa54d84f8dd24124fb912ff, type: 3}
+  - {fileID: 21300000, guid: 0e0277114df178f47bf5d3158d5a89c9, type: 3}
+  - {fileID: 21300000, guid: 7939b28133d3d39459969b0af24d5bf9, type: 3}
+  - {fileID: 21300000, guid: 93943b322e7c48241849d80fbb28bfeb, type: 3}
+  - {fileID: 21300000, guid: 76c21b3652e683847b9d79ced0bd168a, type: 3}
+  - {fileID: 21300000, guid: 2d9d535601e6abe418f13ab5e8e09bf2, type: 3}
+  - {fileID: 21300000, guid: 085da14711acbad4e8c5dc46dd9bb483, type: 3}
+  - {fileID: 21300000, guid: fcfe93877f60fb9489c473dcaf774c68, type: 3}
+  - {fileID: 21300000, guid: 345118383b5e54c41b75a7c44f016646, type: 3}
+  - {fileID: 21300000, guid: 13d0906870d343041a677afb38a73869, type: 3}
+  - {fileID: 21300000, guid: fe433bd801ecb064993a40e0b7e09c88, type: 3}
+  - {fileID: 21300000, guid: 780f1129b8bd0604abfc1afe0c0fecb5, type: 3}
+  - {fileID: 21300000, guid: bbb04fdbe8f89ec41aea3c2936311624, type: 3}
+  - {fileID: 21300000, guid: 27cc19fb947edca459bc702ea8881d67, type: 3}
+  - {fileID: 21300000, guid: 750b6bec7f149944c8661c8090f08b6c, type: 3}
+  - {fileID: 21300000, guid: 71d3555dd8394e845b38e0f6b7390ec0, type: 3}
+  - {fileID: 21300000, guid: 101b9d7fe4c93ae45b194db8a393a64a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - PiggyBank
+  - FS_GoldenKey
+  - FS_Hero
+  - FS_Gem
+  - PlayGift
+  - Loadout
+  - FS_Scroll
+  - SaleHero
+  - Quest
+  - SkillTree
+  - DungeonEvent
+  - Subscription
+  - FS_SilverKey
+  - BattlePass
+  - FS_Gold
+  - FS_HeroKey
+  - StarterPack
+  m_RenderDataMap: {}
+  m_Tag: FeatureButton
+  m_IsVariant: 0

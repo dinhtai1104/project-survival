@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Buff
+  m_EditorClassIdentifier: 
+  m_GroupName: Buff
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 99764af2e5c5c4945bd027be146d1c79
+  m_SerializeEntries:
+  - m_GUID: fac53431f721ed14fa1a733dbce15c98
+    m_Address: Buff
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97aef76ff928c614e8dbd52225d11679
+    m_Address: Hero
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c98a8e4fac81c3346bcd0d3cbb0b7f9e
+    m_Address: Equipment
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a31f554487a40641a84184866c8333c
+    m_Address: BubbleShieldObj
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fe213dfeb5cdecf4880d925eb97b2ca4, type: 2}
+    - {fileID: 11400000, guid: c7437ec2e65f6154292b03faad725533, type: 2}

@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: EquipmentRarity
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 4
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ed3d7124cbbc5564b89e5fc86b648296, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 587239d0f23edc64393d5da321933101, type: 3}
+  - {fileID: 21300000, guid: 83e23c510cee15f45b4e174d212f8f28, type: 3}
+  - {fileID: 21300000, guid: 1d562e61e8f307f478415eca276333fd, type: 3}
+  - {fileID: 21300000, guid: a676de61593b10f4ba87dd237f8f9392, type: 3}
+  - {fileID: 21300000, guid: 6bf3e5e19b5b483468d7418f75db9f35, type: 3}
+  - {fileID: 21300000, guid: b6692a024cbdf844798346295f06ee6d, type: 3}
+  - {fileID: 21300000, guid: a55d4b524e7405140b99bf1cb89dd3ec, type: 3}
+  - {fileID: 21300000, guid: de56e392072845441abcf5fe55a04ea5, type: 3}
+  - {fileID: 21300000, guid: af3923431e512b943a1d7d80d3d80f78, type: 3}
+  - {fileID: 21300000, guid: e9a44fc3153338d4abd561e005e835a6, type: 3}
+  - {fileID: 21300000, guid: bd8aae740e798654490a341dcb00db0c, type: 3}
+  - {fileID: 21300000, guid: cd715ff65dd85244b8f6981521292ff8, type: 3}
+  - {fileID: 21300000, guid: 20998ff9afb77234f91792bbc705b819, type: 3}
+  - {fileID: 21300000, guid: 7dfe6b5ac3c4f5f4dbde15c567a765e4, type: 3}
+  - {fileID: 21300000, guid: 86075ebaf6037544ea7b7ea69c15b2b7, type: 3}
+  - {fileID: 21300000, guid: c7e9205c7af457643b85d2fcd138eb19, type: 3}
+  - {fileID: 21300000, guid: 81d3870e997ece84bbd329b9030e8035, type: 3}
+  - {fileID: 21300000, guid: 9d44452e38cd7634d8d2d70459edcf80, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Rare_Type
+  - UnCommon
+  - Legendary
+  - Legendary_Type
+  - Legendary_Label
+  - Rare_Label
+  - UnCommon_Label
+  - Common_Type
+  - Ultimate
+  - Common_Label
+  - UnCommon_Type
+  - Epic
+  - Ultimate_Type
+  - Epic_Label
+  - Epic_Type
+  - Common
+  - Rare
+  - Ultimate_Label
+  m_RenderDataMap: {}
+  m_Tag: EquipmentRarity
+  m_IsVariant: 0

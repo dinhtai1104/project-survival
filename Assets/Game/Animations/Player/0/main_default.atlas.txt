@@ -1,0 +1,54 @@
+main_default.png
+size:1375,655
+filter:Linear,Linear
+pma:true
+Group 1/angry_mouth
+bounds:1110,359,242,149
+offsets:2,0,244,149
+Group 1/aww_mouth_2
+bounds:1323,259,98,39
+rotate:90
+Group 1/b_normal_eye
+bounds:1195,193,126,164
+Group 1/bell
+bounds:1152,2,115,107
+offsets:1,1,117,109
+Group 1/close_eye_2
+bounds:850,111,410,78
+Group 1/eyeball
+bounds:441,15,260,90
+Group 1/eyebrowns
+bounds:703,39,291,70
+Group 1/eyes_lid
+bounds:850,191,343,141
+Group 1/f_cloark
+bounds:602,376,247,277
+Group 1/f_cloark_2
+bounds:1110,510,143,263
+offsets:1,0,144,263
+rotate:90
+Group 1/f_hair
+bounds:851,393,257,260
+Group 1/f_head
+bounds:2,107,598,546
+Group 1/f_leg
+bounds:996,30,79,154
+rotate:90
+Group 1/huh_mouth
+bounds:1269,64,49,41
+offsets:1,1,52,43
+rotate:90
+Group 1/mouth_close
+bounds:1262,115,76,41
+rotate:90
+Group 1/sad_mouth
+bounds:1323,199,58,37
+offsets:1,1,60,39
+rotate:90
+Group 1/sub_bell
+bounds:851,334,248,57
+Group 1/sub_cloark
+bounds:602,114,246,260
+shadow
+bounds:2,17,437,88
+offsets:20,2,477,95
