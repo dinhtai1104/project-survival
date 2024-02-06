@@ -247,18 +247,7 @@ public static class CustomBuilder
 
     private static void SetupBuildBundlerVersionToScriptableObject()
     {
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            var scriptableSO = Resources.Load<BundleVersionSO>("AndroidBundleVersionSO");
-            scriptableSO.BundleVersion = PlayerSettings.Android.bundleVersionCode;
-            scriptableSO.Save();
-        }
-        else if (Application.platform == RuntimePlatform.IPhonePlayer)
-        {
-            var scriptableSO = Resources.Load<BundleVersionSO>("iOSBundleVersionSO");
-            scriptableSO.BundleVersion = PlayerSettings.iOS.buildNumber.TryGetInt();
-            scriptableSO.Save();
-        }
+        
     }
 
     private static void KeyStore()
@@ -311,18 +300,6 @@ public static class CustomBuilder
     private static void ApplyVersionCode()
     {
        
-        Debug.Log("ApplyVersionCode");
-        var scriptableSO = AssetDatabaseUtils.GetAssetOfType<BundleVersionSO>("AndroidBundleVersionSO");
-        scriptableSO.Save();
-        scriptableSO.BundleVersion = PlayerSettings.Android.bundleVersionCode;
-        scriptableSO.Save();
-        Debug.Log("SET BUNDLE1: " + scriptableSO.BundleVersion);
-
-        var scriptableSO2 = AssetDatabaseUtils.GetAssetOfType<BundleVersionSO>("iOSBundleVersionSO");
-        scriptableSO2.Save();
-        scriptableSO2.BundleVersion = PlayerSettings.iOS.buildNumber.TryGetInt();
-        scriptableSO2.Save();
-        Debug.Log("SET BUNDLE2: " + scriptableSO.BundleVersion);
     }
 
     private static void SetupBuildVersion()
