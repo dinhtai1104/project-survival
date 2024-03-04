@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using Engine;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 namespace Framework
@@ -13,17 +14,21 @@ namespace Framework
         public event Action<Actor> OnSpawning;
         private CoroutineHandle m_CoroutineHandle;
 
-        private MonsterFactory m_MonsterFactory;
+        private EnemyFactory m_EnemyFactory;
         private Bound2D m_SpawnBound;
 
-        protected BaseMonsterSpawner(MonsterFactory monsterFactory, Bound2D spawnBound)
+        public EnemyFactory EnemyFactory => m_EnemyFactory;
+        public Bound2D Bound => m_SpawnBound;
+
+        protected BaseMonsterSpawner(EnemyFactory monsterFactory, Bound2D spawnBound)
         {
-            m_MonsterFactory = monsterFactory;
+            m_EnemyFactory = monsterFactory;
             m_SpawnBound = spawnBound;
         }
 
-        public void StartSpawn(float delaySpawn)
+        public virtual void StartSpawn(float delaySpawn)
         {
+            StopSpawn();
             m_CoroutineHandle = Timing.RunCoroutine(_Spawn(delaySpawn));
         }
 
@@ -42,9 +47,9 @@ namespace Framework
 
         protected abstract IEnumerator<float> _Spawn(float delaySpawn);
 
-        public async UniTask<MonsterActor> SpawnMonster(int id, int monsterLevel, Vector2 position)
+        public async UniTask<EnemyActor> SpawnMonster(string id, int monsterLevel, Vector2 position, CancellationToken token = default)
         {
-            var monster = await m_MonsterFactory.CreateMonster(id, monsterLevel, position);
+            var monster = await m_EnemyFactory.CreateEnemy(id, monsterLevel, position, token);
             if (monster != null)
             {
                 await UniTask.Yield();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Engine
 {
-    public class MonsterActor : Actor
+    public class EnemyActor : Actor
     {
         public int MonsterLevel { set; get; }
         public EnemyEntity MonsterData { set; get; }

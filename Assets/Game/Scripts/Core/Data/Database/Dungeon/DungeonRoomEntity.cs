@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BansheeGz.BGDatabase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,17 @@ namespace Assets.Game.Scripts.Core.Data.Database.Dungeon
     {
         public int RoomId;
         public string TagRoom;
-        public List<DungeonEventEnemyWaveInfo> EnemyRowInfo;
+        public DungeonEventEnemyWaveInfo EventSpawn;
+
+        public DungeonRoomEntity(BGEntity e)
+        {
+            RoomId = e.Get<int>("RoomId");
+            TagRoom = e.Get<string>("TagRoom");
+
+            var eventWave = new DungeonEventEnemyWaveInfo(e);
+            eventWave.RoomId = RoomId;
+            eventWave.TagRoom = TagRoom;
+            EventSpawn = eventWave;
+        }
     }
 }

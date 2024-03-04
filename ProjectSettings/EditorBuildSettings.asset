@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/StartupScene.unity
     guid: 06433d30a9552f9449288d3d45309be7
   - enabled: 0
-    path: Assets/Game/Scenes/AdventureScene.unity
+    path: Assets/Game/Scenes/DungeonScene.unity
     guid: 6af76da43459195419d1e7153b26b43d
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: be9f542e1a083e14b879a8067aeee8a4, type: 2}

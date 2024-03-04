@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 141bf51cd91851742a79a95c187fe7ef, type: 3}
-  m_Name: AdventureScene
+  m_Name: DungeonScene
   m_EditorClassIdentifier: 
-  _sceneName: AdventureScene
+  _sceneName: DungeonScene
   _sceneType:
-    _classRef: Assets.Game.Scripts.Adventure.AdventureSceneController, Assembly-CSharp
+    _classRef: Assets.Game.Scripts.Dungeon.DungeonSceneController, Assembly-CSharp
   _loadingScenePrefab: {fileID: 0}
   _enterTransitionPrefab: {fileID: 0}
   _exitTransitionPrefab: {fileID: 0}

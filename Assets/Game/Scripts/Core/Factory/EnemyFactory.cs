@@ -3,35 +3,37 @@ using com.assets.loader.addressables;
 using com.assets.loader.core;
 using Cysharp.Threading.Tasks;
 using Engine;
+using Manager;
+using SceneManger;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
 namespace Framework
 {
-    public class MonsterFactory
+    public class EnemyFactory
     {
-        private readonly EnemyTable m_MonsterDatabase;
+        private readonly EnemyTable m_EnemyDatabase;
         private IAssetLoader m_AssetLoader;
 
-        public MonsterFactory(EnemyTable monsterDatabase)
+        public EnemyFactory(EnemyTable monsterDatabase)
         {
             m_AssetLoader = new AddressableAssetLoader();
-            m_MonsterDatabase = monsterDatabase;
+            m_EnemyDatabase = monsterDatabase;
         }
 
-        public async UniTask<MonsterActor> CreateMonster(int id, int monsterLevel, Vector2 position, CancellationToken token = default)
+        public async UniTask<EnemyActor> CreateEnemy(string id, int enemyLevel, Vector2 position, CancellationToken token = default)
         {
-            var monsterData = m_MonsterDatabase.Get(id);
+            var monsterData = m_EnemyDatabase.Get(id);
             var monsterPath = monsterData.Path;
-            var monsterPrefab = await m_AssetLoader.LoadAsync<MonsterActor>(monsterPath).Task;
+            var monsterPrefab = await m_AssetLoader.LoadAsync<EnemyActor>(monsterPath).Task;
 
-            return CreateMonster(monsterData, monsterPrefab, monsterLevel, position);
+            return CreateEnemy(monsterData, monsterPrefab, enemyLevel, position);
         }
 
-        public MonsterActor CreateMonster(EnemyEntity monsterData, MonsterActor monsterPrefab, int monsterLevel, Vector2 position)
+        public EnemyActor CreateEnemy(EnemyEntity monsterData, EnemyActor monsterPrefab, int monsterLevel, Vector2 position)
         {
-            var monster = CreateBaseMonster(monsterPrefab, monsterData.Tags, position);
+            var monster = CreateBaseEnemy(monsterPrefab, monsterData.Tags, position);
             monster.MonsterData = monsterData;
             monster.MonsterLevel = monsterLevel;
 
@@ -52,9 +54,9 @@ namespace Framework
             return monster;
         }
 
-        private MonsterActor CreateBaseMonster(MonsterActor prefab, IEnumerable<string> tags, Vector3 position)
+        private EnemyActor CreateBaseEnemy(EnemyActor prefab, IEnumerable<string> tags, Vector3 position)
         {
-            MonsterActor monster = PoolManager.Instance.Spawn(prefab, position, Quaternion.identity);
+            EnemyActor monster = PoolManager.Instance.Spawn(prefab, position, Quaternion.identity);
             monster.AI = true;
 
             var stats = monster.Stat;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BansheeGz.BGDatabase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,7 @@ namespace Assets.Game.Scripts.Core.Data.Database
     [System.Serializable]
     public class EnemyEntity
     {
-        public int Id;
-        public string Name;
+        public string Id;
         public string Path;
 
         public float Hp;
@@ -35,6 +35,24 @@ namespace Assets.Game.Scripts.Core.Data.Database
             }
 
             return false;
+        }
+
+        public EnemyEntity(BGEntity e)
+        {
+            Id = e.Get<string>("Id");
+            Path = e.Get<string>("Path");
+
+            Hp = e.Get<float>("Hp");
+            Damage = e.Get<float>("Damage");
+            Speed = e.Get<float>("Speed");
+            AttackSpeed = e.Get<float>("AttackSpeed");
+
+            iHp = e.Get<float>("iHp");
+            iDamage = e.Get<float>("iDamage");
+            iSpeed = e.Get<float>("iSpeed");
+            iAttackSpeed = e.Get<float>("iAttackSpeed");
+
+            Tags = e.Get<List<string>>("Tags");
         }
     }
 }

@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System;
 using Sirenix.OdinInspector;
 using Assets.Game.Scripts.Core.Data.Database;
+using Assets.Game.Scripts.Core.Data.Database.Dungeon;
 
 public class DatabaseManager : MonoSingleton<DatabaseManager>
 {
     private List<DataTable> databases = new List<DataTable>();
 
-    public EnemyTable MonsterTable = new EnemyTable();
-    public AdventureTable Adventure = new AdventureTable();
+    public EnemyTable EntityTable = new EnemyTable();
+    public DungeonTable DungeonTable = new DungeonTable();
+    public DungeonRoomTable DungeonRoom = new DungeonRoomTable();
 
     public void Init(Transform parent = null)
     {
@@ -22,8 +24,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
 
     private void PreloadData()
     {
-        databases.Add(MonsterTable);
-        databases.Add(Adventure);
+        databases.Add(EntityTable);
     } 
 
     public void LoadDatabase()

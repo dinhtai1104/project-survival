@@ -1,4 +1,4 @@
-﻿using Assets.Game.Scripts.Adventure;
+﻿using Assets.Game.Scripts.Dungeon;
 using Core;
 using Cysharp.Threading.Tasks;
 using Manager;
@@ -31,7 +31,7 @@ namespace Assets.Game.Scripts.StartupScene
 
         private void LoadingScene()
         {
-            SceneManager.LoadSceneAsync<AdventureSceneController>();
+            SceneManager.LoadSceneAsync<DungeonSceneController>();
         }
     }
 }

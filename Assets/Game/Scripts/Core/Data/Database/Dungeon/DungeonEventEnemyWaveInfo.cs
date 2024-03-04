@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BansheeGz.BGDatabase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,16 @@ namespace Assets.Game.Scripts.Core.Data.Database.Dungeon
         public int Amount; // amount enemy spawn each time
         public float MinSpace; // Distance btw enemies
         public float SpawnRadius; // > 0 => spawn cluster
+
+        public DungeonEventEnemyWaveInfo(BGEntity e)
+        {
+            Enemy = e.Get<string>("EnemyId");
+            IdZone = e.Get<int>("ZoneId");
+            Amount = e.Get<int>("Amount");
+            MinSpace = e.Get<float>("MinSpace");
+            SpawnRadius = e.Get<float>("SpawnRadius");
+        }
+
         public bool IsCluster => SpawnRadius > 0;
     }
 }
