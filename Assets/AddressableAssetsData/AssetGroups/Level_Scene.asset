@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Level_Scene
+  m_EditorClassIdentifier: 
+  m_GroupName: Level_Scene
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e87035e0da1deb3459314d584ff93c1f
+  m_SerializeEntries:
+  - m_GUID: 6af76da43459195419d1e7153b26b43d
+    m_Address: AdventureScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ea2f668ace2bf36438d4210191fdb9f2, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: db084fb8f62fb7e46a1a7613511e7943, type: 2}
+    - {fileID: 11400000, guid: 5dd278e2498c8ed46a00fc42fc1d7f67, type: 2}

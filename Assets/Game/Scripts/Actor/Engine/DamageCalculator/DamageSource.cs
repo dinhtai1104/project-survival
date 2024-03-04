@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using UnityEngine;
+
+namespace Engine
+{
+    [Serializable, HideLabel, InlineProperty]
+    public class DamageSource
+    {
+        [SerializeField] private Stat m_Damage;
+
+        [SerializeField, Range(0f, 1f)] private float m_DamageHealthPercentage;
+
+        [SerializeField] private EDamageType m_Type;
+
+
+        [SerializeField] private bool m_CannotEvade;
+
+        [SerializeField] private bool m_CannotHurt;
+
+        public float Value
+        {
+            set { m_Damage.BaseValue = value; }
+            get { return m_Damage.Value; }
+        }
+
+        public void AddModifier(StatModifier mod)
+        {
+            m_Damage.AddModifier(mod);
+        }
+
+        public void RemoveModifier(StatModifier mod)
+        {
+            m_Damage.RemoveModifier(mod);
+        }
+
+        public float DamageHealthPercentage
+        {
+            set { m_DamageHealthPercentage = value; }
+            get { return m_DamageHealthPercentage; }
+        }
+
+        public EDamageType Type
+        {
+            set { m_Type = value; }
+            get { return m_Type; }
+        }
+
+        public bool CannotEvade
+        {
+            set { m_CannotEvade = value; }
+            get { return m_CannotEvade; }
+        }
+
+        public bool CannotHurt
+        {
+            set { m_CannotHurt = value; }
+            get { return m_CannotHurt; }
+        }
+
+        public DamageSource()
+        {
+            m_Damage = new Stat();
+        }
+    }
+}
