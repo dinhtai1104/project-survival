@@ -11,32 +11,71 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 using Random = UnityEngine.Random;
 
 namespace Framework
 {
     public class DungeonEnemySpawner : BaseMonsterSpawner
     {
+
         private List<Actor> m_ActorSpawned;
         private DungeonEntity m_DungeonEntity;
-
         private DungeonRoomTable m_RoomDatabase;
         private DungeonTable m_DungeonDatabase;
 
         private CancellationTokenSource m_Cts;
         private int m_CurrentWave = 0;
-        public int CurrentWave => m_CurrentWave;
-        public int NextWave => m_CurrentWave + 1;
+        public int CurrentWaveEnemy => m_CurrentWave;
+        public int NextWaveEnemy => m_CurrentWave + 1;
 
         private List<CoroutineHandle> m_CoroutineHandleWave;
-        public DungeonEnemySpawner(EnemyFactory monsterFactory, Bound2D spawnBound, DungeonEntity dungeonEntity, int currentWave) : base(monsterFactory, spawnBound)
+
+        public DungeonEnemySpawner(EnemyFactory monsterFactory, Bound2D spawnBound, TeamManager teamManager, DungeonEntity dungeonEntity, int currentWave) : base(monsterFactory, spawnBound, teamManager)
         {
+            Messenger.AddListener<Actor>(EventKey.ActorDie, OnActorDie);
+
+            m_Cts = new CancellationTokenSource();
             m_CoroutineHandleWave = new List<CoroutineHandle>();
             m_ActorSpawned = new List<Actor>();
-            Messenger.AddListener<Actor>(EventKey.ActorDie, OnActorDie);
             m_DungeonEntity = dungeonEntity;
             m_CurrentWave = currentWave;
+        }
+
+        public override void StopSpawn()
+        {
+            base.StopSpawn();
+            m_Cts?.Cancel();
+            foreach (var coroutine in m_CoroutineHandleWave)
+            {
+                if (coroutine.IsValid)
+                {
+                    Timing.KillCoroutines(coroutine);
+                }
+            }
+            m_CoroutineHandleWave.Clear();
+        }
+
+        public override void PauseSpawn()
+        {
+            base.PauseSpawn(); 
+            foreach (var coroutine in m_CoroutineHandleWave)
+            {
+                if (coroutine.IsValid)
+                {
+                    Timing.PauseCoroutines(coroutine);
+                }
+            }
+        }
+        public override void ResumeSpawn()
+        {
+            base.ResumeSpawn();
+            foreach(var coroutine in m_CoroutineHandleWave)
+            {
+                if (coroutine.IsValid)
+                {
+                    Timing.ResumeCoroutines(coroutine);
+                }
+            }
         }
 
         private void OnActorDie(Actor actor)
@@ -61,6 +100,7 @@ namespace Framework
         protected override void AddToSpawnedActor(Actor actor)
         {
             m_ActorSpawned.Add(actor);
+
         }
 
         public override void StartSpawn(float delaySpawn)
@@ -68,16 +108,21 @@ namespace Framework
             base.StartSpawn(delaySpawn);
         }
 
+        public void NextWave()
+        {
+            m_CurrentWave++;
+        }
+
         protected override IEnumerator<float> _Spawn(float delaySpawn)
         {
-            int currentWave = CurrentWave;
+            int currentWave = CurrentWaveEnemy;
             yield return Timing.WaitForSeconds(delaySpawn);
             m_Cts = new CancellationTokenSource();
             // Spawn Wave
             var waveData = m_DungeonEntity.Waves[currentWave];
-            foreach (var @event in waveData.EventEnemies)
+            foreach (var @event in waveData.WaveInfo.EventEnemies)
             {
-                var roomEvent = m_RoomDatabase.GetRoomTag(@event.TagRoom);
+                var roomEvent = @event.Room;
                 var coroutine = Timing.RunCoroutine(_SpawnEvent(roomEvent, @event.Time));
                 m_CoroutineHandleWave.Add(coroutine);
             }
@@ -87,7 +132,6 @@ namespace Framework
         {
             yield return Timing.WaitForSeconds(time);
 
-            
             foreach (var enemiesInf in roomEvent.EventSpawn)
             {
                 bool isCluster = enemiesInf.IsCluster;
@@ -100,9 +144,13 @@ namespace Framework
                 foreach (var position in listPositions)
                 {
                     SpawnMonster(enemiesInf.Enemy, 1, position, m_Cts.Token).Forget();
-                    yield return Timing.DeltaTime;
                 }
+                yield return Timing.DeltaTime;
             }
+        }
+        protected override void ClearAll()
+        {
+            Logger.Log("Clear all actor");
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Engine
     {
         float DirectionSign { get; }
         Vector3 FacingDirection { get; }
-        float Speed { set; get; }
+        Stat Speed { set; get; }
         bool LockMovement { set; get; }
         bool UsingHorizontalBound { set; get; }
         bool UsingVerticalBound { set; get; }

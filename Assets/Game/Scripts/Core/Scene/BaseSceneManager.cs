@@ -1,4 +1,5 @@
-﻿using com.mec;
+﻿using com.assets.loader.addressables;
+using com.mec;
 using Cysharp.Threading.Tasks;
 using SceneManger.Loading;
 using SceneManger.Preloader;
@@ -39,6 +40,7 @@ namespace SceneManger
         #region UNITY METHOD
         protected virtual void Initialize()
         {
+            m_AssetCached = new AssetCached(new AddressableAssetLoader());
             _sceneLookup = new Dictionary<Type, SceneData>();
 
             foreach (var mapping in _sceneData)
@@ -78,7 +80,7 @@ namespace SceneManger
         protected override void Awake()
         {
             base.Awake();
-            InitGame();
+            //InitGame();
         }
 
         public virtual void Reset()
@@ -140,8 +142,8 @@ namespace SceneManger
             _currentSceneController.Init();
             await _currentSceneController.RequestAssets();
             _currentSceneController.Enter();
-
             sceneTransition?.StartTransition();
+
             OnLoadSceneComplete();
         }
 
@@ -357,6 +359,33 @@ namespace SceneManger
             _currentSceneController.RequestAssets();
 
             return UniTask.CompletedTask;
+        }
+
+        public UniTask Request<T>(string id, string path) where T : Object
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                Debug.LogWarning("Asset has null path " + id);
+                return UniTask.CompletedTask;
+            }
+
+            if (string.IsNullOrEmpty(id))
+            {
+                Debug.LogWarning("Asset has null id " + id);
+                return UniTask.CompletedTask;
+            }
+
+            return m_AssetCached.Request<T>(id, path);
+        }
+
+        public T GetAsset<T>(string id) where T : Object
+        {
+            return m_AssetCached.GetAsset<T>(id);
+        }
+
+        public void Clear()
+        {
+            m_AssetCached.Clear();
         }
     }
 }

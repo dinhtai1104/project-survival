@@ -16,5 +16,5 @@ MonoBehaviour:
   _sceneType:
     _classRef: Assets.Game.Scripts.StartupScene.StartupSceneController, Assembly-CSharp
   _loadingScenePrefab: {fileID: 0}
-  _enterTransitionPrefab: {fileID: 0}
-  _exitTransitionPrefab: {fileID: 0}
+  _enterTransitionPrefab: {fileID: 6994057182047679040, guid: 42fbda8881bf77847a35f9ca4362c036, type: 3}
+  _exitTransitionPrefab: {fileID: 6994057182047679040, guid: c5094bd454aa3e04c83c88c67e9bc7e5, type: 3}

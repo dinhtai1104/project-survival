@@ -7,7 +7,7 @@ namespace Engine
     public interface ITargetQuery
     {
         void Init(ITargetFinder finder);
-        Actor GetTarget();
+        Actor GetTarget(IList<Actor> targets);
         void SetTarget(Actor target);
         void ForceUpdateTarget();
         void OnUpdate();

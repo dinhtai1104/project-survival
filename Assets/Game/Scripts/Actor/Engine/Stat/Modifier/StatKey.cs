@@ -8,7 +8,7 @@
         public const string Hp = "Hp";
         public const string HpReg = "HpReg";
         public const string Speed = "Speed";
-        public const string AttackSpeed = "SpeedAttack";
+        public const string AttackSpeed = "AttackSpeed";
         public const string CritDamage = "CritDamage";
         public const string CritRate = "CritRate";
         public const string HeadshotRate = "HeadshotRate";

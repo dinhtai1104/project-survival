@@ -39,7 +39,10 @@ namespace Engine
             {
                 foreach (var t in damageTypes)
                 {
-                    m_ShieldDict.Add(t, 0f);
+                    if (!m_ShieldDict.ContainsKey(t))
+                    {
+                        m_ShieldDict.Add(t, 0f);
+                    }
                 }
             }
         }

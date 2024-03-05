@@ -17,6 +17,7 @@ namespace Assets.Game.Scripts.Core.Data.Database
         public float Damage;
         public float Speed;
         public float AttackSpeed;
+        public float AttackRange;
 
         public float iHp;
         public float iDamage;
@@ -46,6 +47,7 @@ namespace Assets.Game.Scripts.Core.Data.Database
             Damage = e.Get<float>("Damage");
             Speed = e.Get<float>("Speed");
             AttackSpeed = e.Get<float>("AttackSpeed");
+            AttackRange = e.Get<float>("AttackRange");
 
             iHp = e.Get<float>("iHp");
             iDamage = e.Get<float>("iDamage");

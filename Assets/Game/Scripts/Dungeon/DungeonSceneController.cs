@@ -29,11 +29,18 @@ namespace Assets.Game.Scripts.Dungeon
         protected override void OnEnter()
         {
             base.OnEnter();
-            var enemyDatabase = DataManager.Base.EntityTable;
-            m_Bound2D = new Bound2D();
+            var mapInstance = PoolManager.Instance.Spawn(GetRequestedAsset<GameObject>("map"), transform).GetComponent<Map>();
+
+            var enemyDatabase = DataManager.Base.EnemyTable;
+            m_Bound2D = mapInstance.MapBound;
 
             var monsterFactory = new EnemyFactory(enemyDatabase);
-            m_Spawner = new DungeonEnemySpawner(monsterFactory, Bound, m_DungeonEntity, 0);
+            var currentWave = 0;
+            m_Spawner = new DungeonEnemySpawner(monsterFactory, Bound, TeamManager, m_DungeonEntity, currentWave);
+
+            // Spawn Player
+            
+            m_Spawner.StartSpawn(2);
         }
 
         public async override UniTask RequestAssets()
@@ -42,7 +49,10 @@ namespace Assets.Game.Scripts.Dungeon
             if (!Architecture.Get<ShortTermMemoryService>().HasMemory<DungeonMapSelectionMemory>())
             {
                 // Fallback if adventure map select null
-                var adventureMapFallback = new DungeonMapSelectionMemory(new DungeonEntity());
+                var nullDungeon = DataManager.Base.Dungeon.CreateDungeon(0);
+
+
+                var adventureMapFallback = new DungeonMapSelectionMemory(nullDungeon);
                 Architecture.Get<ShortTermMemoryService>().Remember(adventureMapFallback);
             }
             var synchorousLoading = new List<UniTask>();
@@ -51,26 +61,26 @@ namespace Assets.Game.Scripts.Dungeon
             var selectMapMemory = Architecture.Get<ShortTermMemoryService>().RetrieveMemory<DungeonMapSelectionMemory>();
             m_DungeonEntity = selectMapMemory.DungeonEntity;
 
-            // Request monster
-            //foreach (var wave in DungeonEntity.Waves)
-            //{
-            //    foreach (var waveInfo in wave.EnemyInfo)
-            //    {
-            //        foreach (var monsterId in waveInfo.Enemies)
-            //        {
-            //            var monsterEntity = DataManager.Base.EntityTable.Get(monsterId);
-            //            var task = RequestAsset<GameObject>(monsterId.ToString(), monsterEntity.Path);
-            //            synchorousLoading.Add(task);
-            //        }
-            //    }
-            //}
+            //Request monster
+            foreach (var wave in DungeonEntity.Waves)
+            {
+                foreach (var waveInfo in wave.WaveInfo.EventEnemies)
+                {
+                    foreach (var enemy in waveInfo.Room.EventSpawn)
+                    {
+                        var monsterEntity = DataManager.Base.EnemyTable.Get(enemy.Enemy);
+                        var task = RequestAsset<GameObject>(enemy.Enemy, monsterEntity.Path);
+                        synchorousLoading.Add(task);
+                    }
+                }
+            }
 
 
-            var mapPath = "Adventure/Map_" + DungeonEntity.DungeonId;
+            var mapPath = "Map/Dungeon_" + DungeonEntity.DungeonId + ".prefab";
             var taskMap = RequestAsset<GameObject>("map", mapPath);
             synchorousLoading.Add(taskMap);
             synchorousLoading.Add(base.RequestAssets());
-            
+
             await UniTask.WhenAll(synchorousLoading);
         }
 

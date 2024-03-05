@@ -11,7 +11,7 @@ namespace ProgressBar
     public class UIProgressBar : MonoBehaviour
     {
         [SerializeField] private Image m_FilledPrgress;
-        public void SetValue(float percent, bool animate)
+        public void SetValue(float percent, bool animate = false)
         {
             m_FilledPrgress.fillAmount = percent;
         }

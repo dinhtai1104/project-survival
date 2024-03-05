@@ -9,9 +9,10 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
 {
     private List<DataTable> databases = new List<DataTable>();
 
-    public EnemyTable EntityTable = new EnemyTable();
-    public DungeonTable DungeonTable = new DungeonTable();
+    public EnemyTable EnemyTable = new EnemyTable();
+    public DungeonTable Dungeon = new DungeonTable();
     public DungeonRoomTable DungeonRoom = new DungeonRoomTable();
+    public DungeonWaveTable DungeonWave = new DungeonWaveTable();
 
     public void Init(Transform parent = null)
     {
@@ -24,7 +25,10 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
 
     private void PreloadData()
     {
-        databases.Add(EntityTable);
+        databases.Add(EnemyTable);
+        databases.Add(DungeonRoom);
+        databases.Add(DungeonWave);
+        databases.Add(Dungeon);
     } 
 
     public void LoadDatabase()

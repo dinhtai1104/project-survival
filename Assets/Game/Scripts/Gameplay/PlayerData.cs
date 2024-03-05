@@ -23,7 +23,7 @@ namespace Gameplay
         public PlayerData(ECharacter currentCharacter = ECharacter.Normal)
         {
             this.m_CurrentCharacter = currentCharacter;
-
+            m_StatsHolder = new Dictionary<ECharacter, CharacterDataInfo>();
             foreach (var character in CharacterExtension.AllCharacter)
             {
                 var data = new CharacterDataInfo(character);

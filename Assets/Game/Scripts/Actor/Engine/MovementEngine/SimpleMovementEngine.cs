@@ -6,7 +6,7 @@ namespace Engine
 {
     public sealed class SimpleMovementEngine : MonoBehaviour, IMovementEngine
     {
-        [SerializeField] private float _speed;
+        [SerializeField] private Stat _speed;
 
         [SerializeField] private bool _lockFacingDirection;
 
@@ -29,7 +29,7 @@ namespace Engine
         public Vector3 FacingDirection => Vector3.right * DirectionSign;
         public Bound2D MovementBound => _movementBound;
 
-        public float Speed
+        public Stat Speed
         {
             set { _speed = value; }
             get { return _speed; }
@@ -127,12 +127,12 @@ namespace Engine
 
         public bool MoveTo(Vector3 position)
         {
-            return MoveTo(position, Speed);
+            return MoveTo(position, Speed.Value);
         }
 
         public bool MoveDirection(Vector3 direction)
         {
-            return MoveDirection(direction, Speed);
+            return MoveDirection(direction, 1);
         }
 
         public void OnUpdate()
@@ -208,7 +208,7 @@ namespace Engine
             return true;
         }
 
-        public bool MoveDirection(Vector3 direction, float speed)
+        public bool MoveDirection(Vector3 direction, float multiply)
         {
             if (LockMovement)
                 return false;
@@ -225,7 +225,7 @@ namespace Engine
 
             _lastGoodPos = CachedTransform.position;
 
-            CachedTransform.Translate(Time.deltaTime * speed * this.Speed * direction, Space.World);
+            CachedTransform.Translate(Time.deltaTime * multiply * this.Speed.Value * direction, Space.World);
             Bound();
             return true;
         }

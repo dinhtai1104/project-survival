@@ -10,7 +10,7 @@ namespace Engine
         {
         }
 
-        public Actor GetTarget()
+        public Actor GetTarget(IList<Actor> targets)
         {
             return null;
         }

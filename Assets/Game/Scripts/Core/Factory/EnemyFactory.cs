@@ -15,34 +15,40 @@ namespace Framework
     {
         private readonly EnemyTable m_EnemyDatabase;
         private IAssetLoader m_AssetLoader;
+        private BaseSceneManager m_GameScene;
+
 
         public EnemyFactory(EnemyTable monsterDatabase)
         {
             m_AssetLoader = new AddressableAssetLoader();
             m_EnemyDatabase = monsterDatabase;
+            m_GameScene = GameSceneManager.Instance;
         }
 
         public async UniTask<EnemyActor> CreateEnemy(string id, int enemyLevel, Vector2 position, CancellationToken token = default)
         {
             var monsterData = m_EnemyDatabase.Get(id);
             var monsterPath = monsterData.Path;
-            var monsterPrefab = await m_AssetLoader.LoadAsync<EnemyActor>(monsterPath).Task;
+            //var monsterPrefab = await ResourcesLoader.Instance.LoadAsync<GameObject>(monsterPath);
+            var monsterPrefab = m_GameScene.GetAsset<GameObject>(id);
 
-            return CreateEnemy(monsterData, monsterPrefab, enemyLevel, position);
+            return CreateEnemy(monsterData, monsterPrefab.GetComponent<EnemyActor>(), enemyLevel, position);
         }
 
         public EnemyActor CreateEnemy(EnemyEntity monsterData, EnemyActor monsterPrefab, int monsterLevel, Vector2 position)
         {
             var monster = CreateBaseEnemy(monsterPrefab, monsterData.Tags, position);
+            monster.Prepare();
             monster.MonsterData = monsterData;
             monster.MonsterLevel = monsterLevel;
 
             // apply monster stat
             var stats = monster.Stat;
-            stats.SetBaseValue(StatKey.Hp, monsterData.Hp);
-            stats.SetBaseValue(StatKey.Damage, monsterData.Damage);
-            stats.SetBaseValue(StatKey.Speed, monsterData.Speed);
-            stats.SetBaseValue(StatKey.AttackSpeed, monsterData.AttackSpeed);
+            stats.AddStat(StatKey.Hp, monsterData.Hp);
+            stats.AddStat(StatKey.Damage, monsterData.Damage);
+            stats.AddStat(StatKey.Speed, monsterData.Speed);
+            stats.AddStat(StatKey.AttackSpeed, monsterData.AttackSpeed);
+            stats.AddStat(StatKey.AttackRange, monsterData.AttackRange);
 
             // Apply level stat
             stats.AddModifier(StatKey.Hp, new StatModifier(EStatMod.Flat, monsterData.iHp * monsterLevel), this);
@@ -51,6 +57,8 @@ namespace Framework
             stats.AddModifier(StatKey.AttackSpeed, new StatModifier(EStatMod.Flat, monsterData.iAttackSpeed * monsterLevel), this);
 
             stats.CalculateStats();
+
+            monster.Movement.Speed = stats.GetStat(StatKey.Speed);
             return monster;
         }
 

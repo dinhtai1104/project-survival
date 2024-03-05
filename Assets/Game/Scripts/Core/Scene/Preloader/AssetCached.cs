@@ -41,7 +41,12 @@ namespace SceneManger.Preloader
             }
 
             var obj = await m_AssetLoader.LoadAsync<T>(path).Task;
-            m_ResourceLookup[assetType].Add(id, obj);
+
+            if (!m_ResourceLookup[assetType].ContainsKey(id))
+            {
+                m_ResourceLookup[assetType].Add(id, obj);
+                return m_ResourceLookup[assetType][id] as T;
+            }
 
             return obj;
         }

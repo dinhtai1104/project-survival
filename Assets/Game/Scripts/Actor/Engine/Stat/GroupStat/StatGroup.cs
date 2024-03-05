@@ -229,6 +229,7 @@ namespace Engine
                     AddModifier(attributeName, mod, mod.Source);
                 }
             }
+            CalculateStats();
         }
 
         public IEnumerable<StatModifier> GetModifiers(string statName)

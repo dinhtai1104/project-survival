@@ -15,10 +15,10 @@ namespace Engine
             get { return Vector3.right; }
         }
 
-        public float Speed
+        public Stat Speed
         {
             set { }
-            get { return 0f; }
+            get { return null; }
         }
 
         public bool LockMovement

@@ -144,7 +144,7 @@ namespace Engine
         {
             if (m_Animation == null) return false;
             if (m_Animation.AnimationState?.GetCurrent(track) == null) return false;
-            return string.Compare(m_Animation.AnimationState.GetCurrent(0).Animation.Name, animName,
+            return string.Compare(m_Animation.AnimationState.GetCurrent(track).Animation.Name, animName,
                 StringComparison.Ordinal) == 0;
         }
 
@@ -152,7 +152,7 @@ namespace Engine
         {
             if (Lock) return;
             if (m_Animation.AnimationState == null || !HasAnimation(animName)) return;
-            if (m_Animation.AnimationState == null || !restart && IsPlaying(animName)) return;
+            if (m_Animation.AnimationState == null || !restart && IsPlaying(track, animName)) return;
             m_Animation.AnimationState.SetAnimation(track, animName, loop);
         }
 
@@ -160,7 +160,7 @@ namespace Engine
         {
             if (Lock) return false;
             if (m_Animation.AnimationState == null || !HasAnimation(animName)) return false;
-            if (!restart && IsPlaying(animName)) return true;
+            if (!restart && IsPlaying(track, animName)) return true;
             m_Animation.AnimationState.SetAnimation(track, animName, loop);
             return false;
         }
@@ -205,7 +205,7 @@ namespace Engine
         {
             if (Lock) return;
             if (m_Animation.AnimationState == null || !HasAnimation(animName)) return;
-            if (IsPlaying(animName)) return;
+            if (IsPlaying(track, animName)) return;
             m_Animation.AnimationState.AddAnimation(track, animName, loop, delay);
             return;
         }

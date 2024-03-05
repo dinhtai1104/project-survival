@@ -9,6 +9,10 @@ namespace Assets.Game.Scripts.Actor.States.Unit
 {
     public class UnitIdleState : ActorIdleState
     {
+        public override void Enter()
+        {
+            base.Enter();
+        }
         public override void Execute()
         {
             base.Execute();

@@ -51,6 +51,8 @@ public class ResourcesLoader
 
     public async UniTask<T> LoadAsync<T>(string path) where T : UnityEngine.Object
     {
+        Logger.Log("Request: " + path);
+
         var type = typeof(T);
         if (!objectCached.ContainsKey(type))
         {

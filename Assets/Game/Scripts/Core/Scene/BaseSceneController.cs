@@ -13,8 +13,6 @@ namespace SceneManger
 {
     public abstract class BaseSceneController : MonoBehaviour, ISceneController
     {
-        private AssetCached m_AssetCached;
-
         public BaseSceneManager SceneManager { get; private set; }
 
         public bool IsInitialized { get; private set; }
@@ -23,7 +21,6 @@ namespace SceneManger
         public void Init()
         {
             SceneManager = BaseSceneManager.Instance;
-            m_AssetCached = new AssetCached(new AddressableAssetLoader());
             IsInitialized = true;
         }
 
@@ -43,7 +40,7 @@ namespace SceneManger
         {
             IsEnter = false;
             IsInitialized = false;
-            m_AssetCached.Clear();
+            SceneManager.Clear();
             // Clear scene
         }
 
@@ -63,26 +60,16 @@ namespace SceneManger
 
         protected UniTask RequestAsset<T>(string id, string path) where T : UnityEngine.Object
         {
-            if (string.IsNullOrEmpty(path))
-            {
-                Debug.LogWarning("Asset has null path " + id);
-                return UniTask.CompletedTask;
-            }
+            Logger.Log("Request Load: " + id + " --- " + path);
 
-            if (string.IsNullOrEmpty(id))
-            {
-                Debug.LogWarning("Asset has null id " + id);
-                return UniTask.CompletedTask;
-            }
-
-            var asset = m_AssetCached.Request<T>(id, path);
-            return UniTask.CompletedTask;
+            var asset = SceneManager.Request<T>(id, path);
+            return asset;
         }
 
 
-        protected T GetRequestedAsset<T>(string id) where T : UnityEngine.Object
+        public T GetRequestedAsset<T>(string id) where T : UnityEngine.Object
         {
-            return m_AssetCached.GetAsset<T>(id);
+            return SceneManager.GetAsset<T>(id);
         }
 
     }

@@ -23,7 +23,7 @@ namespace Engine
             m_RayDistance = 10;
         }
 
-        public Actor GetTarget()
+        public Actor GetTarget(IList<Actor> targets)
         {
             if (m_Target != null && !m_Target.IsDead)
             {

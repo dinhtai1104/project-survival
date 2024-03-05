@@ -15,6 +15,6 @@ MonoBehaviour:
   _sceneName: DungeonScene
   _sceneType:
     _classRef: Assets.Game.Scripts.Dungeon.DungeonSceneController, Assembly-CSharp
-  _loadingScenePrefab: {fileID: 0}
-  _enterTransitionPrefab: {fileID: 0}
-  _exitTransitionPrefab: {fileID: 0}
+  _loadingScenePrefab: {fileID: 6994057182047679040, guid: f284c0bb63ad2024c814892c999b3b91, type: 3}
+  _enterTransitionPrefab: {fileID: 6994057182047679040, guid: c5094bd454aa3e04c83c88c67e9bc7e5, type: 3}
+  _exitTransitionPrefab: {fileID: 6994057182047679040, guid: 35d8ec1aec7a2374f9e4d2a6f7f22d22, type: 3}

@@ -13,6 +13,7 @@ namespace Manager
         {
             base.Awake();
             DontDestroyOnLoad(gameObject);
+            m_PlayerData = new PlayerData();
         }
     }
 }

@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace SceneManger.Transition
 {
@@ -82,7 +81,7 @@ namespace SceneManger.Transition
         protected override void EndTransition()
         {
             base.EndTransition();
-            PoolManager.Instance.Despawn(gameObject, 0.1f);
+            PoolManager.Instance.Despawn(gameObject);
         }
     }
 }

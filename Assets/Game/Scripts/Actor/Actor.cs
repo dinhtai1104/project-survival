@@ -1,5 +1,6 @@
 using Core;
 using Cysharp.Threading.Tasks;
+using Framework;
 using Sirenix.OdinInspector;
 using Spine;
 using System.Collections;
@@ -23,6 +24,7 @@ namespace Engine
 
         private Transform m_Trans;
         private Transform m_CenterTrans;
+        [ShowInInspector]
         private IStatGroup m_Stat;
         private IStatusEngine m_Status;
         private IAnimationEngine m_Animation;
@@ -122,12 +124,21 @@ namespace Engine
         public IBrain Brain => m_Brain ?? NullBrain;
         public ISkillCaster SkillCaster => m_SkillCaster ?? NullSkillCaster;
 
-        public async virtual void Init()
+        [SerializeField] private TeamModel m_TeamModel;
+        public TeamModel TeamModel => m_TeamModel;
+
+        public void Prepare()
         {
+            m_Stat = new StatGroup();
+        }
+
+        [Button]
+        public virtual void Init(TeamModel teamModel)
+        {
+            this.m_TeamModel = teamModel;
             // Active in screen
             gameObject.SetActive(true);
 
-            m_Stat = new StatGroup();
             Animation?.Init(this);
             Movement?.Init(this);
             TargetFinder?.Init(this);
@@ -141,11 +152,6 @@ namespace Engine
             Brain?.Init(this);
 
             Input.Active = true;
-        }
-
-        private void Start()
-        {
-            Init();
         }
 
         protected virtual void Awake()

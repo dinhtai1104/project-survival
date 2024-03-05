@@ -12,7 +12,6 @@ namespace Engine
         [SerializeField, ShowIf("$m_UsingTagFilter")]
         private string m_TagFilter;
 
-        [SerializeField] private SOStorageActor m_ActiveEnemies;
 
         private Actor m_Actor;
         private Actor m_Target;
@@ -22,14 +21,14 @@ namespace Engine
             m_Actor = finder.Owner;
         }
 
-        public Actor GetTarget()
+        public Actor GetTarget(IList<Actor> targets)
         {
             if (m_Target != null && m_Target.gameObject.activeInHierarchy)
             {
                 return m_Target;
             }
 
-            m_Target = FindEnemy(m_ActiveEnemies.Actors);
+            m_Target = FindEnemy(targets);
             return m_Target;
         }
 

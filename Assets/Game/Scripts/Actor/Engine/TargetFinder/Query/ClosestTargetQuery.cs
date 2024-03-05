@@ -9,7 +9,6 @@ namespace Engine
         [SerializeField] private bool m_UsingTagFilter;
         [SerializeField] private string m_TagFilter;
         [SerializeField, Range(0f, 3f)] private float m_Cooldown;
-        [SerializeField] private SOStorageActor m_ActiveEnemies;
 
         private Actor m_Actor;
         private Actor m_Target;
@@ -27,7 +26,7 @@ namespace Engine
             m_Actor = finder.Owner;
         }
 
-        public Actor GetTarget()
+        public Actor GetTarget(IList<Actor> targets)
         {
             if (m_IsCooldown && m_Target != null && m_Target.gameObject.activeInHierarchy)
             {
@@ -35,7 +34,7 @@ namespace Engine
             }
 
             m_IsCooldown = true;
-            m_Target = FindClosestEnemy(m_ActiveEnemies.Actors);
+            m_Target = FindClosestEnemy(targets);
             return m_Target;
         }
 

@@ -8,6 +8,8 @@ namespace Engine
 {
     public class TargetFinder : SerializedMonoBehaviour, ITargetFinder
     {
+        private IList<Actor> EmptyActors = new List<Actor>();
+
         [SerializeField, Range(0f, 3f)] private float m_ScanTargetPeriod = 0.2f;
 
         [TypeReferences.ClassExtends(typeof(ITargetQuery))]
@@ -29,6 +31,25 @@ namespace Engine
         private bool m_IsUpdatingTarget;
         private float m_ScanTargetTimer;
 
+        private IList<Actor> _enemies;
+        private IList<Actor> _allies;
+
+#if UNITY_EDITOR
+        [SerializeField] private List<Actor> _editorEnemies;
+        [SerializeField] private List<Actor> _editorAllies;
+#endif
+
+        public IList<Actor> Enemies
+        {
+            get { return _enemies ?? EmptyActors; }
+        }
+
+        public IList<Actor> Allies
+        {
+            get { return _allies ?? EmptyActors; }
+        }
+
+
         public void Init(Actor actor)
         {
             Owner = actor;
@@ -37,6 +58,9 @@ namespace Engine
 
             Queries = new List<ITargetQuery>();
             GetComponentsInChildren(Queries);
+
+            _allies = actor.TeamModel.Allies;
+            _enemies = actor.TeamModel.Enemies;
 
             m_QueryMap = new Dictionary<Type, ITargetQuery>();
             foreach (var query in Queries)
@@ -57,6 +81,11 @@ namespace Engine
 
         public void OnUpdate()
         {
+#if UNITY_EDITOR
+            _editorAllies = Allies as List<Actor>;
+            _editorEnemies = Enemies as List<Actor>;
+#endif
+
             if (IsUpdatingTarget)
             {
                 CurrentQuery?.OnUpdate();
@@ -72,12 +101,21 @@ namespace Engine
                 {
                     ForceUpdateTarget();
                 }
+
+                for (int i = Enemies.Count - 1; i >= 0; i--)
+                {
+                    var enemy = Enemies[i];
+                    if (enemy == null || !enemy.gameObject.activeInHierarchy)
+                    {
+                        Enemies.RemoveAt(i);
+                    }
+                }
             }
         }
 
         public void UpdateTarget()
         {
-            CurrentTarget = CurrentQuery?.GetTarget();
+            CurrentTarget = CurrentQuery?.GetTarget(Enemies);
         }
 
         public void ForceUpdateTarget()
