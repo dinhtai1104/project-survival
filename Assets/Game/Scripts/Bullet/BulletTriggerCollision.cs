@@ -40,7 +40,7 @@ public class BulletTriggerCollision : MonoBehaviour
     public void OnTrigger(Actor actor)
     {
         var attacker = m_Bullet.Owner;
-        m_DamageDealer.Init(attacker.Stat);
+        m_DamageDealer.Init(attacker.Stats);
 
         if (m_DealDamageOnCircle)
         {
@@ -62,7 +62,7 @@ public class BulletTriggerCollision : MonoBehaviour
     public void OnTrigger()
     {
         var attacker = m_Bullet.Owner;
-        m_DamageDealer.Init(attacker.Stat);
+        m_DamageDealer.Init(attacker.Stats);
 
         if (m_DealDamageOnCircle)
         {

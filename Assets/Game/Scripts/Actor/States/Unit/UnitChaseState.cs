@@ -34,7 +34,7 @@ namespace Assets.Game.Scripts.Actor.States.Unit
 
                 if (Math.Abs(m_AnimationTimeScale - m_CacheAnimationTimeScale) > 0)
                 {
-                    m_AnimationTimeScale = Actor.Stat.GetValue(StatKey.Speed) / Actor.Stat.GetBaseValue(StatKey.Speed);
+                    m_AnimationTimeScale = Actor.Stats.GetValue(StatKey.Speed) / Actor.Stats.GetBaseValue(StatKey.Speed);
                     Actor.Animation.TimeScale = m_AnimationTimeScale;
                 }
 

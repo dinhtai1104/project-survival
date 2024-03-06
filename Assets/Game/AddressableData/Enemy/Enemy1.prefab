@@ -348,6 +348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy1
       objectReference: {fileID: 0}
+    - target: {fileID: 6381516466356194067, guid: 8d13257c51ca435469d60536afd14dbb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6381516466356194068, guid: 8d13257c51ca435469d60536afd14dbb, type: 3}
       propertyPath: serializationData.Prefab
       value: 

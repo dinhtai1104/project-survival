@@ -6,12 +6,15 @@ using Cysharp.Threading.Tasks;
 using Engine;
 using Framework;
 using Gameplay;
+using Gameplay.Dungeon;
+using Pool;
 using SceneManger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ui.View;
 using UnityEngine;
 
 namespace Assets.Game.Scripts.Dungeon
@@ -33,13 +36,15 @@ namespace Assets.Game.Scripts.Dungeon
 
             var enemyDatabase = DataManager.Base.EnemyTable;
             m_Bound2D = mapInstance.MapBound;
+            MainPlayer.Movement.SetBound(m_Bound2D);
 
             var monsterFactory = new EnemyFactory(enemyDatabase);
             var currentWave = 0;
             m_Spawner = new DungeonEnemySpawner(monsterFactory, Bound, TeamManager, m_DungeonEntity, currentWave);
 
             // Spawn Player
-            
+            CameraController.Instance.Follow(MainPlayer.transform, Vector3.zero);
+            CameraController.Instance.SetBoundary(mapInstance.CameraBoundaries);
             m_Spawner.StartSpawn(2);
         }
 
@@ -91,7 +96,7 @@ namespace Assets.Game.Scripts.Dungeon
 
         protected override bool CheckLoseCondition()
         {
-            return false;
+            return MainPlayer.IsDead;
         }
 
         protected override void OnWin()
@@ -100,6 +105,9 @@ namespace Assets.Game.Scripts.Dungeon
 
         protected override void OnLose()
         {
+            m_Spawner.PauseSpawn();
+            PanelManager.CreateAsync<UIDungeonEndGamePanel>(AddressableName.UIDungeonEndGamePanel)
+                .ContinueWith(panel => panel.Show()).Forget();
         }
     }
 }

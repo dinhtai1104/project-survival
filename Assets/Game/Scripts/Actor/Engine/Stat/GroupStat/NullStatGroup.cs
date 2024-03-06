@@ -27,6 +27,10 @@ namespace Engine
         {
         }
 
+        public void ClearAllStat()
+        {
+        }
+
         public void Copy(IStatGroup refer, float percentage = 1)
         {
         }

@@ -203,6 +203,7 @@ namespace Engine
 
         public void RemoveAllStats()
         {
+            ClearAllModifiers();
             _attrDict.Clear();
         }
 
@@ -237,6 +238,12 @@ namespace Engine
             if (_attrDict == null || !_attrDict.ContainsKey(statName)) return Enumerable.Empty<StatModifier>();
 
             return _attrDict[statName].AttributeModifiers;
+        }
+
+        public void ClearAllStat()
+        {
+            ClearAllModifiers();
+            _attrDict.Clear();
         }
 
         public void ReplaceAllStatBySource(IStatGroup refer, object[] source)

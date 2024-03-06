@@ -15,7 +15,7 @@ namespace SceneManger
         UniTask RequestAssets();
 
         void Enter();
-        void Exit(bool reload);
+        UniTask Exit(bool reload);
         void Execute();
         void Focus();
         void Unfocus();

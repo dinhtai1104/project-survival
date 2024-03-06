@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Engine;
 using ExtensionKit;
+using Pool;
 using Spine;
 using UnityEngine;
 using UnityEngine.Events;
@@ -37,7 +38,7 @@ public class MeleeTask : SkillTask
 
     public override void Begin()
     {
-        m_DamageDealer.DamageSource.Value = Caster.Stat.GetBaseValue(StatKey.Damage);
+        m_DamageDealer.DamageSource.Value = Caster.Stats.GetBaseValue(StatKey.Damage);
         m_AttackEventData = Caster.Animation.FindEvent(m_EventName);
         if (m_AttackEventData != null)
         {
@@ -181,8 +182,6 @@ public class MeleeTask : SkillTask
                                     Vector3 hitPoint = hit.point;
                                     GameObject effectGO =
                                         PoolManager.Instance.Spawn(m_HitEffect, hitPoint, Quaternion.identity);
-                                    effectGO.transform.right =
-                                        hitPoint.x >= hitOrigin.x ? Vector3.right : -Vector3.right;
                                 }
 
                                 //GameCore.Event.Fire(this, HittedSkillEventArgs.Create(Caster, target, Skill != null ? Skill.Id : -999));

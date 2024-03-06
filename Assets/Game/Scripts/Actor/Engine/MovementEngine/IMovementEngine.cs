@@ -29,6 +29,7 @@ namespace Engine
         void Teleport(Vector3 pos);
 
         void SyncGraphicRotation(Vector3 dir);
+        void SetDirection(Vector3 dir);
 
         void FlipFacingDirection();
 

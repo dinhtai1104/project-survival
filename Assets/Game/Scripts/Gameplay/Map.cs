@@ -10,8 +10,16 @@ namespace Gameplay
 {
     public class Map : MonoBehaviour
     {
+        [SerializeField] private Collider2D m_CameraBoundaries;
         [SerializeField] private Bound2D m_MapBound;
 
-        public Bound2D MapBound { get => m_MapBound; set => m_MapBound = value; }
+        public Bound2D MapBound =>m_MapBound;
+        public Collider2D CameraBoundaries => m_CameraBoundaries;
+
+
+        private void OnDrawGizmos()
+        {
+            m_MapBound.DrawBounds();
+        }
     }
 }

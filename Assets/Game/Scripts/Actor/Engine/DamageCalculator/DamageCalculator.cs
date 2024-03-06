@@ -82,8 +82,8 @@ namespace Engine
             }
 
             // Clear temporary mods
-            m_AttackerTempMods.Clear(attacker.Stat);
-            m_DefenderTempMods.Clear(defender.Stat);
+            m_AttackerTempMods.Clear(attacker.Stats);
+            m_DefenderTempMods.Clear(defender.Stats);
 
 
             if (damage > 0f)
@@ -126,10 +126,10 @@ namespace Engine
             evade = false;
             block = false;
 
-            var def = defender.Stat;
+            var def = defender.Stats;
             m_DefenderTempMods.ApplyModifiers(def);
 
-            var atk = attacker.Stat;
+            var atk = attacker.Stats;
             m_AttackerTempMods.ApplyModifiers(atk);
 
 
@@ -145,8 +145,8 @@ namespace Engine
 
         private float CalculateMagicDamage(Actor defender, Actor attacker, DamageSource source)
         {
-            var def = defender.Stat;
-            var atk = attacker.Stat;
+            var def = defender.Stats;
+            var atk = attacker.Stats;
             m_DefenderTempMods.ApplyModifiers(def);
 
             float damage = source.Value;

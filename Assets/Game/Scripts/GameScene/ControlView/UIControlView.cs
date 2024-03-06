@@ -32,7 +32,6 @@ namespace Assets.Game.Scripts.GameScene.ControlView
         private void OnMoving(Vector2 input)
         {
             Messenger.Broadcast(EventKey.InputJoystickMovement, input);
-            Logger.Log(input);
         }
 
         private void OnMovingEnd()

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Engine;
+using Pool;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -22,7 +23,6 @@ public class Bullet2D : MonoBehaviour
     [SerializeField] private bool m_DestroyOnMaximumDuration = false;
     [SerializeField] private int m_TargetNumber = 1;
     [SerializeField] private bool m_RequireInsideCollider;
-    [SerializeField] private bool m_DealDamageOnSameLane;
     [SerializeField] private UnityEvent m_StartBulletEvent;
     [SerializeField] private UnityEvent m_MaxDistanceEvent;
     [SerializeField] private UnityEvent m_HitEvent;

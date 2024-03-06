@@ -2,11 +2,15 @@
 using Core;
 using Cysharp.Threading.Tasks;
 using Engine;
+using Engine.Weapon;
 using Framework;
 using Manager;
+using Pool;
 using SceneManger;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Gameplay
 {
@@ -19,7 +23,6 @@ namespace Gameplay
         protected PlayerGameplayData LocalPlayerData;
         private bool _checkingResult;
         protected bool EndGame => !_checkingResult;
-
         public Actor MainPlayer => m_MainPlayer;
 
 
@@ -28,11 +31,11 @@ namespace Gameplay
         protected abstract bool CheckLoseCondition();
         protected abstract void OnWin();
         protected abstract void OnLose();
-
         protected override void OnEnter()
         {
-            m_TeamManager = new TeamManager();
             base.OnEnter();
+            m_TeamManager = new TeamManager();
+            _checkingResult = true;
 
             //Create Team
             var playerTeam = new TeamModel(ConstantValue.PlayerTeamId, Layers.Player_Int);
@@ -48,15 +51,30 @@ namespace Gameplay
             m_MainPlayer = SpawnPlayerActor();
             SetupPlayerActor(m_MainPlayer);
             m_MainPlayer.Init(TeamManager.GetTeamModel(ConstantValue.PlayerTeamId));
-
-
             m_TeamManager.AddActor(playerTeam.TeamId, m_MainPlayer);
+
+            EquipWeapon();
+        }
+
+        private void EquipWeapon()
+        {
+            var listWea = new List<WeaponActor>();
+            for (int i = 0; i < 4; i++)
+            {
+                var prefab = GetRequestedAsset<GameObject>("weapon-" + i).GetComponent<WeaponActor>();
+
+                var weaponIns = PoolManager.Instance.Spawn(prefab);
+                weaponIns.Prepare();
+                weaponIns.Init(TeamManager.GetTeamModel(ConstantValue.PlayerTeamId));
+                weaponIns.InitOwner(MainPlayer);
+                listWea.Add(weaponIns);
+            }
+            (MainPlayer as PlayerActor).WeaponHolder.SetupWeapon(listWea);
         }
 
         private void SetupPlayerActor(Actor player)
         {
-            player.Stat.Copy(SceneManager.PlayerData.PlayerStats);
-            player.Movement.Speed = player.Stat.GetStat(StatKey.Speed);
+            player.Stats.Copy(SceneManager.PlayerData.PlayerStats);
         }
 
         public Actor SpawnPlayerActor()
@@ -72,13 +90,26 @@ namespace Gameplay
         {
             var playerPath = "Player/Player0.prefab";
             var taskPlayer = RequestAsset<GameObject>("player", playerPath);
+
+
+            // Request weapon
+            var pathWp = "Weapon/{0}.prefab";
+            RequestAsset<GameObject>("weapon-0", pathWp.AddParams("Axe-2"));
+            RequestAsset<GameObject>("weapon-1", pathWp.AddParams("Axe"));
+            RequestAsset<GameObject>("weapon-2", pathWp.AddParams("Pistol"));
+            RequestAsset<GameObject>("weapon-3", pathWp.AddParams("AK"));
+            RequestAsset<GameObject>("weapon-4", pathWp.AddParams("AK"));
+
             return taskPlayer;
         }
 
         protected virtual UniTask RequestPlayer(PlayerGameplayData localPlayerData)
         {
+            // Request character
             var path = "Character/" + localPlayerData.Character;
             RequestAsset<Actor>("main-player", path);
+
+
             return UniTask.CompletedTask;
         }
 

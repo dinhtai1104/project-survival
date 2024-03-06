@@ -56,8 +56,7 @@ namespace Engine
             m_IsUpdatingTarget = true;
             m_ScanTargetTimer = m_ScanTargetPeriod;
 
-            Queries = new List<ITargetQuery>();
-            GetComponentsInChildren(Queries);
+            Queries = new List<ITargetQuery>(transform.GetComponents<ITargetQuery>());
 
             _allies = actor.TeamModel.Allies;
             _enemies = actor.TeamModel.Enemies;

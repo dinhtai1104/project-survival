@@ -93,6 +93,10 @@ namespace Engine
         {
         }
 
+        public void SetDirection(Vector3 dir)
+        {
+        }
+
         public void LookAt(Vector3 position)
         {
         }

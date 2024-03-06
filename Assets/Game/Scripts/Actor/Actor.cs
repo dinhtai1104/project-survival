@@ -24,8 +24,10 @@ namespace Engine
 
         private Transform m_Trans;
         private Transform m_CenterTrans;
+        private bool m_IsInitialize = false;
+
         [ShowInInspector]
-        private IStatGroup m_Stat;
+        private IStatGroup m_Stat = new StatGroup();
         private IStatusEngine m_Status;
         private IAnimationEngine m_Animation;
         private IFsm m_Fsm;
@@ -111,7 +113,7 @@ namespace Engine
         public Transform Trans => m_Trans;
         public Rigidbody2D RigidBody => m_RigidBody;
         public ITagger Tagger => m_Tagger ?? NullTagger;
-        public IStatGroup Stat => m_Stat ?? NullStat;
+        public IStatGroup Stats => m_Stat ?? NullStat;
         public IStatusEngine Status => m_Status ?? NullStatus;
         public IAnimationEngine Animation => m_Animation ?? NullAnimation;
         public IFsm Fsm => m_Fsm ?? NullFsm;
@@ -129,15 +131,16 @@ namespace Engine
 
         public void Prepare()
         {
-            m_Stat = new StatGroup();
         }
 
         [Button]
         public virtual void Init(TeamModel teamModel)
         {
             this.m_TeamModel = teamModel;
-            // Active in screen
+            EnemyLayerMask = teamModel.EnemyLayerMask;
+            AllyLayerMask = teamModel.AllyLayerMask;
             gameObject.SetActive(true);
+            m_IsInitialize = true;
 
             Animation?.Init(this);
             Movement?.Init(this);
@@ -150,7 +153,6 @@ namespace Engine
             Input?.Init(this);
             SkillCaster?.Init(this);
             Brain?.Init(this);
-
             Input.Active = true;
         }
 
@@ -161,7 +163,6 @@ namespace Engine
             m_CenterTrans.position = CenterPosition;
             m_CenterTrans.parent = m_Trans;
 
-            m_Stat = GetComponent<IStatGroup>();
             m_Animation = GetComponent<IAnimationEngine>();
             m_Fsm = GetComponent<IFsm>();
             m_Movement = GetComponent<IMovementEngine>();
@@ -173,11 +174,11 @@ namespace Engine
             m_Input = GetComponent<IInputHandler>();
             m_SkillCaster = GetComponent<ISkillCaster>();
             m_Brain = GetComponent<IBrain>();
-
         }
 
         protected virtual void Update()
         {
+            if (!m_IsInitialize) return;
             Movement?.OnUpdate();
             TargetFinder?.OnUpdate();
             Fsm?.OnUpdate();
@@ -187,11 +188,12 @@ namespace Engine
             SkillCaster?.OnUpdate();
         }
 
+
         protected virtual void OnDestroy()
         {
             Animation?.Clear();
             TargetFinder?.Clear();
-            Stat?.RemoveAllStats();
+            Stats?.RemoveAllStats();
             Graphic?.ClearFlashColor();
             Status?.ClearAllStatus();
             Reset();
@@ -203,14 +205,18 @@ namespace Engine
             Reset();
         }
 
+
         public virtual void OnDisable()
         {
             IsDead = true;
+            Brain.Lock = true;
             Animation.Lock = true;
+            SkillCaster.IsLocked = true;
             Movement.LockMovement = true;
             TargetFinder.Clear();
             SetActiveCollider(false);
         }
+
 
         public void SetActiveCollider(bool enable)
         {
@@ -231,7 +237,7 @@ namespace Engine
             Graphic?.ClearFlashColor();
             Graphic?.SetGraphicAlpha(1f);
             Fsm?.BackToDefaultState();
-            Stat?.ClearAllModifiers();
+            Stats?.ClearAllModifiers();
             Status?.ClearAllStatus();
             SetActiveCollider(true);
         }
@@ -244,16 +250,16 @@ namespace Engine
         [Button]
         public void SetStat(string stat, float value)
         {
-            if (Stat.HasStat(stat))
+            if (Stats.HasStat(stat))
             {
-                Stat.SetBaseValue(stat, value);
+                Stats.SetBaseValue(stat, value);
             }
             else
             {
-                Stat.AddStat(stat, value);
+                Stats.AddStat(stat, value);
             }
 
-            Stat.GetStat(stat).RecalculateValue();
+            Stats.GetStat(stat).RecalculateValue();
         }
     }
 }

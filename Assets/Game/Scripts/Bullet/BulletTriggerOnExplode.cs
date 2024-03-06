@@ -24,7 +24,7 @@ public class BulletTriggerOnExplode : MonoBehaviour
     public void OnTrigger()
     {
         var attacker = m_Bullet.Owner;
-        m_DamageDealer.Init(attacker.Stat);
+        m_DamageDealer.Init(attacker.Stats);
         m_AttackOverlap = new AttackOverlapCircle(attacker, m_DamageDealer, m_TargetNumber);
         m_AttackOverlap.DealDamage(m_Trans.position, m_Radius, m_Bullet.TargetLayer);
         if (m_Shake)

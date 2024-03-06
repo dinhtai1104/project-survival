@@ -14,7 +14,7 @@
     public const int IgnoreRaycast_Int = 2;
     public const int Water_Int = 4;
     public const int UI_Int = 5;
-    public const int Player_Int = 8;
-    public const int Enemy_Int = 9;
-    public const int Bullet_Int = 10;
+    public const int Player_Int = 6;
+    public const int Enemy_Int = 7;
+    public const int Bullet_Int = 8;
 }

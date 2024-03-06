@@ -1,6 +1,7 @@
 ﻿using com.assets.loader.addressables;
 using com.mec;
 using Cysharp.Threading.Tasks;
+using Pool;
 using SceneManger.Loading;
 using SceneManger.Preloader;
 using SceneManger.Transition;
@@ -35,12 +36,12 @@ namespace SceneManger
         protected bool IsInitialized;
         private bool _isLoading;
 
-        private AssetCached m_AssetCached;
+        private AssetPreloader m_AssetPreloader;
 
         #region UNITY METHOD
         protected virtual void Initialize()
         {
-            m_AssetCached = new AssetCached(new AddressableAssetLoader());
+            m_AssetPreloader = new AssetPreloader(new AddressableAssetLoader());
             _sceneLookup = new Dictionary<Type, SceneData>();
 
             foreach (var mapping in _sceneData)
@@ -171,7 +172,7 @@ namespace SceneManger
             return string.Empty;
         }
 
-        protected string GetScenePath<T>() where T : ISceneController
+        protected string GetScenePath<T>() where T : class, ISceneController
         {
             return GetScenePath(typeof(T));
         }
@@ -197,7 +198,7 @@ namespace SceneManger
             return controller;
         }
 
-        protected ISceneController GetSceneController<T>() where T : ISceneController
+        public ISceneController GetSceneController<T>() where T : class, ISceneController
         {
             return GetSceneController(typeof(T));
         }
@@ -207,7 +208,7 @@ namespace SceneManger
         }
 
 
-        private void LoadSceneAsync(Type type)
+        private async UniTask LoadSceneAsync(Type type)
         {
             if (!HasSceneType(type))
             {
@@ -216,7 +217,7 @@ namespace SceneManger
             }
 
             Time.timeScale = 1f;
-            _currentSceneController.Exit(_currentSceneController.GetType() == type);
+            await _currentSceneController.Exit(_currentSceneController.GetType() == type);
 
             string nextScenePath = GetScenePath(type);
             // Load scene address
@@ -270,7 +271,7 @@ namespace SceneManger
 
                     // If there is no resource request then fake the loading progress
                     float progress = 0f;
-                    float t = 0f;
+                    float t = 0f; 
 
                     while (progress < 1f)
                     {
@@ -313,16 +314,16 @@ namespace SceneManger
             }
         }
 
-        public void LoadSceneAsync<T>() where T : ISceneController
+        public UniTask LoadSceneAsync<T>() where T : ISceneController
         {
-            if (_isLoading) return;
-            LoadSceneAsync(typeof(T));
+            if (_isLoading) return UniTask.CompletedTask;
+            return LoadSceneAsync(typeof(T));
         }
 
-        public void LoadSceneTypeAsync(Type type)
+        public UniTask LoadSceneTypeAsync(Type type)
         {
-            if (_isLoading) return;
-            LoadSceneAsync(type);
+            if (_isLoading) return UniTask.CompletedTask;
+            return LoadSceneAsync(type);
         }
 
         private BaseSceneTransition CreateSceneTransition(GameObject prefab)
@@ -375,17 +376,17 @@ namespace SceneManger
                 return UniTask.CompletedTask;
             }
 
-            return m_AssetCached.Request<T>(id, path);
+            return m_AssetPreloader.Request<T>(id, path);
         }
 
         public T GetAsset<T>(string id) where T : Object
         {
-            return m_AssetCached.GetAsset<T>(id);
+            return m_AssetPreloader.GetAsset<T>(id);
         }
 
         public void Clear()
         {
-            m_AssetCached.Clear();
+            m_AssetPreloader.Clear();
         }
     }
 }

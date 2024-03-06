@@ -12,7 +12,7 @@ public class AIIsInRangeAttack : BrainDecision
         var target = actor.TargetFinder.CurrentTarget;
         if (target == null) return false;
         var dist = (target.CenterPosition - actor.CenterPosition).magnitude;
-        if(dist < actor.Stat.GetValue(StatKey.AttackRange))
+        if(dist < actor.Stats.GetValue(StatKey.AttackRange))
         {
             return true;
         }

@@ -2,6 +2,7 @@
 using Core;
 using Cysharp.Threading.Tasks;
 using Manager;
+using MenuScene;
 using SceneManger;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace Assets.Game.Scripts.StartupScene
 
         private void LoadingScene()
         {
-            SceneManager.LoadSceneAsync<DungeonSceneController>();
+            SceneManager.LoadSceneAsync<MenuSceneController>();
         }
     }
 }

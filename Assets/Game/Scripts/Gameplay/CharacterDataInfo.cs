@@ -14,13 +14,12 @@ namespace Gameplay
         public ECharacter Character;
         public IStatGroup Stats;
 
+        // Equipment Handle Here
+
         public CharacterDataInfo(ECharacter character)
         {
             Character = character;
-            Stats = PlayerStat.Default();
+            Stats = ActorStat.Default();
         }
-
-
-
     }
 }

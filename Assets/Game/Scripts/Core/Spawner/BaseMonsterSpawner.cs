@@ -61,12 +61,12 @@ namespace Framework
 
         public async UniTask<EnemyActor> SpawnMonster(string id, int monsterLevel, Vector2 position, CancellationToken token = default)
         {
-            var monster = await m_EnemyFactory.CreateEnemy(id, monsterLevel, position, token);
+            var monster = m_EnemyFactory.CreateEnemy(id, monsterLevel, position, token);
             if (monster != null)
             {
                 await UniTask.Yield();
-                monster.Movement.SetBound(m_SpawnBound);
                 monster.Init(TeamManager.GetTeamModel(ConstantValue.MonsterTeamId));
+                monster.Movement.SetBound(m_SpawnBound);
 
                 OnSpawning?.Invoke(monster);
                 TeamManager.AddActor(ConstantValue.MonsterTeamId, monster);

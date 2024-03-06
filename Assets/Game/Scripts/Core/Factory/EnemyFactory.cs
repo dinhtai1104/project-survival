@@ -4,6 +4,7 @@ using com.assets.loader.core;
 using Cysharp.Threading.Tasks;
 using Engine;
 using Manager;
+using Pool;
 using SceneManger;
 using System.Collections.Generic;
 using System.Threading;
@@ -25,7 +26,7 @@ namespace Framework
             m_GameScene = GameSceneManager.Instance;
         }
 
-        public async UniTask<EnemyActor> CreateEnemy(string id, int enemyLevel, Vector2 position, CancellationToken token = default)
+        public EnemyActor CreateEnemy(string id, int enemyLevel, Vector2 position, CancellationToken token = default)
         {
             var monsterData = m_EnemyDatabase.Get(id);
             var monsterPath = monsterData.Path;
@@ -43,7 +44,8 @@ namespace Framework
             monster.MonsterLevel = monsterLevel;
 
             // apply monster stat
-            var stats = monster.Stat;
+            var stats = monster.Stats;
+            stats.RemoveAllStats();
             stats.AddStat(StatKey.Hp, monsterData.Hp);
             stats.AddStat(StatKey.Damage, monsterData.Damage);
             stats.AddStat(StatKey.Speed, monsterData.Speed);
@@ -58,7 +60,6 @@ namespace Framework
 
             stats.CalculateStats();
 
-            monster.Movement.Speed = stats.GetStat(StatKey.Speed);
             return monster;
         }
 
@@ -66,13 +67,6 @@ namespace Framework
         {
             EnemyActor monster = PoolManager.Instance.Spawn(prefab, position, Quaternion.identity);
             monster.AI = true;
-
-            var stats = monster.Stat;
-            stats.AddStat(StatKey.Hp, 1f);
-            stats.AddStat(StatKey.Damage, 0f);
-            stats.AddStat(StatKey.MovementSpeed, 0f, 0.3f);
-            stats.AddStat(StatKey.AttackSpeed, 1f, 0.3f);
-
             foreach (var tag in tags)
             {
                 monster.Tagger.AddTag(tag);

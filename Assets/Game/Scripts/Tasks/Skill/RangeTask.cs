@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Engine;
 using ExtensionKit;
+using Pool;
 using Spine;
 using UnityEngine;
 using UnityEngine.Events;
@@ -35,7 +36,7 @@ public class RangeTask : SkillTask
             if (m_EventData != null) Caster.Animation.SubscribeEvent(OnAttack);
         }
 
-        m_DamageDealer.Init(Caster.Stat);
+        m_DamageDealer.Init(Caster.Stats);
         base.Begin();
         if (!m_Animation.IsNotNullAndEmpty() || !m_EventName.IsNotNullAndEmpty())
         {

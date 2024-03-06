@@ -59,9 +59,9 @@ MonoBehaviour:
   m_HitEffect: {fileID: 3898783526648824513, guid: a7129a734008da943864f334d3cadcfb, type: 3}
   m_Animations:
   - attack/combo_1
-  m_HitRange: 0.4
-  m_HitRadius: 0.4
-  m_OriginOffsetY: 0.2
+  m_HitRange: 0.7
+  m_HitRadius: 0.6
+  m_OriginOffsetY: 0.4
   m_EventName: attack_tracking
   m_TargetNumber: 1
   m_SyncTimeScale: 0
@@ -291,6 +291,10 @@ PrefabInstance:
     - target: {fileID: 6381516466356194067, guid: 8d13257c51ca435469d60536afd14dbb, type: 3}
       propertyPath: m_Name
       value: Enemy0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381516466356194067, guid: 8d13257c51ca435469d60536afd14dbb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6381516466356194068, guid: 8d13257c51ca435469d60536afd14dbb, type: 3}
       propertyPath: serializationData.Prefab

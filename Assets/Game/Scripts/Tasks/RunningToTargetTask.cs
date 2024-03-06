@@ -27,7 +27,7 @@ public class RunningToTargetTask : SkillTask
         base.Begin();
         m_ReachTarget = false;
         m_TimeOutTimer = 0f;
-        Caster.Stat.AddModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier, this);
+        Caster.Stats.AddModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier, this);
     }
 
     public override void End()
@@ -37,7 +37,7 @@ public class RunningToTargetTask : SkillTask
         Caster.Animation.Play(0, m_IdleAnimation);
         if (Caster != null)
         {
-            Caster.Stat.RemoveModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier);
+            Caster.Stats.RemoveModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier);
         }
 
         if (m_SyncTimeScale)
@@ -53,7 +53,7 @@ public class RunningToTargetTask : SkillTask
         Caster.Animation.Play(0, m_IdleAnimation);
         if (Caster != null)
         {
-            Caster.Stat.RemoveModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier);
+            Caster.Stats.RemoveModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier);
         }
 
         IsCompleted = true;
@@ -90,8 +90,8 @@ public class RunningToTargetTask : SkillTask
                     Caster.Animation.Play(0, m_MovingAnimation, m_LoopAnimation);
                     if (m_SyncTimeScale)
                     {
-                        var stats = Caster.Stat;
-                        Caster.Animation.TimeScale = stats.GetValue(StatKey.MovementSpeed) / stats.GetBaseValue(StatKey.MovementSpeed);
+                        var stats = Caster.Stats;
+                        Caster.Animation.TimeScale = stats.GetValue(StatKey.Speed) / stats.GetBaseValue(StatKey.Speed);
                     }
                 }
 

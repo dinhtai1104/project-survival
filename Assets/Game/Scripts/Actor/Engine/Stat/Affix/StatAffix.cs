@@ -59,5 +59,11 @@ namespace Engine
         {
             DescriptionKey = $"{"Base"}_{StatName}_{Modifier.Type}";
         }
+
+        public override object Clone()
+        {
+            var clone = (StatAffix)base.Clone();
+            return clone;
+        }
     }
 }

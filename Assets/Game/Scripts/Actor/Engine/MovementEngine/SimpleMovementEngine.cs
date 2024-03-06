@@ -108,6 +108,11 @@ namespace Engine
             _graphicTrans.localRotation = Quaternion.Euler(0f, DirectionSign >= 0f ? 0f : 180f, 0f);
         }
 
+        public void SetDirection(Vector3 dir)
+        {
+            CurrentDirection = dir.normalized;
+        }
+
         public void FlipFacingDirection()
         {
             if (_lockFacingDirection)

@@ -24,6 +24,10 @@ namespace SceneManger
             IsInitialized = true;
         }
 
+        /// <summary>
+        /// Preload asset need for scene
+        /// </summary>
+        /// <returns></returns>
         public abstract UniTask RequestAssets();
 
         public void Enter()
@@ -33,14 +37,15 @@ namespace SceneManger
 
         protected virtual void OnEnter()
         {
-
+            IsEnter = true;
         }
 
-        public virtual void Exit(bool reload)
+        public virtual UniTask Exit(bool reload)
         {
             IsEnter = false;
             IsInitialized = false;
             SceneManager.Clear();
+            return UniTask.CompletedTask;
             // Clear scene
         }
 
@@ -58,6 +63,13 @@ namespace SceneManger
 
         }
 
+        /// <summary>
+        /// Preload asset to asynchorous
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="id"></param>
+        /// <param name="path"></param>
+        /// <returns></returns>
         protected UniTask RequestAsset<T>(string id, string path) where T : UnityEngine.Object
         {
             Logger.Log("Request Load: " + id + " --- " + path);
@@ -66,7 +78,12 @@ namespace SceneManger
             return asset;
         }
 
-
+        /// <summary>
+        /// Get asset from loaded asset (prefab, image, sound,..)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public T GetRequestedAsset<T>(string id) where T : UnityEngine.Object
         {
             return SceneManager.GetAsset<T>(id);

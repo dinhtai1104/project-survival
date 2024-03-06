@@ -29,12 +29,12 @@ namespace Assets.Game.Scripts.Actor.States.Unit
         public override void Execute()
         {
             base.Execute();
-            var stat = Actor.Stat;
+            var stat = Actor.Stats;
             var movement = Actor.Movement;
-            movement.MoveDirection(Vector2.right, stat.GetValue(StatKey.MovementSpeed));
+            movement.MoveDirection(Vector2.right, stat.GetValue(StatKey.Speed));
             if (Math.Abs(m_AnimationTimeScale - m_CacheAnimationTimeScale) > 0)
             {
-                m_AnimationTimeScale = Actor.Stat.GetValue(StatKey.MovementSpeed) / Actor.Stat.GetBaseValue(StatKey.MovementSpeed);
+                m_AnimationTimeScale = Actor.Stats.GetValue(StatKey.Speed) / Actor.Stats.GetBaseValue(StatKey.Speed);
                 Actor.Animation.TimeScale = m_AnimationTimeScale;
             }
         }

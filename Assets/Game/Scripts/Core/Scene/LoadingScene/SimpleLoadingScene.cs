@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using static UnityEngine.InputSystem.XInput.XInputController;
 using UnityEngine.AddressableAssets;
 using UnityEngine;
+using Pool;
 
 namespace SceneManger.Loading
 {
@@ -18,7 +19,7 @@ namespace SceneManger.Loading
         {
             base.StartLoading(sceneManager);
             GameSceneManager gameSceneManager = (GameSceneManager)sceneManager;
-            _progressBar.gameObject.SetActive(false);
+            //_progressBar.gameObject.SetActive(false);
 
             _progressBar.SetValue(0f);
         }
