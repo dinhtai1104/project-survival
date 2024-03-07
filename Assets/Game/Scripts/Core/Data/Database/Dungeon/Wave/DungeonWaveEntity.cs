@@ -19,6 +19,7 @@ namespace Assets.Game.Scripts.Core.Data.Database.Dungeon
         public string DefaultEnemy;
         public float DefaultCluster;
         public float DefaultChance;
+        public float CameraSize;
         private List<EnemiesEventEntity> m_EnemiesEvent;
         public List<EnemiesEventEntity> EnemiesEvents => m_EnemiesEvent;
         private BGEntity e;
@@ -31,6 +32,7 @@ namespace Assets.Game.Scripts.Core.Data.Database.Dungeon
             DefaultEnemy = e.Get<string>("DefaultEnemy");
             DefaultChance = 100;
             DefaultCluster = e.Get<float>("DefaultCluster");
+            CameraSize = e.Get<float>("CameraSize");
         }
 
         public DungeonWaveEntity()

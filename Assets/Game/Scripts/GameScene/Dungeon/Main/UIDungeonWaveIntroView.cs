@@ -14,7 +14,7 @@ namespace Assets.Game.Scripts.GameScene.Dungeon.Main
         [SerializeField] private Text m_WaveIdTxt;
         [SerializeField] private UITweenRunner m_Runner;
         
-        public async void Show(string title, float duration = 2f)
+        public async UniTask Show(string title, float duration = 2f)
         {
             this.m_WaveIdTxt.text = title;
             m_Runner.Transitions = GetComponentsInChildren<UITweenBase>();

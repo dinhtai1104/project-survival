@@ -100,7 +100,9 @@ namespace Assets.Game.Scripts.Dungeon
         protected virtual void StartWave()
         {
             m_Spawner.StartSpawn(WaveDungeon.DelayStart);
-            ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave(string.Format("Wave {0}/{1}", CurrentWave + 1, MaxWave), LengthWave, true);
+           // CameraController.Instance.SetCameraSize(WaveDungeon.WaveEntity.CameraSize);
+
+            ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave(string.Format("Wave {0}/{1}", CurrentWave + 1, MaxWave), LengthWave, true).Forget();
 
             var timeThisWave = LengthWave;
             m_TimeWaveSystem.Start(timeThisWave, OnUpdateWaveTime, OnWaveTimeEndComplete);
@@ -110,6 +112,8 @@ namespace Assets.Game.Scripts.Dungeon
         public virtual void StartNextWave()
         {
             m_Spawner.StartNextWave(2);
+            //CameraController.Instance.SetCameraSize(WaveDungeon.WaveEntity.CameraSize);
+
             MainPlayer.Health.CurrentHealth = MainPlayer.Health.MaxHealth;
             ScenePresenter.GetPanel<UIDungeonMainPanel>().ShowByTransitions();
 
@@ -117,12 +121,12 @@ namespace Assets.Game.Scripts.Dungeon
             if (timeThisWave != 0)
             {
                 m_TimeWaveSystem.Start(timeThisWave, OnUpdateWaveTime, OnWaveTimeEndComplete);
-                ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave(string.Format("Wave {0}/{1}", CurrentWave + 1, MaxWave), LengthWave, true);
+                ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave(string.Format("Wave {0}/{1}", CurrentWave + 1, MaxWave), LengthWave, true).Forget();
             }
             else
             {
                 // Attack Boss
-                ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave("Wave Boss!!", LengthWave);
+                ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave("Wave Boss!!", LengthWave).Forget();
             }
             MainPlayer.Health.Invincible = false;
         }

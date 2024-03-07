@@ -230,6 +230,7 @@ public partial class DB_DungeonWave : BGEntity
 	public System.String DefaultEnemy => _DefaultEnemy[Index];
 	public System.Int32 DefaultAmount => _DefaultAmount[Index];
 	public System.Single DefaultCluster => _DefaultCluster[Index];
+	public System.Single CameraSize => _CameraSize[Index];
 	private static BansheeGz.BGDatabase.BGFieldEntityName _ufle12jhs77_name;
 	public static BansheeGz.BGDatabase.BGFieldEntityName _name => _ufle12jhs77_name ?? (_ufle12jhs77_name = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldEntityName>(MetaDefault, new BGId(5199273315712751020UL, 7180544439930714030UL), () => _ufle12jhs77_name = null));
 	private static BansheeGz.BGDatabase.BGFieldString _ufle12jhs77_WaveId;
@@ -242,6 +243,8 @@ public partial class DB_DungeonWave : BGEntity
 	public static BansheeGz.BGDatabase.BGFieldInt _DefaultAmount => _ufle12jhs77_DefaultAmount ?? (_ufle12jhs77_DefaultAmount = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldInt>(MetaDefault, new BGId(4672096289431929998UL, 17955527991210361241UL), () => _ufle12jhs77_DefaultAmount = null));
 	private static BansheeGz.BGDatabase.BGFieldFloat _ufle12jhs77_DefaultCluster;
 	public static BansheeGz.BGDatabase.BGFieldFloat _DefaultCluster => _ufle12jhs77_DefaultCluster ?? (_ufle12jhs77_DefaultCluster = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldFloat>(MetaDefault, new BGId(5097424058560736049UL, 12085130021855477921UL), () => _ufle12jhs77_DefaultCluster = null));
+	private static BansheeGz.BGDatabase.BGFieldFloat _ufle12jhs77_CameraSize;
+	public static BansheeGz.BGDatabase.BGFieldFloat _CameraSize => _ufle12jhs77_CameraSize ?? (_ufle12jhs77_CameraSize = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldFloat>(MetaDefault, new BGId(4848391233012276917UL, 689522806608232622UL), () => _ufle12jhs77_CameraSize = null));
 	private static readonly DB_Equipment.Factory _factory0_PFS = new DB_Equipment.Factory();
 	private static readonly DB_Dungeon.Factory _factory1_PFS = new DB_Dungeon.Factory();
 	private static readonly DB_Enemy.Factory _factory2_PFS = new DB_Enemy.Factory();

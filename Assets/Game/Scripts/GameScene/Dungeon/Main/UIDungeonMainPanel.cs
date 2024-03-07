@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Engine;
 using Assets.Game.Scripts.GameScene.ControlView;
+using Cysharp.Threading.Tasks;
 
 namespace Assets.Game.Scripts.GameScene.Dungeon.Main
 {
@@ -25,13 +26,13 @@ namespace Assets.Game.Scripts.GameScene.Dungeon.Main
             m_WaveIntroView.gameObject.SetActive(false);
         }
 
-        public void StartWave(string title, int length, bool isFirstWaveEnterGame = false)
+        public async UniTask StartWave(string title, int length, bool isFirstWaveEnterGame = false)
         {
-            m_WaveIntroView.Show(title);
+            UpdateTimer(length);
+            await m_WaveIntroView.Show(title);
 
             StartControl();
             m_WaveNameTxt.text = title;
-            UpdateTimer(length);
         }
 
         public void UpdateTimer(long seconds)
