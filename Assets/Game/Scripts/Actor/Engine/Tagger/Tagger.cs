@@ -17,26 +17,10 @@ namespace Engine
 
         private HashSet<string> m_HashTags;
 
-        public Tagger()
+        private void Awake()
         {
             m_Tags = Enumerable.Empty<string>().ToList();
             m_HashTags = new HashSet<string>();
-
-            foreach (var tag in m_Tags)
-            {
-                m_HashTags.Add(tag);
-            }
-        }
-
-        public Tagger(IEnumerable<string> tags)
-        {
-            m_Tags = tags.ToList();
-            m_HashTags = new HashSet<string>();
-
-            foreach (var tag in m_Tags)
-            {
-                m_HashTags.Add(tag);
-            }
         }
 
         public void AddTag(string tag)
@@ -87,6 +71,11 @@ namespace Engine
         {
         }
 
+        public void ClearAll()
+        {
+            m_Tags.Clear();
+            m_HashTags.Clear();
+        }
         public void OnAfterDeserialize()
         {
             if (m_Tags == null) return;

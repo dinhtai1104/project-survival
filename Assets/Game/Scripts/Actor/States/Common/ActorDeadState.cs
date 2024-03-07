@@ -3,6 +3,7 @@ using Engine;
 using Events;
 using ExtensionKit;
 using Pool;
+using RVO;
 using Spine;
 using System;
 using UnityEngine;
@@ -68,6 +69,7 @@ namespace Assets.Game.Scripts.Actor.States.Common
             isFiredEvent = true;
             //Architecture.Get<EventMgr>().Fire(this, new ActorDieEventArgs(Actor));
             PoolManager.Instance.Despawn(Actor.gameObject);
+            Simulator.Instance.delAgent(Actor.RVO.Id);
         }
     }
 }

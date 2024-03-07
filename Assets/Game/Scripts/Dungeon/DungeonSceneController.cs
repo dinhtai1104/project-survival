@@ -11,6 +11,7 @@ using Gameplay;
 using Gameplay.Data;
 using Gameplay.Dungeon;
 using Pool;
+using RVO;
 using SceneManger;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,7 @@ namespace Assets.Game.Scripts.Dungeon
         public int LengthWave => DungeonEntity.Waves[CurrentWave].Length;
         public bool IsWaveEnd => CurrentWave >= MaxWave - 1;
         public bool IsBossDied { get; private set; }
+        public WaveInDungeonEntity WaveDungeon => DungeonEntity.Waves[CurrentWave];
 
         public override UniTask Exit(bool reload)
         {
@@ -49,6 +51,9 @@ namespace Assets.Game.Scripts.Dungeon
         protected override void OnEnter()
         {
             base.OnEnter();
+            Simulator.Instance.setTimeStep(0.25f);
+            Simulator.Instance.setAgentDefaults(5f, 20, 3, 3, 2.0f, 2.0f, new Vector2RVO(0.0f, 0.0f));
+
             IsBossDied = false;
             ScenePresenter.GetPanel<UIDungeonMainPanel>().GetHealthPlayerBar().Init(MainPlayer);
             ScenePresenter.GetPanel<UIDungeonMainPanel>().Show();
@@ -94,7 +99,7 @@ namespace Assets.Game.Scripts.Dungeon
 
         protected virtual void StartWave()
         {
-            m_Spawner.StartSpawn(2);
+            m_Spawner.StartSpawn(WaveDungeon.DelayStart);
             ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave(string.Format("Wave {0}/{1}", CurrentWave + 1, MaxWave), LengthWave, true);
 
             var timeThisWave = LengthWave;
@@ -182,12 +187,13 @@ namespace Assets.Game.Scripts.Dungeon
                 OnWaveTimeEndComplete(0);
             }
 #endif
+            Simulator.Instance.doStep();
         }
 
         public async override UniTask RequestAssets()
         {
             // Request Session
-
+            m_DungeonSession = new DungeonGameplaySessionSave();
             // Request ui
             // Create panel ui
             var uiTask = ScenePresenter.CreateAsync<UIDungeonMainPanel>(AddressableName.UIDungeonMainPanel).AsUniTask();
@@ -211,15 +217,16 @@ namespace Assets.Game.Scripts.Dungeon
             //Request monster
             foreach (var wave in DungeonEntity.Waves)
             {
-                foreach (var waveInfo in wave.WaveInfo.EventEnemies)
+                foreach (var eventInfo in wave.WaveEntity.EnemiesEvents)
                 {
-                    foreach (var enemy in waveInfo.Room.EventSpawn)
-                    {
-                        var monsterEntity = DataManager.Base.EnemyTable.Get(enemy.Enemy);
-                        var task = RequestAsset<GameObject>(enemy.Enemy, monsterEntity.Path);
-                        synchorousLoading.Add(task);
-                    }
+                    var monsterEntity = DataManager.Base.EnemyTable.Get(eventInfo.Enemy);
+                    var task = RequestAsset<GameObject>(monsterEntity.Id, monsterEntity.Path);
+                    synchorousLoading.Add(task);
                 }
+
+                var monsterDefaultEntity = DataManager.Base.EnemyTable.Get(wave.WaveEntity.DefaultEnemy);
+                var taskDefault = RequestAsset<GameObject>(wave.WaveEntity.DefaultEnemy, monsterDefaultEntity.Path);
+                synchorousLoading.Add(taskDefault);
             }
 
 

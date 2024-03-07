@@ -42,32 +42,24 @@ namespace Assets.Game.Scripts.Core.Data.Database.Dungeon
 
         public DungeonEntity CreateDungeon(int dungeonId)
         {
-            var roomDatabase = DataManager.Base.DungeonRoom;
+            var eventDatabase = DataManager.Base.EnemiesEvent;
+            var waveDatabase = DataManager.Base.DungeonWave;
             var dg = Get(dungeonId);
             var newDg = new DungeonEntity { DungeonId = dungeonId };
             foreach (var wave in dg.Waves)
             {
+                var waveInfo = waveDatabase.GetWave(wave.WaveId);
                 var newWave = new WaveInDungeonEntity
                 {
                     DungeonId = dungeonId,
                     Length = wave.Length,
                     LevelEnemy = wave.LevelEnemy,
+                    WaveId = wave.WaveId,
+                    Frequency = wave.Frequency,
+                    DelayStart = wave.DelayStart,
+                    RandomAdd = wave.RandomAdd,
+                    WaveEntity = waveInfo,
                 };
-                var waveInfo = new DungeonWaveEntity();
-                waveInfo.WaveId = wave.WaveId;
-
-                foreach (var info in wave.WaveInfo.EventEnemies)
-                {
-                    var dEvent = new DungeonEventWaveEnemy
-                    {
-                        WaveId = info.WaveId,
-                        Room = roomDatabase.GetRoomTag(info.TagRoom),
-                        TagRoom = info.TagRoom,
-                        Time = info.Time,
-                    };
-                    waveInfo.EventEnemies.Add(dEvent);
-                }
-                newWave.WaveInfo = waveInfo;
                 newDg.Waves.Add(newWave);
             }
             return newDg;

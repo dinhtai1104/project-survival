@@ -1,6 +1,7 @@
 ﻿using com.mec;
 using Cysharp.Threading.Tasks;
 using Engine;
+using ExtensionKit;
 using Gameplay;
 using Manager;
 using SceneManger;
@@ -66,7 +67,7 @@ namespace Framework
 
         protected abstract IEnumerator<float> _Spawn(float delaySpawn);
 
-        public async UniTask<EnemyActor> SpawnMonster(string id, int monsterLevel, Vector2 position, CancellationToken token = default)
+        public async UniTask<EnemyActor> SpawnMonster(string id, int monsterLevel, Vector2 position, CancellationToken token = default, string source = null)
         {
             var monster = m_EnemyFactory.CreateEnemy(id, monsterLevel, position, token);
             if (monster != null)
@@ -78,6 +79,11 @@ namespace Framework
                 TeamManager.AddActor(ConstantValue.MonsterTeamId, monster);
 
                 AddToSpawnedActor(monster);
+                if (source.IsNullOrEmpty())
+                {
+                    monster.Shared.SetShared(SharedKey.SourceSpawn, source);
+                }
+
                 return monster;
             }
             await UniTask.Yield();

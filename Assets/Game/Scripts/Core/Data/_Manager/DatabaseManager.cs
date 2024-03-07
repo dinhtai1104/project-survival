@@ -8,6 +8,7 @@ using Assets.Game.Scripts.Core.Data.Database.Equipment.Gear;
 using Assets.Game.Scripts.Core.Data.Database.Equipment;
 using Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon;
 using Assets.Game.Scripts.Core.Data.Database.Rarity;
+using Assets.Game.Scripts.Core.Data.Database.Dungeon.EnemyEvent;
 
 public class DatabaseManager : MonoSingleton<DatabaseManager>
 {
@@ -15,7 +16,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
 
     public EnemyTable EnemyTable = new EnemyTable();
     public DungeonTable Dungeon = new DungeonTable();
-    public DungeonRoomTable DungeonRoom = new DungeonRoomTable();
+    public EnemiesEventTable EnemiesEvent = new EnemiesEventTable();
     public DungeonWaveTable DungeonWave = new DungeonWaveTable();
 
     public RarityTable Rarity = new RarityTable();
@@ -35,7 +36,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
     private void PreloadData()
     {
         databases.Add(EnemyTable);
-        databases.Add(DungeonRoom);
+        databases.Add(EnemiesEvent);
         databases.Add(DungeonWave);
         databases.Add(Dungeon);
 

@@ -469,7 +469,7 @@ namespace Engine
         /// </summary>
         public static bool RollChance(float value, float min = 0, float max = 1)
         {
-            var chance = UnityEngine.Random.Range(0, 1);
+            var chance = UnityEngine.Random.Range(0, 1f);
             return chance < value;
         }
 
@@ -478,7 +478,7 @@ namespace Engine
         /// </summary>
         public static bool RollSuccessChance(this float value, float min = 0, float max = 1)
         {
-            var chance = UnityEngine.Random.Range(0, 1);
+            var chance = UnityEngine.Random.Range(0, 1f);
             return chance < value;
         }
 

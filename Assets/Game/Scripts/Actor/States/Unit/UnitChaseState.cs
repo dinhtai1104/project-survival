@@ -1,5 +1,6 @@
 ﻿using Assets.Game.Scripts.Actor.States.Common;
 using Engine;
+using RVO;
 using System;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Assets.Game.Scripts.Actor.States.Unit
     {
         [SerializeField] private string m_AnimationChase;
         private Vector3 m_LastPos;
+        private System.Random m_random = new System.Random();
 
         private float m_CacheAnimationTimeScale;
         private float m_AnimationTimeScale;
@@ -26,25 +28,46 @@ namespace Assets.Game.Scripts.Actor.States.Unit
         public override void Execute()
         {
             base.Execute();
+
+            if (Math.Abs(m_AnimationTimeScale - m_CacheAnimationTimeScale) > 0)
+            {
+                m_AnimationTimeScale = Actor.Stats.GetValue(StatKey.Speed) / Actor.Stats.GetBaseValue(StatKey.Speed);
+                Actor.Animation.TimeScale = m_AnimationTimeScale;
+            }
+
             var target = Actor.TargetFinder.CurrentTarget;
             if (target != null)
             {
                 Actor.Animation.EnsurePlay(0, m_AnimationChase, true);
-                var dir = target.CenterPosition - Actor.CenterPosition;
-
-                if (Math.Abs(m_AnimationTimeScale - m_CacheAnimationTimeScale) > 0)
+                if (Actor.RVO.Id >= 0)
                 {
-                    m_AnimationTimeScale = Actor.Stats.GetValue(StatKey.Speed) / Actor.Stats.GetBaseValue(StatKey.Speed);
-                    Actor.Animation.TimeScale = m_AnimationTimeScale;
+                    Vector2RVO pos = Simulator.Instance.getAgentPosition(Actor.RVO.Id);
+                    var position = new Vector3(pos.x(), pos.y());
+
+                    Actor.Movement.MoveTo(position);
                 }
 
-                Actor.Movement.MoveDirection(dir.normalized);
+                Vector2RVO goalVector = new Vector2RVO(target.CenterPosition) - Simulator.Instance.getAgentPosition(Actor.RVO.Id);
+                if (RVOMath.absSq(goalVector) > 1.0f)
+                {
+                    goalVector = RVOMath.normalize(goalVector);
+                }
+                Simulator.Instance.setAgentPrefVelocity(Actor.RVO.Id, goalVector * Actor.Stats.GetValue(StatKey.Speed));
+
+
+                /* Perturb a little to avoid deadlocks due to perfect symmetry. */
+                float angle = (float)m_random.NextDouble() * 2.0f * (float)Math.PI;
+                float dist = (float)m_random.NextDouble() * 0.0001f;
+
+                Simulator.Instance.setAgentPrefVelocity(Actor.RVO.Id, Simulator.Instance.getAgentPrefVelocity(Actor.RVO.Id) +
+                                                             dist *
+                                                             new Vector2RVO((float)Math.Cos(angle), (float)Math.Sin(angle)));
             }
             else
             {
                 //ToIdleState();
             }
-            m_LastPos = Actor.CenterPosition;
+
         }
         protected override void ToIdleState()
         {

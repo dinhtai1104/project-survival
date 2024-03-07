@@ -16,6 +16,10 @@ namespace Engine
         {
         }
 
+        public void ClearAll()
+        {
+        }
+
         public bool HasAllOfTags(IEnumerable<string> tags)
         {
             return false;

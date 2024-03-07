@@ -14,5 +14,6 @@ namespace Engine
         bool HasTags(IEnumerable<string> tags);
         bool HasAnyOfTags(IEnumerable<string> tags);
         bool HasAllOfTags(IEnumerable<string> tags);
+        void ClearAll();
     }
 }

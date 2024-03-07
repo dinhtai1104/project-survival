@@ -10,33 +10,29 @@ namespace Assets.Game.Scripts.Core.Data.Database.Dungeon
     [System.Serializable]
     public class DungeonWaveTable : DataTable<string, DungeonWaveEntity>
     {
-        private List<DungeonEventWaveEnemy> ListWave = new List<DungeonEventWaveEnemy>();
         public override void GetDatabase()
         {
-            ListWave.Clear();
             DB_DungeonWave.ForEachEntity(e => Get(e));
-
-            var groupByWaveId = ListWave.GroupBy(e => e.WaveId);
-            foreach (var wave in groupByWaveId)
-            {
-                var entity = new DungeonWaveEntity
-                {
-                    WaveId = wave.Key
-                };
-
-                foreach (var waveE in wave)
-                {
-                    entity.EventEnemies.Add(waveE);
-                }
-
-                Dictionary.Add(wave.Key, entity);
-            }
         }
 
         private void Get(BGEntity e)
         {
-            var entity = new DungeonEventWaveEnemy(e);
-            ListWave.Add(entity);
+            var entity = new DungeonWaveEntity(e);
+            Dictionary.Add(entity.WaveId, entity);
+        }
+
+        public DungeonWaveEntity GetWave(string waveId)
+        {
+            var eventDatabase = DataManager.Base.EnemiesEvent;
+            var wave = Dictionary[waveId].Clone();
+            wave.AddEvent(eventDatabase.GetEvents(waveId));
+            wave.DefaultChance = 100;
+
+            foreach (var events in wave.EnemiesEvents)
+            {
+                wave.DefaultChance -= events.Chance;
+            }
+            return wave;
         }
     }
 }
