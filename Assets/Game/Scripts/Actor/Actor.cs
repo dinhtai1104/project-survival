@@ -131,15 +131,16 @@ namespace Engine
 
         public void Prepare()
         {
+            IsDead = false;
         }
 
         [Button]
         public virtual void Init(TeamModel teamModel)
         {
+            gameObject.SetActive(true);
             this.m_TeamModel = teamModel;
             EnemyLayerMask = teamModel.EnemyLayerMask;
             AllyLayerMask = teamModel.AllyLayerMask;
-            gameObject.SetActive(true);
             m_IsInitialize = true;
 
             Animation?.Init(this);
@@ -154,6 +155,13 @@ namespace Engine
             SkillCaster?.Init(this);
             Brain?.Init(this);
             Input.Active = true;
+
+            Health.Initialized = false;
+            Brain.Lock = false;
+            Input.Lock = false;
+            SkillCaster.IsLocked = false;
+            Status.Lock = false;
+            Brain.Lock = false;
         }
 
         protected virtual void Awake()
@@ -174,6 +182,7 @@ namespace Engine
             m_Input = GetComponent<IInputHandler>();
             m_SkillCaster = GetComponent<ISkillCaster>();
             m_Brain = GetComponent<IBrain>();
+            m_Tagger = GetComponent<ITagger>();
         }
 
         protected virtual void Update()

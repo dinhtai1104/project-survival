@@ -203,6 +203,11 @@ namespace SceneManger
             return GetSceneController(typeof(T));
         }
 
+        public T GetCurrentSceneController<T>() where T : class, ISceneController
+        {
+            return _currentSceneController as T;
+        }
+
         protected virtual void OnLoadSceneProgress(float percentage)
         {
         }

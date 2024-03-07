@@ -13,6 +13,7 @@ namespace Ui.View
         protected Transform _transform;
         public bool overrideBack = false, isPersistant = false;
         public System.Action onClosed;
+        private PanelManager m_PanelMgr;
 
         private CancellationTokenSource m_Cts;
         [ShowInInspector]
@@ -31,6 +32,15 @@ namespace Ui.View
             Destroy(gameObject);
             //Addressables.ReleaseInstance(gameObject);
         }
+
+        public void SetPanelMgr(PanelManager mgr)
+        {
+            m_PanelMgr = mgr;
+
+            m_PanelMgr.OnPanelShown(this);
+            m_PanelMgr.Register(this);
+        }
+
         [Button]
         public virtual void Show(params object[] @params)
         {
@@ -90,8 +100,8 @@ namespace Ui.View
         public virtual void Deactive()
         {
             gameObject.SetActive(false);
-            PanelManager.Instance.OnPanelHidden(this);
-            PanelManager.Instance.Unregister(this);
+            m_PanelMgr.OnPanelHidden(this);
+            m_PanelMgr.Unregister(this);
             Destroy();
         }
         public virtual void Active()
@@ -105,9 +115,6 @@ namespace Ui.View
             {
                 gameObject.SetActive(true);
             }
-            PanelManager.Instance.OnPanelShown(this);
-            PanelManager.Instance.Register(this);
-
             if (transitions != null && transitions.Length > 0)
             {
                 ShowByTransitions();
@@ -144,6 +151,7 @@ namespace Ui.View
         public virtual void PostInit()
         {
             m_Cts = new CancellationTokenSource();
+
         }
 
         public virtual void OnBack()
@@ -151,5 +159,8 @@ namespace Ui.View
             if (overrideBack) return;
             Close();
         }
+
+        // Update View
+        public virtual void Execute() { }
     }
 }

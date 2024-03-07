@@ -16,4 +16,14 @@ public class ModifierData
 
     public string AttributeName => m_AttributeName;
     public StatModifier Modifier => m_Modifier;
+
+    public ModifierData()
+    {
+    }
+
+    public ModifierData(string attributeName, StatModifier modifier)
+    {
+        m_AttributeName = attributeName;
+        m_Modifier = modifier;
+    }
 }

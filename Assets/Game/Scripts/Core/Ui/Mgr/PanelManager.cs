@@ -17,8 +17,10 @@ namespace Ui.View
         public static OnPanelShow onPanelShow;
         public static PanelManager Instance;
         [SerializeField]
-        private List<Panel> panels = new List<Panel>();
-        private Stack<Panel> stack = new Stack<Panel>();
+        protected List<Panel> panels = new List<Panel>();
+        protected Stack<Panel> stack = new Stack<Panel>();
+        protected bool m_IsInitialized = false;
+
 
         // Start is called before the first frame update
         void Awake()
@@ -46,6 +48,7 @@ namespace Ui.View
             AsyncOperationHandle<GameObject> op = Addressables.InstantiateAsync(type, PanelManager.Instance.transform);
             await op;
             Panel panel = op.Result.GetComponent<Panel>();
+            panel.SetPanelMgr(PanelManager.Instance);
             panel.Prepare();
             panel.PostInit();
             return panel;
@@ -60,6 +63,7 @@ namespace Ui.View
             AsyncOperationHandle<GameObject> op = Addressables.InstantiateAsync(type.ToString(), PanelManager.Instance.transform);
             await op;
             TPanel panel = op.Result.GetComponent<TPanel>();
+            panel.SetPanelMgr(PanelManager.Instance);
             panel.Prepare();
             panel.PostInit();
             return panel;
@@ -69,6 +73,7 @@ namespace Ui.View
             AsyncOperationHandle<GameObject> op = Addressables.InstantiateAsync(address, PanelManager.Instance.transform);
             await op;
             TPanel panel = op.Result.GetComponent<TPanel>();
+            panel.SetPanelMgr(PanelManager.Instance);
             panel.Prepare();
             panel.PostInit();
             return panel;
@@ -82,6 +87,7 @@ namespace Ui.View
                 await UniTask.Yield();
             }
             TPanel panel = op.Result.GetComponent<TPanel>();
+            panel.SetPanelMgr(PanelManager.Instance);
             panel.Prepare();
             panel.PostInit();
 
@@ -93,6 +99,7 @@ namespace Ui.View
         {
             var op = Instantiate(prefab, PanelManager.Instance.transform);
             TPanel panel = op.GetComponent<TPanel>();
+            panel.SetPanelMgr(PanelManager.Instance);
             panel.Prepare();
             panel.PostInit();
             return panel;
@@ -109,10 +116,13 @@ namespace Ui.View
         }
         public void Init()
         {
+            if (m_IsInitialized) return;
+            m_IsInitialized = true;
             Instance = this;
             Transform holder = transform;
             for (int i = 0; i < panels.Count; i++)
             {
+                panels[i].SetPanelMgr(this);
                 panels[i].Prepare();
                 panels[i].PostInit();
             }

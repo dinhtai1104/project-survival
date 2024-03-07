@@ -11,12 +11,19 @@ using UnityEngine;
 
 namespace Framework
 {
+    [System.Serializable]
     public abstract class BaseMonsterSpawner
     {
         private TeamManager m_TeamManager;
 
-        public event Action OnCompleteSpawning;
-        public event Action<Actor> OnSpawning;
+        public delegate void CompleteSpawningDelegate();
+        public delegate void SpawningDelegate(Actor actor);
+        public delegate void StartSpawning();
+
+        public CompleteSpawningDelegate OnCompleteSpawning;
+        public SpawningDelegate OnSpawning;
+        public StartSpawning OnStartSpawning;
+
         private CoroutineHandle m_CoroutineHandle;
         private BaseSceneManager m_SceneManager;
 
@@ -64,7 +71,6 @@ namespace Framework
             var monster = m_EnemyFactory.CreateEnemy(id, monsterLevel, position, token);
             if (monster != null)
             {
-                await UniTask.Yield();
                 monster.Init(TeamManager.GetTeamModel(ConstantValue.MonsterTeamId));
                 monster.Movement.SetBound(m_SpawnBound);
 
@@ -74,11 +80,13 @@ namespace Framework
                 AddToSpawnedActor(monster);
                 return monster;
             }
+            await UniTask.Yield();
             Logger.LogError("Null Monster: " + id);
             return null;
         }
 
         protected abstract void AddToSpawnedActor(Actor actor);
-        protected abstract void ClearAll();
+        public abstract void ClearAll();
+        public abstract void Exit();
     }
 }

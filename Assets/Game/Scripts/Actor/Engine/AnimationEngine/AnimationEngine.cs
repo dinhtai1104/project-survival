@@ -50,6 +50,8 @@ namespace Engine
 
         public void Clear()
         {
+            m_Animation.state.ClearTracks();
+            m_Animation.Skeleton.SetToSetupPose();
         }
 
         #endregion
@@ -153,7 +155,8 @@ namespace Engine
             if (Lock) return;
             if (m_Animation.AnimationState == null || !HasAnimation(animName)) return;
             if (m_Animation.AnimationState == null || !restart && IsPlaying(track, animName)) return;
-            m_Animation.AnimationState.SetAnimation(track, animName, loop);
+            var mix = m_Animation.AnimationState.SetAnimation(track, animName, loop);
+            if (restart) mix.MixDuration = 0;
         }
 
         public bool EnsurePlay(int track, string animName, bool loop = true, bool restart = false)
@@ -161,7 +164,8 @@ namespace Engine
             if (Lock) return false;
             if (m_Animation.AnimationState == null || !HasAnimation(animName)) return false;
             if (!restart && IsPlaying(track, animName)) return true;
-            m_Animation.AnimationState.SetAnimation(track, animName, loop);
+            var mix = m_Animation.AnimationState.SetAnimation(track, animName, loop);
+            if (restart) mix.MixDuration = 0;
             return false;
         }
 

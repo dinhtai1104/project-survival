@@ -8,6 +8,8 @@ using Sirenix.OdinInspector;
 using System.IO;
 using BayatGames.SaveGameFree.Encoders;
 using Newtonsoft.Json;
+using Assets.Game.Scripts.Core.Data.Datasave.Dungeon;
+using Assets.Game.Scripts.Core.Data.Datasave;
 
 public class DatasaveManager : MonoSingleton<DatasaveManager>
 {
@@ -15,7 +17,12 @@ public class DatasaveManager : MonoSingleton<DatasaveManager>
     private string password = "dungeon_labs";
 
     private List<IDatasave> datasaves = new List<IDatasave>();
-    
+
+    public GeneralSave General;
+    public UserSave User;
+    public DungeonSave Dungeon;
+    public ResourcesSave Resources;
+
     public void Init(Transform parent = null)
     {
         DataManager.Save = this;
@@ -31,15 +38,18 @@ public class DatasaveManager : MonoSingleton<DatasaveManager>
     }
     public void LoadData()
     {
-        //General = Load<GeneralSave>("General");
+        General = Load<GeneralSave>("General");
+        User = Load<UserSave>("User");
+        Dungeon = Load<DungeonSave>("Dungeon");
+        Resources = Load<ResourcesSave>("Resources");
         Add();
     }
-    private void Update()
-    {
-    }
+
     public void Add()
     {
         datasaves.Clear();
+        datasaves.Add(General);
+        datasaves.Add(Dungeon);
     }
     public TData Load<TData>(string key) where TData : BaseDatasave
     {

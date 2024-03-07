@@ -15,13 +15,11 @@ namespace Framework
     public class EnemyFactory
     {
         private readonly EnemyTable m_EnemyDatabase;
-        private IAssetLoader m_AssetLoader;
         private BaseSceneManager m_GameScene;
 
 
         public EnemyFactory(EnemyTable monsterDatabase)
         {
-            m_AssetLoader = new AddressableAssetLoader();
             m_EnemyDatabase = monsterDatabase;
             m_GameScene = GameSceneManager.Instance;
         }
@@ -69,7 +67,10 @@ namespace Framework
             monster.AI = true;
             foreach (var tag in tags)
             {
-                monster.Tagger.AddTag(tag);
+                if (monster.Tagger.HasTag(tag) == false)
+                {
+                    monster.Tagger.AddTag(tag);
+                }
             }
 
             return monster;

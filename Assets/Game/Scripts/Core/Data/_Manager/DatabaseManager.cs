@@ -4,6 +4,10 @@ using System;
 using Sirenix.OdinInspector;
 using Assets.Game.Scripts.Core.Data.Database;
 using Assets.Game.Scripts.Core.Data.Database.Dungeon;
+using Assets.Game.Scripts.Core.Data.Database.Equipment.Gear;
+using Assets.Game.Scripts.Core.Data.Database.Equipment;
+using Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon;
+using Assets.Game.Scripts.Core.Data.Database.Rarity;
 
 public class DatabaseManager : MonoSingleton<DatabaseManager>
 {
@@ -13,6 +17,11 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
     public DungeonTable Dungeon = new DungeonTable();
     public DungeonRoomTable DungeonRoom = new DungeonRoomTable();
     public DungeonWaveTable DungeonWave = new DungeonWaveTable();
+
+    public RarityTable Rarity = new RarityTable();
+    public GearTable RarityGear = new GearTable();
+    public EquipmentTable Equipment = new EquipmentTable();
+    public WeaponTable Weapon = new WeaponTable();
 
     public void Init(Transform parent = null)
     {
@@ -29,6 +38,11 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
         databases.Add(DungeonRoom);
         databases.Add(DungeonWave);
         databases.Add(Dungeon);
+
+        databases.Add(Rarity);
+        databases.Add(RarityGear);
+        databases.Add(Equipment);
+        databases.Add(Weapon);
     } 
 
     public void LoadDatabase()

@@ -9,7 +9,11 @@ public class UITweenRunner : MonoBehaviour
 {
     [SerializeField] private UITweenBase[] transitions;
 
+
     private CancellationTokenSource cancelToken;
+
+    public UITweenBase[] Transitions { get => transitions; set => transitions = value; }
+
     public void Init()
     {
         if (transitions != null && transitions.Length > 0)

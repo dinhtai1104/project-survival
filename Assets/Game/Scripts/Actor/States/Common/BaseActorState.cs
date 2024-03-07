@@ -10,7 +10,7 @@ namespace Assets.Game.Scripts.Actor.States.Common
         public override void Execute()
         {
             base.Execute();
-            if (Actor.Health.HealthPercentage <= 0f)
+            if (Actor.Health.HealthPercentage <= 0f && !Actor.Health.Invincible)
             {
                 Actor.Fsm.ChangeState<ActorDeadState>();
             }

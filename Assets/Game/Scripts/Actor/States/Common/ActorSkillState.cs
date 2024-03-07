@@ -8,5 +8,15 @@ namespace Assets.Game.Scripts.Actor.States.Common
 {
     public class ActorSkillState : BaseActorState
     {
+        public override void Enter()
+        {
+            base.Enter();
+            Actor.Health.Invincible = true;
+        }
+        public override void Exit()
+        {
+            base.Exit();
+            Actor.Health.Invincible = false;
+        }
     }
 }

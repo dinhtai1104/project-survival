@@ -1,11 +1,14 @@
 ﻿using Assets.Game.Scripts.Core.Data.Database;
 using Assets.Game.Scripts.Core.Data.Database.Dungeon;
 using Assets.Game.Scripts.Core.SceneMemory.Memory;
+using Assets.Game.Scripts.GameScene.Dungeon.Main;
 using Core;
 using Cysharp.Threading.Tasks;
 using Engine;
+using Events;
 using Framework;
 using Gameplay;
+using Gameplay.Data;
 using Gameplay.Dungeon;
 using Pool;
 using SceneManger;
@@ -16,22 +19,64 @@ using System.Text;
 using System.Threading.Tasks;
 using Ui.View;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Game.Scripts.Dungeon
 {
     public class DungeonSceneController : BaseGameplayScene
     {
         private Bound2D m_Bound2D;
+        [SerializeField]
         private DungeonEnemySpawner m_Spawner;
         private DungeonEntity m_DungeonEntity;
+        private TickSystem m_TimeWaveSystem;
+        private DungeonGameplaySessionSave m_DungeonSession;
 
         public Bound2D Bound => m_Bound2D;
         public DungeonEnemySpawner Spawner => m_Spawner;
         public DungeonEntity DungeonEntity => m_DungeonEntity;
+        public int CurrentWave => Spawner.CurrentWaveEnemy;
+        public int MaxWave => DungeonEntity.Waves.Count;
+        public int LengthWave => DungeonEntity.Waves[CurrentWave].Length;
+        public bool IsWaveEnd => CurrentWave >= MaxWave - 1;
+        public bool IsBossDied { get; private set; }
 
+        public override UniTask Exit(bool reload)
+        {
+            m_Spawner.OnBossDie -= OnBossDie;
+            return base.Exit(reload);
+        }
         protected override void OnEnter()
         {
             base.OnEnter();
+            IsBossDied = false;
+            ScenePresenter.GetPanel<UIDungeonMainPanel>().GetHealthPlayerBar().Init(MainPlayer);
+            ScenePresenter.GetPanel<UIDungeonMainPanel>().Show();
+
+            // Create tick system
+            PrepareSystem();
+
+
+            // Prepare level
+            PrepareMapLevel();
+            m_Spawner.OnBossDie += OnBossDie;
+
+            // Start First Wave
+            StartWave();
+        }
+
+        private void OnBossDie(Engine.Actor boss)
+        {
+            IsBossDied = true;
+        }
+
+        private void PrepareSystem()
+        {
+            m_TimeWaveSystem = new TickSystem();
+        }
+
+        private void PrepareMapLevel()
+        {
             var mapInstance = PoolManager.Instance.Spawn(GetRequestedAsset<GameObject>("map"), transform).GetComponent<Map>();
 
             var enemyDatabase = DataManager.Base.EnemyTable;
@@ -40,16 +85,113 @@ namespace Assets.Game.Scripts.Dungeon
 
             var monsterFactory = new EnemyFactory(enemyDatabase);
             var currentWave = 0;
-            m_Spawner = new DungeonEnemySpawner(monsterFactory, Bound, TeamManager, m_DungeonEntity, currentWave);
+            m_Spawner = new DungeonEnemySpawner(monsterFactory, mapInstance.SpawnBound, TeamManager, m_DungeonEntity, currentWave);
 
             // Spawn Player
             CameraController.Instance.Follow(MainPlayer.transform, Vector3.zero);
             CameraController.Instance.SetBoundary(mapInstance.CameraBoundaries);
+        }
+
+        protected virtual void StartWave()
+        {
             m_Spawner.StartSpawn(2);
+            ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave(string.Format("Wave {0}/{1}", CurrentWave + 1, MaxWave), LengthWave, true);
+
+            var timeThisWave = LengthWave;
+            m_TimeWaveSystem.Start(timeThisWave, OnUpdateWaveTime, OnWaveTimeEndComplete);
+            MainPlayer.Health.Invincible = false;
+        }
+
+        public virtual void StartNextWave()
+        {
+            m_Spawner.StartNextWave(2);
+            MainPlayer.Health.CurrentHealth = MainPlayer.Health.MaxHealth;
+            ScenePresenter.GetPanel<UIDungeonMainPanel>().ShowByTransitions();
+
+            var timeThisWave = LengthWave;
+            if (timeThisWave != 0)
+            {
+                m_TimeWaveSystem.Start(timeThisWave, OnUpdateWaveTime, OnWaveTimeEndComplete);
+                ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave(string.Format("Wave {0}/{1}", CurrentWave + 1, MaxWave), LengthWave, true);
+            }
+            else
+            {
+                // Attack Boss
+                ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave("Wave Boss!!", LengthWave);
+            }
+            MainPlayer.Health.Invincible = false;
+        }
+
+        private async void OnWaveTimeEndComplete(long seconds)
+        {
+            m_TimeWaveSystem.Stop();
+            m_Spawner.StopSpawn();
+            MainPlayer.Health.Invincible = true;
+
+            // Collect Pickle
+            await UniTask.Delay(TimeSpan.FromSeconds(1));
+            m_Spawner.ClearAll();
+            ScenePresenter.GetPanel<UIDungeonMainPanel>().HideByTransitions().Forget();
+            ScenePresenter.GetPanel<UIDungeonMainPanel>().StopControl();
+            
+            // Screen Wave
+            await UniTask.Delay(TimeSpan.FromSeconds(1));
+
+            bool isLevelUp = Random.value > 0.5f;
+            if (isLevelUp)
+            {
+                ScenePresenter.CreateAsync<UIDungeonLevelUpPanel>(AddressableName.UIDungeonLevelUpPanel)
+                    .ContinueWith(panel =>
+                    {
+                        panel.onClosed += ShowShopWavePanel;
+                        panel.Show();
+                    }).Forget();
+                return;
+            }
+            ShowShopWavePanel();
+        }
+
+        public void ShowShopWavePanel()
+        {
+            ScenePresenter.CreateAsync<UIDungeonShopWavePanel>(AddressableName.UIDungeonShopWavePanel)
+                    .ContinueWith(panel =>
+                    {
+                        panel.onClosed += () =>
+                        {
+                            StartNextWave();
+                        };
+                        panel.Show();
+                    }).Forget();
+        }
+
+        private void OnUpdateWaveTime(long seconds)
+        {
+            ScenePresenter.GetPanel<UIDungeonMainPanel>().UpdateTimer(seconds);
+        }
+
+
+        public override void Execute()
+        {
+            base.Execute();
+            if (EndGame) return;
+            ScenePresenter.Execute();
+
+#if UNITY_EDITOR
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                OnWaveTimeEndComplete(0);
+            }
+#endif
         }
 
         public async override UniTask RequestAssets()
         {
+            // Request Session
+
+            // Request ui
+            // Create panel ui
+            var uiTask = ScenePresenter.CreateAsync<UIDungeonMainPanel>(AddressableName.UIDungeonMainPanel).AsUniTask();
+
             // Request map data
             if (!Architecture.Get<ShortTermMemoryService>().HasMemory<DungeonMapSelectionMemory>())
             {
@@ -85,13 +227,15 @@ namespace Assets.Game.Scripts.Dungeon
             var taskMap = RequestAsset<GameObject>("map", mapPath);
             synchorousLoading.Add(taskMap);
             synchorousLoading.Add(base.RequestAssets());
+            synchorousLoading.Add(uiTask);
 
             await UniTask.WhenAll(synchorousLoading);
         }
 
         protected override bool CheckWinCondition()
         {
-            return false;
+            if (!IsWaveEnd) return false;
+            return IsBossDied;
         }
 
         protected override bool CheckLoseCondition()
@@ -101,13 +245,26 @@ namespace Assets.Game.Scripts.Dungeon
 
         protected override void OnWin()
         {
+            m_DungeonSession.Result = Enums.EBattleResult.Win;
         }
 
         protected override void OnLose()
         {
+            m_DungeonSession.Result = Enums.EBattleResult.Lose;
+        }
+
+        protected override void OnEndGame()
+        {
+            base.OnEndGame();
+
             m_Spawner.PauseSpawn();
-            PanelManager.CreateAsync<UIDungeonEndGamePanel>(AddressableName.UIDungeonEndGamePanel)
-                .ContinueWith(panel => panel.Show()).Forget();
+            m_TimeWaveSystem.Stop();
+
+            ScenePresenter.GetPanel<UIDungeonMainPanel>().StopControl();
+            ScenePresenter.CreateAsync<UIDungeonEndGamePanel>(AddressableName.UIDungeonEndGamePanel)
+                .ContinueWith(panel => panel.Show(m_DungeonSession)).Forget();
+
+            m_Spawner.Exit();
         }
     }
 }

@@ -15,6 +15,8 @@ namespace Common
         private GameSceneManager m_SceneManager;
 
         public GameSceneManager SceneManager => m_SceneManager;
+        public BaseSceneController SceneController => m_SceneManager.GetCurrentSceneController<BaseSceneController>();
+        public BaseScenePresenter ScenePresenter => SceneController.ScenePresenter;
         public override void PostInit()
         {
             base.PostInit();

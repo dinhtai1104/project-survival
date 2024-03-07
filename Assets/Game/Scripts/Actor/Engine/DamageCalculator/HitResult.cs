@@ -17,10 +17,10 @@ namespace Engine
         public EDamageType DamageType { get; }
 
         public static readonly HitResult FailedResult =
-            new HitResult(false, false, false, false, false, false, false, 0f, EDamageType.PHYSICAL);
+            new HitResult(false, false, false, false, false, false, false, 0f, EDamageType.Physical);
 
         public static readonly HitResult InvincibleHitResult =
-            new HitResult(false, true, false, false, false, false, false, 0f, EDamageType.PHYSICAL);
+            new HitResult(false, true, false, false, false, false, false, 0f, EDamageType.Physical);
 
         public HitResult(bool success, bool immune, bool critical, bool lastHit, bool hurt, bool evade, bool block, float damage, EDamageType damageType)
         {

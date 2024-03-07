@@ -1,4 +1,5 @@
-﻿using Gameplay;
+﻿using Core;
+using Gameplay;
 using SceneManger;
 using UnityEngine;
 

@@ -44,7 +44,6 @@ namespace Engine
         {
             base.OnUnEquip();
             Stats?.RemoveModifier(StatName, _modifier);
-            Stats = null;
         }
 
         public override string GetDescription()

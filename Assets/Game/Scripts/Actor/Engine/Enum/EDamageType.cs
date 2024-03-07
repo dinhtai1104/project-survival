@@ -8,8 +8,10 @@ namespace Engine
 {
     public enum EDamageType
     {
-        PHYSICAL,
-        MAGIC,
-        RAW
+        Physical = 0,
+        Lightning,
+        Fire,
+        Explosion,
+        Elemental,
     }
 }

@@ -39,6 +39,11 @@ public abstract class UITweenBase : MonoBehaviour, ITransitionElement
     {
         if (cancelToken != null) { cancelToken.Cancel(); }
         cancelToken = new CancellationTokenSource();
+
+        if (settings == null)
+        {
+            settings = ResourcesLoader.Instance.LoadResource<UITweenFadeMoveSettings>("UITweenFadeMoveSettings");
+        }
     }
 
     public abstract UniTask Show();

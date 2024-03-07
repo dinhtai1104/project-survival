@@ -21,7 +21,7 @@ namespace Assets.Game.Scripts.Actor.States.Common
             isFiredEvent = false;
             Actor.Animation.TimeScale = 1f;
             Actor.IsDead = true;
-            Actor.Animation.EnsurePlay(0, m_Animation, false);
+            Actor.Animation.EnsurePlay(0, m_Animation, false, true);
             Actor.Animation.SubscribeComplete(CompleteEvent);
 
                 // Ensure the zero heal event to be broadcasted
@@ -40,7 +40,10 @@ namespace Assets.Game.Scripts.Actor.States.Common
 
         private void CompleteEvent(TrackEntry trackEntry)
         {
-            FireEvent();
+            if (trackEntry.TrackCompareAnimation(m_Animation))
+            {
+                FireEvent();
+            }
         }
 
         public override void Exit()
@@ -56,12 +59,14 @@ namespace Assets.Game.Scripts.Actor.States.Common
             Actor.Input.Lock = false;
             Actor.SkillCaster.IsLocked = false;
             Actor.Status.Lock = false;
+            Actor.Brain.Lock = false;
+            Actor.Animation.Stop();
         }
 
         private void FireEvent()
         {
             isFiredEvent = true;
-            Architecture.Get<EventMgr>().Fire(this, new ActorDieEventArgs(Actor));
+            //Architecture.Get<EventMgr>().Fire(this, new ActorDieEventArgs(Actor));
             PoolManager.Instance.Despawn(Actor.gameObject);
         }
     }

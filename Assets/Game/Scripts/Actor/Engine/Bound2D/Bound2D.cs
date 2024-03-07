@@ -98,8 +98,9 @@ namespace Engine
         }
 
 #if UNITY_EDITOR
-        public void DrawBounds(float delay = 0)
+        public void DrawBounds(Color color, float delay = 0)
         {
+            Gizmos.color = color;
             Gizmos.DrawWireCube(Center, new Vector3(Width, Height, 0));
         }
 #endif

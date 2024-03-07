@@ -16,6 +16,7 @@ public abstract class BaseDatasave : IDatasave
     [Button]
     public virtual void Save()
     {
+        if (Key == "NotSave") return;
         SaveGame.Save(Key, this);
     }
     public virtual void OnLoaded() { }

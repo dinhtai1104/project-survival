@@ -29,16 +29,6 @@ namespace Assets.Game.Scripts.Actor.States.Weapon
                 {
                     NextState();
                 }
-                var dir = target.CenterPosition - Weapon.CenterPosition;
-                Weapon.transform.LookAt2D(dir);
-                Weapon.Movement.SetDirection(dir);
-            }
-            else
-            {
-                // Follow Joystick
-                var directionMove = Owner.Movement.CurrentDirection;
-                Weapon.transform.LookAt2D(directionMove);
-                Weapon.Movement.SetDirection(directionMove);
             }
         }
     }

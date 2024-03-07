@@ -10,7 +10,6 @@ namespace Assets.Game.Scripts.GameScene.ControlView
     public class UIControlView : MonoBehaviour
     {
         [SerializeField] private Joystick m_Joystick;
-
         private void OnEnable()
         {
             m_Joystick.onMoveStart.AddListener(OnMovingStart);
@@ -19,6 +18,7 @@ namespace Assets.Game.Scripts.GameScene.ControlView
         }
         private void OnDisable()
         {
+            m_Joystick.OnPointerUp(null);
             m_Joystick.onMoveStart.RemoveListener(OnMovingStart);
             m_Joystick.onMove.RemoveListener(OnMoving);
             m_Joystick.onMoveEnd.RemoveListener(OnMovingEnd);

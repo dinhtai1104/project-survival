@@ -138,6 +138,10 @@ public static class CSharpExtension
         }
         return $"{value.Days}D:{value.Hours:00}H";
     }
+    public static string ConvertMinuteSecond(this TimeSpan value)
+    {
+        return $"{value.Minutes:00}:{value.Seconds:00}";
+    }
     public static string AddParams(this string value, params object[] args)
     {
         return string.Format(value, args);

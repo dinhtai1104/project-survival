@@ -37,10 +37,6 @@ public class UITweenFadeMove : UITweenBase
         {
             startPos = (transform as RectTransform).localPosition;
             targetPos = startPos + offset;
-            if (settings == null)
-            {
-                settings = ResourcesLoader.Instance.LoadResource<UITweenFadeMoveSettings>("UITweenFadeMoveSettings");
-            }
             (transform as RectTransform).localPosition = targetPos;
             isInit = true;
             return;

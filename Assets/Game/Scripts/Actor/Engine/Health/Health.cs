@@ -35,7 +35,7 @@ namespace Engine
                     if (Initialized && !m_IsZero)
                     {
                         m_OnHealthZero?.Invoke();
-                        Architecture.Get<EventMgr>().Fire(this, new HealthZeroEventArgs(Owner));
+                        Architecture.Get<EventMgr>().Fire(this, new ActorDieEventArgs(Owner));
                     }
 
                     m_IsZero = true;

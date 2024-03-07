@@ -7,13 +7,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ui.View;
 using UnityEngine;
 
 namespace SceneManger
 {
     public abstract class BaseSceneController : MonoBehaviour, ISceneController
     {
+        [SerializeField] private BaseScenePresenter m_ScenePresenter;
+
         public BaseSceneManager SceneManager { get; private set; }
+        public BaseScenePresenter ScenePresenter => m_ScenePresenter;
 
         public bool IsInitialized { get; private set; }
         public bool IsEnter { get; private set; }
@@ -21,6 +25,7 @@ namespace SceneManger
         public void Init()
         {
             SceneManager = BaseSceneManager.Instance;
+            ScenePresenter.Initialize(this);
             IsInitialized = true;
         }
 

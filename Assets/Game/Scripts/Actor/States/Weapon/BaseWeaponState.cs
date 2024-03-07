@@ -21,5 +21,23 @@ namespace Assets.Game.Scripts.Actor.States.Weapon
         {
             Weapon.Fsm.ChangeState(typeof(TNextState));
         }
+        public override void Execute()
+        {
+            base.Execute();
+            var target = Weapon.TargetFinder.CurrentTarget;
+            if (target != null)
+            {
+                var dir = target.CenterPosition - Weapon.CenterPosition;
+                Weapon.transform.LookAt2D(dir);
+                Weapon.Movement.SetDirection(dir);
+            }
+            else
+            {
+                // Follow Joystick
+                var directionMove = Owner.Movement.CurrentDirection;
+                Weapon.transform.LookAt2D(directionMove);
+                Weapon.Movement.SetDirection(directionMove);
+            }
+        }
     }
 }

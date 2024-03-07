@@ -66,14 +66,14 @@ namespace Engine
 
             switch (source.Type)
             {
-                case EDamageType.PHYSICAL:
+                case EDamageType.Physical:
                     damage = CalculatePhysicalDamage(defender, attacker, source, out success, out crit, out hurt, out evade,
                         out block);
                     break;
-                case EDamageType.MAGIC:
+                case EDamageType.Lightning:
                     damage = CalculateMagicDamage(defender, attacker, source);
                     break;
-                case EDamageType.RAW:
+                case EDamageType.Fire:
                     damage = CalculateRawDamage(source, defender);
                     break;
                 default:
