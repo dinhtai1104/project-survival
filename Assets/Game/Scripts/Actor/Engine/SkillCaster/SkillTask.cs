@@ -4,12 +4,12 @@ namespace Engine
 {
     public class SkillTask : Task, IStopHandler
     {
-        [SerializeField] private int m_SkillId;
-        [SerializeField] private bool m_InvokeCastingSkill;
-        [SerializeField] private bool m_CooldownAtBegin;
-        [SerializeField] private bool m_CooldownAtEnd;
-        [SerializeField] private Skill m_Skill;
-        [SerializeField] private Actor m_Actor;
+        [SerializeField] protected int m_SkillId;
+        [SerializeField] protected bool m_InvokeCastingSkill;
+        [SerializeField] protected bool m_CooldownAtBegin;
+        [SerializeField] protected bool m_CooldownAtEnd;
+        [SerializeField] protected Skill m_Skill;
+        [SerializeField] protected Actor m_Actor;
 
         public Actor Caster
         {

@@ -57,7 +57,7 @@ MonoBehaviour:
   m_CooldownAtEnd: 0
   m_Skill: {fileID: 0}
   m_Actor: {fileID: 0}
-  m_HitEffect: {fileID: 3898783526648824513, guid: a7129a734008da943864f334d3cadcfb, type: 3}
+  m_HitEffect: {fileID: 3898783526648824513, guid: 30fee4f4af724bd40956f3d1480cb963, type: 3}
   m_Animations:
   - attack/combo_1
   m_HitRange: 0.7

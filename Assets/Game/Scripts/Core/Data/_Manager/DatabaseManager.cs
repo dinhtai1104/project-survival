@@ -12,17 +12,17 @@ using Assets.Game.Scripts.Core.Data.Database.Dungeon.EnemyEvent;
 
 public class DatabaseManager : MonoSingleton<DatabaseManager>
 {
-    private List<DataTable> databases = new List<DataTable>();
+    private List<DataTable> databases = new();
 
-    public EnemyTable EnemyTable = new EnemyTable();
-    public DungeonTable Dungeon = new DungeonTable();
-    public EnemiesEventTable EnemiesEvent = new EnemiesEventTable();
-    public DungeonWaveTable DungeonWave = new DungeonWaveTable();
+    public EnemyTable EnemyTable = new();
+    public DungeonTable Dungeon = new();
+    public EnemiesEventTable EnemiesEvent = new();
+    public DungeonWaveTable DungeonWave = new();
 
-    public RarityTable Rarity = new RarityTable();
-    public GearTable RarityGear = new GearTable();
-    public EquipmentTable Equipment = new EquipmentTable();
-    public WeaponTable Weapon = new WeaponTable();
+    public RarityTable Rarity = new();
+    public GearPerkTable GearPerk = new();
+    public EquipmentTable Equipment = new();
+    public WeaponTable Weapon = new();
 
     public void Init(Transform parent = null)
     {
@@ -41,7 +41,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
         databases.Add(Dungeon);
 
         databases.Add(Rarity);
-        databases.Add(RarityGear);
+        databases.Add(GearPerk);
         databases.Add(Equipment);
         databases.Add(Weapon);
     } 

@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 namespace Assets.Game.Scripts.Core.Data.Database.Equipment.Gear
 {
     [System.Serializable]
-    public class GearEntity
+    public class GearPerkEntity
     {
         public string IdEquipment;
         public string IdGear;
         public ERarity Rarity;
         public RarityPerkModifier PerkModifier;
 
-        public GearEntity(BGEntity e)
+        public GearPerkEntity(BGEntity e)
         {
             IdEquipment = e.Get<string>("IdEquipment");
             IdGear = e.Get<string>("IdGear");

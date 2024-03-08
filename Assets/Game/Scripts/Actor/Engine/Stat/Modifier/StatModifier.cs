@@ -80,5 +80,10 @@ namespace Engine
 
             return pre + " " + Value + aff;
         }
+
+        public StatModifier Clone()
+        {
+            return new StatModifier(Type, value);
+        }
     }
 }

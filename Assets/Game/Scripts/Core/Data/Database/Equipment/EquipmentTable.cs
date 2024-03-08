@@ -12,12 +12,13 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment
     {
         public override void GetDatabase()
         {
+            DB_Equipment.ForEachEntity(e => Get(e));
         }
 
         private void Get(BGEntity e)
         {
             var equip = new EquipmentEntity(e);
-            Dictionary.Add(equip.Id, equip);
+            Dictionary.Add(equip.IdEquipment, equip);
         }
     }
 }

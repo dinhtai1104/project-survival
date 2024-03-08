@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4622606185252804137}
-  m_AppearEffect: {fileID: 0}
-  m_ImpactEffect: {fileID: 0}
+  m_AppearEffect: {fileID: 7241903803212873611, guid: dfb6a905524275c488f7c1a3b96f1dc8, type: 3}
+  m_ImpactEffect: {fileID: 3898783526648824513, guid: 1948a26170db3e247b00cd0ff5fe7bed, type: 3}
   m_CritHitEffect: {fileID: 0}
   m_DamageDealer:
     m_Source:
@@ -74,6 +74,7 @@ MonoBehaviour:
   m_DestroyOnMaximumDistance: 1
   m_DestroyOnMaximumDuration: 1
   m_TargetNumber: 1
+  m_PiercingReduce: 0
   m_RequireInsideCollider: 0
   m_StartBulletEvent:
     m_PersistentCalls:
@@ -148,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b75bf5b6cd8d6449f62775d4aa9671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 40
-  m_LookAt: 1
+  m_Speed: 10
+  m_LookAt: 0
   m_NoiseAngle: 0
 --- !u!50 &2217161270523324616
 Rigidbody2D:

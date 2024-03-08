@@ -28,5 +28,12 @@
         public const string ConsumableHeal = "ConsumableHeal";
         public const string PatrolEarn = "PatrolEarn";
         public const string BossDamage = "BossDamage";
+
+
+        public const string Projectiles = "Projectiles";
+        public const string Pierce = "Pierce";
+        public const string PierceReduce = "PierceReduce";
+        public const string AngleZone = "AngleZone";
+        public const string Velocity = "Velocity";
     }
 }

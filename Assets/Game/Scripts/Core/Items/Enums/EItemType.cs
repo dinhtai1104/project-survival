@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Framework
 {
-    public enum EItemSlot : byte
+    public enum EItemType : byte
     {
         Weapon,
         Helmet,

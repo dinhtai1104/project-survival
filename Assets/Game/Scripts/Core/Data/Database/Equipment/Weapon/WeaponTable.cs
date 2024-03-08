@@ -13,6 +13,7 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon
     {
         public override void GetDatabase()
         {
+            DB_Weapon.ForEachEntity(e => Get(e));
         }
         
         private void Get(BGEntity e)

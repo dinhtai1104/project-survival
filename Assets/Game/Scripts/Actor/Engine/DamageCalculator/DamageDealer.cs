@@ -24,12 +24,12 @@ namespace Engine
 
         public void Init(IStatGroup stat)
         {
-            //stat.AddListener(StatKey.Damage, OnUpdateBaseDamage);
+            stat.AddListener(StatKey.Damage, OnUpdateBaseDamage);
         }
 
         public void Release(IStatGroup stat)
         {
-            //stat.RemoveListener(StatKey.Damage, OnUpdateBaseDamage);
+            stat.RemoveListener(StatKey.Damage, OnUpdateBaseDamage);
         }
 
         private void OnUpdateBaseDamage(float value)

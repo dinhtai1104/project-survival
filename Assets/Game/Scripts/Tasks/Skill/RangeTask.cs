@@ -10,7 +10,7 @@ using UnityEngine.Events;
 public class RangeTask : SkillTask
 {
     [SerializeField] private string m_Animation;
-    [SerializeField] private Transform m_FirePoint;
+    [SerializeField] protected Transform m_FirePoint;
     [SerializeField] private string m_EventName;
     [SerializeField] private GameObject m_BulletPrefab;
     [SerializeField] private DamageDealer m_DamageDealer;
@@ -81,25 +81,28 @@ public class RangeTask : SkillTask
         }
         if (m_EventData != null) Caster.Animation.UnsubcribeEvent(OnAttack);
     }
-    private void Attack()
+    protected virtual void Attack()
     {
         if (m_BulletPrefab == null) return;
+        CreateBullet(m_FirePoint.rotation);
+    }
 
+    protected virtual Bullet2D CreateBullet(Quaternion angle)
+    {
         var firePosition = m_FirePoint.position;
-        var fireRotation = m_FirePoint.rotation;
+        var fireRotation = angle;
 
         GameObject gameObject = PoolManager.Instance.Spawn(m_BulletPrefab, firePosition, fireRotation);
-        
+
         Bullet2D bullet = gameObject.GetComponent<Bullet2D>();
         bullet.Owner = Caster;
         bullet.TargetLayer = Caster.EnemyLayerMask;
 
+
         // Add rotation noise
-        Vector3 eulerAngles = bullet.Trans.rotation.eulerAngles;
+        Vector3 eulerAngles = bullet.Trans.eulerAngles;
         eulerAngles.z += Random.Range(m_NoiseAngle.x, m_NoiseAngle.y);
         bullet.Trans.rotation = Quaternion.Euler(eulerAngles);
-
-
         var target = Caster.TargetFinder.CurrentTarget;
         if (target != null)
         {
@@ -111,10 +114,13 @@ public class RangeTask : SkillTask
         {
             bullet.DamageDealer?.CopyData(m_DamageDealer);
         }
-
         m_OnStartBullet.Invoke(bullet);
         bullet.StartBullet();
+
+        return bullet;
     }
+
+    protected virtual void SetupBullet(Bullet2D bullet) { }
 
     private void OnAttack(TrackEntry trackEntry, Spine.Event e)
     {

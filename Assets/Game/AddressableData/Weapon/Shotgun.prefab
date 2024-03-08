@@ -125,7 +125,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4647584340083678309}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a840e7ee9bff4449a19c4d6781fc34d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c4a76e476db654429e638d14ea800a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_ManuallySetUpRelation: 0
@@ -327,7 +327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7924887141545511704, guid: e9c0a2d584c077842826782d93e74ce8, type: 3}
       propertyPath: m_Name
-      value: AK
+      value: Shotgun
       objectReference: {fileID: 0}
     - target: {fileID: 8761448800729187578, guid: e9c0a2d584c077842826782d93e74ce8, type: 3}
       propertyPath: m_Cooldown._baseValue

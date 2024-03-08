@@ -22,6 +22,7 @@ public class Bullet2D : MonoBehaviour
     [SerializeField] private bool m_DestroyOnMaximumDistance = true;
     [SerializeField] private bool m_DestroyOnMaximumDuration = false;
     [SerializeField] private int m_TargetNumber = 1;
+    [SerializeField] private float m_PiercingReduce = 0;
     [SerializeField] private bool m_RequireInsideCollider;
     [SerializeField] private UnityEvent m_StartBulletEvent;
     [SerializeField] private UnityEvent m_MaxDistanceEvent;
@@ -94,6 +95,9 @@ public class Bullet2D : MonoBehaviour
         get { return m_Owner; }
     }
 
+    public int TargetNumber { get => m_TargetNumber; set => m_TargetNumber = value; }
+    public float PiercingReduce { get => m_PiercingReduce; set => m_PiercingReduce = value; }
+
     protected virtual void Awake()
     {
         Trans = transform;
@@ -143,6 +147,7 @@ public class Bullet2D : MonoBehaviour
             if (target == null) return;
             if (m_DealDamageOnContact && m_DamageDealer != null)
             {
+                m_DamageDealer.DamageSource.AddModifier(new StatModifier(EStatMod.PercentAdd, -PiercingReduce));
                 m_TargetCount++;
                 var hitResult = m_DamageDealer.DealDamage(Owner, target);
 
@@ -171,7 +176,7 @@ public class Bullet2D : MonoBehaviour
             m_HitEvent.Invoke();
             OnHitTarget?.Invoke(this, target);
 
-            if (m_DestroyOnImpact)
+            if (m_DestroyOnImpact && m_TargetCount >= m_TargetNumber)
             {
                 Despawn();
             }
@@ -213,6 +218,8 @@ public class Bullet2D : MonoBehaviour
     {
         m_Update = false;
         m_TargetCount = 0;
+        m_TargetNumber = 1;
+        m_PiercingReduce = 0;
         ReachMaxDistance = false;
         Target = null;
         TargetPosition = Vector3.zero;

@@ -11,7 +11,7 @@ namespace Framework
     [System.Serializable]
     public class EquipmentHandler 
     {
-        private Dictionary<EItemSlot, EquipableItem> m_EquipmentSlots;
+        private Dictionary<EItemType, EquipableItem> m_EquipmentSlots;
         private List<EquipableItem> m_Equipments;
         private IStatGroup m_Stat;
         public event Action<EquipableItem> OnEquipItem;
@@ -23,10 +23,10 @@ namespace Framework
         public EquipmentHandler(IStatGroup stat)
         {
             m_Stat = stat;
-            m_EquipmentSlots = new Dictionary<EItemSlot, EquipableItem>();
+            m_EquipmentSlots = new Dictionary<EItemType, EquipableItem>();
             m_Equipments = new List<EquipableItem>();
 
-            foreach (var slot in Enum.GetValues(typeof(EItemSlot)) as EItemSlot[])
+            foreach (var slot in Enum.GetValues(typeof(EItemType)) as EItemType[])
             {
                 m_EquipmentSlots.Add(slot, null);
             }
@@ -65,7 +65,7 @@ namespace Framework
             item.OnEquip(m_Stat);
         }
 
-        public void Unequip(EItemSlot slot)
+        public void Unequip(EItemType slot)
         {
             if (!m_EquipmentSlots.ContainsKey(slot)) return;
             

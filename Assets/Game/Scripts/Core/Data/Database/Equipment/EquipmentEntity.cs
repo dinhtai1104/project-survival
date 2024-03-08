@@ -13,22 +13,21 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment
     [System.Serializable]
     public class EquipmentEntity
     {
-        public string Id;
-        public string Name;
-        public EItemSlot SlotType;
-        public Dictionary<ERarity, GearEntity> RarityPerks;
+        public string IdEquipment;
+        public EItemType ItemType;
+        public Dictionary<ERarity, GearPerkEntity> RarityPerks;
         public string BaseStatKey => BaseStat.AttributeName;
         public ModifierData BaseStat;
 
         public EquipmentEntity(BGEntity e)
         {
-            Id = e.Get<string>("Id");
-            Name = e.Get<string>("Name");
-            Enum.TryParse(e.Get<string>("SlotType"), out SlotType);
-            RarityPerks = DataManager.Base.RarityGear.GetRarityPerks(Id);
+            IdEquipment = e.Get<string>("IdEquipment");
+            //Name = e.Get<string>("Name");
+            Enum.TryParse(e.Get<string>("ItemType"), out ItemType);
+            RarityPerks = DataManager.Base.GearPerk.GetRarityPerks(IdEquipment);
 
-            var statData = e.Get<string>("Stat").Split(';');
-            BaseStat = new ModifierData(statData[0], new StatModifier(EStatMod.Flat, float.Parse(statData[1])));
+            var statData = e.Get<string>("StatName");
+            BaseStat = new ModifierData(statData, new StatModifier(EStatMod.Flat, e.Get<float>("Stat")));
         }
     }
 }

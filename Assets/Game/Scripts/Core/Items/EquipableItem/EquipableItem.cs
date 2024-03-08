@@ -21,12 +21,12 @@ namespace Framework
         // Properties
         private int m_ItemLevel;
         private bool m_IsEquipped;
-        private EItemSlot m_SlotType;
+        private EItemType m_SlotType;
         private StatAffix m_baseStatAffix;
         private ERarity m_Rarity;
         private List<BaseAffix> m_ListAffixes;
 
-        public EItemSlot SlotType => m_SlotType;
+        public EItemType SlotType => m_SlotType;
         public StatAffix BaseStatAffix => m_baseStatAffix;
         public ERarity Rarity => m_Rarity;
         public bool IsEquipped { get => m_IsEquipped; set => m_IsEquipped = value; }
