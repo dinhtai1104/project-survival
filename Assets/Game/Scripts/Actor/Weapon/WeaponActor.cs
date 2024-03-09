@@ -29,7 +29,7 @@ namespace Engine.Weapon
 
             Stats.AddStat(StatKey.Damage, weaponEntity.Damage, 0);
             Stats.AddStat(StatKey.AttackRange, weaponEntity.RangeAttack);
-            Stats.AddStat(StatKey.AttackSpeed, weaponEntity.AttackSpeed, 0.5f);
+            Stats.AddStat(StatKey.AttackSpeed, weaponEntity.AttackSpeed, 0.05f);
             Stats.AddStat(StatKey.Knockback, weaponEntity.Knockback);
             Stats.AddStat(StatKey.Projectiles, weaponEntity.Projectiles, 1);
             Stats.AddStat(StatKey.CritChance, weaponEntity.CritChance, 0);
@@ -40,6 +40,11 @@ namespace Engine.Weapon
 
             foreach (var statOther in weaponEntity.OtherStats)
             {
+                if (!Stats.HasStat(statOther.AttributeName))
+                {
+                    Stats.AddStat(statOther.AttributeName, statOther.Modifier.Value);
+                    continue;
+                }
                 Stats.AddModifier(statOther.AttributeName, statOther.Modifier.Clone(), null);
             }
 

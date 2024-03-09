@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using Assets.Game.Scripts.Events;
+using Core;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Spine.Unity.Examples.BasicPlatformerController;
 
 namespace Engine
 {
@@ -100,6 +101,7 @@ namespace Engine
             var hitResult = new HitResult(success, false, crit, lastHit, hurt, evade, block, damage, source.Type);
 
             //FireEvent After Hit
+            Architecture.Get<EventMgr>().Fire(this, new AttackEventArgs(attacker, defender, hitResult));
             //GameCore.Event.Fire(this, DamageAfterHitEventArgs.Create(attacker, defender, source, hitResult));
 
             if (lastHit)
@@ -135,8 +137,6 @@ namespace Engine
 
             // Calculate base damage
             float damage = source.Value;
-
-            // Reflect damage to attacker. Cannot reflect Reflect and Overtime damage
 
             damage += defender.Health != null ? defender.Health.MaxHealth * source.DamageHealthPercentage : 0f;
             if (damage < MinDamage) damage = MinDamage;

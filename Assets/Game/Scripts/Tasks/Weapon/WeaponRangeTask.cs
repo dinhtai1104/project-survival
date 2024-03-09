@@ -23,14 +23,18 @@ namespace Assets.Game.Scripts.Tasks.Weapon
         private int m_PiercingCount = 0;
         private float m_PiercingReduceDmg = 0;
         private float m_AngleZone = 0;
+        private float m_Speed = 0;
         public override void Begin()
         {
             base.Begin();
 
-            m_ProjectileCount = (int)Caster.Stats.GetValue(StatKey.Projectiles);
-            m_PiercingCount = (int)Caster.Stats.GetValue(StatKey.Pierce);
-            m_PiercingReduceDmg = Caster.Stats.GetValue(StatKey.PierceReduce);
-            m_AngleZone = Caster.Stats.GetValue(StatKey.AngleZone);
+            m_ProjectileCount = (int)Caster.Stats.GetValue(StatKey.Projectiles, 1);
+            m_PiercingCount = (int)Caster.Stats.GetValue(StatKey.Pierce, 0) + 1;
+            m_PiercingReduceDmg = Caster.Stats.GetValue(StatKey.PierceReduce, 0.25f);
+            m_AngleZone = Caster.Stats.GetValue(StatKey.AngleZone, 0);
+            m_Speed = Caster.Stats.GetValue(StatKey.AngleZone, 10);
+
+            DefaultSpeed = new Stat(m_Speed);
         }
 
         protected override void Attack()
@@ -49,6 +53,7 @@ namespace Assets.Game.Scripts.Tasks.Weapon
             base.SetupBullet(bullet);
             bullet.TargetNumber = m_PiercingCount;
             bullet.PiercingReduce = m_PiercingReduceDmg;
+            bullet.SetSpeed(DefaultSpeed);
         }
     }
 }

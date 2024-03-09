@@ -22,7 +22,7 @@ namespace Engine
 
         public float Value
         {
-            set { m_Damage.BaseValue = value; }
+            set { m_Damage.BaseValue = value; m_Damage.RecalculateValue(); }
             get { return m_Damage.Value; }
         }
 
@@ -34,6 +34,11 @@ namespace Engine
         public void RemoveModifier(StatModifier mod)
         {
             m_Damage.RemoveModifier(mod);
+        }
+
+        public void ClearModifiers()
+        {
+            m_Damage.ClearModifiers();
         }
 
         public float DamageHealthPercentage

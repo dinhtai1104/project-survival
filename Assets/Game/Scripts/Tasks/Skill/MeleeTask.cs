@@ -38,6 +38,7 @@ public class MeleeTask : SkillTask
 
     public override void Begin()
     {
+        m_DamageDealer.Init(Caster.Stats);
         m_DamageDealer.DamageSource.Value = Caster.Stats.GetBaseValue(StatKey.Damage);
         m_AttackEventData = Caster.Animation.FindEvent(m_EventName);
         if (m_AttackEventData != null)

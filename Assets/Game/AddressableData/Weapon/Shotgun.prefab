@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 525ebe56230dc3c4a84756ae0d6879db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75d5658a9ba1b3540a92d251094f305f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Animation: 
   m_FirePoint: {fileID: 1366791992288689839}
   m_EventName: 
-  m_BulletPrefab: {fileID: 184124638555975885, guid: 08d0d44c2919aad4288113268e19f265, type: 3}
+  m_BulletPrefab: {fileID: 184124638555975885, guid: 6a2d69d04748ec84ebaeb2f117c1a7d5, type: 3}
   m_DamageDealer:
     m_Source:
       m_Damage:
@@ -166,6 +166,11 @@ MonoBehaviour:
   m_OnStartBullet:
     m_PersistentCalls:
       m_Calls: []
+  DefaultSpeed:
+    _baseValue: 10
+    _minValue: 0
+    _maxValue: 3.4028235e+38
+    attributeModifiers: []
 --- !u!1 &8764674386403803599
 GameObject:
   m_ObjectHideFlags: 0

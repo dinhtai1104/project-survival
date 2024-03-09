@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MoveStraightToTarget : MonoBehaviour, IBulletMovement
 {
-    [SerializeField] private float m_Speed;
+    [SerializeField] private Stat m_SpeedStat = new Stat(10);
     [SerializeField] private bool m_LookAt;
     [SerializeField, Range(0f, 180f)] private float m_NoiseAngle;
 
@@ -13,18 +13,19 @@ public class MoveStraightToTarget : MonoBehaviour, IBulletMovement
     private Transform m_Trans;
     private Vector3 m_Dir;
     private Vector3 m_TargetPos;
-    private Stat m_SpeedStat;
     private bool m_Update;
+
+    public Stat Speed { get { return m_SpeedStat; } set { m_SpeedStat = value; } }
 
     private void Awake()
     {
         m_Trans = transform;
         m_Bullet = GetComponent<Bullet2D>();
-        m_SpeedStat = new Stat(m_Speed);
     }
 
     public void Move()
     {
+        Speed.RecalculateValue();
         var target = m_Bullet.Owner.TargetFinder.CurrentTarget;
         if (target != null)
         {

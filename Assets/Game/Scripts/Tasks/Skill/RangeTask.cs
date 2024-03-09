@@ -22,6 +22,8 @@ public class RangeTask : SkillTask
 
     private Spine.EventData m_EventData;
 
+    [SerializeField] protected Stat DefaultSpeed = new Stat(10);
+
     public GameObject BulletPrefab
     {
         get { return m_BulletPrefab; }
@@ -29,6 +31,7 @@ public class RangeTask : SkillTask
 
     public override void Begin()
     {
+        DefaultSpeed = ConstantValue.DefaultSpeed;
         if (m_EventName.IsNotNullAndEmpty())
         {
             m_EventData = Caster.Animation.FindEvent(m_EventName);
@@ -37,6 +40,7 @@ public class RangeTask : SkillTask
         }
 
         m_DamageDealer.Init(Caster.Stats);
+        m_DamageDealer.DamageSource.Value = Caster.Stats.GetValue(StatKey.Damage);
         base.Begin();
         if (!m_Animation.IsNotNullAndEmpty() || !m_EventName.IsNotNullAndEmpty())
         {
@@ -83,8 +87,13 @@ public class RangeTask : SkillTask
     }
     protected virtual void Attack()
     {
+        var target = Caster.TargetFinder.CurrentTarget;
+        if (target == null) return;
         if (m_BulletPrefab == null) return;
-        CreateBullet(m_FirePoint.rotation);
+        var dir = target.CenterPosition - m_FirePoint.position;
+
+        var quaternionTarget = Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg);
+        CreateBullet(quaternionTarget);
     }
 
     protected virtual Bullet2D CreateBullet(Quaternion angle)
@@ -115,6 +124,8 @@ public class RangeTask : SkillTask
             bullet.DamageDealer?.CopyData(m_DamageDealer);
         }
         m_OnStartBullet.Invoke(bullet);
+        bullet.SetSpeed(DefaultSpeed);
+        SetupBullet(bullet);
         bullet.StartBullet();
 
         return bullet;

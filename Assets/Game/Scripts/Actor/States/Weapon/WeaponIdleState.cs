@@ -13,6 +13,7 @@ namespace Assets.Game.Scripts.Actor.States.Weapon
         public override void Enter()
         {
             base.Enter();
+            m_Cooldown = new Stat(Actor.Stats.GetValue(StatKey.AttackSpeed));
             m_CooldownTimer = 0;
             m_Cooldown.RecalculateValue();
         }

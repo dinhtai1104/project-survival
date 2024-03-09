@@ -21,6 +21,7 @@ namespace Engine
         public override void Init(TeamModel teamModel)
         {
             base.Init(teamModel);
+            WeaponHolder.Init(this);
             m_StatBridge = new ActorStatBridge(this);
         }
         public override void Reset()

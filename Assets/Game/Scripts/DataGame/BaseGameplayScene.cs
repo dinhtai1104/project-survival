@@ -59,20 +59,20 @@ namespace Gameplay
         private void EquipWeapon()
         {
             var listWea = new List<WeaponActor>();
-            //for (int i = 0; i < 4; i++)
-            //{
-                var prefab = GetRequestedAsset<GameObject>("weapon-5").GetComponent<WeaponActor>();
+            var prefab = GetRequestedAsset<GameObject>("weapon-5").GetComponent<WeaponActor>();
 
-                var weaponIns = PoolManager.Instance.Spawn(prefab);
-                weaponIns.Prepare();
-                weaponIns.Init(TeamManager.GetTeamModel(ConstantValue.PlayerTeamId));
-                weaponIns.InitOwner(MainPlayer);
+            // Spawn Weapon
+            var weaponIns = PoolManager.Instance.Spawn(prefab);
+            weaponIns.Prepare();
+            weaponIns.Init(TeamManager.GetTeamModel(ConstantValue.PlayerTeamId));
+            weaponIns.InitOwner(MainPlayer);
 
-                // TODO:
-                //weaponIns.InitWeapon(null);
+            // TODO:
+            // Test -> Get Shotgun weapon
+            var smgEntity = DataManager.Base.Weapon.Get("1")[ERarity.UnCommon];
+            weaponIns.InitWeapon(smgEntity);
 
-                listWea.Add(weaponIns);
-            //}
+            listWea.Add(weaponIns);
             (MainPlayer as PlayerActor).WeaponHolder.SetupWeapon(listWea);
         }
 
@@ -110,7 +110,7 @@ namespace Gameplay
             RequestAsset<GameObject>("weapon-2", pathWp.AddParams("Pistol"));
             RequestAsset<GameObject>("weapon-3", pathWp.AddParams("AK"));
             RequestAsset<GameObject>("weapon-4", pathWp.AddParams("AK"));
-            RequestAsset<GameObject>("weapon-5", pathWp.AddParams("Shotgun"));
+            RequestAsset<GameObject>("weapon-5", pathWp.AddParams("SMG"));
 
             return taskPlayer;
         }

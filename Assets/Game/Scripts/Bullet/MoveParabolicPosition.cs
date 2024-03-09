@@ -24,6 +24,8 @@ public class MoveParabolicPosition : MonoBehaviour, IBulletMovement
     private float m_Distance;
     private CoroutineHandle m_DespawnEnumerator;
 
+    public Stat Speed { get { return m_Speed; } set { m_Speed = value; } }
+
     private void Awake()
     {
         m_Trans = transform;
@@ -32,6 +34,7 @@ public class MoveParabolicPosition : MonoBehaviour, IBulletMovement
 
     public void Move()
     {
+        Speed.RecalculateValue();
         m_ReachTarget = false;
         m_StartPos = m_Trans.position;
         if (m_Bullet.Target != null)

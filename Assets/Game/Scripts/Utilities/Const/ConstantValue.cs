@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Engine;
+using System.Collections.Generic;
 
 public static class ConstantValue
 {
@@ -7,4 +8,8 @@ public static class ConstantValue
 
     public const string TagBoss = "Boss";
     public const float ClusterRange = 3;
+
+    public const int Weapon_MaxSlot = 6;
+
+    public static Stat DefaultSpeed = new Stat(10);
 }

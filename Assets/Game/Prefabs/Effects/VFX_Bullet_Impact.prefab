@@ -19564,6 +19564,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4223418172314628397}
+  - component: {fileID: -5255211923449201145}
+  - component: {fileID: 6312008582542657991}
   m_Layer: 0
   m_Name: VFX_Bullet_Impact
   m_TagString: Untagged
@@ -19587,3 +19589,30 @@ Transform:
   - {fileID: 7301138347368036511}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5255211923449201145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255720225982883778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4b83fc95b621544a1016532721175a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimeLive: 1
+--- !u!114 &6312008582542657991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255720225982883778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3607ba75b84be42bf537e3b5ed9b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CleanOnEnable: 1
+  m_Particles: []

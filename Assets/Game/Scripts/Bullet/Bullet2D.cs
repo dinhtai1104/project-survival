@@ -98,10 +98,23 @@ public class Bullet2D : MonoBehaviour
     public int TargetNumber { get => m_TargetNumber; set => m_TargetNumber = value; }
     public float PiercingReduce { get => m_PiercingReduce; set => m_PiercingReduce = value; }
 
+    private Stat m_BulletSpeed = new Stat(10);
+
+    private float m_DamageInvoke = 0.2f;
+    private float m_DamageLastInvoke = 0;
+    
+
     protected virtual void Awake()
     {
         Trans = transform;
         Movement = GetComponent<IBulletMovement>();
+        m_BulletSpeed.RecalculateValue();
+    }
+
+    public void SetSpeed(Stat speed)
+    {
+        m_BulletSpeed = speed;
+        m_BulletSpeed.RecalculateValue();
     }
 
     protected virtual void Update()
@@ -145,9 +158,9 @@ public class Bullet2D : MonoBehaviour
         {
             var target = other.GetComponent<Actor>();
             if (target == null) return;
+            if (Time.time - m_DamageLastInvoke < m_DamageInvoke) return;
             if (m_DealDamageOnContact && m_DamageDealer != null)
             {
-                m_DamageDealer.DamageSource.AddModifier(new StatModifier(EStatMod.PercentAdd, -PiercingReduce));
                 m_TargetCount++;
                 var hitResult = m_DamageDealer.DealDamage(Owner, target);
 
@@ -173,8 +186,13 @@ public class Bullet2D : MonoBehaviour
                 }
             }
 
+            // Reduce damage when pierce
+            m_DamageDealer.DamageSource.AddModifier(new StatModifier(EStatMod.PercentAdd, -PiercingReduce));
+
             m_HitEvent.Invoke();
             OnHitTarget?.Invoke(this, target);
+
+            m_DamageLastInvoke = Time.time;
 
             if (m_DestroyOnImpact && m_TargetCount >= m_TargetNumber)
             {
@@ -197,6 +215,10 @@ public class Bullet2D : MonoBehaviour
             PoolManager.Instance.Spawn(m_AppearEffect, StartingPosition, Quaternion.identity);
         }
 
+        if (Movement != null)
+        {
+            Movement.Speed = m_BulletSpeed;
+        }
         Movement?.Move();
 
         m_Update = true;
@@ -224,6 +246,7 @@ public class Bullet2D : MonoBehaviour
         Target = null;
         TargetPosition = Vector3.zero;
         OnHitTarget = null;
+        m_DamageDealer.DamageSource.ClearModifiers();
         Movement?.Reset();
     }
 
