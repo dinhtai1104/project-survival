@@ -18,11 +18,12 @@ namespace Gameplay
         public Bound2D SpawnBound => m_SpawnBound;
         public Collider2D CameraBoundaries => m_CameraBoundaries;
 
-
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             m_MapBound.DrawBounds(Color.white);
             m_SpawnBound.DrawBounds(Color.green);
         }
+#endif
     }
 }
