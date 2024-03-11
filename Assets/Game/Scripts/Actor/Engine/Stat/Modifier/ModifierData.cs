@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using Engine;
+using System;
 
 [System.Serializable]
 public class ModifierData
@@ -25,5 +26,14 @@ public class ModifierData
     {
         m_AttributeName = attributeName;
         m_Modifier = modifier;
+    }
+
+    public ModifierData(string param)
+    {
+        var split = param.Trim().Split(';');
+        m_AttributeName = split[0];
+
+        Enum.TryParse(split[1], out EStatMod mod);
+        m_Modifier = new StatModifier(mod, float.Parse(split[2]));
     }
 }
