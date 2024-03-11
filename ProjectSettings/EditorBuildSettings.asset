@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/StartupScene.unity
     guid: 06433d30a9552f9449288d3d45309be7
+  - enabled: 1
+    path: Assets/Game/Scenes/DungeonScene.unity
+    guid: 6af76da43459195419d1e7153b26b43d
+  - enabled: 1
+    path: Assets/Game/Scenes/MenuScene.unity
+    guid: 311105e6593f09d41b7804fce85d6230
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: be9f542e1a083e14b879a8067aeee8a4, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 7c42a2a99bb27ae46a8849f6a892e95f, type: 2}
