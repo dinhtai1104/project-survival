@@ -18,7 +18,12 @@ MonoBehaviour:
   m_GUID: e87035e0da1deb3459314d584ff93c1f
   m_SerializeEntries:
   - m_GUID: 6af76da43459195419d1e7153b26b43d
-    m_Address: AdventureScene
+    m_Address: DungeonScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 311105e6593f09d41b7804fce85d6230
+    m_Address: MenuScene
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

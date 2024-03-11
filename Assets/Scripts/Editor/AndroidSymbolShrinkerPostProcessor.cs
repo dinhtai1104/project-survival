@@ -40,7 +40,7 @@ public class AndroidSymbolShrinkerPostProcessor: IPostprocessBuildWithReport
     {
         if (!EditorUserBuildSettings.androidCreateSymbolsZip) return;
 
-        var outputFilePath = report.files.FirstOrDefault(file =>
+        var outputFilePath = report.GetFiles().FirstOrDefault(file =>
             file.path.Substring(Math.Max(0, file.path.Length - 4)) ==
             (EditorUserBuildSettings.buildAppBundle ? ".aab" : ".apk")).path;
 

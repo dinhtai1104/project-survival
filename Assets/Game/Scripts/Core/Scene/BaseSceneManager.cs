@@ -11,6 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TypeReferences;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 
@@ -233,6 +234,7 @@ namespace SceneManger
             string nextScenePath = GetScenePath(type);
             // Load scene address
 
+            
 
             AsyncOperation loadSceneAsync = SceneManager.LoadSceneAsync(nextScenePath);
             InProgressing(type, loadSceneAsync).Forget();
