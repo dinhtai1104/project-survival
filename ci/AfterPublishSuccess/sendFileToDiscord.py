@@ -40,20 +40,6 @@ workspace = os.environ["WORKSPACE"]
 artifact_url = build_url + "artifact"
 android_identifier = Config.read(Config.KEY.ANDROID_IDENTIFIER)
 google_url = f"https://play.google.com/store/apps/details?id={android_identifier}&hl=en_US&gl=US"
-
-
-
-if (branch.__contains__("ios")):
-    git_full_message = run_command("git log -1 --pretty=format:%B")
-    msg = f'''\
-*{company} | {project} | {"iOS Project"}*
-{build_id} - {committer} | {branch} | {version_name} | {version_code}
-```{git_full_message}```
-Unity Build *SUCCESS*
-'''    
-    Discord().message(message=msg)
-    exit(0)
-
 # Not use function def due to function not get local variable run in jenkins
 for (dirpath, dirnames, filenames) in os.walk(build_folder):
     for file in filenames:

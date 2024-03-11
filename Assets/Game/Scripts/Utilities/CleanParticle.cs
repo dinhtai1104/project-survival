@@ -8,34 +8,40 @@ public class CleanParticle : MonoBehaviour
 {
     [SerializeField] private bool m_CleanOnEnable = true;
     [SerializeField, ReadOnly] private ParticleSystem[] m_Particles;
+    [SerializeField, ReadOnly] private TrailRenderer[] m_Trails;
 
     private void Awake()
     {
         if (m_Particles == null)
         {
             m_Particles = GetComponentsInChildren<ParticleSystem>();
+            m_Trails = GetComponentsInChildren<TrailRenderer>();
         }
     }
 
     private void Start()
     {
-        if (m_CleanOnEnable) return;
         foreach (var m_Particle in m_Particles)
         {
             m_Particle.Clear();
             m_Particle.Simulate(0, true, true);
-            m_Particle.Play();
+        }
+        foreach (var trail in m_Trails)
+        {
+            trail.Clear();
         }
     }
 
-    private void OnEnable()
+    private void OnDisable()
     {
-        if (!m_CleanOnEnable) return;
         foreach (var m_Particle in m_Particles)
         {
             m_Particle.Clear();
             m_Particle.Simulate(0, true, true);
-            m_Particle.Play();
+        }
+        foreach (var trail in m_Trails)
+        {
+            trail.Clear();
         }
     }
 }

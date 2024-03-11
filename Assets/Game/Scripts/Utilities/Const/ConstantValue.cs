@@ -7,7 +7,7 @@ public static class ConstantValue
     public const int PlayerTeamId = 1;
 
     public const string TagBoss = "Boss";
-    public const float ClusterRange = 3;
+    public const float ClusterRange = 1.5f;
 
     public const int Weapon_MaxSlot = 6;
 

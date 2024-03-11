@@ -161,7 +161,6 @@ namespace Engine
             Brain?.Init(this);
             Input.Active = true;
             Shared.ClearAll();
-            Tagger.ClearAll();
             RVO.Init(this);
 
             Health.Initialized = false;

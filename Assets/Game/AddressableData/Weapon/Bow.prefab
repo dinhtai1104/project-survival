@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a3e7d7fcdf13c3f429c500a6b584f037, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4939e5871c475104b93fc08d407b0cbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -242,8 +242,16 @@ MonoBehaviour:
   m_IsPassive: 0
   m_AutoCast: 0
   m_Interruptible: 1
-  m_Cooldown: 0.2
-  m_StartingCooldown: 2
+  m_Cooldown:
+    _baseValue: 0
+    _minValue: 0
+    _maxValue: 3.4028235e+38
+    attributeModifiers: []
+  m_StartingCooldown:
+    _baseValue: 0
+    _minValue: 0
+    _maxValue: 3.4028235e+38
+    attributeModifiers: []
   m_CastingAnimation: 
   m_LockOtherSkills: 1
   m_InvokeCastingSkillManually: 0
@@ -266,6 +274,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4326761806912771417, guid: e9c0a2d584c077842826782d93e74ce8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.115
+      objectReference: {fileID: 0}
     - target: {fileID: 4622930219253877805, guid: e9c0a2d584c077842826782d93e74ce8, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -236,7 +236,6 @@ GameObject:
   - component: {fileID: 6381516466356194058}
   - component: {fileID: 6381516466356194059}
   - component: {fileID: 6381516466356194056}
-  - component: {fileID: 6381516466356194057}
   - component: {fileID: 6381516466356194070}
   - component: {fileID: 6381516466356194071}
   - component: {fileID: 6381516466356194068}
@@ -481,18 +480,6 @@ MonoBehaviour:
   statesHolder: {fileID: 6381516466670010512}
   _startingState:
     _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitBornState, Assembly-CSharp
---- !u!114 &6381516466356194057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6381516466356194067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd55b901629a6042a4258a51b3918a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6381516466356194070
 MonoBehaviour:
   m_ObjectHideFlags: 0

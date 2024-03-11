@@ -50,6 +50,10 @@ namespace Assets.Game.Scripts.GameScene.Dungeon.Main
             m_ControlView.gameObject.SetActive(true);
         }
 
+        public void SetupControlView(Engine.Actor actor)
+        {
+            m_ControlView.Setup(actor);
+        }
 
         public UIHealthBar GetHealthPlayerBar() => m_PlayerHealthBar;
         public UIProgressBar GetExpPlayerBar() => m_PlayerExpBar;
@@ -57,6 +61,11 @@ namespace Assets.Game.Scripts.GameScene.Dungeon.Main
         public void PauseOnClicked()
         {
 
+        }
+        public override void Execute()
+        {
+            base.Execute();
+            m_ControlView.OnExecute();
         }
     }
 }

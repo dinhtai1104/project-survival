@@ -9,7 +9,6 @@ namespace Assets.Game.Scripts.Actor.States.Weapon
         public override void Enter()
         {
             base.Enter();
-            Weapon.SkillCaster.CastRandomAvailableSkill();
         }
 
         public override void Execute()
@@ -18,6 +17,10 @@ namespace Assets.Game.Scripts.Actor.States.Weapon
             if (!Weapon.SkillCaster.HasAvailableSkill)
             {
                 NextState();
+            }
+            else
+            {
+                Weapon.SkillCaster.CastRandomAvailableSkill();
             }
         }
 

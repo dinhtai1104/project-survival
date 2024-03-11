@@ -8,7 +8,7 @@ namespace Ui.View
     public class SafeAreaHandler : MonoBehaviour
     {
         [SerializeField] private Rect rect;
-        [SerializeField] private Direction direction = Direction.Horizontal;
+        [SerializeField] private Direction direction = Direction.Vertical;
 
         // Start is called before the first frame update
         void Awake()

@@ -2144,6 +2144,11 @@
             return selfComponent;
         }
 
+        public static void SetGOActive<T>(this T component, bool active) where T : Component
+        {
+            component.gameObject.SetActive(active);
+        }
+
         public static void CopyDataFromTrans(this Transform selfTrans, Transform fromTrans)
         {
             selfTrans.SetParent(fromTrans.parent);

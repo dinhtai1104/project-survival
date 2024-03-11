@@ -52,5 +52,16 @@ namespace Gameplay
             var weaponEntity = evt.m_WeaponEntity;
             m_WeaponInQueue.Add(weaponEntity);
         }
+
+        public void AddWeapon(WeaponActor weapon)
+        {
+            m_ListWeaponCurrent.Add(weapon);
+            SetupWeapon(m_ListWeaponCurrent);
+        }
+
+        public bool IsMax()
+        {
+            return m_ListWeaponCurrent.Count >= ConstantValue.Weapon_MaxSlot;
+        }
     }
 }

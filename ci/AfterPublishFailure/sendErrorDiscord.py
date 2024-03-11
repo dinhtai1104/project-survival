@@ -4,7 +4,7 @@ import sys
 import traceback
 from DiscordMessage import Discord
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
-import subprocess
+
 import Config
 import SlackCommand
 
@@ -69,10 +69,6 @@ def find_errors_in_log(file):
 
 # Read doc https://api.slack.com/methods/files.upload
 
-
-def run_command(command):
-    return subprocess.run(command, stdout=subprocess.PIPE, shell=True).stdout.decode('utf-8')
-
 # git info
 email = Config.read(Config.KEY.GIT_AUTHOR_EMAIL)
 committer = Config.read(Config.KEY.GIT_COMMITER)
@@ -98,7 +94,7 @@ build_id = os.environ.get("BUILD_DISPLAY_NAME")
 repo = os.environ.get("WORKSPACE")
 
 # slack stuff
-mention_user = email
+mention_user = SlackCommand.get_user_mention(email)
 
 
 if Config.read("UNITY_BUILD_TIMEOUT") == "TRUE":
@@ -109,7 +105,8 @@ if Config.read("UNITY_BUILD_TIMEOUT") == "TRUE":
 {build_id} - {committer} | {branch} | {version_name} | {version_code}
 Unity build *TIMEOUT*
 Detail: {pipeline_url}'''
-    Discord().message(message=msg)    # check Unity failure. Send Script error
+    SlackCommand.send_file(slack_channel, log_file, f"{build_id} log", msg)
+    # check Unity failure. Send Script error
 elif build_failed:
     print("Unity build fail. Send fail log and reaons")
     errors = find_errors_in_log(log_file)

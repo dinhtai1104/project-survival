@@ -1,6 +1,7 @@
 ﻿using BansheeGz.BGDatabase;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
+using System.Linq;
 
 [System.Serializable]
 public abstract class DataTable
@@ -22,5 +23,10 @@ public abstract class DataTable<T, E> : DataTable
     { 
         if (Dictionary.ContainsKey(key)) return Dictionary[key];
         return (E)default;
+    }
+
+    public E GetRandom()
+    {
+        return Dictionary.Values.ToList().Random();
     }
 }

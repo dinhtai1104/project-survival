@@ -17,15 +17,16 @@ namespace Gameplay
     public abstract class BaseGameplayScene : BaseSceneController<GameSceneManager>
     {
         [SerializeField] private TeamManager m_TeamManager;
+        private WeaponFactory m_WeaponFactory;
         public TeamManager TeamManager => m_TeamManager;
 
         private Actor m_MainPlayer;
         protected PlayerGameplayData m_LocalPlayerData;
         private bool _checkingResult;
         protected bool EndGame => !_checkingResult;
-        public Actor MainPlayer => m_MainPlayer;
+        public PlayerActor MainPlayer => m_MainPlayer as PlayerActor;
 
-
+        public WeaponFactory WeaponFactory { get => m_WeaponFactory; set => m_WeaponFactory = value; }
 
         protected abstract bool CheckWinCondition();
         protected abstract bool CheckLoseCondition();
@@ -59,20 +60,24 @@ namespace Gameplay
         private void EquipWeapon()
         {
             var listWea = new List<WeaponActor>();
-            var prefab = GetRequestedAsset<GameObject>("weapon-5").GetComponent<WeaponActor>();
 
-            // Spawn Weapon
-            var weaponIns = PoolManager.Instance.Spawn(prefab);
-            weaponIns.Prepare();
-            weaponIns.Init(TeamManager.GetTeamModel(ConstantValue.PlayerTeamId));
-            weaponIns.InitOwner(MainPlayer);
+            var smgEntity = DataManager.Base.Weapon.Get("1")[ERarity.Legendary];
+            var prefab = GetRequestedAsset<GameObject>(smgEntity.IdEquipment).GetComponent<WeaponActor>();
 
-            // TODO:
-            // Test -> Get Shotgun weapon
-            var smgEntity = DataManager.Base.Weapon.Get("1")[ERarity.UnCommon];
-            weaponIns.InitWeapon(smgEntity);
+            for (int i = 0; i < 2; i++)
+            {
+                // Spawn Weapon
+                var weaponIns = PoolManager.Instance.Spawn(prefab);
+                weaponIns.Prepare();
+                weaponIns.Init(TeamManager.GetTeamModel(ConstantValue.PlayerTeamId));
+                weaponIns.InitOwner(MainPlayer);
 
-            listWea.Add(weaponIns);
+                // TODO:
+                // Test -> Get Shotgun weapon
+                weaponIns.InitWeapon(smgEntity);
+
+                listWea.Add(weaponIns);
+            }
             (MainPlayer as PlayerActor).WeaponHolder.SetupWeapon(listWea);
         }
 
@@ -92,6 +97,7 @@ namespace Gameplay
 
         public override UniTask RequestAssets()
         {
+            WeaponFactory = new WeaponFactory(SceneManager, this);
             if (!Architecture.Get<ShortTermMemoryService>().RetrieveMemory<LocalPlayerMemory>(out var playerData))
             {
                 playerData = new LocalPlayerMemory(PlayerGameplayData.CreateTest());
@@ -102,15 +108,20 @@ namespace Gameplay
             var playerPath = "Player/Player0.prefab";
             var taskPlayer = RequestAsset<GameObject>("player", playerPath);
 
+            foreach (var weapon in DataManager.Base.Weapon.Dictionary)
+            {
+                var id = weapon.Value[ERarity.Common];
+                RequestAsset<GameObject>(id.IdEquipment, id.PrefabPath);
+            }
 
-            // Request weapon
-            var pathWp = "Weapon/{0}.prefab";
-            RequestAsset<GameObject>("weapon-0", pathWp.AddParams("Axe-2"));
-            RequestAsset<GameObject>("weapon-1", pathWp.AddParams("Axe"));
-            RequestAsset<GameObject>("weapon-2", pathWp.AddParams("Pistol"));
-            RequestAsset<GameObject>("weapon-3", pathWp.AddParams("AK"));
-            RequestAsset<GameObject>("weapon-4", pathWp.AddParams("AK"));
-            RequestAsset<GameObject>("weapon-5", pathWp.AddParams("SMG"));
+            //// Request weapon
+            //var pathWp = "Weapon/{0}.prefab";
+            //RequestAsset<GameObject>("weapon-0", pathWp.AddParams("Axe-2"));
+            //RequestAsset<GameObject>("weapon-1", pathWp.AddParams("Axe"));
+            //RequestAsset<GameObject>("weapon-2", pathWp.AddParams("Pistol"));
+            //RequestAsset<GameObject>("weapon-3", pathWp.AddParams("AK"));
+            //RequestAsset<GameObject>("weapon-4", pathWp.AddParams("AK"));
+            //RequestAsset<GameObject>("weapon-5", pathWp.AddParams("SMG"));
 
             return taskPlayer;
         }

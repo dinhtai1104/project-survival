@@ -13,5 +13,7 @@ namespace Engine
         public const string RangeTag = "Range";
         public const string MeleeTag = "Melee";
         public const string ImmuneTag = "Immune";
+
+        public const string Status_CrowdControl = "Status_CrowdControl";
     }
 }

@@ -20,12 +20,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Ui.View;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using Random = UnityEngine.Random;
 
 namespace Assets.Game.Scripts.Dungeon
 {
     public class DungeonSceneController : BaseGameplayScene
     {
+        [SerializeField] private AssetReference m_EffectSpawnEnemy;
+
         private Bound2D m_Bound2D;
         [SerializeField]
         private DungeonEnemySpawner m_Spawner;
@@ -57,6 +60,7 @@ namespace Assets.Game.Scripts.Dungeon
             IsBossDied = false;
             ScenePresenter.GetPanel<UIDungeonMainPanel>().GetHealthPlayerBar().Init(MainPlayer);
             ScenePresenter.GetPanel<UIDungeonMainPanel>().Show();
+            ScenePresenter.GetPanel<UIDungeonMainPanel>().SetupControlView(MainPlayer);
 
             // Create tick system
             PrepareSystem();
@@ -109,8 +113,24 @@ namespace Assets.Game.Scripts.Dungeon
             MainPlayer.Health.Invincible = false;
         }
 
-        public virtual void StartNextWave()
+        public virtual async UniTask StartNextWave()
         {
+            var loading = SceneManager.CreateSceneTransition(SceneManager.CurrentSceneData.EnterTransitionPrefab);
+            loading.gameObject.SetActive(true);
+
+            if (!MainPlayer.WeaponHolder.IsMax())
+            {
+                var gunEntity = DataManager.Base.Weapon.GetRandom()[ERarity.Common];
+                var weapon = await WeaponFactory.CreateWeapon(gunEntity);
+
+                MainPlayer.WeaponHolder.AddWeapon(weapon);
+            }
+            loading.StartTransition();
+            while (!loading.IsDone)
+            {
+                await UniTask.Yield();
+            }
+
             m_Spawner.StartNextWave(2);
             //CameraController.Instance.SetCameraSize(WaveDungeon.WaveEntity.CameraSize);
 
@@ -182,16 +202,24 @@ namespace Assets.Game.Scripts.Dungeon
         public override void Execute()
         {
             base.Execute();
+            Simulator.Instance.doStep();
             if (EndGame) return;
             ScenePresenter.Execute();
 
-#if UNITY_EDITOR
+#if DEVELOPMENT
             if (Input.GetKeyDown(KeyCode.K))
             {
-                OnWaveTimeEndComplete(0);
+                if (!Spawner.IsLastWave)
+                {
+                    OnWaveTimeEndComplete(0);
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                MainPlayer.Health.Invincible = !MainPlayer.Health.Invincible;
+                Logger.Log("Player Invincible: " + MainPlayer.Health.Invincible, Color.green);
             }
 #endif
-            Simulator.Instance.doStep();
         }
 
         public async override UniTask RequestAssets()
@@ -239,6 +267,10 @@ namespace Assets.Game.Scripts.Dungeon
             synchorousLoading.Add(taskMap);
             synchorousLoading.Add(base.RequestAssets());
             synchorousLoading.Add(uiTask);
+
+            string path = m_EffectSpawnEnemy.RuntimeKey.ToString();
+            var taskEffect = RequestAsset<GameObject>("Effect_Spawn_Enemy", path);
+            synchorousLoading.Add(taskEffect);
 
             await UniTask.WhenAll(synchorousLoading);
         }

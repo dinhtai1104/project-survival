@@ -37,6 +37,7 @@ namespace SceneManger
         private bool _isLoading;
 
         private AssetPreloader m_AssetPreloader;
+        public SceneData CurrentSceneData => _currentSceneData;
 
         #region UNITY METHOD
         protected virtual void Initialize()
@@ -76,6 +77,11 @@ namespace SceneManger
                 IsInitialized = true;
                 _EnterFirstSceneAsync().Forget();
             }
+        }
+
+        public void AddAsyncTask(UniTask task)
+        {
+            m_AssetPreloader.AddAsyncTask(task);
         }
 
         protected override void Awake()
@@ -331,7 +337,7 @@ namespace SceneManger
             return LoadSceneAsync(type);
         }
 
-        private BaseSceneTransition CreateSceneTransition(GameObject prefab)
+        public BaseSceneTransition CreateSceneTransition(GameObject prefab)
         {
             if (prefab == null)
             {
@@ -392,6 +398,11 @@ namespace SceneManger
         public void Clear()
         {
             m_AssetPreloader.Clear();
+        }
+
+        public bool IsCompletedAsyncTask()
+        {
+            return m_AssetPreloader.IsAsyncTaskIsCompleted();
         }
     }
 }

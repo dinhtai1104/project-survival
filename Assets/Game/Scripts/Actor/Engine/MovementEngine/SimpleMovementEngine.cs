@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using DG.Tweening;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
@@ -233,6 +234,11 @@ namespace Engine
             CachedTransform.Translate(Time.deltaTime * multiply * this.Speed.Value * direction, Space.World);
             Bound();
             return true;
+        }
+
+        public void MoveTween(Vector3 dest, float duration)
+        {
+            CachedTransform.DOMove(dest, duration).OnUpdate(() => { Bound(); });
         }
     }
 }

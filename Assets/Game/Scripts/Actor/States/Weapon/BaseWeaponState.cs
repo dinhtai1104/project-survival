@@ -32,7 +32,7 @@ namespace Assets.Game.Scripts.Actor.States.Weapon
             Vector2 dir = Vector2.zero;
             if (target != null)
             {
-                dir = target.CenterPosition - Weapon.CenterPosition;
+                dir = target.CenterPosition - Weapon.Trans.position;
                 
             }
             else

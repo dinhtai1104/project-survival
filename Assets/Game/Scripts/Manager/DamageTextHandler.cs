@@ -21,12 +21,12 @@ namespace Manager
 
         private void OnEnable()
         {
-            Architecture.Get<EventMgr>().Subscribe<AttackEventArgs>(AttackEventHandler);
+            Architecture.Get<EventMgr>().Subscribe<DamageAfterHitEventArgs>(AttackEventHandler);
         }
 
         private void AttackEventHandler(object sender, IEventArgs e)
         {
-            var evt = e as AttackEventArgs;
+            var evt = e as DamageAfterHitEventArgs;
 
             if (!dict.ContainsKey(evt.defender))
             {
@@ -41,7 +41,7 @@ namespace Manager
             damageInfo.damage = evt.hitResult.Damage;
             //damageInfo.lastHitTime = Time.time;
 
-            int direction = evt.attack.CenterPosition.x < evt.defender.CenterPosition.x ? 1 : -1;
+            int direction = evt.attacker.CenterPosition.x < evt.defender.CenterPosition.x ? 1 : -1;
             damageInfo.ShowDamage(direction, prefabs);
 
 
@@ -49,7 +49,7 @@ namespace Manager
 
         private void OnDisable()
         {
-            Architecture.Get<EventMgr>().Unsubscribe<AttackEventArgs>(AttackEventHandler);
+            Architecture.Get<EventMgr>().Unsubscribe<DamageAfterHitEventArgs>(AttackEventHandler);
         }
     }
 }

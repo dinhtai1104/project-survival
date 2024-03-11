@@ -280,6 +280,11 @@ namespace Framework
                     if (HasSpawnEnemy(out var left) && MathUtils.RollChance(waveDefault.DefaultChance / 100f))
                     {
                         var amount = Mathf.Min(left, (int)(waveDefault.DefaultAmount * (1 + CurrentWave.RandomAdd)));
+                        if (IsLastWave)
+                        {
+                            amount = 1;
+                        }
+
                         var IsCluster = MathUtils.RollChance(waveDefault.DefaultCluster / 100f);
                         var centerCluster = MathUtils.RandomPointInBound2D(Bound);
                         var clusterPoint = MathUtils.GetPositionsInCircle(centerCluster, ConstantValue.ClusterRange, amount);

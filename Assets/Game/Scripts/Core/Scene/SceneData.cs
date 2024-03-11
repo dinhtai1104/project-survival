@@ -12,7 +12,6 @@ namespace SceneManger
     [CreateAssetMenu(fileName = "SceneData", menuName = "ScriptableObjects/Scene Data")]
     public class SceneData : ScriptableObject
     {
-        [SerializeField, SceneSelection]
         private string _sceneName;
 
         [SerializeField, ClassExtends(typeof(BaseSceneController))]

@@ -13,9 +13,11 @@ namespace SceneManger.Preloader
     {
         private readonly Dictionary<Type, Dictionary<string, Object>> m_ResourceLookup;
         private IAssetLoader m_AssetLoader;
+        private List<UniTask> m_AsyncTask;
 
         public AssetPreloader(IAssetLoader m_AssetLoader)
         {
+            m_AsyncTask = new List<UniTask>();
             this.m_AssetLoader = m_AssetLoader;
             m_ResourceLookup = new Dictionary<Type, Dictionary<string, Object>>();
         }
@@ -70,6 +72,23 @@ namespace SceneManger.Preloader
             }
 
             return (T)dict[id];
+        }
+
+        public void AddAsyncTask(UniTask task)
+        {
+            m_AsyncTask.Add(task);
+        }
+
+        public bool IsAsyncTaskIsCompleted()
+        {
+            if (m_AsyncTask.Count == 0) return true;
+            foreach (var task in m_AsyncTask)
+            {
+                if (task.Status != UniTaskStatus.Succeeded) return false;
+            }
+
+            m_AsyncTask.Clear();
+            return true;
         }
     }
 }

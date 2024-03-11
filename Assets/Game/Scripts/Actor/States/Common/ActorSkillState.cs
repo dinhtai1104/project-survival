@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Game.Scripts.Actor.States.Common
 {
-    public class ActorSkillState : BaseActorState
+    public class ActorSkillState : BaseSkillState
     {
         public override void Enter()
         {

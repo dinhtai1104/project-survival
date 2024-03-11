@@ -9,11 +9,13 @@ using Assets.Game.Scripts.Core.Data.Database.Equipment;
 using Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon;
 using Assets.Game.Scripts.Core.Data.Database.Rarity;
 using Assets.Game.Scripts.Core.Data.Database.Dungeon.EnemyEvent;
+using Assets.Game.Scripts.Core.Data.Database.Config;
 
 public class DatabaseManager : MonoSingleton<DatabaseManager>
 {
     private List<DataTable> databases = new();
 
+    public GameConfigTable GameConfig = new();
     public EnemyTable EnemyTable = new();
     public DungeonTable Dungeon = new();
     public EnemiesEventTable EnemiesEvent = new();
@@ -35,6 +37,8 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
 
     private void PreloadData()
     {
+        databases.Add(GameConfig);
+
         databases.Add(EnemyTable);
         databases.Add(EnemiesEvent);
         databases.Add(DungeonWave);

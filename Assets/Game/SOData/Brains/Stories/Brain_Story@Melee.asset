@@ -50,6 +50,6 @@ MonoBehaviour:
         _classRef: 
     - m_Decision: {fileID: 11400000, guid: f0475f3e35e7d9b449ff331850df56c6, type: 2}
       m_TrueState:
-        _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitIdleState, Assembly-CSharp
+        _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitChaseState, Assembly-CSharp
       m_FalseState:
         _classRef: 

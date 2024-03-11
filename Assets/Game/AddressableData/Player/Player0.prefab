@@ -862,14 +862,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf0c2b9b03cafa468a7aa717151c318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Animation: run/fight
-  m_TimeDash: 0.5
-  m_DashMulSpeed: 3
-  m_Cooldown:
-    _baseValue: 0
+  _cooldown:
+    _baseValue: 5
     _minValue: 0
     _maxValue: 3.4028235e+38
     attributeModifiers: []
+  m_Animation: run/fight
+  m_TimeDash: 0.5
+  m_DashMulSpeed: 3
 --- !u!114 &7279236687164069472
 MonoBehaviour:
   m_ObjectHideFlags: 0

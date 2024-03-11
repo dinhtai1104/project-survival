@@ -46,6 +46,7 @@ namespace Engine
         bool MoveTo(Vector3 position, float speedMul);
 
         bool MoveDirection(Vector3 direction, float speedMul);
+        void MoveTween(Vector3 dest, float duration);
 
         Vector3 Bound(Vector3 position);
 

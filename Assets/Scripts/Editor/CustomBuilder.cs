@@ -12,15 +12,15 @@ using UnityEngine;
 
 public static class CustomBuilder
 {
-    private const string UserKeystore = ".keystore";
-    private const string KeyaliasName = "";
-    private const string KeyaliasPass = "";
-    private const string KeystorePass = "";
+    private const string UserKeystore = "user.keystore";
+    private const string KeyaliasName = "boba";
+    private const string KeyaliasPass = "123456";
+    private const string KeystorePass = "123456";
 
     private const string GoogleCredentialsId = "";
-    private const string FirebaseAndroidAppId = "";
+    private const string FirebaseAndroidAppId = "1:338671856305:android:9cdaac1243a18d70121090";
     private const string FirebaseIosAppId = "";
-    private const string FirebaseCliToken = "";
+    private const string FirebaseCliToken = "1//0e5ChghiQ4b4qCgYIARAAGA4SNwF-L9IrpbX2HzZkP7npBZ9UwF39Xqy3z3XDs3nyLBEZ_7Gfeank07yIKXUCYyu5HPFJKFAiBes";
 
     #region Build
 
@@ -84,7 +84,7 @@ public static class CustomBuilder
         RemoveScriptingDefineSymbol("UNLOCK"); // Someone might accidentally add this
         EditorUserBuildSettings.development = false;
         EditorUserBuildSettings.allowDebugging = false;
-        EditorUserBuildSettings.symlinkSources = false;
+        EditorUserBuildSettings.symlinkLibraries = false;
         EditorUserBuildSettings.androidCreateSymbolsZip = false;
         EditorUserBuildSettings.buildAppBundle = false;
         EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
@@ -113,7 +113,7 @@ public static class CustomBuilder
         RemoveScriptingDefineSymbol("UNLOCK"); // Someone might accidentally add this
         EditorUserBuildSettings.development = false;
         EditorUserBuildSettings.allowDebugging = false;
-        EditorUserBuildSettings.symlinkSources = false;
+        EditorUserBuildSettings.symlinkLibraries = false;
         EditorUserBuildSettings.androidCreateSymbolsZip = true;
         EditorUserBuildSettings.buildAppBundle = true;
         EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
@@ -136,7 +136,7 @@ public static class CustomBuilder
         AddScriptingDefineSymbol("UNLOCK"); // Someone might accidentally add this
         EditorUserBuildSettings.development = false;
         EditorUserBuildSettings.allowDebugging = false;
-        EditorUserBuildSettings.symlinkSources = false;
+        EditorUserBuildSettings.symlinkLibraries = false;
         EditorUserBuildSettings.androidCreateSymbolsZip = false;
         EditorUserBuildSettings.buildAppBundle = false;
         EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
@@ -146,8 +146,8 @@ public static class CustomBuilder
         buildPlayerOptions.target = BuildTarget.Android;
         buildPlayerOptions.locationPathName = GetAndroidBuildPath();
 
-        // var report = BuildPipeline.BuildPlayer(GetEnabledScenes(), GetAndroidBuildPath(), BuildTarget.Android, BuildOptions.None);
-        var report = BuildPipeline.BuildPlayer(buildPlayerOptions);
+        var report = BuildPipeline.BuildPlayer(GetEnabledScenes(), GetAndroidBuildPath(), BuildTarget.Android, BuildOptions.None);
+        //var report = BuildPipeline.BuildPlayer(buildPlayerOptions);
         var code = report.summary.result == BuildResult.Succeeded ? 0 : 1;
         EditorApplication.Exit(code);
     }
@@ -158,7 +158,7 @@ public static class CustomBuilder
         RemoveScriptingDefineSymbol("DEVELOPMENT"); // Someone might accidentally add this
         EditorUserBuildSettings.development = false;
         EditorUserBuildSettings.allowDebugging = false;
-        EditorUserBuildSettings.symlinkSources = true;
+        EditorUserBuildSettings.symlinkLibraries = true;
         SwitchScriptingImplement(ScriptingImplementation.IL2CPP);
         var report = BuildPipeline.BuildPlayer(GetEnabledScenes(), GetXcodeFolder(), BuildTarget.iOS, BuildOptions.None);
         var code = report.summary.result == BuildResult.Succeeded ? 0 : 1;
@@ -170,9 +170,8 @@ public static class CustomBuilder
         AddScriptingDefineSymbol("DEVELOPMENT");
         EditorUserBuildSettings.development = false;
         EditorUserBuildSettings.allowDebugging = false;
-        EditorUserBuildSettings.symlinkSources = false;
+        EditorUserBuildSettings.symlinkLibraries = false;
         SwitchScriptingImplement(ScriptingImplementation.IL2CPP);
-
         var report =
             BuildPipeline.BuildPlayer(GetEnabledScenes(), GetXcodeFolder(), BuildTarget.iOS, BuildOptions.None);
         var code = report.summary.result == BuildResult.Succeeded ? 0 : 1;
@@ -190,7 +189,13 @@ public static class CustomBuilder
         var definesString =
             PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
         var allDefines = definesString.Split(';').ToList();
-        allDefines.AddRange(defines);
+        foreach (var define in defines)
+            if (!allDefines.Contains(define))
+            {
+                Debug.Log($"LOG::: Add {define} from Define Symbols");
+                allDefines.Add(define);
+            }
+        //allDefines.AddRange(defines);
         PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup,
             string.Join(";", allDefines.ToArray()));
     }
@@ -240,14 +245,9 @@ public static class CustomBuilder
 
         SetupBuildVersion();
         SetupBuildBundleVersion();
-        SetupBuildBundlerVersionToScriptableObject();
+
         AssetDatabase.SaveAssets();
         BuildAddressable();
-    }
-
-    private static void SetupBuildBundlerVersionToScriptableObject()
-    {
-        
     }
 
     private static void KeyStore()
@@ -289,17 +289,12 @@ public static class CustomBuilder
                 PlayerSettings.Android.bundleVersionCode = buildCount;
                 PlayerSettings.iOS.buildNumber = buildCount.ToString();
             }
-            ApplyVersionCode();
         }
         catch (Exception e)
         {
             Console.WriteLine("ERROR::: MISSING Environment for Build versioning");
             Console.WriteLine(e);
         }
-    }
-    private static void ApplyVersionCode()
-    {
-       
     }
 
     private static void SetupBuildVersion()

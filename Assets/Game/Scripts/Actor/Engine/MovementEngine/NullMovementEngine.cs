@@ -137,5 +137,9 @@ namespace Engine
         public void Bound()
         {
         }
+
+        public void MoveTween(Vector3 dest, float duration)
+        {
+        }
     }
 }

@@ -15,13 +15,10 @@ namespace Engine
         bool AutoCast { set; get; }
         bool IsLocked { set; get; }
         bool IsCooldown { get; }
-        string CastingAnimation { get; }
-        float CastingRange { get; }
         bool InvokeCastingSkillManually { set; get; }
         bool StartCooldownManually { set; get; }
         bool LockOtherSkill { set; get; }
         bool IsCooldownTimerRunning { get; }
-        bool IsPassive { set; get; }
         float RemainingCooldownTime { get; }
         bool CanCast { get; }
         float StartingCooldown { set; get; }
@@ -40,5 +37,8 @@ namespace Engine
         void SetActiveCooldownTimer(bool active);
         UnityEvent OnCastingEvent { get; }
         UnityEvent OnExitEvent { get; }
+
+        void SetManuallyCooldown(Stat cooldown);
+        void SetManuallyStartCooldown(Stat cooldown);
     }
 }

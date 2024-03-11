@@ -2,21 +2,25 @@
 using UnityEngine;
 namespace Assets.Game.Scripts.Actor.States.Common
 {
-    public class ActorDashState : BaseActorState
+    public class ActorDashState : ActorSkillState
     {
         [SerializeField] private string m_Animation = "run/fight";
         [SerializeField] protected float m_TimeDash;
         [SerializeField] protected float m_DashMulSpeed = 5;
-        [SerializeField] protected Stat m_Cooldown;
 
         private Vector2 _direction;
         private float m_CurrentTimeDash = 0;
+
+        public Vector2 Direction { get => _direction; set => _direction = value; }
+
         public override void Enter()
         {
             base.Enter();
             _direction = Actor.Movement.CurrentDirection;
             m_CurrentTimeDash = 0;
         }
+
+
         public override void Execute()
         {
             base.Execute();

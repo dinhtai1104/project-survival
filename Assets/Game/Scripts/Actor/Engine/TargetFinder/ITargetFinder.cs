@@ -9,6 +9,8 @@ namespace Engine
         Actor Owner { get; }
         ITargetQuery CurrentQuery { get; }
         Actor CurrentTarget { get; set; }
+        IList<Actor> Enemies { get; }
+        IList<Actor> Allies { get; }
         bool IsUpdatingTarget { set; get; }
         void Init(Actor actor);
         void OnUpdate();

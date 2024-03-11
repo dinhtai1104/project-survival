@@ -175,39 +175,32 @@ pipeline {
 
                         dir(xcode_dir)
                         {
-                            try {
-                                sh "printenv | sort"
-                                sh "yes | cp -rf ../../ci/FastLaneFiles/. ."
-                                withCredentials([string(credentialsId: 'KEYCHAIN_PASSWORD', variable: 'KEYCHAIN_PASSWORD'),
-                                                string(credentialsId: 'FASTLANE_PASSWORD', variable: 'FASTLANE_PASSWORD'),
-                                                string(credentialsId: 'FASTLANE_USER', variable: 'FASTLANE_USER'),
-                                                string(credentialsId: 'MATCH_PASSWORD', variable: 'MATCH_PASSWORD'),
-                                                string(credentialsId: 'FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD', variable: 'FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD')])
-                                {
-    //                                 sshagent (credentials: ['appstore_github'])
-    //                                 {
-                                        // Enable below code if fastlane still cant find ssh key. It add all ssh in ~/.ssh key if jenkins have sudo power (you shouldnt give CI sudo. fastlane cant run in sudo shell)
-                                        // sh "ssh-add -A"
-                                        sh "printenv | sort"
+                            sh "printenv | sort"
+                            sh "yes | cp -rf ../../ci/FastLaneFiles/. ."
+                            withCredentials([string(credentialsId: 'KEYCHAIN_PASSWORD', variable: 'KEYCHAIN_PASSWORD'),
+                                            string(credentialsId: 'FASTLANE_PASSWORD', variable: 'FASTLANE_PASSWORD'),
+                                            string(credentialsId: 'FASTLANE_USER', variable: 'FASTLANE_USER'),
+                                            string(credentialsId: 'MATCH_PASSWORD', variable: 'MATCH_PASSWORD'),
+                                            string(credentialsId: 'FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD', variable: 'FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD')])
+                            {
+//                                 sshagent (credentials: ['appstore_github'])
+//                                 {
+                                    // Enable below code if fastlane still cant find ssh key. It add all ssh in ~/.ssh key if jenkins have sudo power (you shouldnt give CI sudo. fastlane cant run in sudo shell)
+                                    // sh "ssh-add -A"
+                                    sh "printenv | sort"
 
-                                        // For proper keychain setup with fastlane. Create new keychain user in macbook with custom password. login.keychain is the default keychain
-                                        // That included all login for appstore, github, and certification use for fastlane.
-                                        // sh "security list-keychains"
-                                        sh(script:'security -v unlock-keychain -p "${KEYCHAIN_PASSWORD}" ~/Library/Keychains/login.keychain', label: 'Unlock Keychain')
-                                        // sh "security list-keychains"
+                                    // For proper keychain setup with fastlane. Create new keychain user in macbook with custom password. login.keychain is the default keychain
+                                    // That included all login for appstore, github, and certification use for fastlane.
+                                    // sh "security list-keychains"
+                                    sh(script:'security -v unlock-keychain -p "${KEYCHAIN_PASSWORD}" ~/Library/Keychains/login.keychain', label: 'Unlock Keychain')
+                                    // sh "security list-keychains"
 
-                                        def lane = "beta"
-                                        if(env.BRANCH_NAME.toLowerCase().contains("production"))
-                                            lane = "publish"
+                                    def lane = "beta"
+                                    if(env.BRANCH_NAME.toLowerCase().contains("production"))
+                                        lane = "publish"
 
-                                        // env.FASTLANE_SESSION = sh(script:"fastlane spaceauth -u devteam.unimob@gmail.com")
-                                        // echo "FASTLANE_SESSION = ${env.FASTLANE_SESSION}"
-
-                                        sh(script:"bundle exec fastlane ${lane} --verbose 2>&1 | tee ${workspace}/fastlane_log.txt ; ( exit \${PIPESTATUS[0]} )", label: 'Fastlane')
-    //                                 }
-                                }
-                            } catch (err) {
-                                echo err.getMessage()
+                                    sh(script:"bundle exec fastlane ${lane} --verbose 2>&1 | tee ${workspace}/fastlane_log.txt ; ( exit \${PIPESTATUS[0]} )", label: 'Fastlane')
+//                                 }
                             }
                         }
                     }

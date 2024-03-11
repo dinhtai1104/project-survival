@@ -43,8 +43,16 @@ namespace Assets.Game.Scripts.Actor.States.Unit
                 {
                     Vector2RVO pos = Simulator.Instance.getAgentPosition(Actor.RVO.Id);
                     var position = new Vector3(pos.x(), pos.y());
-
-                    Actor.Movement.MoveTo(position);
+                    var dir = Actor.CenterPosition - target.CenterPosition;
+                    if (dir.magnitude < Actor.Stats.GetValue(StatKey.AttackRange) * 0.7f)
+                    {
+                        Actor.Movement.MoveDirection(dir.normalized);
+                        Simulator.Instance.setAgentPosition(Actor.RVO.Id, new Vector2RVO(Actor.BotPosition));
+                    }
+                    else 
+                    {
+                        Actor.Movement.MoveTo(position);
+                    }
                 }
 
                 Vector2RVO goalVector = new Vector2RVO(target.CenterPosition) - Simulator.Instance.getAgentPosition(Actor.RVO.Id);

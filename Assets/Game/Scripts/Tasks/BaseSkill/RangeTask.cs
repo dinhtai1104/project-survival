@@ -119,6 +119,11 @@ public class RangeTask : SkillTask
             bullet.TargetPosition = target.CenterPosition;
         }
 
+        if (m_FirePoint != null)
+        {
+            bullet.Firepoint = m_FirePoint;
+        }
+
         if (m_DamageDealer != null)
         {
             bullet.DamageDealer?.CopyData(m_DamageDealer);

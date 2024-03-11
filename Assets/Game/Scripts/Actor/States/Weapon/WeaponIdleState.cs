@@ -10,10 +10,16 @@ namespace Assets.Game.Scripts.Actor.States.Weapon
         private float m_CooldownTimer = 0;
         private bool IsSkillAvailable => m_CooldownTimer >= m_Cooldown.Value;
 
+        public override void InitializeStateMachine()
+        {
+            base.InitializeStateMachine();
+        }
+
         public override void Enter()
         {
             base.Enter();
             m_Cooldown = new Stat(Actor.Stats.GetValue(StatKey.AttackSpeed));
+            Actor.SkillCaster.GetSkillById(0).SetManuallyCooldown(m_Cooldown);
             m_CooldownTimer = 0;
             m_Cooldown.RecalculateValue();
         }

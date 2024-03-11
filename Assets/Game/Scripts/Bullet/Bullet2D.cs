@@ -30,6 +30,7 @@ public class Bullet2D : MonoBehaviour
     [SerializeField] private UnityEvent<Actor> m_HitTargetEvent;
     [SerializeField] private UnityEvent m_DespawnEvent;
 
+    private Transform m_Firepoint;
     private int m_TargetCount;
     private Actor m_Owner;
     private bool m_Update;
@@ -97,6 +98,7 @@ public class Bullet2D : MonoBehaviour
 
     public int TargetNumber { get => m_TargetNumber; set => m_TargetNumber = value; }
     public float PiercingReduce { get => m_PiercingReduce; set => m_PiercingReduce = value; }
+    public Transform Firepoint { get => m_Firepoint; set => m_Firepoint = value; }
 
     private Stat m_BulletSpeed = new Stat(10);
 
@@ -212,7 +214,15 @@ public class Bullet2D : MonoBehaviour
 
         if (m_AppearEffect != null)
         {
-            PoolManager.Instance.Spawn(m_AppearEffect, StartingPosition, Quaternion.identity);
+            if (Firepoint != null)
+            {
+                var eff = PoolManager.Instance.Spawn(m_AppearEffect, Firepoint);
+                eff.transform.rotation = Trans.rotation;
+            }
+            else
+            {
+                var eff = PoolManager.Instance.Spawn(m_AppearEffect, StartingPosition, Trans.rotation);
+            }
         }
 
         if (Movement != null)
@@ -248,6 +258,7 @@ public class Bullet2D : MonoBehaviour
         OnHitTarget = null;
         m_DamageDealer.DamageSource.ClearModifiers();
         Movement?.Reset();
+        Firepoint = null;
     }
 
     public virtual void Despawn()

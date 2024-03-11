@@ -4,6 +4,7 @@ using Engine;
 using ExtensionKit;
 using Gameplay;
 using Manager;
+using Pool;
 using SceneManger;
 using System;
 using System.Collections.Generic;
@@ -69,6 +70,13 @@ namespace Framework
 
         public async UniTask<EnemyActor> SpawnMonster(string id, int monsterLevel, Vector2 position, CancellationToken token = default, string source = null)
         {
+            var effectPrefab = SceneManager.GetAsset<GameObject>("Effect_Spawn_Enemy");
+            if (effectPrefab != null)
+            {
+                var ef = PoolManager.Instance.Spawn(effectPrefab);
+                ef.transform.position = position;
+                await UniTask.Delay(TimeSpan.FromSeconds(1));
+            }
             var monster = m_EnemyFactory.CreateEnemy(id, monsterLevel, position, token);
             if (monster != null)
             {
@@ -82,6 +90,18 @@ namespace Framework
                 if (source.IsNullOrEmpty())
                 {
                     monster.Shared.SetShared(SharedKey.SourceSpawn, source);
+                }
+
+
+                // apply skill cooldown
+                var skillDefault = monster.SkillCaster.GetSkillById(0);
+                if (skillDefault != null)
+                {
+                    skillDefault.SetManuallyCooldown(new Stat(monster.Stats.GetValue(StatKey.AttackSpeed)));
+                }
+                else
+                {
+                    Debug.Log("Enemy this " + id + " Has no skill default!");
                 }
 
                 return monster;

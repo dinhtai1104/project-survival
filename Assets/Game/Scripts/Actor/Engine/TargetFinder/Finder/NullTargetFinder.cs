@@ -12,6 +12,10 @@ namespace Engine
         public Actor CurrentTarget { get; set; }
         public bool IsUpdatingTarget { get; set; }
 
+        public IList<Actor> Enemies => new List<Actor>();
+
+        public IList<Actor> Allies => new List<Actor>();
+
         public void Init(Actor actor)
         {
             Owner = actor;

@@ -101,7 +101,7 @@ namespace Engine
             var hitResult = new HitResult(success, false, crit, lastHit, hurt, evade, block, damage, source.Type);
 
             //FireEvent After Hit
-            Architecture.Get<EventMgr>().Fire(this, new AttackEventArgs(attacker, defender, hitResult));
+            Architecture.Get<EventMgr>().Fire(this, new DamageAfterHitEventArgs(attacker, defender, source, hitResult));
             //GameCore.Event.Fire(this, DamageAfterHitEventArgs.Create(attacker, defender, source, hitResult));
 
             if (lastHit)

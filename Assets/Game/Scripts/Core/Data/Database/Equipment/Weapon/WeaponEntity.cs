@@ -14,6 +14,7 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon
     [System.Serializable]
     public class WeaponEntity
     {
+        public string PrefabPath;
         public string IdEquipment => Equipment.IdEquipment;
         public EquipmentEntity Equipment;
         // Other properties
@@ -47,6 +48,7 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon
             Enum.TryParse(e.Get<string>("Rarity"), out Rarity);
 
             var eqpId = e.Get<string>("IdEquipment");
+            PrefabPath = e.Get<string>("PrefabPath");
             Equipment = DataManager.Base.Equipment.Get(eqpId);
             Damage = e.Get<float>("Damage");
             AttackSpeed = e.Get<float>("AttackSpeed");

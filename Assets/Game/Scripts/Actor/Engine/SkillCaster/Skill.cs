@@ -15,12 +15,12 @@ namespace Engine
         [SerializeField] private bool m_IsPassive;
         [SerializeField] private bool m_AutoCast;
         [SerializeField] private bool m_Interruptible = true;
-        [SerializeField, BoxGroup("Cooldown")] private float m_Cooldown;
-        [SerializeField, BoxGroup("Cooldown")] private float m_StartingCooldown;
+        [SerializeField, BoxGroup("Cooldown")] private Stat m_Cooldown;
+        [SerializeField, BoxGroup("Cooldown")] private Stat m_StartingCooldown;
         [SerializeField] private string m_CastingAnimation;
         [SerializeField] private bool m_LockOtherSkills = true;
         [SerializeField] private bool m_InvokeCastingSkillManually;
-        [SerializeField] private bool m_StartCooldownManually;
+        [SerializeField] private bool m_StartCooldownManually = true;
         [SerializeField, Range(0f, 20f)] private float m_CastingRange;
         [SerializeField] private UnityEvent m_OnCasting;
         [SerializeField] private UnityEvent m_OnExit;
@@ -58,8 +58,8 @@ namespace Engine
 
         public float Cooldown
         {
-            get { return m_Cooldown; }
-            set { m_Cooldown = value; }
+            get { return m_Cooldown.Value; }
+            set { m_Cooldown.BaseValue = value; m_Cooldown.RecalculateValue(); }
         }
 
         public bool AutoCast
@@ -77,16 +77,6 @@ namespace Engine
         public bool IsCooldown
         {
             get { return m_IsCooldown; }
-        }
-
-        public string CastingAnimation
-        {
-            get { return m_CastingAnimation; }
-        }
-
-        public float CastingRange
-        {
-            get { return m_CastingRange; }
         }
 
         public bool InvokeCastingSkillManually
@@ -112,15 +102,9 @@ namespace Engine
             get { return m_IsCooldownTimerRunning; }
         }
 
-        public bool IsPassive
-        {
-            get { return m_IsPassive; }
-            set { m_IsPassive = value; }
-        }
-
         public float RemainingCooldownTime
         {
-            get { return Mathf.Clamp(m_Cooldown - m_CooldownTimer, 0f, m_Cooldown); }
+            get { return Mathf.Clamp(m_Cooldown.Value - m_CooldownTimer, 0f, m_Cooldown.Value); }
         }
 
         public bool CanCast
@@ -134,12 +118,13 @@ namespace Engine
 
         public float StartingCooldown
         {
-            get { return m_StartingCooldown; }
+            get { return m_StartingCooldown.Value; }
             set
             {
-                m_StartingCooldown = value;
+                m_StartingCooldown.BaseValue = value;
+                m_StartingCooldown.RecalculateValue();
                 m_IsCooldown = true;
-                m_CooldownTimer = Mathf.Clamp(Cooldown - m_StartingCooldown, 0f, Cooldown);
+                m_CooldownTimer = Mathf.Clamp(Cooldown - m_StartingCooldown.Value, 0f, Cooldown);
             }
         }
 
@@ -197,7 +182,7 @@ namespace Engine
                 //}
             }
 
-            if (m_StartingCooldown > 0)
+            if (m_StartingCooldown.Value > 0)
             {
                 StartCooldown();
             }
@@ -214,7 +199,7 @@ namespace Engine
                     m_CooldownTimer += Time.deltaTime;
                 }
 
-                if (m_CooldownTimer >= m_Cooldown)
+                if (m_CooldownTimer >= m_Cooldown.Value)
                 {
                     m_IsCooldown = false;
                     m_CooldownTimer = 0f;
@@ -307,6 +292,16 @@ namespace Engine
         protected virtual void OnExit()
         {
             m_OnExit.Invoke();
+        }
+
+        public void SetManuallyCooldown(Stat cooldown)
+        {
+            this.m_Cooldown = cooldown;
+        }
+
+        public void SetManuallyStartCooldown(Stat cooldown)
+        {
+            this.m_StartingCooldown = cooldown;
         }
     }
 }
