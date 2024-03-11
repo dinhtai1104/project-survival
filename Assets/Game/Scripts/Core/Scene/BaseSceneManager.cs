@@ -234,9 +234,10 @@ namespace SceneManger
             string nextScenePath = GetScenePath(type);
             // Load scene address
 
-            
 
-            AsyncOperation loadSceneAsync = SceneManager.LoadSceneAsync(nextScenePath);
+            var scene = await Addressables.LoadSceneAsync(nextScenePath, UnityEngine.SceneManagement.LoadSceneMode.Single, false);
+
+            AsyncOperation loadSceneAsync = scene.ActivateAsync();
             InProgressing(type, loadSceneAsync).Forget();
             _isLoading = true;
             
