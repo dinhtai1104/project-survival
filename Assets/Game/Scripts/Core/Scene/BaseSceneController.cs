@@ -79,7 +79,7 @@ namespace SceneManger
         {
             Logger.Log("Request Load: " + id + " --- " + path);
 
-            var asset = SceneManager.Request<T>(id, path);
+            var asset = SceneManager.RequestAsync<T>(id, path);
             return asset;
         }
 

@@ -31,7 +31,7 @@ namespace Framework
         /// <returns></returns>
         public async UniTask<WeaponActor> CreateWeapon(WeaponEntity entity)
         {
-            var taskRequest = SceneManager.Request<GameObject>(entity.IdEquipment, $"{entity.PrefabPath}");
+            var taskRequest = SceneManager.RequestAsync<GameObject>(entity.IdEquipment, $"{entity.PrefabPath}");
             await taskRequest;
 
             var prefab = SceneManager.GetAsset<GameObject>(entity.IdEquipment);
@@ -40,7 +40,7 @@ namespace Framework
 
             weaponActor.Init(mainPlayer.TeamModel);
             weaponActor.InitWeapon(entity);
-            weaponActor.InitOwner(weaponActor);
+            weaponActor.InitOwner(mainPlayer);
 
 
             return weaponActor;

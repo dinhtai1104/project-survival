@@ -376,7 +376,7 @@ namespace SceneManger
             return UniTask.CompletedTask;
         }
 
-        public UniTask Request<T>(string id, string path) where T : Object
+        public UniTask RequestAsync<T>(string id, string path) where T : Object
         {
             if (string.IsNullOrEmpty(path))
             {
@@ -390,7 +390,24 @@ namespace SceneManger
                 return UniTask.CompletedTask;
             }
 
-            return m_AssetPreloader.Request<T>(id, path);
+            return m_AssetPreloader.RequestAsync<T>(id, path);
+        }
+
+        public void Request<T>(string id, string path) where T : Object
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                Debug.LogWarning("Asset has null path " + id);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(id))
+            {
+                Debug.LogWarning("Asset has null id " + id);
+                return;
+            }
+
+            m_AssetPreloader.Request<T>(id, path);
         }
 
         public T GetAsset<T>(string id) where T : Object
