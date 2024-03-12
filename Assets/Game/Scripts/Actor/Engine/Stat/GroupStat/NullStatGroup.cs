@@ -7,7 +7,7 @@ namespace Engine
     {
         public IEnumerable<string> StatNames => null;
 
-        public void AddListener(string statName, Action<float> callback)
+        public void AddListener(string statName, StatChangeListener callback)
         {
         }
 
@@ -89,7 +89,7 @@ namespace Engine
         {
         }
 
-        public void RemoveListener(string statName, Action<float> callback)
+        public void RemoveListener(string statName, StatChangeListener callback)
         {
         }
 
@@ -113,7 +113,12 @@ namespace Engine
         {
             return this;
         }
-
+        public List<StatModifier> GetModifiersFromSource(string statName, object source)
+        {
+            var stat = GetStat(statName);
+            if (stat == null) return new List<StatModifier>();
+            return stat.AttributeModifiers;
+        }
         public IStatGroup SetMaxValue(string statName, float max)
         {
             return this;

@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using Engine;
+using Engine.State.Unit;
 using ExtensionKit;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Game.Scripts.Actor.States.Unit
+namespace Engine.State.Common
 {
     public class UnitBornState : BaseState
     {

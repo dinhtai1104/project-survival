@@ -479,7 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statesHolder: {fileID: 6381516466670010512}
   _startingState:
-    _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitBornState, Assembly-CSharp
+    _classRef: Engine.State.Common.UnitBornState, Assembly-CSharp
 --- !u!114 &6381516466356194070
 MonoBehaviour:
   m_ObjectHideFlags: 0

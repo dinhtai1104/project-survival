@@ -8,14 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Game.Scripts.Actor.States.Weapon
+namespace Engine.State.Weapon
 {
     public class BaseWeaponState : BaseState
     {
         public WeaponActor Weapon => Actor as WeaponActor;
-        public Engine.Actor Owner => Weapon.Owner;
+        public Actor Owner => Weapon.Owner;
     }
-    
+}
+
+namespace Engine.State.Weapon
+{
     public class BaseWeaponState<TNextState> : BaseWeaponState where TNextState : BaseState
     {
         private Vector3 left = new Vector3(-1, 1, 1);
@@ -33,7 +36,7 @@ namespace Assets.Game.Scripts.Actor.States.Weapon
             if (target != null)
             {
                 dir = target.CenterPosition - Weapon.Trans.position;
-                
+
             }
             else
             {

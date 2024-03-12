@@ -1,11 +1,11 @@
-﻿using Assets.Game.Scripts.Actor.States.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Engine;
 using UnityEngine;
+using Engine.State.Common;
 
-namespace Assets.Game.Scripts.Actor.States.Common
+namespace Engine.State.Unit
 {
     public class ActorKeepDistanceState : BaseActorState
     {
@@ -23,7 +23,7 @@ namespace Assets.Game.Scripts.Actor.States.Common
         private float _cooldownTimer;
         private float _durationTimer;
         private float _changeDirTimer;
-        private Engine.Actor _target;
+        private Actor _target;
         private Vector3 _currentDir;
 
         public float Distance
@@ -38,7 +38,7 @@ namespace Assets.Game.Scripts.Actor.States.Common
             get { return _minDuration; }
         }
 
-        public Engine.Actor CurrentThreat
+        public Actor CurrentThreat
         {
             set { _target = value; }
             get { return _target; }
@@ -144,19 +144,19 @@ namespace Assets.Game.Scripts.Actor.States.Common
             _currentDir = dir;
         }
 
-        public Engine.Actor FindPotentialThreat()
+        public Actor FindPotentialThreat()
         {
-            IList<Engine.Actor> enemies = Actor.TargetFinder.Enemies;
+            IList<Actor> enemies = Actor.TargetFinder.Enemies;
 
             if (enemies.Count == 0)
                 return null;
 
             float minSqrDist = float.MaxValue;
-            Engine.Actor target = null;
+            Actor target = null;
 
             for (int i = 0; i < enemies.Count; ++i)
             {
-                Engine.Actor enemyActor = enemies[i];
+                Actor enemyActor = enemies[i];
 
                 if (enemyActor != null && enemyActor != Actor && enemyActor.gameObject.activeInHierarchy)
                 {

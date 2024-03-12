@@ -19,7 +19,7 @@ namespace Pool
         private IEnumerator<float> _Killing()
         {
             yield return Timing.WaitForSeconds(m_TimeLive);
-            PoolManager.Instance.Despawn(gameObject);
+            PoolFactory.Despawn(gameObject);
         }
         public void Stop()
         {

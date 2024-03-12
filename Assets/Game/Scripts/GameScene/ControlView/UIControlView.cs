@@ -1,5 +1,7 @@
-﻿using Assets.Game.Scripts.Actor.States.Common;
+﻿using Assets.Game.Scripts.Events;
+using Core;
 using Engine;
+using Engine.State.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,16 +18,27 @@ namespace Assets.Game.Scripts.GameScene.ControlView
         [SerializeField] private Joystick m_Joystick;
         [SerializeField] private UIButtonSkill m_DashSkillBtn;
 
+        private IEventArgs m_JoystickStartMoveEvent;
+        private IEventArgs m_JoystickMoveEvent;
+        private IEventArgs m_JoystickEndMoveEvent;
+        private IEventArgs m_DashEvent;
+
+        private void Awake()
+        {
+            m_DashEvent = new InputButtonSkillEventArgs();
+            (m_DashEvent as InputButtonSkillEventArgs).ControlCode = EControlCode.Dash;
+            m_JoystickStartMoveEvent = new JoystickMovementStartEventArgs();
+            m_JoystickMoveEvent = new JoystickMovementEventArgs();
+            m_JoystickEndMoveEvent = new JoystickMovementEndEventArgs();
+        }
+
+
         private void OnEnable()
         {
             m_Joystick.onMoveStart.AddListener(OnMovingStart);
             m_Joystick.onMove.AddListener(OnMoving);
             m_Joystick.onMoveEnd.AddListener(OnMovingEnd);
             m_DashSkillBtn.SetCallback(OnDash);
-        }
-        private void OnDash()
-        {
-            Messenger.Broadcast(EventKey.InputDash);
         }
         private void OnDisable()
         {
@@ -41,19 +54,25 @@ namespace Assets.Game.Scripts.GameScene.ControlView
             MappingState<ActorDashState>(m_DashSkillBtn);
         }
 
+        private void OnDash()
+        {
+            Architecture.Get<EventMgr>().FireNow(this, m_DashEvent);
+        }
+
         private void OnMovingStart()
         {
-            Messenger.Broadcast(EventKey.InputJoystickStart);
+            Architecture.Get<EventMgr>().FireNow(this, m_JoystickStartMoveEvent);
         }
 
         private void OnMoving(Vector2 input)
         {
-            Messenger.Broadcast(EventKey.InputJoystickMovement, input);
+            (m_JoystickMoveEvent as JoystickMovementEventArgs).m_Direction = input;
+            Architecture.Get<EventMgr>().FireNow(this, m_JoystickMoveEvent);
         }
 
         private void OnMovingEnd()
         {
-            Messenger.Broadcast(EventKey.InputJoystickEnd);
+            Architecture.Get<EventMgr>().FireNow(this, m_JoystickEndMoveEvent);
         }
 
         public void OnExecute()

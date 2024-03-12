@@ -1,6 +1,6 @@
 ﻿namespace Engine
 {
-    public enum ControlCode
+    public enum EControlCode
     {
         Move = 0,
         Dash = 1,

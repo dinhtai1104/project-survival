@@ -497,7 +497,7 @@ namespace Engine
         private IStatus CreateStatusInstance(GameObject statusPrefab, Actor source)
         {
             if (Owner == null || Owner.IsDead || Owner.Trans == null) return null;
-            var addedStatus = PoolManager.Instance.Spawn(statusPrefab);
+            var addedStatus = PoolFactory.Spawn(statusPrefab);
             addedStatus.transform.SetParent(Owner.Trans);
             addedStatus.transform.localPosition = Vector3.zero;
             addedStatus.transform.localRotation = Quaternion.identity;
@@ -516,7 +516,7 @@ namespace Engine
             {
                 if (statusObject != null)
                 {
-                    PoolManager.Instance.Despawn(statusObject.gameObject);
+                    PoolFactory.Despawn(statusObject.gameObject);
                 }
             }
         }

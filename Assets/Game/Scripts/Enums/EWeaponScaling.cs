@@ -9,8 +9,8 @@ namespace Assets.Game.Scripts.Enums
     public enum EWeaponScaling
     {
         Melee = 0,
-        Ranged = 1,
-        Elemental = 2,
-        Mechanical = 3,
+        Range = 1,
+        Element = 2,
+        Engineering = 3,
     }
 }

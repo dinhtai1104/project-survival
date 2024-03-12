@@ -1,5 +1,6 @@
 ﻿using Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon;
 using Framework;
+using System;
 using UnityEngine;
 namespace Engine.Weapon
 {
@@ -18,6 +19,8 @@ namespace Engine.Weapon
         public WeaponEntity WpEntity => m_WeaponEntity;
         public ERarity Rarity => WpEntity.Rarity;
 
+        private WeaponStatBridge m_BridgeStat;
+
         public void InitOwner(Actor owner)
         {
             m_Owner = owner;
@@ -29,10 +32,11 @@ namespace Engine.Weapon
 
             Stats.AddStat(StatKey.Damage, weaponEntity.Damage, 0);
             Stats.AddStat(StatKey.AttackRange, weaponEntity.RangeAttack);
-            Stats.AddStat(StatKey.AttackSpeed, weaponEntity.AttackSpeed, 0.05f);
+            Stats.AddStat(StatKey.AttackSpeed, weaponEntity.AttackSpeed, -100);
             Stats.AddStat(StatKey.Knockback, weaponEntity.Knockback);
             Stats.AddStat(StatKey.Projectiles, weaponEntity.Projectiles, 1);
             Stats.AddStat(StatKey.CritChance, weaponEntity.CritChance, 0);
+            Stats.AddStat(StatKey.CritDamage, 0.5f, 0);
             Stats.AddStat(StatKey.Velocity, weaponEntity.Velocity, 0);
             Stats.AddStat(StatKey.Pierce, 0);
             Stats.AddStat(StatKey.PierceReduce, 0);
@@ -57,6 +61,12 @@ namespace Engine.Weapon
 
             Trans.SetParent(placeHolder, false);
             Trans.localPosition = Vector3.zero;
+        }
+
+        public void Active()
+        {
+            m_BridgeStat?.Dispose();
+            m_BridgeStat = new WeaponStatBridge(this);
         }
     }
 }

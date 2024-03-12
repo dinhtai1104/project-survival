@@ -1,5 +1,5 @@
-﻿using Assets.Game.Scripts.Actor.States.Common;
-using Engine;
+﻿using Engine;
+using Engine.State.Common;
 using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Game.Scripts.Actor.States.Unit
+namespace Engine.State.Unit
 {
     public class UnitMoveState : BaseActorState
     {

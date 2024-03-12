@@ -11,7 +11,7 @@ using Event = Spine.Event;
 
 namespace Engine
 {
-    public class AnimationEngine : MonoBehaviour, IAnimationEngine
+    public class SpineAnimationEngine : MonoBehaviour, IAnimationEngine
     {
         [SerializeField] private SkeletonAnimation m_Animation;
         [SerializeField, ReadOnly] private string m_CurrentAnimation;

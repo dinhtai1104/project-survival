@@ -29,13 +29,13 @@ namespace Engine
 
         public List<StatModifier> AttributeModifiers => attributeModifiers;
 
-        private readonly List<Action<float>> _listeners;
+        private readonly List<StatChangeListener> _listeners;
 
 
         public Stat()
         {
             attributeModifiers = new List<StatModifier>();
-            _listeners = new List<Action<float>>();
+            _listeners = new List<StatChangeListener>();
         }
         public Stat(float baseValue) : this()
         {
@@ -53,7 +53,7 @@ namespace Engine
         }
 
         // Add listener when detect any change stat
-        public void AddListener(Action<float> callback)
+        public void AddListener(StatChangeListener callback)
         {
             if (!_listeners.Contains(callback))
             {
@@ -62,7 +62,7 @@ namespace Engine
             }
         }
 
-        public void RemoveListener(Action<float> callback)
+        public void RemoveListener(StatChangeListener callback)
         {
             if (_listeners.Contains(callback))
             {
@@ -107,6 +107,7 @@ namespace Engine
         {
             return AttributeModifiers[index];
         }
+
         public virtual void AddModifier(StatModifier mod)
         {
 #if UNITY_EDITOR

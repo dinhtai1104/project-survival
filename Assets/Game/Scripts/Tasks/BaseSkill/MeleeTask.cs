@@ -182,7 +182,7 @@ public class MeleeTask : SkillTask
                                 {
                                     Vector3 hitPoint = hit.point;
                                     GameObject effectGO =
-                                        PoolManager.Instance.Spawn(m_HitEffect, hitPoint, Quaternion.identity);
+                                        PoolFactory.Spawn(m_HitEffect, hitPoint, Quaternion.identity);
                                 }
 
                                 //GameCore.Event.Fire(this, HittedSkillEventArgs.Create(Caster, target, Skill != null ? Skill.Id : -999));

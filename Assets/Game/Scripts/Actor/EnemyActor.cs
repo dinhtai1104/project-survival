@@ -11,7 +11,7 @@ namespace Engine
     public class EnemyActor : Actor
     {
         public int MonsterLevel { set; get; }
-        public EnemyEntity MonsterData { set; get; }
+        public EnemyEntity EntityData { set; get; }
         private ActorStatBridge m_StatBridge;
 
         public override void Init(TeamModel teamModel)

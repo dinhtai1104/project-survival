@@ -15,41 +15,41 @@ MonoBehaviour:
   m_GlobalTransitions:
   - m_Decision: {fileID: 11400000, guid: 26182bd1f81490c4b88317f423f14590, type: 2}
     m_TrueState:
-      _classRef: Assets.Game.Scripts.Actor.States.Common.ActorDeadState, Assembly-CSharp
+      _classRef: Engine.State.Common.ActorDeadState, Assembly-CSharp
     m_FalseState:
       _classRef: 
   m_LocalTransitions:
   - m_State:
-      _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitIdleState, Assembly-CSharp
+      _classRef: Engine.State.Unit.UnitIdleState, Assembly-CSharp
     m_Transitions:
     - m_Decision: {fileID: 11400000, guid: 56de6b0a25d581949acbe0d1da30f73a, type: 2}
       m_TrueState:
-        _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitChaseState, Assembly-CSharp
+        _classRef: Engine.State.Unit.UnitChaseState, Assembly-CSharp
       m_FalseState:
         _classRef: 
     - m_Decision: {fileID: 11400000, guid: ddac92a686ad4bb4996f55402b6f9f5a, type: 2}
       m_TrueState:
-        _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitSkillState, Assembly-CSharp
+        _classRef: Engine.State.Unit.UnitSkillState, Assembly-CSharp
       m_FalseState:
         _classRef: 
   - m_State:
-      _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitChaseState, Assembly-CSharp
+      _classRef: Engine.State.Unit.UnitChaseState, Assembly-CSharp
     m_Transitions:
     - m_Decision: {fileID: 11400000, guid: ddac92a686ad4bb4996f55402b6f9f5a, type: 2}
       m_TrueState:
-        _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitSkillState, Assembly-CSharp
+        _classRef: Engine.State.Unit.UnitSkillState, Assembly-CSharp
       m_FalseState:
         _classRef: 
   - m_State:
-      _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitSkillState, Assembly-CSharp
+      _classRef: Engine.State.Unit.UnitSkillState, Assembly-CSharp
     m_Transitions:
     - m_Decision: {fileID: 11400000, guid: 8f30a24230f685d4b8d98c942112ad94, type: 2}
       m_TrueState:
-        _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitSkillState, Assembly-CSharp
+        _classRef: Engine.State.Unit.UnitSkillState, Assembly-CSharp
       m_FalseState:
         _classRef: 
     - m_Decision: {fileID: 11400000, guid: f0475f3e35e7d9b449ff331850df56c6, type: 2}
       m_TrueState:
-        _classRef: Assets.Game.Scripts.Actor.States.Unit.UnitChaseState, Assembly-CSharp
+        _classRef: Engine.State.Unit.UnitChaseState, Assembly-CSharp
       m_FalseState:
         _classRef: 

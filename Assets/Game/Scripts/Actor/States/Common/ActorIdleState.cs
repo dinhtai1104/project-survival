@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Game.Scripts.Actor.States.Common
+namespace Engine.State.Common
 {
     public class ActorIdleState : BaseActorState
     {
@@ -14,8 +14,8 @@ namespace Assets.Game.Scripts.Actor.States.Common
         public override void Enter()
         {
             base.Enter();
-            Actor.Input.SubscribeControl(ControlCode.Move, ToMoveState);
-            Actor.Input.SubscribeControl(ControlCode.Dash, ToDashState);
+            Actor.Input.SubscribeControl(EControlCode.Move, ToMoveState);
+            Actor.Input.SubscribeControl(EControlCode.Dash, ToDashState);
             Actor.Animation.EnsurePlay(0, m_Animation, true);
         }
         public override void Execute()
@@ -30,8 +30,8 @@ namespace Assets.Game.Scripts.Actor.States.Common
         public override void Exit()
         {
             base.Exit();
-            Actor.Input.UnsubscribeControl(ControlCode.Move, ToMoveState);
-            Actor.Input.UnsubscribeControl(ControlCode.Dash, ToDashState);
+            Actor.Input.UnsubscribeControl(EControlCode.Move, ToMoveState);
+            Actor.Input.UnsubscribeControl(EControlCode.Dash, ToDashState);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Engine
 {
     public abstract class BaseInputHandler : MonoBehaviour, IInputHandler
     {
-        private Dictionary<ControlCode, UnityEvent> _listenerLookup;
+        private Dictionary<EControlCode, UnityEvent> _listenerLookup;
         private IInputHandler _controlStrategy;
         private bool _active;
 
@@ -40,15 +40,15 @@ namespace Engine
 
         public virtual void Init(Actor actor)
         {
-            _listenerLookup = new Dictionary<ControlCode, UnityEvent>();
+            _listenerLookup = new Dictionary<EControlCode, UnityEvent>();
         }
 
-        public virtual void InvokeControl(ControlCode controlCode)
+        public virtual void InvokeControl(EControlCode controlCode)
         {
             if (_listenerLookup.ContainsKey(controlCode)) _listenerLookup[controlCode].Invoke();
         }
 
-        public virtual void SubscribeControl(ControlCode controlCode, UnityAction action)
+        public virtual void SubscribeControl(EControlCode controlCode, UnityAction action)
         {
             if (_listenerLookup.ContainsKey(controlCode))
             {
@@ -62,7 +62,7 @@ namespace Engine
             }
         }
 
-        public virtual void UnsubscribeControl(ControlCode controlCode, UnityAction action)
+        public virtual void UnsubscribeControl(EControlCode controlCode, UnityAction action)
         {
             if (_listenerLookup.ContainsKey(controlCode))
             {

@@ -1,5 +1,6 @@
 ﻿using Assets.Game.Scripts.Events;
 using Core;
+using Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,23 +65,7 @@ namespace Engine
 
             // FireEvent BeforeHit
             //GameCore.Event.Fire(this, DamageBeforeHitEventArgs.Create(attacker, defender, source));
-
-            switch (source.Type)
-            {
-                case EDamageType.Physical:
-                    damage = CalculatePhysicalDamage(defender, attacker, source, out success, out crit, out hurt, out evade,
-                        out block);
-                    break;
-                case EDamageType.Lightning:
-                    damage = CalculateMagicDamage(defender, attacker, source);
-                    break;
-                case EDamageType.Fire:
-                    damage = CalculateRawDamage(source, defender);
-                    break;
-                default:
-                    damage = defender.Health.MaxHealth * 0.01f;
-                    break;
-            }
+            damage = CalculatePhysicalDamage(defender, attacker, source, out success, out crit, out hurt, out evade, out block);
 
             // Clear temporary mods
             m_AttackerTempMods.Clear(attacker.Stats);
@@ -134,9 +119,24 @@ namespace Engine
             var atk = attacker.Stats;
             m_AttackerTempMods.ApplyModifiers(atk);
 
+            float critChance = atk.GetValue(StatKey.CritChance);
+            crit = MathUtils.RandomBoolean(critChance);
 
             // Calculate base damage
             float damage = source.Value;
+
+            if (crit && !source.CannotCrit)
+            {
+                damage *= atk.GetValue(StatKey.CritDamage) + 1;
+            }
+
+            if (defender.Tagger.HasTag(Tags.BossTag))
+            {
+                damage *= atk.GetValue(StatKey.BossDamage) + 1;
+            }
+
+            // Calculate Armor
+            damage = FormulaHelper.CalculateDamageArmorTaken(attacker, defender, damage);
 
             damage += defender.Health != null ? defender.Health.MaxHealth * source.DamageHealthPercentage : 0f;
             if (damage < MinDamage) damage = MinDamage;

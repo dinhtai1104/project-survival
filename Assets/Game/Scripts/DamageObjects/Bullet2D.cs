@@ -180,7 +180,7 @@ public class Bullet2D : MonoBehaviour
                     {
                         if (m_ImpactEffect != null)
                         {
-                            PoolManager.Instance.Spawn(m_ImpactEffect, target.CenterPosition, Quaternion.identity);
+                            PoolFactory.Spawn(m_ImpactEffect, target.CenterPosition, Quaternion.identity);
                         }
                     }
 
@@ -216,12 +216,12 @@ public class Bullet2D : MonoBehaviour
         {
             if (Firepoint != null)
             {
-                var eff = PoolManager.Instance.Spawn(m_AppearEffect, Firepoint);
+                var eff = PoolFactory.Spawn(m_AppearEffect, Firepoint);
                 eff.transform.rotation = Trans.rotation;
             }
             else
             {
-                var eff = PoolManager.Instance.Spawn(m_AppearEffect, StartingPosition, Trans.rotation);
+                var eff = PoolFactory.Spawn(m_AppearEffect, StartingPosition, Trans.rotation);
             }
         }
 
@@ -242,7 +242,7 @@ public class Bullet2D : MonoBehaviour
     {
         if (m_ImpactEffect != null)
         {
-            PoolManager.Instance.Spawn(m_ImpactEffect, Trans.position, Quaternion.identity);
+            PoolFactory.Spawn(m_ImpactEffect, Trans.position, Quaternion.identity);
         }
     }
 
@@ -264,7 +264,7 @@ public class Bullet2D : MonoBehaviour
     public virtual void Despawn()
     {
         Reset();
-        PoolManager.Instance.Despawn(gameObject);
+        PoolFactory.Despawn(gameObject);
         m_DespawnEvent?.Invoke();
     }
 }

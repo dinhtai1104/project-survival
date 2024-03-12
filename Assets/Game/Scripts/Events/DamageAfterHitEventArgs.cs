@@ -1,5 +1,7 @@
 ﻿using Core;
 using Engine;
+using UnityEngine;
+
 namespace Assets.Game.Scripts.Events
 {
     public class DamageAfterHitEventArgs : BaseEventArgs<DamageAfterHitEventArgs>
@@ -15,6 +17,8 @@ namespace Assets.Game.Scripts.Events
             this.attacker = attack;
             this.defender = defense;
             this.hitResult = hitResult;
+
+            Debug.Log("Hit: " + hitResult.Damage);
         }
     }
 }

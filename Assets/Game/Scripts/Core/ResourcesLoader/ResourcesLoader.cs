@@ -27,16 +27,17 @@ public class ResourcesLoader
 
     private static void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
     {
-        ResourcesLoader.Instance.UnloadAll();
+        UnloadAll();
     }
 
-    private void UnloadAll()
+    private static void UnloadAll()
     {
-        objectLoader.ReleaseAll();
-        objectCached.Clear();
-        assetCachedRequest.Clear();
-        spriteAtlasCached.Clear();
-        spriteCached.Clear();
+        Instance.objectLoader.ReleaseAll();
+        Instance.objectResourceLoader.ReleaseAll();
+        Instance.objectCached.Clear();
+        Instance.assetCachedRequest.Clear();
+        Instance.spriteAtlasCached.Clear();
+        Instance.spriteCached.Clear();
     }
 
     private IAssetLoader objectLoader = new AddressableAssetLoader();
@@ -50,25 +51,25 @@ public class ResourcesLoader
     private Dictionary<Type, Dictionary<string, object>> objectResourcesCached = new Dictionary<Type, Dictionary<string, object>>();
     private Dictionary<Type, Dictionary<string, AssetRequest>> assetResourceCachedRequest = new Dictionary<Type, Dictionary<string, AssetRequest>>();
 
-    public async UniTask<T> LoadAsync<T>(string path) where T : UnityEngine.Object
+    public static async UniTask<T> LoadAsync<T>(string path) where T : UnityEngine.Object
     {
         Logger.Log("Request: " + path);
 
         var type = typeof(T);
-        if (!objectCached.ContainsKey(type))
+        if (!Instance.objectCached.ContainsKey(type))
         {
-            objectCached.Add(type, new Dictionary<string, object>());
-            assetCachedRequest.Add(type, new Dictionary<string, AssetRequest>());
+            Instance.objectCached.Add(type, new Dictionary<string, object>());
+            Instance.assetCachedRequest.Add(type, new Dictionary<string, AssetRequest>());
         }
-        var dic = objectCached[type];
-        var request = assetCachedRequest[type];
+        var dic = Instance.objectCached[type];
+        var request = Instance.assetCachedRequest[type];
         if (dic.ContainsKey(path))
         {
             return (T)dic[path];
         }
         else
         {
-            var loader = objectLoader.LoadAsync<T>(path);
+            var loader = Instance.objectLoader.LoadAsync<T>(path);
             
             await loader.Task;
             if (!dic.ContainsKey(path))
@@ -80,31 +81,31 @@ public class ResourcesLoader
         }
     }
 
-    public async UniTask<T> GetAsync<T>(string path, Transform parent)
+    public static async UniTask<T> GetAsync<T>(string path, Transform parent)
     {
         var ins = await LoadAsync<GameObject>(path);
         if (ins == null) return default;
-        var obj = PoolManager.Instance.Spawn(ins, parent).GetComponent<T>();
+        var obj = PoolFactory.Spawn(ins, parent).GetComponent<T>();
         return (T)obj;
     }
 
-    public T Load<T>(string path) where T : UnityEngine.Object
+    public static T Load<T>(string path) where T : UnityEngine.Object
     {
         var type = typeof(T);
-        if (!objectCached.ContainsKey(type))
+        if (!Instance.objectCached.ContainsKey(type))
         {
-            objectCached.Add(type, new Dictionary<string, object>());
-            assetCachedRequest.Add(type, new Dictionary<string, AssetRequest>());
+            Instance.objectCached.Add(type, new Dictionary<string, object>());
+            Instance.assetCachedRequest.Add(type, new Dictionary<string, AssetRequest>());
         }
-        var dic = objectCached[type];
-        var request = assetCachedRequest[type];
+        var dic = Instance.objectCached[type];
+        var request = Instance.assetCachedRequest[type];
         if (dic.ContainsKey(path))
         {
             return (T)dic[path];
         }
         else
         {
-            var loader = objectLoader.Load<T>(path);
+            var loader = Instance.objectLoader.Load<T>(path);
 
             if (!dic.ContainsKey(path))
             {
@@ -115,28 +116,28 @@ public class ResourcesLoader
         }
     }
 
-    public T Get<T>(string path, Transform parent)
+    public static T Get<T>(string path, Transform parent)
     {
         var ins = Load<GameObject>(path);
         if (ins == null) return default;
-        var obj = PoolManager.Instance.Spawn(ins, parent).GetComponent<T>();
+        var obj = PoolFactory.Spawn(ins, parent).GetComponent<T>();
         return (T)obj;
     }
-    public async UniTask<GameObject> GetGOAsync(string path, Transform parent = null)
+    public static async UniTask<GameObject> GetGOAsync(string path, Transform parent = null)
     {
         var ins = await LoadAsync<GameObject>(path);
         if (ins == null) return default;
-        var obj = PoolManager.Instance.Spawn(ins, parent);
+        var obj = PoolFactory.Spawn(ins, parent);
         return (GameObject)obj;
     }
     
 
-    public Sprite GetSprite(string atlas, string nameSprite)
+    public static Sprite GetSprite(string atlas, string nameSprite)
     {
         var path = atlas + "/" + nameSprite;
-        if (spriteCached.ContainsKey(path))
+        if (Instance.spriteCached.ContainsKey(path))
         {
-            return spriteCached[path];
+            return Instance.spriteCached[path];
         }
         var atlasArt = LoadAtlas(atlas);
         if (atlasArt != null)
@@ -144,7 +145,7 @@ public class ResourcesLoader
             var sprite = atlasArt.GetSprite(nameSprite);
             if (sprite != null)
             {
-                spriteCached.Add(path, sprite);
+                Instance.spriteCached.Add(path, sprite);
                 return sprite;
             }
             else
@@ -158,24 +159,24 @@ public class ResourcesLoader
         }
         return null;
     }
-    public SpriteAtlas LoadAtlas(string address)
+    public static SpriteAtlas LoadAtlas(string address)
     {
         var newAddress = "Atlas/" + address + ".spriteatlas";
-        if (spriteAtlasCached.ContainsKey(newAddress))
+        if (Instance.spriteAtlasCached.ContainsKey(newAddress))
         {
-            return spriteAtlasCached[newAddress];
+            return Instance.spriteAtlasCached[newAddress];
         }
 
-        var atlasTask = objectLoader.Load<SpriteAtlas>(newAddress);
+        var atlasTask = Instance.objectLoader.Load<SpriteAtlas>(newAddress);
         var atlas = atlasTask.Result;
         if (atlas != null)
         {
-            if (spriteAtlasCached.ContainsKey(newAddress))
+            if (Instance.spriteAtlasCached.ContainsKey(newAddress))
             {
-                return spriteAtlasCached[newAddress];
+                return Instance.spriteAtlasCached[newAddress];
             }
-            spriteAtlasCached.Add(newAddress, atlas);
-            return spriteAtlasCached[newAddress];
+            Instance.spriteAtlasCached.Add(newAddress, atlas);
+            return Instance.spriteAtlasCached[newAddress];
         }
         else
         {
@@ -183,36 +184,36 @@ public class ResourcesLoader
         }
     }
 
-    public void UnloadAsset<T>(string name) where T : UnityEngine.Object
+    public static void UnloadAsset<T>(string name) where T : UnityEngine.Object
     {
         var type =typeof(T);
-        if (!assetCachedRequest.ContainsKey(type)) return;
-        var dict = assetCachedRequest[type];
+        if (!Instance.assetCachedRequest.ContainsKey(type)) return;
+        var dict = Instance.assetCachedRequest[type];
         if (dict.ContainsKey(name))
         {
-            objectLoader.Release(dict[name]);
-            objectCached[type].Remove(name);
+            Instance.objectLoader.Release(dict[name]);
+            Instance.objectCached[type].Remove(name);
             dict.Remove(name);
         }
     }
 
-    public T LoadResource<T>(string path) where T: UnityEngine.Object
+    public static T LoadResource<T>(string path) where T: UnityEngine.Object
     {
         var type = typeof(T);
-        if (!objectCached.ContainsKey(type))
+        if (!Instance.objectCached.ContainsKey(type))
         {
-            objectCached.Add(type, new Dictionary<string, object>());
-            assetCachedRequest.Add(type, new Dictionary<string, AssetRequest>());
+            Instance.objectCached.Add(type, new Dictionary<string, object>());
+            Instance.assetCachedRequest.Add(type, new Dictionary<string, AssetRequest>());
         }
-        var dic = objectCached[type];
-        var request = assetCachedRequest[type];
+        var dic = Instance.objectCached[type];
+        var request = Instance.assetCachedRequest[type];
         if (dic.ContainsKey(path))
         {
             return (T)dic[path];
         }
         else
         {
-            var loader = objectResourceLoader.Load<T>(path);
+            var loader = Instance.objectResourceLoader.Load<T>(path);
 
             if (!dic.ContainsKey(path))
             {

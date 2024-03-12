@@ -1,6 +1,6 @@
 ﻿using Engine;
 using UnityEngine;
-namespace Assets.Game.Scripts.Actor.States.Common
+namespace Engine.State.Common
 {
     public class ActorDashState : ActorSkillState
     {

@@ -32,19 +32,22 @@ namespace Framework
 
         private EnemyFactory m_EnemyFactory;
         private Bound2D m_SpawnBound;
+        private Bound2D m_EnemyBound;
 
         public EnemyFactory EnemyFactory => m_EnemyFactory;
         public Bound2D Bound => m_SpawnBound;
+        public Bound2D EnemyBound => m_EnemyBound;
 
         public BaseSceneManager SceneManager { get => m_SceneManager; set => m_SceneManager = value; }
         public TeamManager TeamManager { get => m_TeamManager; set => m_TeamManager = value; }
 
-        protected BaseMonsterSpawner(EnemyFactory monsterFactory, Bound2D spawnBound, TeamManager teamManager)
+        protected BaseMonsterSpawner(EnemyFactory monsterFactory, Bound2D spawnBound, TeamManager teamManager, Bound2D enemyBound)
         {
             m_EnemyFactory = monsterFactory;
             m_SpawnBound = spawnBound;
             SceneManager = GameSceneManager.Instance;
             m_TeamManager = teamManager;
+            m_EnemyBound = enemyBound;
         }
 
         public virtual void StartSpawn(float delaySpawn)
@@ -73,7 +76,7 @@ namespace Framework
             var effectPrefab = SceneManager.GetAsset<GameObject>("Effect_Spawn_Enemy");
             if (effectPrefab != null)
             {
-                var ef = PoolManager.Instance.Spawn(effectPrefab);
+                var ef = PoolFactory.Spawn(effectPrefab);
                 ef.transform.position = position;
                 await UniTask.Delay(TimeSpan.FromSeconds(1));
             }

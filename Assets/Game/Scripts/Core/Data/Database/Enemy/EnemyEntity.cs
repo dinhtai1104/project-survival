@@ -24,6 +24,8 @@ namespace Assets.Game.Scripts.Core.Data.Database
         public float iSpeed;
         public float iAttackSpeed;
 
+        public float Mass;
+
      
         // Monster Tags
         public List<string> Tags;
@@ -55,6 +57,8 @@ namespace Assets.Game.Scripts.Core.Data.Database
             iAttackSpeed = e.Get<float>("iAttackSpeed");
 
             Tags = e.Get<List<string>>("Tags");
+
+            //Mass = e.Get<float>("Mass");
         }
     }
 }

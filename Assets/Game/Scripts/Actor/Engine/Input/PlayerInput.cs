@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Assets.Game.Scripts.Events;
+using Core;
+using UnityEngine;
 
 namespace Engine
 {
@@ -11,10 +13,10 @@ namespace Engine
         public override void Init(Actor actor)
         {
             base.Init(actor);
-            Messenger.AddListener(EventKey.InputJoystickStart, OnJoystickMovementStart);
-            Messenger.AddListener(EventKey.InputJoystickEnd, OnJoystickMovementEnd);
-            Messenger.AddListener<Vector2>(EventKey.InputJoystickMovement, OnJoystickMovement);
-            Messenger.AddListener(EventKey.InputDash, OnDash);
+            Architecture.Get<EventMgr>().Subscribe<JoystickMovementStartEventArgs>(OnJoystickMovementStart);
+            Architecture.Get<EventMgr>().Subscribe<JoystickMovementEventArgs>(OnJoystickMovement);
+            Architecture.Get<EventMgr>().Subscribe<JoystickMovementEndEventArgs>(OnJoystickMovementEnd);
+            Architecture.Get<EventMgr>().Subscribe<InputButtonSkillEventArgs>(OnInputButtonSkill);
         }
 
         protected override void OnDeactivate()
@@ -26,43 +28,48 @@ namespace Engine
 
         public void RemoveAllListener()
         {
-            Messenger.RemoveListener(EventKey.InputJoystickStart, OnJoystickMovementStart);
-            Messenger.RemoveListener(EventKey.InputJoystickEnd, OnJoystickMovementEnd);
-            Messenger.RemoveListener<Vector2>(EventKey.InputJoystickMovement, OnJoystickMovement);
-            Messenger.RemoveListener(EventKey.InputDash, OnDash);
+            Architecture.Get<EventMgr>().Unsubscribe<JoystickMovementStartEventArgs>(OnJoystickMovementStart);
+            Architecture.Get<EventMgr>().Unsubscribe<JoystickMovementEventArgs>(OnJoystickMovement);
+            Architecture.Get<EventMgr>().Unsubscribe<JoystickMovementEndEventArgs>(OnJoystickMovementEnd);
+            Architecture.Get<EventMgr>().Unsubscribe<InputButtonSkillEventArgs>(OnInputButtonSkill);
         }
 
 #if UNITY_EDITOR
         private void Update()
         {
             var dash = Input.GetKeyDown(KeyCode.Space);
-            if (dash) OnDash();
+            if (dash)
+            {
+                InvokeControl(EControlCode.Dash);
+            }
         }
 #endif
 
-        private void OnJoystickMovementStart()
+        private void OnJoystickMovementStart(object sender, IEventArgs e)
         {
             IsUsingJoystick = true;
         }
 
-        private void OnJoystickMovement(Vector2 dir)
+        private void OnJoystickMovement(object sender, IEventArgs e)
         {
             if (!Active) return;
-            var normalizedDir = dir.normalized;
+            var evt = e as JoystickMovementEventArgs;
+            var normalizedDir = evt.m_Direction.normalized;
             JoystickDirection = normalizedDir;
-            InvokeControl(ControlCode.Move);
+            InvokeControl(EControlCode.Move);
         }
 
-        private void OnJoystickMovementEnd()
+        private void OnJoystickMovementEnd(object sender, IEventArgs e)
         {
             IsUsingJoystick = false;
             JoystickDirection = Vector2.zero;
         }
 
-        private void OnDash()
+        private void OnInputButtonSkill(object sender, IEventArgs e)
         {
             if (!Active) return;
-            InvokeControl(ControlCode.Dash);
+            var evt = e as InputButtonSkillEventArgs;
+            InvokeControl(evt.ControlCode);
         }
     }
 }

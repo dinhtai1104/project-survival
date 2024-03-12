@@ -56,9 +56,9 @@ namespace Assets.Game.Scripts.Tasks
 
             if (m_HitEffect)
             {
-                PoolManager.Instance.Spawn(m_HitEffect, actor.CenterPosition, Quaternion.identity);
+                PoolFactory.Spawn(m_HitEffect, actor.CenterPosition, Quaternion.identity);
             }
             m_DamageDealer.DealDamage(Caster, actor);
-        }
+        } 
     }
 }

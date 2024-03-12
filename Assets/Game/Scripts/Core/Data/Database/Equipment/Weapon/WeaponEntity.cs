@@ -72,6 +72,19 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon
                     OtherStats.Add(statB);
                 }
             }
+
+            var weaponScaling = e.Get<List<string>>("WeaponScaling");
+            if (weaponScaling.IsNotNull())
+            {
+                foreach (var ws in weaponScaling)
+                {
+                    this.WeaponScaling.Add((EWeaponScaling)Enum.Parse(typeof(EWeaponScaling), ws));
+                }
+            }
         }
-    }
+        public bool IsWeaponContainsScaling(EWeaponScaling scale)
+        {
+            return WeaponScaling.Contains(scale);
+        }
+     }
 }

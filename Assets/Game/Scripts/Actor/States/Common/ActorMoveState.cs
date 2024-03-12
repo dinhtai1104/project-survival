@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Game.Scripts.Actor.States.Common
+namespace Engine.State.Common
 {
     public class ActorMoveState : BaseActorState
     {
@@ -15,7 +15,7 @@ namespace Assets.Game.Scripts.Actor.States.Common
         {
             base.Enter();
             var inputHandler = Actor.Input;
-            inputHandler.SubscribeControl(ControlCode.Dash, ToDashState);
+            inputHandler.SubscribeControl(EControlCode.Dash, ToDashState);
         }
 
         public override void Execute()
@@ -34,7 +34,7 @@ namespace Assets.Game.Scripts.Actor.States.Common
         {
             base.Exit();
             var inputHandler = Actor.Input;
-            inputHandler.UnsubscribeControl(ControlCode.Dash, ToDashState);
+            inputHandler.UnsubscribeControl(EControlCode.Dash, ToDashState);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Manager
         public float damageTextCoolDown = 0.1f;
         public Dictionary<Actor, DamageInfo> dict = new Dictionary<Actor, DamageInfo>();
         [ShowInInspector]
-        public DamageNumber prefabs;
+        public DamageNumber[] prefabs;
 
         private void OnEnable()
         {
@@ -42,8 +42,14 @@ namespace Manager
             //damageInfo.lastHitTime = Time.time;
 
             int direction = evt.attacker.CenterPosition.x < evt.defender.CenterPosition.x ? 1 : -1;
-            damageInfo.ShowDamage(direction, prefabs);
-
+            if (evt.hitResult.Critical)
+            {
+                damageInfo.ShowDamage(direction, prefabs[1]);
+            }
+            else
+            {
+                damageInfo.ShowDamage(direction, prefabs[0]);
+            }
 
         }
 
@@ -74,13 +80,13 @@ namespace Manager
             DamageNumber newDamageNumber = effectObj.Spawn(target.CenterPosition, Mathf.RoundToInt(damage));
             if (direction < 0)
             {
-                newDamageNumber.lerpSettings.minX = -2f;
-                newDamageNumber.lerpSettings.maxX = -1.5f;
+                newDamageNumber.lerpSettings.minX = -1f;
+                newDamageNumber.lerpSettings.maxX = -0.5f;
             }
             else
             {
-                newDamageNumber.lerpSettings.minX = 1.5f;
-                newDamageNumber.lerpSettings.maxX = 2f;
+                newDamageNumber.lerpSettings.minX = 1f;
+                newDamageNumber.lerpSettings.maxX = 0.5f;
             }
         }
         public void Clear()

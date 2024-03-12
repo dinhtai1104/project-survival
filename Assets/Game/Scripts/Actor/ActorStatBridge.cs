@@ -8,7 +8,7 @@ namespace Engine
 {
     public class ActorStatBridge : IDisposable
     {
-        private readonly Actor m_Actor;
+        private readonly Actor m_Actor; 
 
         public ActorStatBridge(Actor actor)
         {

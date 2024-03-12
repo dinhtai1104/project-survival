@@ -12,11 +12,8 @@ public class CleanParticle : MonoBehaviour
 
     private void Awake()
     {
-        if (m_Particles == null)
-        {
-            m_Particles = GetComponentsInChildren<ParticleSystem>();
-            m_Trails = GetComponentsInChildren<TrailRenderer>();
-        }
+        m_Particles = GetComponentsInChildren<ParticleSystem>();
+        m_Trails = GetComponentsInChildren<TrailRenderer>();
     }
 
     private void Start()
@@ -26,6 +23,10 @@ public class CleanParticle : MonoBehaviour
             m_Particle.Clear();
             m_Particle.Simulate(0, true, true);
         }
+    }
+
+    private void OnEnable()
+    {
         foreach (var trail in m_Trails)
         {
             trail.Clear();
@@ -38,10 +39,6 @@ public class CleanParticle : MonoBehaviour
         {
             m_Particle.Clear();
             m_Particle.Simulate(0, true, true);
-        }
-        foreach (var trail in m_Trails)
-        {
-            trail.Clear();
         }
     }
 }
