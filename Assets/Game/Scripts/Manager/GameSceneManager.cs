@@ -16,5 +16,10 @@ namespace Manager
             DontDestroyOnLoad(gameObject);
             m_PlayerData = new PlayerData();
         }
+
+        private void Start()
+        {
+            Application.targetFrameRate = 60;
+        }
     }
 }

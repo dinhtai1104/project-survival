@@ -27,7 +27,7 @@ namespace SceneManger.Preloader
             m_ResourceLookup.Clear();
         }
 
-        public async UniTask<T> Request<T>(string id, string path) where T : Object
+        public async UniTask<T> RequestAsync<T>(string id, string path) where T : Object
         {
             var assetType = typeof(T);
 
@@ -42,6 +42,31 @@ namespace SceneManger.Preloader
             }
 
             var obj = await m_AssetLoader.LoadAsync<T>(path).Task;
+
+            if (!m_ResourceLookup[assetType].ContainsKey(id))
+            {
+                m_ResourceLookup[assetType].Add(id, obj);
+                return m_ResourceLookup[assetType][id] as T;
+            }
+
+            return obj;
+        }
+
+        public T Request<T>(string id, string path) where T : Object
+        {
+            var assetType = typeof(T);
+
+            if (!m_ResourceLookup.ContainsKey(assetType))
+            {
+                m_ResourceLookup.Add(assetType, new Dictionary<string, Object>());
+            }
+
+            if (m_ResourceLookup[assetType].ContainsKey(id))
+            {
+                return m_ResourceLookup[assetType][id] as T;
+            }
+
+            var obj = m_AssetLoader.Load<T>(path).Result;
 
             if (!m_ResourceLookup[assetType].ContainsKey(id))
             {

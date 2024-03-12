@@ -17,7 +17,7 @@ namespace Ui.Btn
         public override async void Action()
         {
             Logger.Log("Action Sound: " + gameObject.name);
-            await GameSceneManager.Instance.Request<AudioClip>(SFX_Address, SFX_Address);
+            await GameSceneManager.Instance.RequestAsync<AudioClip>(SFX_Address, SFX_Address);
 
             var audio = GameSceneManager.Instance.GetAsset<AudioClip>(SFX_Address);
             // Play Audio Here
