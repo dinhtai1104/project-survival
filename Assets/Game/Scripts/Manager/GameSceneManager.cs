@@ -1,7 +1,9 @@
 ﻿using Core;
+using Cysharp.Threading.Tasks;
 using Gameplay;
 using SceneManger;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Manager
 {
@@ -17,9 +19,13 @@ namespace Manager
             m_PlayerData = new PlayerData();
         }
 
-        private void Start()
+        private async UniTaskVoid Start()
         {
+            await Addressables.InitializeAsync();
             Application.targetFrameRate = 60;
+
+            UnityEngine.InputSystem.EnhancedTouch.EnhancedTouchSupport.Enable();
+            Input.simulateMouseWithTouches = true;
         }
     }
 }

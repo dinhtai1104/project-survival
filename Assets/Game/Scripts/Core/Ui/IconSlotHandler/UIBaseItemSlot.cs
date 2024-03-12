@@ -33,7 +33,7 @@ namespace Framework
         {
             if (m_Icon != null)
             {
-                PoolManager.Instance.Despawn(m_Icon.gameObject);
+                PoolFactory.Despawn(m_Icon.gameObject);
                 m_Icon = null;
             }
         }

@@ -101,7 +101,7 @@ public class RangeTask : SkillTask
         var firePosition = m_FirePoint.position;
         var fireRotation = angle;
 
-        GameObject gameObject = PoolManager.Instance.Spawn(m_BulletPrefab, firePosition, fireRotation);
+        GameObject gameObject = PoolFactory.Spawn(m_BulletPrefab, firePosition, fireRotation);
 
         Bullet2D bullet = gameObject.GetComponent<Bullet2D>();
         bullet.Owner = Caster;

@@ -41,7 +41,7 @@ namespace Framework
 
         private List<CoroutineHandle> m_CoroutineHandlSpawn;
 
-        public DungeonEnemySpawner(EnemyFactory monsterFactory, Bound2D spawnBound, TeamManager teamManager, DungeonEntity dungeonEntity, int currentWave) : base(monsterFactory, spawnBound, teamManager)
+        public DungeonEnemySpawner(EnemyFactory monsterFactory, Bound2D spawnBound, TeamManager teamManager, Bound2D movementBound, DungeonEntity dungeonEntity, int currentWave) : base(monsterFactory, spawnBound, teamManager, movementBound)
         {
             m_Cts = new CancellationTokenSource();
             m_CoroutineHandlSpawn = new List<CoroutineHandle>();

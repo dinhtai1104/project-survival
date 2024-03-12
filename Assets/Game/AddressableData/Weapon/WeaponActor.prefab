@@ -306,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statesHolder: {fileID: 6421387296550060273}
   _startingState:
-    _classRef: Assets.Game.Scripts.Actor.States.Weapon.WeaponIdleState, Assembly-CSharp
+    _classRef: Engine.State.Weapon.WeaponIdleState, Assembly-CSharp
 --- !u!1 &9193815075354769821
 GameObject:
   m_ObjectHideFlags: 0

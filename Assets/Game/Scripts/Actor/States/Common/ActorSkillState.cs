@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.Game.Scripts.Actor.States.Common
+namespace Engine.State.Common
 {
     public class ActorSkillState : BaseSkillState
     {

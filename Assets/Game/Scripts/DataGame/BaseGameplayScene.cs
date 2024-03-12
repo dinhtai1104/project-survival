@@ -67,7 +67,7 @@ namespace Gameplay
             for (int i = 0; i < 2; i++)
             {
                 // Spawn Weapon
-                var weaponIns = PoolManager.Instance.Spawn(prefab);
+                var weaponIns = PoolFactory.Spawn(prefab);
                 weaponIns.Prepare();
                 weaponIns.Init(TeamManager.GetTeamModel(ConstantValue.PlayerTeamId));
                 weaponIns.InitOwner(MainPlayer);
@@ -75,6 +75,7 @@ namespace Gameplay
                 // TODO:
                 // Test -> Get Shotgun weapon
                 weaponIns.InitWeapon(smgEntity);
+                weaponIns.Active();
 
                 listWea.Add(weaponIns);
             }
@@ -89,7 +90,7 @@ namespace Gameplay
         public Actor SpawnPlayerActor()
         {
             var prefab = GetRequestedAsset<GameObject>("player").GetComponent<Actor>();
-            var playerActor = PoolManager.Instance.Spawn(prefab, Vector3.zero, Quaternion.identity);
+            var playerActor = PoolFactory.Spawn(prefab, Vector3.zero, Quaternion.identity);
             playerActor.Prepare();
 
             return playerActor;

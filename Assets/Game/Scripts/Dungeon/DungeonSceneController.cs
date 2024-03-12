@@ -86,7 +86,7 @@ namespace Assets.Game.Scripts.Dungeon
 
         private void PrepareMapLevel()
         {
-            var mapInstance = PoolManager.Instance.Spawn(GetRequestedAsset<GameObject>("map"), transform).GetComponent<Map>();
+            var mapInstance = PoolFactory.Spawn(GetRequestedAsset<GameObject>("map"), transform).GetComponent<Map>();
 
             var enemyDatabase = DataManager.Base.EnemyTable;
             m_Bound2D = mapInstance.MapBound;
@@ -94,7 +94,7 @@ namespace Assets.Game.Scripts.Dungeon
 
             var monsterFactory = new EnemyFactory(enemyDatabase);
             var currentWave = 0;
-            m_Spawner = new DungeonEnemySpawner(monsterFactory, mapInstance.SpawnBound, TeamManager, m_DungeonEntity, currentWave);
+            m_Spawner = new DungeonEnemySpawner(monsterFactory, mapInstance.SpawnBound, TeamManager, mapInstance.MapBound, m_DungeonEntity, currentWave);
 
             // Spawn Player
             CameraController.Instance.Follow(MainPlayer.transform, Vector3.zero);

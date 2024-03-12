@@ -16,9 +16,11 @@ namespace Engine
         [SerializeField] private EDamageType m_Type;
 
 
-        [SerializeField] private bool m_CannotEvade;
+        [SerializeField] private bool m_CannotEvade = false;
 
-        [SerializeField] private bool m_CannotHurt;
+        [SerializeField] private bool m_CannotHurt = false;
+
+        [SerializeField] private bool m_CannotCrit = false;
 
         public float Value
         {
@@ -63,6 +65,12 @@ namespace Engine
         {
             set { m_CannotHurt = value; }
             get { return m_CannotHurt; }
+        }
+        
+        public bool CannotCrit
+        {
+            set { m_CannotCrit = value; }
+            get { return m_CannotCrit; }
         }
 
         public DamageSource()

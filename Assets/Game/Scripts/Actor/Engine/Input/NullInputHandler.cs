@@ -49,11 +49,11 @@ namespace Engine
         {
         }
 
-        public void InvokeControl(ControlCode controlCode)
+        public void InvokeControl(EControlCode controlCode)
         {
         }
 
-        public void SubscribeControl(ControlCode controlCode, UnityAction action)
+        public void SubscribeControl(EControlCode controlCode, UnityAction action)
         {
         }
 
@@ -61,7 +61,7 @@ namespace Engine
         {
         }
 
-        public void UnsubscribeControl(ControlCode controlCode, UnityAction action)
+        public void UnsubscribeControl(EControlCode controlCode, UnityAction action)
         {
         }
     }

@@ -82,7 +82,7 @@ namespace SceneManger.Transition
         protected override void EndTransition()
         {
             base.EndTransition();
-            PoolManager.Instance.Despawn(gameObject);
+            PoolFactory.Despawn(gameObject);
         }
     }
 }

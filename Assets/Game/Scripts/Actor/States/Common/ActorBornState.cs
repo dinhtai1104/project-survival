@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Game.Scripts.Actor.States.Common
+namespace Engine.State.Common
 {
     public class ActorBornState : BaseActorState
     {

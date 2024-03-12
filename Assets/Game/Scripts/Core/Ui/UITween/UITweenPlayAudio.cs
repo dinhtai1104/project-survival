@@ -8,12 +8,12 @@ public class UITweenPlayAudio : UITweenBase
     public float volumn = 1;
     public override async UniTask Show()
     {
-        var audio = await ResourcesLoader.Instance.LoadAsync<AudioClip>(SFX_Address);
+        var audio = await ResourcesLoader.LoadAsync<AudioClip>(SFX_Address);
     }
 
     public override async UniTask Hide()
     {
         await UniTask.Yield(cancellationToken: cancelToken.Token);
-        ResourcesLoader.Instance.UnloadAsset<AudioClip>(SFX_Address);
+        ResourcesLoader.UnloadAsset<AudioClip>(SFX_Address);
     }
 }

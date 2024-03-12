@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace Pool
 {
-    public class PoolManager : LiveSingleton<PoolManager>
+    public class PoolFactory : LiveSingleton<PoolFactory>
     {
         protected void Start()
         {
@@ -25,11 +25,11 @@ namespace Pool
             DespawnAll();
         }
 
-        public T Spawn<T>(T prefab) where T : Component
+        public static T Spawn<T>(T prefab) where T : Component
         {
             return LeanPool.Spawn(prefab);
         }
-        public T Spawn<T>(T prefab, Vector2 position, Quaternion quaternion) where T : Component
+        public static T Spawn<T>(T prefab, Vector2 position, Quaternion quaternion) where T : Component
         {
             var ob = LeanPool.Spawn(prefab);
             ob.transform.position = position;
@@ -37,21 +37,21 @@ namespace Pool
             return ob;
         }
 
-        public T Spawn<T>(T prefab, Transform parent) where T : Component
+        public static T Spawn<T>(T prefab, Transform parent) where T : Component
         {
             return LeanPool.Spawn(prefab, parent);
         }
 
-        public GameObject Spawn(GameObject prefab)
+        public static GameObject Spawn(GameObject prefab)
         {
             return LeanPool.Spawn(prefab);
         }
 
-        public GameObject Spawn(GameObject prefab, Transform parent)
+        public static GameObject Spawn(GameObject prefab, Transform parent)
         {
             return LeanPool.Spawn(prefab, parent);
         }
-        public GameObject Spawn(GameObject prefab, Vector2 position, Quaternion quaternion)
+        public static GameObject Spawn(GameObject prefab, Vector2 position, Quaternion quaternion)
         {
             var ob = LeanPool.Spawn(prefab);
             ob.transform.position = position;
@@ -59,21 +59,21 @@ namespace Pool
             return ob;
         }
 
-        public void Despawn(Component clone, float delay = 0)
+        public static void Despawn(Component clone, float delay = 0)
         {
             LeanPool.Despawn(clone, delay);
         }
 
-        public void Despawn(GameObject clone, float delay = 0)
+        public static void Despawn(GameObject clone, float delay = 0)
         {
             LeanPool.Despawn(clone, delay);
         }
 
-        public void Clear(GameObject clone)
+        public static void Clear(GameObject clone)
         {
             LeanPool.CleanUpByPrefab(clone);
         }
-        public void DespawnAll()
+        public static void DespawnAll()
         {
             LeanPool.DespawnAll();
         }

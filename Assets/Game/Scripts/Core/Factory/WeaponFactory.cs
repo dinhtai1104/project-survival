@@ -35,12 +35,13 @@ namespace Framework
             await taskRequest;
 
             var prefab = SceneManager.GetAsset<GameObject>(entity.IdEquipment);
-            var weaponActor = PoolManager.Instance.Spawn(prefab.GetComponent<WeaponActor>());
+            var weaponActor = PoolFactory.Spawn(prefab.GetComponent<WeaponActor>());
             var mainPlayer = GameplayScene.MainPlayer;
 
             weaponActor.Init(mainPlayer.TeamModel);
             weaponActor.InitWeapon(entity);
             weaponActor.InitOwner(mainPlayer);
+            weaponActor.Active();
 
 
             return weaponActor;

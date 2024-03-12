@@ -42,7 +42,7 @@ public abstract class UITweenBase : MonoBehaviour, ITransitionElement
 
         if (settings == null)
         {
-            settings = ResourcesLoader.Instance.LoadResource<UITweenFadeMoveSettings>("UITweenFadeMoveSettings");
+            settings = ResourcesLoader.LoadResource<UITweenFadeMoveSettings>("UITweenFadeMoveSettings");
         }
     }
 

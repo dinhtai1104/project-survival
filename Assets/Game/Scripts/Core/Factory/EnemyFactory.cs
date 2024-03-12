@@ -38,7 +38,7 @@ namespace Framework
         {
             var monster = CreateBaseEnemy(monsterPrefab, monsterData.Tags, position);
             monster.Prepare();
-            monster.MonsterData = monsterData;
+            monster.EntityData = monsterData;
             monster.MonsterLevel = monsterLevel;
 
             // apply monster stat
@@ -63,7 +63,7 @@ namespace Framework
 
         private EnemyActor CreateBaseEnemy(EnemyActor prefab, IEnumerable<string> tags, Vector3 position)
         {
-            EnemyActor monster = PoolManager.Instance.Spawn(prefab, position, Quaternion.identity);
+            EnemyActor monster = PoolFactory.Spawn(prefab, position, Quaternion.identity);
             monster.AI = true;
             foreach (var tag in tags)
             {

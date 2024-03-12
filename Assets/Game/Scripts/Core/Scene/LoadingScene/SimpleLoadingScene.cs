@@ -29,7 +29,7 @@ namespace SceneManger.Loading
             base.EndLoading();
             _progressBar.SetValue(1f);
             
-            PoolManager.Instance.Despawn(gameObject);
+            PoolFactory.Despawn(gameObject);
         }
 
         public override void LoadingProgress(float percentage)

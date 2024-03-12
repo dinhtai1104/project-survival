@@ -77,14 +77,14 @@ namespace Engine
             }
         }
 
-        public void AddListener(string statName, Action<float> callback)
+        public void AddListener(string statName, StatChangeListener callback)
         {
             if (!_attrDict.ContainsKey(statName)) return;
             Stat stat = _attrDict[statName];
             stat.AddListener(callback);
         }
 
-        public void RemoveListener(string statName, Action<float> callback)
+        public void RemoveListener(string statName, StatChangeListener callback)
         {
             if (!_attrDict.ContainsKey(statName)) return;
             _attrDict[statName].RemoveListener(callback);
@@ -278,6 +278,13 @@ namespace Engine
                     }
                 }
             }
+        }
+
+        public List<StatModifier> GetModifiersFromSource(string statName, object source)
+        {
+            var stat = GetStat(statName);
+            if (stat == null) return new List<StatModifier>();
+            return stat.AttributeModifiers;
         }
     }
 }

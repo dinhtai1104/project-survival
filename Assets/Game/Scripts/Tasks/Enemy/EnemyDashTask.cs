@@ -1,6 +1,5 @@
-﻿using Assets.Game.Scripts.Actor.States.Common;
-using Assets.Game.Scripts.Actor.States.Unit;
-using Engine;
+﻿using Engine;
+using Engine.State.Unit;
 using UnityEngine;
 
 namespace Assets.Game.Scripts.Tasks.Enemy

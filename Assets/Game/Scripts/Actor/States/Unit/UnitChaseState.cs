@@ -1,10 +1,10 @@
-﻿using Assets.Game.Scripts.Actor.States.Common;
-using Engine;
+﻿using Engine;
+using Engine.State.Common;
 using RVO;
 using System;
 using UnityEngine;
 
-namespace Assets.Game.Scripts.Actor.States.Unit
+namespace Engine.State.Unit
 {
     public class UnitChaseState : BaseActorState
     {
@@ -49,7 +49,7 @@ namespace Assets.Game.Scripts.Actor.States.Unit
                         Actor.Movement.MoveDirection(dir.normalized);
                         Simulator.Instance.setAgentPosition(Actor.RVO.Id, new Vector2RVO(Actor.BotPosition));
                     }
-                    else 
+                    else
                     {
                         Actor.Movement.MoveTo(position);
                     }

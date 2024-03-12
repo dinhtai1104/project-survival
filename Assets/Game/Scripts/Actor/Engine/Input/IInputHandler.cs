@@ -14,8 +14,8 @@ namespace Engine
 
         void Init(Actor actor);
         void OnUpdate();
-        void SubscribeControl(ControlCode controlCode, UnityAction action);
-        void UnsubscribeControl(ControlCode controlCode, UnityAction action);
-        void InvokeControl(ControlCode controlCode);
+        void SubscribeControl(EControlCode controlCode, UnityAction action);
+        void UnsubscribeControl(EControlCode controlCode, UnityAction action);
+        void InvokeControl(EControlCode controlCode);
     }
 }

@@ -2,7 +2,7 @@
 using Engine;
 using UnityEngine;
 
-namespace Assets.Game.Scripts.Actor.States.Weapon
+namespace Engine.State.Weapon
 {
     public class WeaponIdleState : BaseWeaponState<WeaponAttackState>
     {

@@ -6,7 +6,7 @@ using Core;
 using Engine;
 using UnityEngine;
 
-namespace Assets.Game.Scripts.Actor.States.Common
+namespace Engine.State.Common
 {
     public class BaseActorState : BaseState
     {
@@ -29,7 +29,7 @@ namespace Assets.Game.Scripts.Actor.States.Common
             if (defender != Actor) return;
             if (defender is PlayerActor) return;
             var hitResult = evt.hitResult;
-
+            var enemyEntity = (defender as EnemyActor).EntityData;
             var _hurtDir = Vector3.Normalize(defender.BotPosition - attacker.BotPosition);
             var _dest = defender.BotPosition + _hurtDir * attacker.Stats.GetValue(StatKey.Knockback, 1) * 0.2f;
             defender.Movement.MoveTween(_dest, 0.3f);

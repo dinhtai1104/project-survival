@@ -921,6 +921,7 @@ GameObject:
   - component: {fileID: 6590603301623878669}
   - component: {fileID: -2531349769437950271}
   - component: {fileID: 2764240189407196035}
+  - component: {fileID: 3098261973448935041}
   m_Layer: 6
   m_Name: Player0
   m_TagString: Untagged
@@ -1170,7 +1171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statesHolder: {fileID: 7279236687164069475}
   _startingState:
-    _classRef: Assets.Game.Scripts.Actor.States.Common.ActorBornState, Assembly-CSharp
+    _classRef: Engine.State.Common.ActorBornState, Assembly-CSharp
 --- !u!114 &7279236687291230143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,6 +1259,18 @@ MonoBehaviour:
   m_UsingTagFilter: 0
   m_TagFilter: 
   m_Cooldown: 0.1
+--- !u!114 &3098261973448935041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7279236687291230137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d020c2ac65015478589381eec4ec11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7279236687325351707
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,4 +36,9 @@ public class ModifierData
         Enum.TryParse(split[1], out EStatMod mod);
         m_Modifier = new StatModifier(mod, float.Parse(split[2]));
     }
+
+    public override string ToString()
+    {
+        return m_AttributeName + " " + m_Modifier.ToString();
+    }
 }

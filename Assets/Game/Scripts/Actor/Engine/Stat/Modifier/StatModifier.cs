@@ -52,33 +52,28 @@ namespace Engine
 
         public override string ToString()
         {
-            var pre = "";
+            var pre = value > 0 ? "+" : "-";
             var aff = "";
 
             switch (Type)
             {
                 case EStatMod.Flat:
-                    pre = "+";
                     break;
                 case EStatMod.PercentAdd:
-                    pre = "+";
                     aff = "%";
                     break;
                 case EStatMod.PercentMul:
-                    pre = "x";
                     aff = "%";
                     break;
                 case EStatMod.FlatMul:
-                    pre = "x";
                     aff = "";
                     break;
                 case EStatMod.Percent:
-                    pre = "+";
                     aff = "%";
                     break;
             }
 
-            return pre + " " + Value + aff;
+            return pre + Value + aff;
         }
 
         public StatModifier Clone()

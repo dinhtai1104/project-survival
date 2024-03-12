@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System;
-using Sirenix.OdinInspector;
 using Assets.Game.Scripts.Core.Data.Database;
 using Assets.Game.Scripts.Core.Data.Database.Dungeon;
 using Assets.Game.Scripts.Core.Data.Database.Equipment.Gear;
@@ -10,6 +8,7 @@ using Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon;
 using Assets.Game.Scripts.Core.Data.Database.Rarity;
 using Assets.Game.Scripts.Core.Data.Database.Dungeon.EnemyEvent;
 using Assets.Game.Scripts.Core.Data.Database.Config;
+using Assets.Game.Scripts.Core.Data.Database.Buff;
 
 public class DatabaseManager : MonoSingleton<DatabaseManager>
 {
@@ -25,6 +24,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
     public GearPerkTable GearPerk = new();
     public EquipmentTable Equipment = new();
     public WeaponTable Weapon = new();
+    public BuffTable Buff = new();
 
     public void Init(Transform parent = null)
     {
@@ -48,6 +48,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
         databases.Add(GearPerk);
         databases.Add(Equipment);
         databases.Add(Weapon);
+        databases.Add(Buff);
     } 
 
     public void LoadDatabase()

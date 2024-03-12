@@ -94,9 +94,8 @@ namespace SceneManger
         public virtual void Reset()
         {
             Timing.KillCoroutines();
-            PoolManager.Instance.DespawnAll();
+            PoolFactory.DespawnAll();
             IsInitialized = false;
-            Messenger.Cleanup(true);
         }
 
 
@@ -348,7 +347,7 @@ namespace SceneManger
                 return null;
             }
 
-            var transition = PoolManager.Instance.Spawn(prefab).GetComponent<BaseSceneTransition>();
+            var transition = PoolFactory.Spawn(prefab).GetComponent<BaseSceneTransition>();
             return transition;
         }
         private BaseLoadingScene StartLoadingScene(GameObject prefab)
@@ -359,7 +358,7 @@ namespace SceneManger
                 return null;
             }
 
-            var loadingScene = PoolManager.Instance.Spawn(prefab).GetComponent<BaseLoadingScene>();
+            var loadingScene = PoolFactory.Spawn(prefab).GetComponent<BaseLoadingScene>();
             loadingScene.StartLoading(this);
             return loadingScene;
         }

@@ -8,7 +8,7 @@ using Spine;
 using System;
 using UnityEngine;
 
-namespace Assets.Game.Scripts.Actor.States.Common
+namespace Engine.State.Common
 {
     public class ActorDeadState : BaseState
     {
@@ -25,7 +25,7 @@ namespace Assets.Game.Scripts.Actor.States.Common
             Actor.Animation.EnsurePlay(0, m_Animation, false, true);
             Actor.Animation.SubscribeComplete(CompleteEvent);
 
-                // Ensure the zero heal event to be broadcasted
+            // Ensure the zero heal event to be broadcasted
             Actor.Health.CurrentHealth = 0f;
             Actor.Animation.Lock = true;
             Actor.Movement.IsMoving = false;
@@ -68,7 +68,7 @@ namespace Assets.Game.Scripts.Actor.States.Common
         {
             isFiredEvent = true;
             //Architecture.Get<EventMgr>().Fire(this, new ActorDieEventArgs(Actor));
-            PoolManager.Instance.Despawn(Actor.gameObject);
+            PoolFactory.Despawn(Actor.gameObject);
             Simulator.Instance.delAgent(Actor.RVO.Id);
         }
     }

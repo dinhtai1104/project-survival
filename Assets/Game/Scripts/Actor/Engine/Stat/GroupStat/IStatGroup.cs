@@ -1,16 +1,18 @@
-﻿using Newtonsoft.Json.Bson;
+﻿using Assets.Game.Scripts.Buffs;
+using Newtonsoft.Json.Bson;
 using System;
 using System.Collections.Generic;
 
 namespace Engine
 {
+    public delegate void StatChangeListener(float statValue);
     public interface IStatGroup
     {
         IEnumerable<string> StatNames { get; }
         IEnumerable<StatModifier> GetModifiers(string statName);
         void AddStat(string statName, float baseValue, float min = 0f, float max = float.MaxValue);
-        void AddListener(string statName, Action<float> callback);
-        void RemoveListener(string statName, Action<float> callback);
+        void AddListener(string statName, StatChangeListener callback);
+        void RemoveListener(string statName, StatChangeListener callback);
 
         IStatGroup SetBaseValue(string statName, float value, bool callUpdater = true);
         IStatGroup SetMinValue(string statName, float min);
@@ -35,5 +37,6 @@ namespace Engine
         void CalculateStats();
         void Copy(IStatGroup refer, float percentage = 1.0f);
         void ReplaceAllStatBySource(IStatGroup refer, object[] source);
+        List<StatModifier> GetModifiersFromSource(string statName, object source);
     }
 }
