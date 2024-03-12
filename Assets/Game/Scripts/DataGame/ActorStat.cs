@@ -14,9 +14,10 @@ namespace Gameplay
             AddStat(StatKey.Armor, 0);
             AddStat(StatKey.Damage, 0, 0);
             AddStat(StatKey.DamageBonus, 0, 0);
-            AddStat(StatKey.RangeDamage, 0, 0);
-            AddStat(StatKey.ElementDamage, 0, 0);
-            AddStat(StatKey.EngineeringDamage, 0, 0);
+            AddStat(StatKey.RangeDamage, 0, -100000);
+            AddStat(StatKey.ElementDamage, 0, -100000);
+            AddStat(StatKey.EngineeringDamage, 0, -100000);
+            AddStat(StatKey.MeleeDamage, 0, -100000);
             AddStat(StatKey.AttackSpeed, 0);
             AddStat(StatKey.HpRegeneration, 0, 0);
             AddStat(StatKey.CritChance, 0, 0, 1f);
