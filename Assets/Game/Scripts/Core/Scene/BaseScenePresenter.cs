@@ -12,7 +12,9 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 namespace SceneManger
 {
     public class BaseScenePresenter : PanelManager
-    { 
+    {
+        public static new BaseScenePresenter Instance => PanelManager.Instance as BaseScenePresenter;
+
         public BaseSceneController SceneController { private set; get; }
 
         public virtual void Initialize(BaseSceneController sceneController)

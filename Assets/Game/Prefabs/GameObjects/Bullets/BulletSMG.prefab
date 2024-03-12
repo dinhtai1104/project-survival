@@ -64,6 +64,7 @@ MonoBehaviour:
       m_Type: 0
       m_CannotEvade: 0
       m_CannotHurt: 0
+      m_CannotCrit: 0
     m_ApplyEffect: 1
   m_TargetLayer:
     serializedVersion: 2
@@ -5251,6 +5252,6 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.01
   m_MaskInteraction: 0
-  m_Autodestruct: 0
+  m_Autodestruct: 1
   m_Emitting: 1
   m_ApplyActiveColorSpace: 0

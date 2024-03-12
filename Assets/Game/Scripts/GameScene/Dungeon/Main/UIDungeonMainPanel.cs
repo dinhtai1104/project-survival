@@ -67,5 +67,11 @@ namespace Assets.Game.Scripts.GameScene.Dungeon.Main
             base.Execute();
             m_ControlView.OnExecute();
         }
+
+        public void CheatSheetStatShowOnClicked()
+        {
+            ScenePresenter.CreateAsync(AddressableName.UICheatSheetPanel)
+                .ContinueWith(t => t.Show()).Forget();
+        }
     }
 }

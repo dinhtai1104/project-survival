@@ -23,19 +23,10 @@ public class CleanParticle : MonoBehaviour
             m_Particle.Clear();
             m_Particle.Simulate(0, true, true);
         }
-        foreach (var trail in m_Trails)
-        {
-            trail.Clear();
-        }
     }
 
     private void OnEnable()
     {
-        foreach (var m_Particle in m_Particles)
-        {
-            m_Particle.Clear();
-            m_Particle.Simulate(0, true, true);
-        }
         foreach (var trail in m_Trails)
         {
             trail.Clear();
@@ -48,10 +39,6 @@ public class CleanParticle : MonoBehaviour
         {
             m_Particle.Clear();
             m_Particle.Simulate(0, true, true);
-        }
-        foreach (var trail in m_Trails)
-        {
-            trail.Clear();
         }
     }
 }

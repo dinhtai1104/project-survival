@@ -61,10 +61,10 @@ namespace Gameplay
         {
             var listWea = new List<WeaponActor>();
 
-            var smgEntity = DataManager.Base.Weapon.Get("1")[ERarity.Legendary];
+            var smgEntity = DataManager.Base.Weapon.Get("0")[ERarity.Common];
             var prefab = GetRequestedAsset<GameObject>(smgEntity.IdEquipment).GetComponent<WeaponActor>();
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 1; i++)
             {
                 // Spawn Weapon
                 var weaponIns = PoolFactory.Spawn(prefab);

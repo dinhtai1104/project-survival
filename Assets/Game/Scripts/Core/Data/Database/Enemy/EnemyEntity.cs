@@ -58,7 +58,7 @@ namespace Assets.Game.Scripts.Core.Data.Database
 
             Tags = e.Get<List<string>>("Tags");
 
-            Mass = e.Get<float>("Mass");
+            //Mass = e.Get<float>("Mass");
         }
     }
 }

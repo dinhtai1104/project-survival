@@ -20,7 +20,7 @@ MonoBehaviour:
       _classRef: 
   m_LocalTransitions:
   - m_State:
-      _classRef: Engine.State.Unit.UnitMoveState, Assembly-CSharp
+      _classRef: Engine.State.Unit.UnitIdleState, Assembly-CSharp
     m_Transitions:
     - m_Decision: {fileID: 11400000, guid: 56de6b0a25d581949acbe0d1da30f73a, type: 2}
       m_TrueState:
