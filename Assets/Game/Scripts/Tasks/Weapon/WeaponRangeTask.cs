@@ -24,6 +24,10 @@ namespace Assets.Game.Scripts.Tasks.Weapon
         private float m_PiercingReduceDmg = 0;
         private float m_AngleZone = 0;
         private float m_Speed = 0;
+
+        private int m_Ricochet = 0;
+        private float m_RicochetReduceDmg = 0;
+
         public override void Begin()
         {
             base.Begin();
@@ -34,11 +38,15 @@ namespace Assets.Game.Scripts.Tasks.Weapon
             m_AngleZone = Caster.Stats.GetValue(StatKey.AngleZone, 0);
             m_Speed = Caster.Stats.GetValue(StatKey.AngleZone, 10);
 
+            m_Ricochet = (int)Caster.Stats.GetValue(StatKey.Ricochet, 0);
+            m_RicochetReduceDmg = Caster.Stats.GetValue(StatKey.RicochetReduce, 0.3f);
+
             DefaultSpeed = new Stat(m_Speed);
         }
 
         protected override void Attack()
         {
+            if (Caster.TargetFinder.CurrentTarget == null) return;
             var lowerRotate = m_FirePoint.eulerAngles.z - m_AngleZone / 2f;
             var angleOffset = m_AngleZone / m_ProjectileCount;
             for (int i = 0; i < m_ProjectileCount; i++)
@@ -51,8 +59,8 @@ namespace Assets.Game.Scripts.Tasks.Weapon
         protected override void SetupBullet(Bullet2D bullet)
         {
             base.SetupBullet(bullet);
-            bullet.TargetNumber = m_PiercingCount;
-            bullet.PiercingReduce = m_PiercingReduceDmg;
+            bullet.TargetNumber = m_Ricochet > 0 ? m_Ricochet : m_PiercingCount;
+            bullet.PiercingReduce = m_RicochetReduceDmg > 0 ? m_RicochetReduceDmg : m_PiercingReduceDmg;
             bullet.SetSpeed(DefaultSpeed);
         }
     }

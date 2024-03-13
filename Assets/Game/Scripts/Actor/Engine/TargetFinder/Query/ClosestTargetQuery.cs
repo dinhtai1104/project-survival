@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using ExtensionKit;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -64,7 +65,7 @@ namespace Engine
             }
         }
 
-        private Actor FindClosestEnemy(IList<Actor> enemies)
+        private Actor FindClosestEnemy(IList<Actor> enemies, params Actor[] except)
         {
             float minDist = float.MaxValue;
             Actor target = null;
@@ -75,6 +76,8 @@ namespace Engine
 
                 if (enemyActor != null && enemyActor.gameObject.activeInHierarchy && !enemyActor.IsDead)
                 {
+                    if (enemyActor.IsActivated == false) continue;
+                    if (except.IsNotNull() && except.Contains(enemyActor)) continue;
                     if (m_UsingTagFilter && !enemyActor.CompareTag(m_TagFilter)) continue;
 
                     float dist = (enemyActor.BotPosition - m_Actor.BotPosition).magnitude;
@@ -87,6 +90,11 @@ namespace Engine
             }
 
             return target;
+        }
+
+        public Actor GetTarget(IList<Actor> targets, params Actor[] except)
+        {
+            return FindClosestEnemy(targets, except);
         }
     }
 }

@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 6641462387723138688}
   - component: {fileID: 4568792914381937252}
   - component: {fileID: 8511954070104445524}
+  - component: {fileID: 4572570165108587498}
   m_Layer: 0
   m_Name: WeaponActor
   m_TagString: Untagged
@@ -224,6 +225,7 @@ MonoBehaviour:
     _allies: []
     _enemies: []
   m_TriggerPoint: {fileID: 4930933187657128187}
+  m_TargetFollow: {fileID: 4572570165108587498}
 --- !u!114 &4641303786933579696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +309,18 @@ MonoBehaviour:
   statesHolder: {fileID: 6421387296550060273}
   _startingState:
     _classRef: Engine.State.Weapon.WeaponIdleState, Assembly-CSharp
+--- !u!114 &4572570165108587498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924887141545511704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7303325fbbb2dfb4c82c19733b785ed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9193815075354769821
 GameObject:
   m_ObjectHideFlags: 0

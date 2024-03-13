@@ -14,6 +14,11 @@ namespace Engine.State.Weapon
     {
         public WeaponActor Weapon => Actor as WeaponActor;
         public Actor Owner => Weapon.Owner;
+        public override void Enter()
+        {
+            base.Enter();
+            Actor.IsActivated = true;
+        }
     }
 }
 
@@ -31,31 +36,7 @@ namespace Engine.State.Weapon
         public override void Execute()
         {
             base.Execute();
-            var target = Weapon.TargetFinder.CurrentTarget;
-            Vector2 dir = Vector2.zero;
-            if (target != null)
-            {
-                dir = target.CenterPosition - Weapon.Trans.position;
-
-            }
-            else
-            {
-                // Follow Joystick
-                dir = Owner.Movement.CurrentDirection;
-            }
-
-            var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            Weapon.Trans.eulerAngles = new Vector3(0, 0, angle);
-            Weapon.Movement.SetDirection(dir);
-
-            if (angle > 90 || angle < -90)
-            {
-                Weapon.Trans.LocalScaleY(-1);
-            }
-            else
-            {
-                Weapon.Trans.LocalScaleY(1);
-            }
+            
         }
     }
 }

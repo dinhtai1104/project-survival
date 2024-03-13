@@ -102,7 +102,7 @@ public class Bullet2D : MonoBehaviour
 
     private Stat m_BulletSpeed = new Stat(10);
 
-    private float m_DamageInvoke = 0.2f;
+    private float m_DamageInvoke = 0.1f;
     private float m_DamageLastInvoke = 0;
     
 
@@ -174,6 +174,13 @@ public class Bullet2D : MonoBehaviour
                     {
                         if (m_CritHitEffect != null)
                         {
+                        }
+                        else
+                        {
+                            if (m_ImpactEffect != null)
+                            {
+                                PoolFactory.Spawn(m_ImpactEffect, target.CenterPosition, Quaternion.identity);
+                            }
                         }
                     }
                     else

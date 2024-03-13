@@ -1,5 +1,6 @@
 ﻿using com.mec;
 using Engine;
+using ExtensionKit;
 using UnityEngine;
 
 namespace Engine.State.Weapon
@@ -35,7 +36,33 @@ namespace Engine.State.Weapon
                 if (IsSkillAvailable && Weapon.SkillCaster.HasAvailableSkill)
                 {
                     NextState();
+                    return;
                 }
+            }
+
+            Vector2 dir = Vector2.zero;
+            if (target != null)
+            {
+                dir = target.CenterPosition - Weapon.Trans.position;
+
+            }
+            else
+            {
+                // Follow Joystick
+                dir = Owner.Movement.CurrentDirection;
+            }
+
+            var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Weapon.Trans.eulerAngles = new Vector3(0, 0, angle);
+            Weapon.Movement.SetDirection(dir);
+
+            if (angle > 90 || angle < -90)
+            {
+                Weapon.Trans.LocalScaleY(-1);
+            }
+            else
+            {
+                Weapon.Trans.LocalScaleY(1);
             }
         }
     }

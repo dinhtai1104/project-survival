@@ -29,12 +29,15 @@
         public const string PatrolEarn = "PatrolEarn";
         public const string BossDamage = "BossDamage";
 
-
+        // Weapon
         public const string Projectiles = "Projectiles";
         public const string Pierce = "Pierce";
         public const string PierceReduce = "PierceReduce";
         public const string AngleZone = "AngleZone";
         public const string Velocity = "Velocity";
+        public const string Ricochet = "Ricochet";
+        public const string RicochetReduce = "RicochetReduce";
+
 
         public const string Random = "Random";
         public const string Max = "Max";

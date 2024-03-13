@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ExtensionKit;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -48,7 +49,7 @@ namespace Engine
             m_Target = null;
         }
 
-        private Actor FindTarget()
+        private Actor FindTarget(params Actor[] except)
         {
             var origin = m_Finder.Owner.Trans.position;
             origin.y += m_OriginOffetY;
@@ -58,15 +59,31 @@ namespace Engine
             var count = Physics2D.RaycastNonAlloc(origin, m_Direction, m_HitResults, m_RayDistance, m_Finder.Owner.EnemyLayerMask);
             if (count > 0)
             {
-                var rayHit = m_HitResults[0].transform;
-                m_Target = rayHit.GetComponent<Actor>();
-                if (m_Target != null)
+                for (int i = 0; i < count; i++)
                 {
-                    return m_Target;
+                    var rayHit = m_HitResults[i].transform;
+                    
+                    if (rayHit.TryGetComponent<Actor>(out m_Target))
+                    {
+                        if (m_Target.IsActivated == false) continue;
+                        if (except.IsNotNull() && except.Contains(m_Target)) continue;
+                        return m_Target;
+                    }
                 }
             }
 
             return null;
+        }
+
+        public Actor GetTarget(IList<Actor> targets, params Actor[] except)
+        {
+            if (m_Target != null && !m_Target.IsDead)
+            {
+                return m_Target;
+            }
+
+            m_Target = FindTarget(except);
+            return m_Target;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon;
+using Assets.Game.Scripts.Utilities.Utilities.Scripts;
 using Framework;
 using System;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace Engine.Weapon
 
 
         [SerializeField] private Transform m_TriggerPoint;
+        [SerializeField] private MoveFollowTarget m_TargetFollow;
 
         private Transform m_PlaceHolderWeapon;
         public Transform PlaceHolderWeapon => m_PlaceHolderWeapon;
@@ -58,7 +60,7 @@ namespace Engine.Weapon
         public void SetPlaceHolder(Transform placeHolder)
         {
             m_PlaceHolderWeapon = placeHolder;
-
+            //m_TargetFollow.SetTarget(placeHolder);
             Trans.SetParent(placeHolder, false);
             Trans.localPosition = Vector3.zero;
         }

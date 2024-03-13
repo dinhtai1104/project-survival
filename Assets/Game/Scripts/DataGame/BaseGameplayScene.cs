@@ -61,7 +61,7 @@ namespace Gameplay
         {
             var listWea = new List<WeaponActor>();
 
-            var smgEntity = DataManager.Base.Weapon.Get("0")[ERarity.Common];
+            var smgEntity = DataManager.Base.Weapon.Get("8")[ERarity.Common];
             var prefab = GetRequestedAsset<GameObject>(smgEntity.IdEquipment).GetComponent<WeaponActor>();
 
             for (int i = 0; i < 1; i++)

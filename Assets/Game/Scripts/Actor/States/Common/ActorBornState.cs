@@ -16,6 +16,7 @@ namespace Engine.State.Common
         public override void Enter()
         {
             base.Enter();
+            Actor.IsActivated = false;
             Actor.Animation.Clear();
             Actor.Health.Invincible = true;
             if (!m_Animation.IsNullOrEmpty())
@@ -50,6 +51,7 @@ namespace Engine.State.Common
             }
             base.Exit();
             Actor.Health.Invincible = false;
+            Actor.IsActivated = true;
         }
     }
 }

@@ -25,6 +25,7 @@ namespace Engine
         private Transform m_Trans;
         private Transform m_CenterTrans;
         private bool m_IsInitialize = false;
+        private bool m_IsActivated = false;
 
         [ShowInInspector]
         private IStatGroup m_Stat = new StatGroup();
@@ -134,6 +135,9 @@ namespace Engine
         [SerializeField] private TeamModel m_TeamModel;
         public TeamModel TeamModel => m_TeamModel;
 
+        public bool IsInitialize { get => m_IsInitialize; set => m_IsInitialize = value; }
+        public bool IsActivated { get => m_IsActivated; set => m_IsActivated = value; }
+
         public void Prepare()
         {
             IsDead = false;
@@ -146,8 +150,7 @@ namespace Engine
             this.m_TeamModel = teamModel;
             EnemyLayerMask = teamModel.EnemyLayerMask;
             AllyLayerMask = teamModel.AllyLayerMask;
-            m_IsInitialize = true;
-
+            IsInitialize = true;
             Animation?.Init(this);
             Movement?.Init(this);
             TargetFinder?.Init(this);

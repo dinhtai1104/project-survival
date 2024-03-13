@@ -53,7 +53,7 @@ namespace SceneManger.Transition
 
             var diff = Mathf.Abs(endAlpha - startAlpha);
 
-            Timing.RunCoroutine(_Fading(startAlpha, endAlpha, diff));
+            Timing.RunCoroutine(_Fading(startAlpha, endAlpha, diff), Segment.FixedUpdate);
 
         }
 
@@ -66,13 +66,14 @@ namespace SceneManger.Transition
             while (time < _duration)
             {
                 alpha = Mathf.Lerp(startAlpha, endAlpha, time);
-                time += Time.deltaTime;
+                time += Time.fixedDeltaTime;
+
 
                 Progress = Mathf.Abs(alpha - startAlpha) / diff;
                 color.a = alpha;
                 _image.color = color;
 
-                yield return Timing.DeltaTime;
+                yield return 0f;
             }
 
             IsDone = true;

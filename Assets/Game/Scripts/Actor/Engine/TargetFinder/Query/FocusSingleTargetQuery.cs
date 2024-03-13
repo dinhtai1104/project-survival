@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ExtensionKit;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -45,7 +46,7 @@ namespace Engine
         {
         }
 
-        private Actor FindEnemy(IList<Actor> enemies)
+        private Actor FindEnemy(IList<Actor> enemies, params Actor[] except)
         {
             Actor target = null;
             for (var i = 0; i < enemies.Count; ++i)
@@ -53,12 +54,25 @@ namespace Engine
                 var enemyActor = enemies[i];
                 if (enemyActor != null && enemyActor.gameObject.activeInHierarchy && !enemyActor.IsDead)
                 {
+                    if (enemyActor.IsActivated == false) continue;
+                    if (except.IsNotNull() && except.Contains(enemyActor)) continue;
                     if (m_UsingTagFilter && !enemyActor.CompareTag(m_TagFilter)) continue;
                     target = enemyActor;
                 }
             }
 
             return target;
+        }
+
+        public Actor GetTarget(IList<Actor> targets, params Actor[] except)
+        {
+            if (m_Target != null && m_Target.gameObject.activeInHierarchy)
+            {
+                return m_Target;
+            }
+
+            m_Target = FindEnemy(targets, except);
+            return m_Target;
         }
     }
 }

@@ -156,6 +156,7 @@ MonoBehaviour:
       m_Type: 0
       m_CannotEvade: 0
       m_CannotHurt: 0
+      m_CannotCrit: 0
     m_ApplyEffect: 1
   m_NoiseAngle: {x: 0, y: 0}
   m_SyncTimeScale: 0

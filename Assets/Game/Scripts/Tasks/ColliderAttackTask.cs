@@ -9,7 +9,6 @@ namespace Assets.Game.Scripts.Tasks
         [SerializeField] private DamageDealer m_DamageDealer;
         [SerializeField] private GameObject m_HitEffect;
         [SerializeField] private Collider2D m_Collider;
-        [SerializeField] private float m_Duration = 2f;
 
         private float m_CurrentTime = 0;
 
@@ -25,16 +24,6 @@ namespace Assets.Game.Scripts.Tasks
             m_DamageDealer.Init(Caster.Stats);
             m_Collider.enabled = true;
             m_CurrentTime = 0;
-        }
-
-        public override void Run()
-        {
-            base.Run();
-            m_CurrentTime += Time.deltaTime;
-            if (m_CurrentTime > m_Duration)
-            {
-                IsCompleted = true;
-            }
         }
 
         public override void End()

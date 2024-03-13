@@ -15,7 +15,7 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment
     {
         public string IdEquipment;
         public EItemType ItemType;
-        public Dictionary<ERarity, GearPerkEntity> RarityPerks;
+        public Dictionary<ERarity, PerkRarityEntity> RarityPerks;
         public string BaseStatKey => BaseStat.AttributeName;
         public ModifierData BaseStat;
 

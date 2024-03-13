@@ -9,6 +9,8 @@ using Assets.Game.Scripts.Core.Data.Database.Rarity;
 using Assets.Game.Scripts.Core.Data.Database.Dungeon.EnemyEvent;
 using Assets.Game.Scripts.Core.Data.Database.Config;
 using Assets.Game.Scripts.Core.Data.Database.Buff;
+using Assets.Game.Scripts.Core.Data.Database.LevelExp;
+using Assets.Game.Scripts.Core.Data.Database.LevelUpBuff;
 
 public class DatabaseManager : MonoSingleton<DatabaseManager>
 {
@@ -21,10 +23,13 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
     public DungeonWaveTable DungeonWave = new();
 
     public RarityTable Rarity = new();
-    public GearPerkTable GearPerk = new();
+    public PerkRarityTable GearPerk = new();
     public EquipmentTable Equipment = new();
     public WeaponTable Weapon = new();
     public BuffTable Buff = new();
+    public LevelExpGameplayTable LevelExpGameplay = new();
+    public LevelExpAccountTable LevelExpAccount = new();
+    public LevelUpBuffTable LevelUpBuff = new();
 
     public void Init(Transform parent = null)
     {
@@ -49,7 +54,12 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
         databases.Add(Equipment);
         databases.Add(Weapon);
         databases.Add(Buff);
-    } 
+
+        databases.Add(LevelExpAccount);
+        databases.Add(LevelExpGameplay);
+        databases.Add(LevelUpBuff);
+
+    }
 
     public void LoadDatabase()
     {

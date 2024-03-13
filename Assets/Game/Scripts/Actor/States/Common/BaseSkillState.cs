@@ -45,7 +45,7 @@ namespace Engine.State.Common
         {
             while (_cooldownTimer > 0f)
             {
-                _cooldownTimer -= Time.deltaTime;
+                _cooldownTimer -= Time.fixedDeltaTime;
                 yield return 0f;
             }
 
@@ -56,7 +56,7 @@ namespace Engine.State.Common
         {
             _cooldownTimer = Cooldown;
             IsCooldowning = true;
-            Timing.RunCoroutine(_Cooldowning());
+            Timing.RunCoroutine(_Cooldowning(), Segment.FixedUpdate);
         }
 
         [Button]

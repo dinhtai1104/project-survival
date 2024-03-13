@@ -29,7 +29,7 @@ namespace Gameplay
             {
                 for (int i = 0; i < m_WeaponActors.Count; i++)
                 {
-                    m_WeaponActors[i].transform.SetParent(null, false);
+                    m_WeaponActors[i].SetPlaceHolder(null);
                 }
             }
             return m_WeaponActors;

@@ -26,5 +26,10 @@ namespace Engine
         public void OnUpdate()
         {
         }
+
+        public Actor GetTarget(IList<Actor> targets, params Actor[] except)
+        {
+            return null;
+        }
     }
 }

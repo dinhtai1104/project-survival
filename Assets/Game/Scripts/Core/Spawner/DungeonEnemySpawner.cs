@@ -203,11 +203,11 @@ namespace Framework
             OnStartSpawning?.Invoke();
 
             // highest Wave - Default Enemies
-            var highestWave = Timing.RunCoroutine(_SpawnDefaultEnemies());
+            var highestWave = Timing.RunCoroutine(_SpawnDefaultEnemies(), Segment.FixedUpdate);
             m_CoroutineHandlSpawn.Add(highestWave);
 
             // handle stage event enemies spawn
-            var lowerWave = Timing.RunCoroutine(_SpawnStageEventEnemies());
+            var lowerWave = Timing.RunCoroutine(_SpawnStageEventEnemies(), Segment.FixedUpdate);
             m_CoroutineHandlSpawn.Add(lowerWave);
         }
 
@@ -218,7 +218,7 @@ namespace Framework
             foreach (var @event in CurrentWave.WaveEntity.EnemiesEvents)
             {
                 // spawn enemies event
-                var lowestWave = Timing.RunCoroutine(_SpawnEnemiesEvent(@event));
+                var lowestWave = Timing.RunCoroutine(_SpawnEnemiesEvent(@event), Segment.FixedUpdate);
                 m_CoroutineHandlSpawn.Add(lowestWave);
             }
         }
@@ -258,8 +258,8 @@ namespace Framework
                     }
                 }
 
-                currentTimer += Time.deltaTime;
-                yield return Timing.DeltaTime;
+                currentTimer += Time.fixedDeltaTime;
+                yield return 0f;
             }
         }
 
@@ -310,8 +310,8 @@ namespace Framework
                 {
                     break;
                 }
-                currentTimer += Time.deltaTime;
-                yield return Timing.DeltaTime;
+                currentTimer += Time.fixedDeltaTime;
+                yield return 0f;
             }
         }
 

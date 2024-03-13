@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BansheeGz.BGDatabase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,10 @@ namespace Assets.Game.Scripts.Core.Data.Database.Config
         public override void GetDatabase()
         {
             DB_GameConfig.ForEachEntity(e => Get(e));
+            DB_EnemyConfig.ForEachEntity(e => Get(e));
         }
 
-        private void Get(DB_GameConfig e)
+        private void Get(BGEntity e)
         {
             var configKey = e.Get<string>("ConfigKey");
             var configValue = e.Get<string>("ConfigValue");

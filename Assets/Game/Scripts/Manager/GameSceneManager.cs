@@ -23,6 +23,7 @@ namespace Manager
         {
             await Addressables.InitializeAsync();
             Application.targetFrameRate = 60;
+            QualitySettings.vSyncCount = 0;
 
             UnityEngine.InputSystem.EnhancedTouch.EnhancedTouchSupport.Enable();
             Input.simulateMouseWithTouches = true;

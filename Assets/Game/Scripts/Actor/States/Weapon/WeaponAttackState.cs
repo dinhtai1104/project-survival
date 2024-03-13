@@ -14,13 +14,16 @@ namespace Engine.State.Weapon
         public override void Execute()
         {
             base.Execute();
-            if (!Weapon.SkillCaster.HasAvailableSkill)
+            if (!Weapon.SkillCaster.IsExecuting && !Weapon.SkillCaster.HasAvailableSkill)
             {
                 NextState();
             }
             else
             {
-                Weapon.SkillCaster.CastRandomAvailableSkill();
+                if (!Weapon.SkillCaster.IsBusy)
+                {
+                    Weapon.SkillCaster.CastRandomAvailableSkill();
+                }
             }
         }
 

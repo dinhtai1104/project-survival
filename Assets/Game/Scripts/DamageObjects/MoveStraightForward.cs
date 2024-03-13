@@ -20,10 +20,10 @@ public class MoveStraightForward : MonoBehaviour, IBulletMovement
         m_Bullet = GetComponent<Bullet2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!m_Update) return;
-        m_Trans.Translate(m_Trans.right * (Time.deltaTime * m_SpeedStat.Value), Space.World);
+        m_Trans.position += m_Trans.right * (Time.fixedDeltaTime * m_SpeedStat.Value);
     }
 
     public GameObject ModSource => m_Bullet.Owner == null ? gameObject : m_Bullet.Owner.gameObject;

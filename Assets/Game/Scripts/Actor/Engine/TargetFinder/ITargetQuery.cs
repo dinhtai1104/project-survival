@@ -8,6 +8,7 @@ namespace Engine
     {
         void Init(ITargetFinder finder);
         Actor GetTarget(IList<Actor> targets);
+        Actor GetTarget(IList<Actor> targets, params Actor[] except);
         void SetTarget(Actor target);
         void ForceUpdateTarget();
         void OnUpdate();

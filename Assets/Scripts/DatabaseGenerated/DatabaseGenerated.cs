@@ -41,9 +41,13 @@ public partial class DB_Equipment : BGEntity
 	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
 	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
 	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
-	private static readonly DB_GearPerk.Factory _factory6_PFS = new DB_GearPerk.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
 	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
 	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
 	private DB_Equipment() : base(MetaDefault)
 	{
 	}
@@ -112,9 +116,13 @@ public partial class DB_Dungeon : BGEntity
 	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
 	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
 	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
-	private static readonly DB_GearPerk.Factory _factory6_PFS = new DB_GearPerk.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
 	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
 	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
 	private DB_Dungeon() : base(MetaDefault)
 	{
 	}
@@ -198,9 +206,13 @@ public partial class DB_Enemy : BGEntity
 	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
 	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
 	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
-	private static readonly DB_GearPerk.Factory _factory6_PFS = new DB_GearPerk.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
 	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
 	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
 	private DB_Enemy() : base(MetaDefault)
 	{
 	}
@@ -266,9 +278,13 @@ public partial class DB_DungeonWave : BGEntity
 	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
 	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
 	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
-	private static readonly DB_GearPerk.Factory _factory6_PFS = new DB_GearPerk.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
 	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
 	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
 	private DB_DungeonWave() : base(MetaDefault)
 	{
 	}
@@ -337,9 +353,13 @@ public partial class DB_DungeonWaveEvent : BGEntity
 	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
 	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
 	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
-	private static readonly DB_GearPerk.Factory _factory6_PFS = new DB_GearPerk.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
 	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
 	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
 	private DB_DungeonWaveEvent() : base(MetaDefault)
 	{
 	}
@@ -435,9 +455,13 @@ public partial class DB_Weapon : BGEntity
 	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
 	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
 	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
-	private static readonly DB_GearPerk.Factory _factory6_PFS = new DB_GearPerk.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
 	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
 	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
 	private DB_Weapon() : base(MetaDefault)
 	{
 	}
@@ -464,13 +488,13 @@ public partial class DB_Weapon : BGEntity
 	public static DB_Weapon GetEntity(string entityName) => (DB_Weapon) MetaDefault.GetEntity(entityName);
 }
 
-public partial class DB_GearPerk : BGEntity
+public partial class DB_PerkRarity : BGEntity
 {
 
 	public class Factory : BGEntity.EntityFactory
 	{
-		public BGEntity NewEntity(BGMetaEntity meta) => new DB_GearPerk(meta);
-		public BGEntity NewEntity(BGMetaEntity meta, BGId id) => new DB_GearPerk(meta, id);
+		public BGEntity NewEntity(BGMetaEntity meta) => new DB_PerkRarity(meta);
+		public BGEntity NewEntity(BGMetaEntity meta, BGId id) => new DB_PerkRarity(meta, id);
 	}
 	private static BansheeGz.BGDatabase.BGMetaRow _metaDefault;
 	public static BansheeGz.BGDatabase.BGMetaRow MetaDefault => _metaDefault ?? (_metaDefault = BGCodeGenUtils.GetMeta<BansheeGz.BGDatabase.BGMetaRow>(new BGId(5311475314760370833UL,1448962693894215101UL), () => _metaDefault = null));
@@ -500,33 +524,37 @@ public partial class DB_GearPerk : BGEntity
 	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
 	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
 	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
-	private static readonly DB_GearPerk.Factory _factory6_PFS = new DB_GearPerk.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
 	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
 	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
-	private DB_GearPerk() : base(MetaDefault)
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
+	private DB_PerkRarity() : base(MetaDefault)
 	{
 	}
-	private DB_GearPerk(BGId id) : base(MetaDefault, id)
+	private DB_PerkRarity(BGId id) : base(MetaDefault, id)
 	{
 	}
-	private DB_GearPerk(BGMetaEntity meta) : base(meta)
+	private DB_PerkRarity(BGMetaEntity meta) : base(meta)
 	{
 	}
-	private DB_GearPerk(BGMetaEntity meta, BGId id) : base(meta, id)
+	private DB_PerkRarity(BGMetaEntity meta, BGId id) : base(meta, id)
 	{
 	}
-	public static DB_GearPerk FindEntity(Predicate<DB_GearPerk> filter)
+	public static DB_PerkRarity FindEntity(Predicate<DB_PerkRarity> filter)
 	{
-		return MetaDefault.FindEntity(entity => filter==null || filter((DB_GearPerk) entity)) as DB_GearPerk;
+		return MetaDefault.FindEntity(entity => filter==null || filter((DB_PerkRarity) entity)) as DB_PerkRarity;
 	}
-	public static List<DB_GearPerk> FindEntities(Predicate<DB_GearPerk> filter, List<DB_GearPerk> result=null, Comparison<DB_GearPerk> sort=null) => BGCodeGenUtils.FindEntities(MetaDefault, filter, result, sort);
-	public static void ForEachEntity(Action<DB_GearPerk> action, Predicate<DB_GearPerk> filter=null, Comparison<DB_GearPerk> sort=null)
+	public static List<DB_PerkRarity> FindEntities(Predicate<DB_PerkRarity> filter, List<DB_PerkRarity> result=null, Comparison<DB_PerkRarity> sort=null) => BGCodeGenUtils.FindEntities(MetaDefault, filter, result, sort);
+	public static void ForEachEntity(Action<DB_PerkRarity> action, Predicate<DB_PerkRarity> filter=null, Comparison<DB_PerkRarity> sort=null)
 	{
-		MetaDefault.ForEachEntity(entity => action((DB_GearPerk) entity), filter == null ? null : (Predicate<BGEntity>) (entity => filter((DB_GearPerk) entity)), sort==null?(Comparison<BGEntity>) null:(e1,e2) => sort((DB_GearPerk)e1,(DB_GearPerk)e2));
+		MetaDefault.ForEachEntity(entity => action((DB_PerkRarity) entity), filter == null ? null : (Predicate<BGEntity>) (entity => filter((DB_PerkRarity) entity)), sort==null?(Comparison<BGEntity>) null:(e1,e2) => sort((DB_PerkRarity)e1,(DB_PerkRarity)e2));
 	}
-	public static DB_GearPerk GetEntity(BGId entityId) => (DB_GearPerk) MetaDefault.GetEntity(entityId);
-	public static DB_GearPerk GetEntity(int index) => (DB_GearPerk) MetaDefault[index];
-	public static DB_GearPerk GetEntity(string entityName) => (DB_GearPerk) MetaDefault.GetEntity(entityName);
+	public static DB_PerkRarity GetEntity(BGId entityId) => (DB_PerkRarity) MetaDefault.GetEntity(entityId);
+	public static DB_PerkRarity GetEntity(int index) => (DB_PerkRarity) MetaDefault[index];
+	public static DB_PerkRarity GetEntity(string entityName) => (DB_PerkRarity) MetaDefault.GetEntity(entityName);
 }
 
 public partial class DB_GameConfig : BGEntity
@@ -556,9 +584,13 @@ public partial class DB_GameConfig : BGEntity
 	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
 	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
 	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
-	private static readonly DB_GearPerk.Factory _factory6_PFS = new DB_GearPerk.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
 	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
 	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
 	private DB_GameConfig() : base(MetaDefault)
 	{
 	}
@@ -627,9 +659,13 @@ public partial class DB_Buff : BGEntity
 	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
 	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
 	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
-	private static readonly DB_GearPerk.Factory _factory6_PFS = new DB_GearPerk.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
 	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
 	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
 	private DB_Buff() : base(MetaDefault)
 	{
 	}
@@ -654,5 +690,254 @@ public partial class DB_Buff : BGEntity
 	public static DB_Buff GetEntity(BGId entityId) => (DB_Buff) MetaDefault.GetEntity(entityId);
 	public static DB_Buff GetEntity(int index) => (DB_Buff) MetaDefault[index];
 	public static DB_Buff GetEntity(string entityName) => (DB_Buff) MetaDefault.GetEntity(entityName);
+}
+
+public partial class DB_EnemyConfig : BGEntity
+{
+
+	public class Factory : BGEntity.EntityFactory
+	{
+		public BGEntity NewEntity(BGMetaEntity meta) => new DB_EnemyConfig(meta);
+		public BGEntity NewEntity(BGMetaEntity meta, BGId id) => new DB_EnemyConfig(meta, id);
+	}
+	private static BansheeGz.BGDatabase.BGMetaRow _metaDefault;
+	public static BansheeGz.BGDatabase.BGMetaRow MetaDefault => _metaDefault ?? (_metaDefault = BGCodeGenUtils.GetMeta<BansheeGz.BGDatabase.BGMetaRow>(new BGId(5662968900856753507UL,13895789156797762432UL), () => _metaDefault = null));
+	public static BansheeGz.BGDatabase.BGRepoEvents Events => BGRepo.I.Events;
+	public static int CountEntities => MetaDefault.CountEntities;
+	public System.String name => _name[Index];
+	public System.String ConfigKey => _ConfigKey[Index];
+	public System.String ConfigValue => _ConfigValue[Index];
+	private static BansheeGz.BGDatabase.BGFieldEntityName _ufle12jhs77_name;
+	public static BansheeGz.BGDatabase.BGFieldEntityName _name => _ufle12jhs77_name ?? (_ufle12jhs77_name = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldEntityName>(MetaDefault, new BGId(5545623209910696604UL, 5302696383627258004UL), () => _ufle12jhs77_name = null));
+	private static BansheeGz.BGDatabase.BGFieldString _ufle12jhs77_ConfigKey;
+	public static BansheeGz.BGDatabase.BGFieldString _ConfigKey => _ufle12jhs77_ConfigKey ?? (_ufle12jhs77_ConfigKey = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldString>(MetaDefault, new BGId(5531044962385832129UL, 3659561948548060053UL), () => _ufle12jhs77_ConfigKey = null));
+	private static BansheeGz.BGDatabase.BGFieldString _ufle12jhs77_ConfigValue;
+	public static BansheeGz.BGDatabase.BGFieldString _ConfigValue => _ufle12jhs77_ConfigValue ?? (_ufle12jhs77_ConfigValue = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldString>(MetaDefault, new BGId(5095734151961211723UL, 1542989657564225181UL), () => _ufle12jhs77_ConfigValue = null));
+	private static readonly DB_Equipment.Factory _factory0_PFS = new DB_Equipment.Factory();
+	private static readonly DB_Dungeon.Factory _factory1_PFS = new DB_Dungeon.Factory();
+	private static readonly DB_Enemy.Factory _factory2_PFS = new DB_Enemy.Factory();
+	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
+	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
+	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
+	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
+	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
+	private DB_EnemyConfig() : base(MetaDefault)
+	{
+	}
+	private DB_EnemyConfig(BGId id) : base(MetaDefault, id)
+	{
+	}
+	private DB_EnemyConfig(BGMetaEntity meta) : base(meta)
+	{
+	}
+	private DB_EnemyConfig(BGMetaEntity meta, BGId id) : base(meta, id)
+	{
+	}
+	public static DB_EnemyConfig FindEntity(Predicate<DB_EnemyConfig> filter)
+	{
+		return MetaDefault.FindEntity(entity => filter==null || filter((DB_EnemyConfig) entity)) as DB_EnemyConfig;
+	}
+	public static List<DB_EnemyConfig> FindEntities(Predicate<DB_EnemyConfig> filter, List<DB_EnemyConfig> result=null, Comparison<DB_EnemyConfig> sort=null) => BGCodeGenUtils.FindEntities(MetaDefault, filter, result, sort);
+	public static void ForEachEntity(Action<DB_EnemyConfig> action, Predicate<DB_EnemyConfig> filter=null, Comparison<DB_EnemyConfig> sort=null)
+	{
+		MetaDefault.ForEachEntity(entity => action((DB_EnemyConfig) entity), filter == null ? null : (Predicate<BGEntity>) (entity => filter((DB_EnemyConfig) entity)), sort==null?(Comparison<BGEntity>) null:(e1,e2) => sort((DB_EnemyConfig)e1,(DB_EnemyConfig)e2));
+	}
+	public static DB_EnemyConfig GetEntity(BGId entityId) => (DB_EnemyConfig) MetaDefault.GetEntity(entityId);
+	public static DB_EnemyConfig GetEntity(int index) => (DB_EnemyConfig) MetaDefault[index];
+	public static DB_EnemyConfig GetEntity(string entityName) => (DB_EnemyConfig) MetaDefault.GetEntity(entityName);
+}
+
+public partial class DB_LevelExpGameplay : BGEntity
+{
+
+	public class Factory : BGEntity.EntityFactory
+	{
+		public BGEntity NewEntity(BGMetaEntity meta) => new DB_LevelExpGameplay(meta);
+		public BGEntity NewEntity(BGMetaEntity meta, BGId id) => new DB_LevelExpGameplay(meta, id);
+	}
+	private static BansheeGz.BGDatabase.BGMetaRow _metaDefault;
+	public static BansheeGz.BGDatabase.BGMetaRow MetaDefault => _metaDefault ?? (_metaDefault = BGCodeGenUtils.GetMeta<BansheeGz.BGDatabase.BGMetaRow>(new BGId(5686822228797312043UL,13786898213731770028UL), () => _metaDefault = null));
+	public static BansheeGz.BGDatabase.BGRepoEvents Events => BGRepo.I.Events;
+	public static int CountEntities => MetaDefault.CountEntities;
+	public System.String name => _name[Index];
+	public System.Int32 Level => _Level[Index];
+	public System.Int64 ExpRequire => _ExpRequire[Index];
+	private static BansheeGz.BGDatabase.BGFieldEntityName _ufle12jhs77_name;
+	public static BansheeGz.BGDatabase.BGFieldEntityName _name => _ufle12jhs77_name ?? (_ufle12jhs77_name = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldEntityName>(MetaDefault, new BGId(5328291770059467641UL, 238653686803771785UL), () => _ufle12jhs77_name = null));
+	private static BansheeGz.BGDatabase.BGFieldInt _ufle12jhs77_Level;
+	public static BansheeGz.BGDatabase.BGFieldInt _Level => _ufle12jhs77_Level ?? (_ufle12jhs77_Level = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldInt>(MetaDefault, new BGId(5178260878181157602UL, 16672160080125970321UL), () => _ufle12jhs77_Level = null));
+	private static BansheeGz.BGDatabase.BGFieldLong _ufle12jhs77_ExpRequire;
+	public static BansheeGz.BGDatabase.BGFieldLong _ExpRequire => _ufle12jhs77_ExpRequire ?? (_ufle12jhs77_ExpRequire = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldLong>(MetaDefault, new BGId(5176757479027722932UL, 17375744440501317300UL), () => _ufle12jhs77_ExpRequire = null));
+	private static readonly DB_Equipment.Factory _factory0_PFS = new DB_Equipment.Factory();
+	private static readonly DB_Dungeon.Factory _factory1_PFS = new DB_Dungeon.Factory();
+	private static readonly DB_Enemy.Factory _factory2_PFS = new DB_Enemy.Factory();
+	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
+	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
+	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
+	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
+	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
+	private DB_LevelExpGameplay() : base(MetaDefault)
+	{
+	}
+	private DB_LevelExpGameplay(BGId id) : base(MetaDefault, id)
+	{
+	}
+	private DB_LevelExpGameplay(BGMetaEntity meta) : base(meta)
+	{
+	}
+	private DB_LevelExpGameplay(BGMetaEntity meta, BGId id) : base(meta, id)
+	{
+	}
+	public static DB_LevelExpGameplay FindEntity(Predicate<DB_LevelExpGameplay> filter)
+	{
+		return MetaDefault.FindEntity(entity => filter==null || filter((DB_LevelExpGameplay) entity)) as DB_LevelExpGameplay;
+	}
+	public static List<DB_LevelExpGameplay> FindEntities(Predicate<DB_LevelExpGameplay> filter, List<DB_LevelExpGameplay> result=null, Comparison<DB_LevelExpGameplay> sort=null) => BGCodeGenUtils.FindEntities(MetaDefault, filter, result, sort);
+	public static void ForEachEntity(Action<DB_LevelExpGameplay> action, Predicate<DB_LevelExpGameplay> filter=null, Comparison<DB_LevelExpGameplay> sort=null)
+	{
+		MetaDefault.ForEachEntity(entity => action((DB_LevelExpGameplay) entity), filter == null ? null : (Predicate<BGEntity>) (entity => filter((DB_LevelExpGameplay) entity)), sort==null?(Comparison<BGEntity>) null:(e1,e2) => sort((DB_LevelExpGameplay)e1,(DB_LevelExpGameplay)e2));
+	}
+	public static DB_LevelExpGameplay GetEntity(BGId entityId) => (DB_LevelExpGameplay) MetaDefault.GetEntity(entityId);
+	public static DB_LevelExpGameplay GetEntity(int index) => (DB_LevelExpGameplay) MetaDefault[index];
+	public static DB_LevelExpGameplay GetEntity(string entityName) => (DB_LevelExpGameplay) MetaDefault.GetEntity(entityName);
+}
+
+public partial class DB_LevelExpAccount : BGEntity
+{
+
+	public class Factory : BGEntity.EntityFactory
+	{
+		public BGEntity NewEntity(BGMetaEntity meta) => new DB_LevelExpAccount(meta);
+		public BGEntity NewEntity(BGMetaEntity meta, BGId id) => new DB_LevelExpAccount(meta, id);
+	}
+	private static BansheeGz.BGDatabase.BGMetaRow _metaDefault;
+	public static BansheeGz.BGDatabase.BGMetaRow MetaDefault => _metaDefault ?? (_metaDefault = BGCodeGenUtils.GetMeta<BansheeGz.BGDatabase.BGMetaRow>(new BGId(5261967217048347742UL,7685834756704872079UL), () => _metaDefault = null));
+	public static BansheeGz.BGDatabase.BGRepoEvents Events => BGRepo.I.Events;
+	public static int CountEntities => MetaDefault.CountEntities;
+	public System.String name => _name[Index];
+	public System.Int32 Level => _Level[Index];
+	public System.Int64 ExpRequire => _ExpRequire[Index];
+	private static BansheeGz.BGDatabase.BGFieldEntityName _ufle12jhs77_name;
+	public static BansheeGz.BGDatabase.BGFieldEntityName _name => _ufle12jhs77_name ?? (_ufle12jhs77_name = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldEntityName>(MetaDefault, new BGId(4826203743015004209UL, 11858944137793301407UL), () => _ufle12jhs77_name = null));
+	private static BansheeGz.BGDatabase.BGFieldInt _ufle12jhs77_Level;
+	public static BansheeGz.BGDatabase.BGFieldInt _Level => _ufle12jhs77_Level ?? (_ufle12jhs77_Level = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldInt>(MetaDefault, new BGId(4839151311078594921UL, 5245766391511650728UL), () => _ufle12jhs77_Level = null));
+	private static BansheeGz.BGDatabase.BGFieldLong _ufle12jhs77_ExpRequire;
+	public static BansheeGz.BGDatabase.BGFieldLong _ExpRequire => _ufle12jhs77_ExpRequire ?? (_ufle12jhs77_ExpRequire = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldLong>(MetaDefault, new BGId(5486263338497964646UL, 14825673541543259819UL), () => _ufle12jhs77_ExpRequire = null));
+	private static readonly DB_Equipment.Factory _factory0_PFS = new DB_Equipment.Factory();
+	private static readonly DB_Dungeon.Factory _factory1_PFS = new DB_Dungeon.Factory();
+	private static readonly DB_Enemy.Factory _factory2_PFS = new DB_Enemy.Factory();
+	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
+	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
+	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
+	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
+	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
+	private DB_LevelExpAccount() : base(MetaDefault)
+	{
+	}
+	private DB_LevelExpAccount(BGId id) : base(MetaDefault, id)
+	{
+	}
+	private DB_LevelExpAccount(BGMetaEntity meta) : base(meta)
+	{
+	}
+	private DB_LevelExpAccount(BGMetaEntity meta, BGId id) : base(meta, id)
+	{
+	}
+	public static DB_LevelExpAccount FindEntity(Predicate<DB_LevelExpAccount> filter)
+	{
+		return MetaDefault.FindEntity(entity => filter==null || filter((DB_LevelExpAccount) entity)) as DB_LevelExpAccount;
+	}
+	public static List<DB_LevelExpAccount> FindEntities(Predicate<DB_LevelExpAccount> filter, List<DB_LevelExpAccount> result=null, Comparison<DB_LevelExpAccount> sort=null) => BGCodeGenUtils.FindEntities(MetaDefault, filter, result, sort);
+	public static void ForEachEntity(Action<DB_LevelExpAccount> action, Predicate<DB_LevelExpAccount> filter=null, Comparison<DB_LevelExpAccount> sort=null)
+	{
+		MetaDefault.ForEachEntity(entity => action((DB_LevelExpAccount) entity), filter == null ? null : (Predicate<BGEntity>) (entity => filter((DB_LevelExpAccount) entity)), sort==null?(Comparison<BGEntity>) null:(e1,e2) => sort((DB_LevelExpAccount)e1,(DB_LevelExpAccount)e2));
+	}
+	public static DB_LevelExpAccount GetEntity(BGId entityId) => (DB_LevelExpAccount) MetaDefault.GetEntity(entityId);
+	public static DB_LevelExpAccount GetEntity(int index) => (DB_LevelExpAccount) MetaDefault[index];
+	public static DB_LevelExpAccount GetEntity(string entityName) => (DB_LevelExpAccount) MetaDefault.GetEntity(entityName);
+}
+
+public partial class DB_LevelUp : BGEntity
+{
+
+	public class Factory : BGEntity.EntityFactory
+	{
+		public BGEntity NewEntity(BGMetaEntity meta) => new DB_LevelUp(meta);
+		public BGEntity NewEntity(BGMetaEntity meta, BGId id) => new DB_LevelUp(meta, id);
+	}
+	private static BansheeGz.BGDatabase.BGMetaRow _metaDefault;
+	public static BansheeGz.BGDatabase.BGMetaRow MetaDefault => _metaDefault ?? (_metaDefault = BGCodeGenUtils.GetMeta<BansheeGz.BGDatabase.BGMetaRow>(new BGId(4791711307010293757UL,13235942265993897617UL), () => _metaDefault = null));
+	public static BansheeGz.BGDatabase.BGRepoEvents Events => BGRepo.I.Events;
+	public static int CountEntities => MetaDefault.CountEntities;
+	public System.String name => _name[Index];
+	public System.String Stat => _Stat[Index];
+	public System.String ModType => _ModType[Index];
+	public System.Collections.Generic.List<System.Single> Modifier => _Modifier[Index];
+	public System.Single Ratio => _Ratio[Index];
+	public System.Int32 Id => _Id[Index];
+	private static BansheeGz.BGDatabase.BGFieldEntityName _ufle12jhs77_name;
+	public static BansheeGz.BGDatabase.BGFieldEntityName _name => _ufle12jhs77_name ?? (_ufle12jhs77_name = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldEntityName>(MetaDefault, new BGId(5571497454273028211UL, 5232925175369721257UL), () => _ufle12jhs77_name = null));
+	private static BansheeGz.BGDatabase.BGFieldString _ufle12jhs77_Stat;
+	public static BansheeGz.BGDatabase.BGFieldString _Stat => _ufle12jhs77_Stat ?? (_ufle12jhs77_Stat = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldString>(MetaDefault, new BGId(4644865989698025406UL, 16622764137509198496UL), () => _ufle12jhs77_Stat = null));
+	private static BansheeGz.BGDatabase.BGFieldString _ufle12jhs77_ModType;
+	public static BansheeGz.BGDatabase.BGFieldString _ModType => _ufle12jhs77_ModType ?? (_ufle12jhs77_ModType = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldString>(MetaDefault, new BGId(5609979687880185488UL, 8820036057687596930UL), () => _ufle12jhs77_ModType = null));
+	private static BansheeGz.BGDatabase.BGFieldListFloat _ufle12jhs77_Modifier;
+	public static BansheeGz.BGDatabase.BGFieldListFloat _Modifier => _ufle12jhs77_Modifier ?? (_ufle12jhs77_Modifier = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldListFloat>(MetaDefault, new BGId(5693970233510162033UL, 5270487705033738904UL), () => _ufle12jhs77_Modifier = null));
+	private static BansheeGz.BGDatabase.BGFieldFloat _ufle12jhs77_Ratio;
+	public static BansheeGz.BGDatabase.BGFieldFloat _Ratio => _ufle12jhs77_Ratio ?? (_ufle12jhs77_Ratio = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldFloat>(MetaDefault, new BGId(5660624552326697993UL, 2982951620674775462UL), () => _ufle12jhs77_Ratio = null));
+	private static BansheeGz.BGDatabase.BGFieldInt _ufle12jhs77_Id;
+	public static BansheeGz.BGDatabase.BGFieldInt _Id => _ufle12jhs77_Id ?? (_ufle12jhs77_Id = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldInt>(MetaDefault, new BGId(5676538314553694785UL, 6788615952158841741UL), () => _ufle12jhs77_Id = null));
+	private static readonly DB_Equipment.Factory _factory0_PFS = new DB_Equipment.Factory();
+	private static readonly DB_Dungeon.Factory _factory1_PFS = new DB_Dungeon.Factory();
+	private static readonly DB_Enemy.Factory _factory2_PFS = new DB_Enemy.Factory();
+	private static readonly DB_DungeonWave.Factory _factory3_PFS = new DB_DungeonWave.Factory();
+	private static readonly DB_DungeonWaveEvent.Factory _factory4_PFS = new DB_DungeonWaveEvent.Factory();
+	private static readonly DB_Weapon.Factory _factory5_PFS = new DB_Weapon.Factory();
+	private static readonly DB_PerkRarity.Factory _factory6_PFS = new DB_PerkRarity.Factory();
+	private static readonly DB_GameConfig.Factory _factory7_PFS = new DB_GameConfig.Factory();
+	private static readonly DB_Buff.Factory _factory8_PFS = new DB_Buff.Factory();
+	private static readonly DB_EnemyConfig.Factory _factory9_PFS = new DB_EnemyConfig.Factory();
+	private static readonly DB_LevelExpGameplay.Factory _factory10_PFS = new DB_LevelExpGameplay.Factory();
+	private static readonly DB_LevelExpAccount.Factory _factory11_PFS = new DB_LevelExpAccount.Factory();
+	private static readonly DB_LevelUp.Factory _factory12_PFS = new DB_LevelUp.Factory();
+	private DB_LevelUp() : base(MetaDefault)
+	{
+	}
+	private DB_LevelUp(BGId id) : base(MetaDefault, id)
+	{
+	}
+	private DB_LevelUp(BGMetaEntity meta) : base(meta)
+	{
+	}
+	private DB_LevelUp(BGMetaEntity meta, BGId id) : base(meta, id)
+	{
+	}
+	public static DB_LevelUp FindEntity(Predicate<DB_LevelUp> filter)
+	{
+		return MetaDefault.FindEntity(entity => filter==null || filter((DB_LevelUp) entity)) as DB_LevelUp;
+	}
+	public static List<DB_LevelUp> FindEntities(Predicate<DB_LevelUp> filter, List<DB_LevelUp> result=null, Comparison<DB_LevelUp> sort=null) => BGCodeGenUtils.FindEntities(MetaDefault, filter, result, sort);
+	public static void ForEachEntity(Action<DB_LevelUp> action, Predicate<DB_LevelUp> filter=null, Comparison<DB_LevelUp> sort=null)
+	{
+		MetaDefault.ForEachEntity(entity => action((DB_LevelUp) entity), filter == null ? null : (Predicate<BGEntity>) (entity => filter((DB_LevelUp) entity)), sort==null?(Comparison<BGEntity>) null:(e1,e2) => sort((DB_LevelUp)e1,(DB_LevelUp)e2));
+	}
+	public static DB_LevelUp GetEntity(BGId entityId) => (DB_LevelUp) MetaDefault.GetEntity(entityId);
+	public static DB_LevelUp GetEntity(int index) => (DB_LevelUp) MetaDefault[index];
+	public static DB_LevelUp GetEntity(string entityName) => (DB_LevelUp) MetaDefault.GetEntity(entityName);
 }
 #pragma warning restore 414
