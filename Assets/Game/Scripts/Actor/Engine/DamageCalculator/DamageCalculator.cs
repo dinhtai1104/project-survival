@@ -92,6 +92,7 @@ namespace Engine
             if (lastHit)
             {
                 // FireEvent LastHit
+                Architecture.Get<EventMgr>().Fire(this, new LastHitEventArgs(attacker, defender));
                 //GameCore.Event.Fire(this, DamageLastHitEventArgs.Create(attacker, defender, source, hitResult));
             }
 

@@ -29,10 +29,9 @@ namespace Framework
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async UniTask<WeaponActor> CreateWeapon(WeaponEntity entity)
+        public WeaponActor CreateWeapon(WeaponEntity entity)
         {
-            var taskRequest = SceneManager.RequestAsync<GameObject>(entity.IdEquipment, $"{entity.PrefabPath}");
-            await taskRequest;
+            SceneManager.Request<GameObject>(entity.IdEquipment, $"{entity.PrefabPath}");
 
             var prefab = SceneManager.GetAsset<GameObject>(entity.IdEquipment);
             var weaponActor = PoolFactory.Spawn(prefab.GetComponent<WeaponActor>());

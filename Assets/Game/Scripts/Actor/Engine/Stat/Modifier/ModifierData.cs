@@ -9,7 +9,6 @@ using System;
 public class ModifierData
 {
     [SerializeField]
-    [ValueDropdown("@DropdownKey.Stat")]
     private string m_AttributeName;
 
     [SerializeField, InlineProperty, HideLabel]

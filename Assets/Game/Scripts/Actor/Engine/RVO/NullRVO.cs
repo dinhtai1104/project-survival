@@ -22,5 +22,9 @@ namespace Engine
         public void OnUpdate()
         {
         }
+
+        public void ReInit()
+        {
+        }
     }
 }

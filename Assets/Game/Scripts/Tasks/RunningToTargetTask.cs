@@ -12,9 +12,11 @@ public class RunningToTargetTask : SkillTask
     [SerializeField] private bool m_LoopAnimation = true;
     [SerializeField] private bool m_SyncTimeScale;
     [SerializeField] private bool m_Follow;
-    [SerializeField, Range(0f, 10f)] private float m_Range;
+    [SerializeField] private float m_RangeOffset;
     [SerializeField] private bool m_CompleteIfInRange;
     [SerializeField] private ModifierData m_SpeedMod;
+
+    private float m_Range;
 
     private bool m_ReachTarget;
     private float m_CurrentOffsetY;
@@ -35,6 +37,7 @@ public class RunningToTargetTask : SkillTask
         base.End();
         Caster.Movement.IsMoving = false;
         Caster.Animation.Play(0, m_IdleAnimation);
+        m_Range = Caster.Stats.GetValue(StatKey.AttackRange) + m_RangeOffset;
         if (Caster != null)
         {
             Caster.Stats.RemoveModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier);

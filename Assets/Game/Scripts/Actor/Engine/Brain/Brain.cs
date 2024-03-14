@@ -11,10 +11,16 @@ namespace Engine
 
         private float m_AiTimer;
 
+        public BrainTransition[] CoreTransitions
+        {
+            get { return m_Brain.m_CoreTransitions; }
+        }
+
         public BrainTransition[] GlobalTransitions
         {
             get { return m_Brain.m_GlobalTransitions; }
         }
+
 
         public BrainLocalTransition[] LocalTransitions
         {
@@ -40,28 +46,37 @@ namespace Engine
             }
 
             m_AiTimer = 0f;
-            bool globalResult = false;
-            if (m_Brain.m_GlobalTransitions != null)
+            bool coreResult = false;
+            if (CoreTransitions != null)
             {
-                globalResult = CheckGlobalTransitions();
+                coreResult = CheckGlobalTransitions(CoreTransitions);
             }
-
-            if (globalResult || m_Brain.m_LocalTransitions == null || !Owner.AI)
+            
+            if (!coreResult && Owner.AI)
             {
-                return;
-            }
+                bool globalResult = false;
+                if (GlobalTransitions != null)
+                {
+                    globalResult = CheckGlobalTransitions(GlobalTransitions);
+                }
 
-            foreach (var local in m_Brain.m_LocalTransitions)
-            {
-                if (!Owner.Fsm.IsCurrentState(local.StateType)) continue;
-                CheckLocalTransitions(local.Transitions);
-                break;
+                if (globalResult || LocalTransitions == null)
+                {
+                    return;
+                }
+
+                foreach (var local in LocalTransitions)
+                {
+                    if (!Owner.Fsm.IsCurrentState(local.StateType)) continue;
+                    CheckLocalTransitions(local.Transitions);
+                    break;
+                }
             }
         }
 
-        private bool CheckGlobalTransitions()
+        private bool CheckGlobalTransitions(BrainTransition[] globalTransitions)
         {
-            foreach (var transition in m_Brain.m_GlobalTransitions)
+            foreach (var transition in globalTransitions)
             {
                 bool result = transition.Decision.Decide(Owner);
 

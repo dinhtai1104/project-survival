@@ -1,4 +1,5 @@
 ﻿using Assets.Game.Scripts.Core.SceneMemory.Memory;
+using Assets.Game.Scripts.Dungeon;
 using Core;
 using Cysharp.Threading.Tasks;
 using Engine;
@@ -9,6 +10,7 @@ using Pool;
 using SceneManger;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,6 +19,7 @@ namespace Gameplay
     public abstract class BaseGameplayScene : BaseSceneController<GameSceneManager>
     {
         [SerializeField] private TeamManager m_TeamManager;
+        private GameplayLevelUpHandler m_GameplayLevelUpHandler;
         private WeaponFactory m_WeaponFactory;
         public TeamManager TeamManager => m_TeamManager;
 
@@ -27,6 +30,7 @@ namespace Gameplay
         public PlayerActor MainPlayer => m_MainPlayer as PlayerActor;
 
         public WeaponFactory WeaponFactory { get => m_WeaponFactory; set => m_WeaponFactory = value; }
+        public GameplayLevelUpHandler GameplayLevelUpHandler => m_GameplayLevelUpHandler;
 
         protected abstract bool CheckWinCondition();
         protected abstract bool CheckLoseCondition();
@@ -35,8 +39,16 @@ namespace Gameplay
         protected override void OnEnter()
         {
             base.OnEnter();
-            m_TeamManager = new TeamManager();
             _checkingResult = true;
+            CreateTeam();
+            EquipWeapon();
+        }
+        /// <summary>
+        /// Create Ally + Enemies Team ==== Create player
+        /// </summary>
+        private void CreateTeam()
+        {
+            m_TeamManager = new TeamManager();
 
             //Create Team
             var playerTeam = new TeamModel(ConstantValue.PlayerTeamId, Layers.Player_Int);
@@ -54,39 +66,33 @@ namespace Gameplay
             m_MainPlayer.Init(TeamManager.GetTeamModel(ConstantValue.PlayerTeamId));
             m_TeamManager.AddActor(playerTeam.TeamId, m_MainPlayer);
 
-            EquipWeapon();
-        }
 
+            var pickupRange = PoolFactory.Spawn(GetRequestedAsset<GameObject>(StatKey.PickupRange), m_MainPlayer.transform).GetComponent<IPassive>();
+            m_MainPlayer.Passive.AddPassive(pickupRange);
+
+            var regeneration = PoolFactory.Spawn(GetRequestedAsset<GameObject>(StatKey.HpRegeneration), m_MainPlayer.transform).GetComponent<IPassive>();
+            m_MainPlayer.Passive.AddPassive(regeneration);
+
+        }
         private void EquipWeapon()
         {
             var listWea = new List<WeaponActor>();
 
             var smgEntity = DataManager.Base.Weapon.Get("8")[ERarity.Common];
-            var prefab = GetRequestedAsset<GameObject>(smgEntity.IdEquipment).GetComponent<WeaponActor>();
 
             for (int i = 0; i < 1; i++)
             {
                 // Spawn Weapon
-                var weaponIns = PoolFactory.Spawn(prefab);
-                weaponIns.Prepare();
-                weaponIns.Init(TeamManager.GetTeamModel(ConstantValue.PlayerTeamId));
-                weaponIns.InitOwner(MainPlayer);
-
-                // TODO:
-                // Test -> Get Shotgun weapon
-                weaponIns.InitWeapon(smgEntity);
-                weaponIns.Active();
-
+                var weaponIns = m_WeaponFactory.CreateWeapon(smgEntity);
                 listWea.Add(weaponIns);
             }
             (MainPlayer as PlayerActor).WeaponHolder.SetupWeapon(listWea);
         }
-
         private void SetupPlayerActor(Actor player)
         {
             player.Stats.Copy(SceneManager.PlayerData.PlayerStats);
+            // Add Passive Here
         }
-
         public Actor SpawnPlayerActor()
         {
             var prefab = GetRequestedAsset<GameObject>("player").GetComponent<Actor>();
@@ -98,6 +104,7 @@ namespace Gameplay
 
         public override UniTask RequestAssets()
         {
+            var asynchorours = new List<UniTask>();
             WeaponFactory = new WeaponFactory(SceneManager, this);
             if (!Architecture.Get<ShortTermMemoryService>().RetrieveMemory<LocalPlayerMemory>(out var playerData))
             {
@@ -108,23 +115,18 @@ namespace Gameplay
 
             var playerPath = "Player/Player0.prefab";
             var taskPlayer = RequestAsset<GameObject>("player", playerPath);
+            asynchorours.Add(taskPlayer);
+            // Level
+            var expLevel = DataManager.Base.LevelExpGameplay.Dictionary.Values.ToList();
+            m_GameplayLevelUpHandler = new GameplayLevelUpHandler(new ExpHandler(0, expLevel));
 
-            foreach (var weapon in DataManager.Base.Weapon.Dictionary)
-            {
-                var id = weapon.Value[ERarity.Common];
-                RequestAsset<GameObject>(id.IdEquipment, id.PrefabPath);
-            }
+            var pickupRange = AddressableName.StatPassive.AddParams(StatKey.PickupRange);
+            asynchorours.Add(RequestAsset<GameObject>(StatKey.PickupRange, pickupRange));
 
-            //// Request weapon
-            //var pathWp = "Weapon/{0}.prefab";
-            //RequestAsset<GameObject>("weapon-0", pathWp.AddParams("Axe-2"));
-            //RequestAsset<GameObject>("weapon-1", pathWp.AddParams("Axe"));
-            //RequestAsset<GameObject>("weapon-2", pathWp.AddParams("Pistol"));
-            //RequestAsset<GameObject>("weapon-3", pathWp.AddParams("AK"));
-            //RequestAsset<GameObject>("weapon-4", pathWp.AddParams("AK"));
-            //RequestAsset<GameObject>("weapon-5", pathWp.AddParams("SMG"));
+            var regeneration = AddressableName.StatPassive.AddParams(StatKey.HpRegeneration);
+            asynchorours.Add(RequestAsset<GameObject>(StatKey.HpRegeneration, regeneration));
 
-            return taskPlayer;
+            return UniTask.WhenAll(asynchorours);
         }
 
         protected virtual UniTask RequestPlayer(PlayerGameplayData localPlayerData)

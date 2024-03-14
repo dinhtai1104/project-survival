@@ -44,15 +44,28 @@ namespace Engine.State.Unit
                     Vector2RVO pos = Simulator.Instance.getAgentPosition(Actor.RVO.Id);
                     var position = new Vector3(pos.x(), pos.y());
                     var dir = Actor.CenterPosition - target.CenterPosition;
-                    if (dir.magnitude < Actor.Stats.GetValue(StatKey.AttackRange) * 0.7f)
-                    {
-                        Actor.Movement.MoveDirection(dir.normalized);
-                        Simulator.Instance.setAgentPosition(Actor.RVO.Id, new Vector2RVO(Actor.BotPosition));
-                    }
-                    else
-                    {
-                        Actor.Movement.MoveTo(position);
-                    }
+
+                    Actor.Trans.position = position;
+
+                    //if (dir.magnitude < Actor.Stats.GetValue(StatKey.AttackRange))
+                    //{
+                    //    if (dir.magnitude < Actor.Stats.GetValue(StatKey.AttackRange) * 0.7f)
+                    //    {
+                    //        Actor.Movement.MoveDirection(dir.normalized);
+                    //    }
+                    //    else
+                    //    {
+                    //        ToIdleState();
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    Actor.Movement.MoveTo(position);
+                    //}
+                }
+                else
+                {
+                    Actor.RVO.ReInit();
                 }
 
                 Vector2RVO goalVector = new Vector2RVO(target.CenterPosition) - Simulator.Instance.getAgentPosition(Actor.RVO.Id);
@@ -60,7 +73,7 @@ namespace Engine.State.Unit
                 {
                     goalVector = RVOMath.normalize(goalVector);
                 }
-                Simulator.Instance.setAgentPrefVelocity(Actor.RVO.Id, goalVector * Actor.Stats.GetValue(StatKey.Speed));
+                Simulator.Instance.setAgentPrefVelocity(Actor.RVO.Id, goalVector/* * Actor.Stats.GetValue(StatKey.Speed)*/);
 
 
                 /* Perturb a little to avoid deadlocks due to perfect symmetry. */

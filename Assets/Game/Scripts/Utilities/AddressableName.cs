@@ -14,4 +14,7 @@ public static class AddressableName
     public const string UICheatSheetPanel = "Panel/UICheatSheetPanel.prefab";
 
     public const string SFX_Button_Common = "Audio/sfx_button.wav";
+
+    public const string LootObject = "Loots/{0}.prefab";
+    public const string StatPassive = "Passive/{0}.prefab";
 }

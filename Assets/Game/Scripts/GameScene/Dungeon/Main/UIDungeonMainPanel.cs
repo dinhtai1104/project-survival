@@ -15,7 +15,7 @@ namespace Assets.Game.Scripts.GameScene.Dungeon.Main
         [SerializeField] private UIControlView m_ControlView;
         [SerializeField] private UITimerView m_TimerWaveLeft;
         [SerializeField] private UIHealthBar m_PlayerHealthBar;
-        [SerializeField] private UIProgressBar m_PlayerExpBar;
+        [SerializeField] private UIExpBar m_PlayerExpBar;
         [SerializeField] private UIResourceView m_PickleResourceView;
         [SerializeField] private UIDungeonWaveIntroView m_WaveIntroView;
         private TimeSpan m_TimerCache;
@@ -56,7 +56,7 @@ namespace Assets.Game.Scripts.GameScene.Dungeon.Main
         }
 
         public UIHealthBar GetHealthPlayerBar() => m_PlayerHealthBar;
-        public UIProgressBar GetExpPlayerBar() => m_PlayerExpBar;
+        public UIExpBar GetExpPlayerBar() => m_PlayerExpBar;
 
         public void PauseOnClicked()
         {

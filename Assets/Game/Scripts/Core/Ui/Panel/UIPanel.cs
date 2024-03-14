@@ -13,6 +13,7 @@ namespace Ui.View
         protected Transform _transform;
         public bool overrideBack = false, isPersistant = false;
         public System.Action onClosed;
+        public System.Action onBeforeDestroy;
         private PanelManager m_PanelMgr;
 
         private CancellationTokenSource m_Cts;
@@ -29,6 +30,7 @@ namespace Ui.View
         }
         public virtual void Destroy()
         {
+            onBeforeDestroy?.Invoke();
             Destroy(gameObject);
             //Addressables.ReleaseInstance(gameObject);
         }

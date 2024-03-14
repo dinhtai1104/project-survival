@@ -27,7 +27,7 @@ namespace Assets.Game.Scripts.GameScene.Common.CheatSheetStat
                 item.Setup(statKey, mainPlayer.GetStat(statKey));
                 m_StatItemGO.Add(item);
             }
-            onClosed += OnClosed;
+            onBeforeDestroy += OnClosed;
         }
 
         private void OnClosed()

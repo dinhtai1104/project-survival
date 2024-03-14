@@ -43,6 +43,7 @@ namespace Engine
         private ISkillCaster m_SkillCaster;
         private ISharedEngine m_SharedEngine;
         private IRVO m_RVO;
+        private IPassiveEngine m_Passive;
 
         private static readonly IStatGroup NullStat = new NullStatGroup();
         private static readonly IStatusEngine NullStatus = new NullStatusEngine();
@@ -58,6 +59,7 @@ namespace Engine
         private static readonly IBrain NullBrain = new NullBrain();
         private static readonly ISkillCaster NullSkillCaster = new NullSkillCaster();
         private static readonly IRVO NullRVO = new NullRVO();
+        private static readonly IPassiveEngine NullPassive = new NullPassiveEngine();
         public bool AI
         {
             get { return m_AI; }
@@ -131,6 +133,8 @@ namespace Engine
         public ISkillCaster SkillCaster => m_SkillCaster ?? NullSkillCaster;
         public ISharedEngine Shared => m_SharedEngine;
         public IRVO RVO => m_RVO ?? NullRVO;
+        public IPassiveEngine Passive => m_Passive ?? NullPassive;
+
 
         [SerializeField] private TeamModel m_TeamModel;
         public TeamModel TeamModel => m_TeamModel;
@@ -165,6 +169,7 @@ namespace Engine
             Input.Active = true;
             Shared.ClearAll();
             RVO.Init(this);
+            Passive?.Init(this);
 
             Health.Initialized = false;
             Brain.Lock = false;
@@ -195,6 +200,7 @@ namespace Engine
             m_Tagger = GetComponent<ITagger>();
             m_RVO = GetComponent<IRVO>();
             m_SharedEngine = new ShareValueEngine();
+            m_Passive = GetComponent<IPassiveEngine>();
         }
 
         protected virtual void Update()
@@ -207,6 +213,7 @@ namespace Engine
             Input?.OnUpdate();
             Brain?.OnUpdate();
             SkillCaster?.OnUpdate();
+            Passive?.OnUpdate();
         }
 
 

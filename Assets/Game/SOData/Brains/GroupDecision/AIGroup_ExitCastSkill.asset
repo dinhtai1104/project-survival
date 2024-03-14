@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: AIGroup_ExitCastSkill
   m_EditorClassIdentifier: 
   m_DecisionOperators:
-  - m_Decision: {fileID: 11400000, guid: 34631e267bd00ab4a89be294e21d2fd2, type: 2}
+  - m_Decision: {fileID: 11400000, guid: 63c0134fc33f6b94294da6323d639a0a, type: 2}
     m_Operator: 2
     m_IsNot: 1
-  - m_Decision: {fileID: 11400000, guid: 63c0134fc33f6b94294da6323d639a0a, type: 2}
+  - m_Decision: {fileID: 11400000, guid: 6c9b99be434c4ba41a5e324959172d4e, type: 2}
     m_Operator: 0
     m_IsNot: 1

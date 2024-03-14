@@ -1,13 +1,4 @@
-﻿using com.assets.loader.addressables;
-using com.assets.loader.core;
-using Cysharp.Threading.Tasks;
-using SceneManger.Preloader;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ui.View;
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace SceneManger

@@ -67,8 +67,22 @@ namespace Engine.Weapon
 
         public void Active()
         {
+            IsActivated = true;
             m_BridgeStat?.Dispose();
             m_BridgeStat = new WeaponStatBridge(this);
         }
+
+#if DEVELOPMENT
+        bool isstop = false;
+        protected override void Update()
+        {
+            if (UnityEngine.Input.GetKeyDown(KeyCode.S))
+            {
+                isstop = !isstop;
+            }
+            if (isstop) return;
+            base.Update();
+        }
+#endif
     }
 }

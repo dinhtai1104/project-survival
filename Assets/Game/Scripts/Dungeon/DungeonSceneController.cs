@@ -1,7 +1,10 @@
 ﻿using Assets.Game.Scripts.Core.Data.Database;
 using Assets.Game.Scripts.Core.Data.Database.Dungeon;
 using Assets.Game.Scripts.Core.SceneMemory.Memory;
+using Assets.Game.Scripts.Events;
 using Assets.Game.Scripts.GameScene.Dungeon.Main;
+using Assets.Game.Scripts.Manager;
+using Assets.Game.Scripts.Objects.Loots;
 using Core;
 using Cysharp.Threading.Tasks;
 using Engine;
@@ -28,14 +31,15 @@ namespace Assets.Game.Scripts.Dungeon
     public class DungeonSceneController : BaseGameplayScene
     {
         [SerializeField] private AssetReference m_EffectSpawnEnemy;
+        [SerializeField] private DungeonEnemySpawner m_Spawner;
 
+        // Variables in game
         private Bound2D m_Bound2D;
-        [SerializeField]
-        private DungeonEnemySpawner m_Spawner;
         private DungeonEntity m_DungeonEntity;
         private TickSystem m_TimeWaveSystem;
         private DungeonGameplaySessionSave m_DungeonSession;
 
+        // Properties in game
         public Bound2D Bound => m_Bound2D;
         public DungeonEnemySpawner Spawner => m_Spawner;
         public DungeonEntity DungeonEntity => m_DungeonEntity;
@@ -48,30 +52,63 @@ namespace Assets.Game.Scripts.Dungeon
 
         public override UniTask Exit(bool reload)
         {
-            m_Spawner.OnBossDie -= OnBossDie;
+            RemoveEvents();
+            RemoveSystem();
             return base.Exit(reload);
         }
+
         protected override void OnEnter()
         {
             base.OnEnter();
             Simulator.Instance.setTimeStep(0.25f);
-            Simulator.Instance.setAgentDefaults(5f, 20, 3, 3, 2.0f, 2.0f, new Vector2RVO(0.0f, 0.0f));
+            Simulator.Instance.setAgentDefaults(5, 15, 3, 3, 3f, 4.0f, new Vector2RVO(0.0f, 0.0f));
 
             IsBossDied = false;
-            ScenePresenter.GetPanel<UIDungeonMainPanel>().GetHealthPlayerBar().Init(MainPlayer);
-            ScenePresenter.GetPanel<UIDungeonMainPanel>().Show();
-            ScenePresenter.GetPanel<UIDungeonMainPanel>().SetupControlView(MainPlayer);
+            var mainPanel = ScenePresenter.GetPanel<UIDungeonMainPanel>();
+            mainPanel.GetHealthPlayerBar().Init(MainPlayer);
+            mainPanel.SetupControlView(MainPlayer);
+            mainPanel.Show();
 
             // Create tick system
             PrepareSystem();
-
-
             // Prepare level
             PrepareMapLevel();
-            m_Spawner.OnBossDie += OnBossDie;
-
+            //Setup Event
+            SetupEvents();
             // Start First Wave
             StartWave();
+        }
+
+        private void SetupEvents()
+        {
+            m_Spawner.OnBossDie += OnBossDie;
+            Architecture.Get<EventMgr>().Subscribe<LootEventArgs>(LootEventHandler);
+        }
+
+        private void RemoveEvents()
+        {
+            m_Spawner.OnBossDie -= OnBossDie;
+            Architecture.Get<EventMgr>().Unsubscribe<LootEventArgs>(LootEventHandler);
+        }
+
+        private void RemoveSystem()
+        {
+            GameplayLevelUpHandler.Dispose();
+            LootObjectUpdater.Instance.Dispose();
+        }
+        #region EVENT
+        private void LootEventHandler(object sender, IEventArgs e)
+        {
+            var evt = e as LootEventArgs;
+            switch (evt.Type)
+            {
+                case Enums.ELootObject.Pickle:
+                    GameplayLevelUpHandler.AddExp(3);
+                    break;
+                case Enums.ELootObject.HpKit:
+                    MainPlayer.Health.Healing(10);
+                    break;
+            }
         }
 
         private void OnBossDie(Engine.Actor boss)
@@ -79,9 +116,53 @@ namespace Assets.Game.Scripts.Dungeon
             IsBossDied = true;
         }
 
+        private void OnWaveTimeEndComplete(long seconds)
+        {
+            WaveEndTime().Forget();
+
+            // For optimize UniTask (Call UniTaskVoid)
+            async UniTaskVoid WaveEndTime()
+            {
+                LootObjectUpdater.Instance.DestroyAll();
+                m_TimeWaveSystem.Stop();
+                m_Spawner.StopSpawn();
+                MainPlayer.Health.Invincible = true;
+
+                // Collect Pickle
+                await UniTask.Delay(TimeSpan.FromSeconds(1));
+                m_Spawner.ClearAll();
+                ScenePresenter.GetPanel<UIDungeonMainPanel>().HideByTransitions().Forget();
+                ScenePresenter.GetPanel<UIDungeonMainPanel>().StopControl();
+
+                // Screen Wave
+                await UniTask.Delay(TimeSpan.FromSeconds(1));
+
+                // CheckLevelUp
+                for (int i = 0; i < GameplayLevelUpHandler.GetLevelInWave(); i++)
+                {
+                    await ShowLevelUpPanel();
+                }
+                if (GameplayLevelUpHandler.GetLevelInWave() > 0)
+                {
+                    await UniTask.Delay(TimeSpan.FromSeconds(1));
+                }
+                GameplayLevelUpHandler.Reset();
+
+
+                // Show Shop Wave
+                ShowShopWavePanel();
+            }
+        }
+
+        #endregion
         private void PrepareSystem()
         {
             m_TimeWaveSystem = new TickSystem();
+            var m_Expbar = ScenePresenter.GetPanel<UIDungeonMainPanel>().GetExpPlayerBar();
+            GameplayLevelUpHandler.RegisterUI(m_Expbar);
+            GameplayLevelUpHandler.StartTracking();
+
+            var loot = new LootObjectUpdater();
         }
 
         private void PrepareMapLevel()
@@ -104,8 +185,6 @@ namespace Assets.Game.Scripts.Dungeon
         protected virtual void StartWave()
         {
             m_Spawner.StartSpawn(WaveDungeon.DelayStart);
-           // CameraController.Instance.SetCameraSize(WaveDungeon.WaveEntity.CameraSize);
-
             ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave(string.Format("Wave {0}/{1}", CurrentWave + 1, MaxWave), LengthWave, true).Forget();
 
             var timeThisWave = LengthWave;
@@ -121,10 +200,11 @@ namespace Assets.Game.Scripts.Dungeon
             if (!MainPlayer.WeaponHolder.IsMax())
             {
                 var gunEntity = DataManager.Base.Weapon.GetRandom()[ERarity.Common];
-                var weapon = await WeaponFactory.CreateWeapon(gunEntity);
+                var weapon = WeaponFactory.CreateWeapon(gunEntity);
 
                 MainPlayer.WeaponHolder.AddWeapon(weapon);
             }
+            await UniTask.Delay(200);
             loading.StartTransition();
             while (!loading.IsDone)
             {
@@ -151,33 +231,16 @@ namespace Assets.Game.Scripts.Dungeon
             MainPlayer.Health.Invincible = false;
         }
 
-        private async void OnWaveTimeEndComplete(long seconds)
+        private UniTask ShowLevelUpPanel()
         {
-            m_TimeWaveSystem.Stop();
-            m_Spawner.StopSpawn();
-            MainPlayer.Health.Invincible = true;
-
-            // Collect Pickle
-            await UniTask.Delay(TimeSpan.FromSeconds(1));
-            m_Spawner.ClearAll();
-            ScenePresenter.GetPanel<UIDungeonMainPanel>().HideByTransitions().Forget();
-            ScenePresenter.GetPanel<UIDungeonMainPanel>().StopControl();
-            
-            // Screen Wave
-            await UniTask.Delay(TimeSpan.FromSeconds(1));
-
-            bool isLevelUp = Random.value > 0.5f;
-            if (isLevelUp)
-            {
-                ScenePresenter.CreateAsync<UIDungeonLevelUpPanel>(AddressableName.UIDungeonLevelUpPanel)
-                    .ContinueWith(panel =>
-                    {
-                        panel.onClosed += ShowShopWavePanel;
-                        panel.Show();
-                    }).Forget();
-                return;
-            }
-            ShowShopWavePanel();
+            bool isFinish = false;
+            ScenePresenter.CreateAsync<UIDungeonLevelUpPanel>(AddressableName.UIDungeonLevelUpPanel)
+                   .ContinueWith(panel =>
+                   {
+                       panel.Show();
+                       panel.onBeforeDestroy += () => isFinish = true;
+                   }).Forget();
+            return UniTask.WaitUntil(()=>isFinish);
         }
 
         public void ShowShopWavePanel()
@@ -185,9 +248,9 @@ namespace Assets.Game.Scripts.Dungeon
             ScenePresenter.CreateAsync<UIDungeonShopWavePanel>(AddressableName.UIDungeonShopWavePanel)
                     .ContinueWith(panel =>
                     {
-                        panel.onClosed += () =>
+                        panel.onBeforeDestroy += () =>
                         {
-                            StartNextWave();
+                            StartNextWave().Forget();
                         };
                         panel.Show();
                     }).Forget();
@@ -198,13 +261,13 @@ namespace Assets.Game.Scripts.Dungeon
             ScenePresenter.GetPanel<UIDungeonMainPanel>().UpdateTimer(seconds);
         }
 
-
         public override void Execute()
         {
             base.Execute();
-            Simulator.Instance.doStep();
             if (EndGame) return;
             ScenePresenter.Execute();
+            Simulator.Instance.doStep();
+            LootObjectUpdater.Instance.OnUpdate();
 
 #if DEVELOPMENT
             if (Input.GetKeyDown(KeyCode.K))
@@ -219,6 +282,13 @@ namespace Assets.Game.Scripts.Dungeon
                 MainPlayer.Health.Invincible = !MainPlayer.Health.Invincible;
                 Logger.Log("Player Invincible: " + MainPlayer.Health.Invincible, Color.green);
             }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                GameplayLevelUpHandler.AddExp(3);
+                Logger.Log("Player Invincible: " + MainPlayer.Health.Invincible, Color.green);
+            }
+
 #endif
         }
 

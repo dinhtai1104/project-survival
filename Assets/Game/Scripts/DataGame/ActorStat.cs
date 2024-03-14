@@ -19,7 +19,6 @@ namespace Gameplay
             AddStat(StatKey.EngineeringDamage, 0, -100000);
             AddStat(StatKey.MeleeDamage, 0, -100000);
             AddStat(StatKey.AttackSpeed, 0);
-            AddStat(StatKey.HpRegeneration, 0, 0);
             AddStat(StatKey.CritChance, 0, 0, 1f);
             AddStat(StatKey.CritDamage, 0, 0);
             AddStat(StatKey.Speed, 6, 0);
@@ -28,7 +27,8 @@ namespace Gameplay
             AddStat(StatKey.InterestRate, 0, 0);
             AddStat(StatKey.LifestealRate, 0, 0);
             AddStat(StatKey.XpGain, 0, 0);
-            AddStat(StatKey.PickupRange, 0, 0);
+            AddStat(StatKey.PickupRange, 3, 0);
+            AddStat(StatKey.HpRegeneration, 1, 0);
             AddStat(StatKey.Knockback, 0, 0);
             AddStat(StatKey.ConsumableHeal, 0, 0);
             AddStat(StatKey.PatrolEarn, 0, 0);

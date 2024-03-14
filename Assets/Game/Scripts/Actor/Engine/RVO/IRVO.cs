@@ -10,7 +10,8 @@ namespace Engine
     public interface IRVO
     {
         int Id { get; }
-        void Init(Actor  owner);
+        void Init(Actor owner);
+        void ReInit();
         void OnUpdate();
         Vector2 NextPosition();
     }

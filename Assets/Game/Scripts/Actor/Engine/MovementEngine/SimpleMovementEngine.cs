@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using RVO;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -7,6 +8,8 @@ namespace Engine
 {
     public sealed class SimpleMovementEngine : MonoBehaviour, IMovementEngine
     {
+        private System.Random m_random;
+
         [SerializeField] private Stat _speed;
 
         [SerializeField] private bool _lockFacingDirection;
@@ -89,6 +92,8 @@ namespace Engine
             _trans = transform;
             _graphicTrans = actor.GraphicTrans;
             SyncGraphicRotation(Vector3.right);
+
+            m_random = new System.Random();
         }
         public void SetBound(Bound2D bound)
         {
@@ -202,6 +207,14 @@ namespace Engine
             if (!IsMoving)
                 IsMoving = true;
 
+
+            // add some noise to hack enemy is in same direction
+
+            float angle = (float)m_random.NextDouble() * 2.0f * (float)Mathf.PI;
+            float dist = (float)m_random.NextDouble() * 0.0001f;
+            var noise = dist * new Vector3((float)Mathf.Cos(angle), (float)Mathf.Sin(angle));
+            position += noise;
+
             position = Bound(position);
             position.z = 0f;
 
@@ -224,6 +237,13 @@ namespace Engine
 
             if (!IsMoving)
                 IsMoving = true;
+
+            // add some noise to hack enemy is in same direction
+
+            float angle = (float)m_random.NextDouble() * 2.0f * (float)Mathf.PI;
+            float dist = (float)m_random.NextDouble() * 0.0001f;
+            var noise = dist * new Vector3((float)Mathf.Cos(angle), (float)Mathf.Sin(angle));
+            direction += noise;
 
             direction.z = 0f;
             CurrentDirection = Vector3.Normalize(direction);
