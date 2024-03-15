@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Engine.State.Weapon
+namespace WeaponState
 {
-    public class BaseWeaponState : BaseState
+    public abstract class BaseWeaponState : BaseState
     {
         public WeaponActor Weapon => Actor as WeaponActor;
         public ActorBase Owner => Weapon.Owner;
@@ -22,7 +22,7 @@ namespace Engine.State.Weapon
     }
 }
 
-namespace Engine.State.Weapon
+namespace WeaponState
 {
     public class BaseWeaponState<TNextState> : BaseWeaponState where TNextState : BaseState
     {
@@ -36,7 +36,7 @@ namespace Engine.State.Weapon
         public override void Execute()
         {
             base.Execute();
-            
+
         }
     }
 }

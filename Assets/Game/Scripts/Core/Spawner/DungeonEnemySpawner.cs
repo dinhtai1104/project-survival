@@ -287,6 +287,11 @@ namespace Framework
 
                         var IsCluster = MathUtils.RollChance(waveDefault.DefaultCluster / 100f);
                         var centerCluster = MathUtils.RandomPointInBound2D(Bound);
+
+                        if (IsCluster && !IsLastWave)
+                        {
+                            amount = left;
+                        }
                         var clusterPoint = MathUtils.GetPositionsInCircle(centerCluster, ConstantValue.ClusterRange, amount);
 
                         for (int i = 0; i < amount; i++)

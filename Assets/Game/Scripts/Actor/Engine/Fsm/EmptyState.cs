@@ -1,4 +1,6 @@
-﻿namespace Engine
+﻿using Engine;
+
+namespace ActorState
 {
     public class EmptyState : IState
     {

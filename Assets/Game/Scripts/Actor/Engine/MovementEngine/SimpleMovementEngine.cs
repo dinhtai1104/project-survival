@@ -211,7 +211,7 @@ namespace Engine
             // add some noise to hack enemy is in same direction
 
             float angle = (float)m_random.NextDouble() * 2.0f * (float)Mathf.PI;
-            float dist = (float)m_random.NextDouble() * 0.0001f;
+            float dist = (float)m_random.NextDouble() * 0.3f;
             var noise = dist * new Vector3((float)Mathf.Cos(angle), (float)Mathf.Sin(angle));
             position += noise;
 
@@ -241,7 +241,7 @@ namespace Engine
             // add some noise to hack enemy is in same direction
 
             float angle = (float)m_random.NextDouble() * 2.0f * (float)Mathf.PI;
-            float dist = (float)m_random.NextDouble() * 0.0001f;
+            float dist = (float)m_random.NextDouble() * 0.3f;
             var noise = dist * new Vector3((float)Mathf.Cos(angle), (float)Mathf.Sin(angle));
             direction += noise;
 

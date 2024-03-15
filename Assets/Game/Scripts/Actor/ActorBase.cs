@@ -289,5 +289,14 @@ namespace Engine
 
             Stats.GetStat(stat).RecalculateValue();
         }
+
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            var center = transform.position;
+            center += Vector3.up * Height / 2;
+            Gizmos.DrawWireCube(center, new Vector2(Width, Height));
+        }
+#endif
     }
 }

@@ -111,7 +111,7 @@ Material:
     - _DistortTexYSpeed: 5
     - _EditorDrawers: 6
     - _FadeAmount: -0.1
-    - _FadeBurnGlow: 25
+    - _FadeBurnGlow: 30
     - _FadeBurnTransition: 0.075
     - _FadeBurnWidth: 0.025
     - _FishEyeUvAmount: 0.35

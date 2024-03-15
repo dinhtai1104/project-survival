@@ -1,8 +1,7 @@
-﻿using Engine;
-using Pool;
+﻿using Pool;
 using UnityEngine;
 
-namespace Engine.State.Weapon
+namespace WeaponState
 {
     public class WeaponAttackState : BaseWeaponState<WeaponIdleState>
     {

@@ -3,7 +3,7 @@ using Engine;
 using ExtensionKit;
 using UnityEngine;
 
-namespace Engine.State.Weapon
+namespace WeaponState
 {
     public class WeaponIdleState : BaseWeaponState<WeaponAttackState>
     {

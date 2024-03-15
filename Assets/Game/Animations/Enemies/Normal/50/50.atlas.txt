@@ -1,0 +1,33 @@
+50.png
+size:718,1961
+filter:Linear,Linear
+pma:true
+scale:0.5
+-1/10
+bounds:2,331,806,417
+rotate:90
+-1/L_wing
+bounds:2,2,327,361
+rotate:90
+-1/Layer 3
+bounds:421,322,266,225
+-1/eye
+bounds:546,1166,174,124
+offsets:0,0,176,124
+rotate:90
+-1/flower1
+bounds:421,835,288,284
+-1/head
+bounds:2,1139,542,309
+dungeon_11/Layer 3
+bounds:365,10,346,310
+dungeon_11/eye
+bounds:546,1342,147,106
+dungeon_11/flower1
+bounds:421,549,288,284
+dungeon_11/head
+bounds:2,1450,686,509
+shadow
+bounds:672,1121,219,44
+offsets:10,1,239,48
+rotate:90

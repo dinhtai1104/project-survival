@@ -1,7 +1,7 @@
-﻿using Assets.Game.Scripts.Events;
+﻿using ActorState;
+using Assets.Game.Scripts.Events;
 using Core;
 using Engine;
-using Engine.State.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,7 +51,7 @@ namespace Assets.Game.Scripts.GameScene.ControlView
         public void Setup(Engine.ActorBase actor)
         {
             this.m_MainActor = actor;
-            MappingState<ActorDashState>(m_DashSkillBtn);
+            MappingState<DashState>(m_DashSkillBtn);
         }
 
         private void OnDash()
