@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AIIsRangeAttack : BrainDecision
 {
-    public override bool Decide(Actor actor)
+    public override bool Decide(ActorBase actor)
     {
         return false;
     }

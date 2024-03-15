@@ -10,7 +10,7 @@ namespace Engine
     public class NullRVO : IRVO
     {
         public int Id => 0;
-        public void Init(Actor owner)
+        public void Init(ActorBase owner)
         {
         }
 

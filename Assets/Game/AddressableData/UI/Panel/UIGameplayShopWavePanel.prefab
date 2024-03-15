@@ -357,8 +357,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6840364636392582504}
   - component: {fileID: 148353452617362348}
+  - component: {fileID: 5841486261897824519}
   m_Layer: 5
-  m_Name: UIDungeonShopWavePanel
+  m_Name: UIGameplayShopWavePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,7 +395,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6793769296383728017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db26c885ca069c84b8da7f50112b64cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 689931dc6cd803e498ecfb2cae5247bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   overrideBack: 0
@@ -403,6 +404,25 @@ MonoBehaviour:
   - {fileID: 5068973871233533583}
   - {fileID: 4800259515739019507}
   - {fileID: 7631314159929048273}
+--- !u!114 &5841486261897824519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6793769296383728017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756e3006f6988f6409e1a3d5b2021da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RunType: 0
+  settings: {fileID: 0}
+  delayIn: 0
+  delayOut: 0
+  scaleFactor: 1
+  canvasGroup: {fileID: 0}
+  offset: {x: 0, y: 0}
 --- !u!1 &7720026378186341760
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +511,6 @@ GameObject:
   - component: {fileID: 7154617277463931951}
   - component: {fileID: 5224056750982292437}
   - component: {fileID: 7046023500453885000}
-  - component: {fileID: 8885503929437727560}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -615,25 +634,6 @@ MonoBehaviour:
   button: {fileID: 5224056750982292437}
   isUseOrigin: 0
   originScaleForce: 1
---- !u!114 &8885503929437727560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7850677626493709551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 756e3006f6988f6409e1a3d5b2021da6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RunType: 0
-  settings: {fileID: 0}
-  delayIn: 0
-  delayOut: 0
-  scaleFactor: 1
-  canvasGroup: {fileID: 0}
-  offset: {x: 0, y: 0}
 --- !u!1 &7954934917935689519
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICardShopWaveItem
       objectReference: {fileID: 0}
+    - target: {fileID: 1747097911439317135, guid: b3f4d731ee81fe14db5a5b9509a9556c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5508662112865801880, guid: b3f4d731ee81fe14db5a5b9509a9556c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -918,7 +922,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9072f388259d6214a827e0770e29659d, type: 3}
+  m_Script: {fileID: 11500000, guid: 91324d82cacd1564fbb011e89d659cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &569934172657991144
@@ -1037,6 +1041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICardShopWaveItem (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1747097911439317135, guid: b3f4d731ee81fe14db5a5b9509a9556c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5508662112865801880, guid: b3f4d731ee81fe14db5a5b9509a9556c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1071,7 +1079,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9072f388259d6214a827e0770e29659d, type: 3}
+  m_Script: {fileID: 11500000, guid: 91324d82cacd1564fbb011e89d659cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3211908001154210250
@@ -1190,6 +1198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICardShopWaveItem (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1747097911439317135, guid: b3f4d731ee81fe14db5a5b9509a9556c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5508662112865801880, guid: b3f4d731ee81fe14db5a5b9509a9556c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1224,6 +1236,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9072f388259d6214a827e0770e29659d, type: 3}
+  m_Script: {fileID: 11500000, guid: 91324d82cacd1564fbb011e89d659cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

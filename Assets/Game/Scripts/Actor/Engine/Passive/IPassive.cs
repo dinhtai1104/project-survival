@@ -8,7 +8,7 @@ namespace Engine
 {
     public interface IPassive
     {
-        Actor Owner { get; set; }
+        ActorBase Owner { get; set; }
         void OnUpdate();
         void UnEquip();
         void Equip();

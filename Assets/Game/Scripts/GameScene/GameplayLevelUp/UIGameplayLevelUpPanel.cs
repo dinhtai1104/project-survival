@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Game.Scripts.GameScene.Dungeon.Main
 {
-    public class UIDungeonLevelUpPanel : GamePanel
+    public class UIGameplayLevelUpPanel : GamePanel
     {
     }
 }

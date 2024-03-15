@@ -15,7 +15,7 @@ namespace Engine
 
         public DamageSource DamageSource => m_Source;
 
-        public Actor Owner { set; get; }
+        public ActorBase Owner { set; get; }
 
         public DamageDealer()
         {
@@ -37,7 +37,7 @@ namespace Engine
             m_Source.Value = value;
         }
 
-        public HitResult DealDamage(Actor attacker, Actor defender)
+        public HitResult DealDamage(ActorBase attacker, ActorBase defender)
         {
             if (defender.IsDead)
             {

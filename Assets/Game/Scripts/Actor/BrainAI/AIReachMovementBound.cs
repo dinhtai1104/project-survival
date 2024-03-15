@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AI_ReachMovementBound.asset", menuName = SOUtility.GAME_AI + "AI_ReachMovementBound")]
 public class AIReachMovementBound : BrainDecision
 {
-    public override bool Decide(Actor actor)
+    public override bool Decide(ActorBase actor)
     {
         return actor.Movement.ReachBound;
     }

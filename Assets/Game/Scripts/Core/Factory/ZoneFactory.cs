@@ -4,7 +4,7 @@ namespace Framework
 {
     public class ZoneFactory
     {
-        private Actor m_MainPlayer;
+        private ActorBase m_MainPlayer;
         
 
     }

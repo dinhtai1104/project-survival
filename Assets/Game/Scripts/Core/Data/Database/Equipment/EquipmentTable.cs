@@ -1,4 +1,5 @@
 ﻿using BansheeGz.BGDatabase;
+using GameUtility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment
         {
             var equip = new EquipmentEntity(e);
             Dictionary.Add(equip.IdEquipment, equip);
+        }
+
+        public EquipmentEntity GetRandomWeight()
+        {
+            return Dictionary.Values.ToList().RandomWeighted(out int dex);
         }
     }
 }

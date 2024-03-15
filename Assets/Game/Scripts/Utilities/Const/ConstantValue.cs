@@ -1,5 +1,6 @@
 ﻿using Engine;
-using System.Collections.Generic;
+using ExtensionKit;
+using UnityEngine;
 
 public static class ConstantValue
 {
@@ -12,4 +13,6 @@ public static class ConstantValue
     public const int Weapon_MaxSlot = 6;
 
     public static Stat DefaultSpeed = new Stat(10);
+    public static Color ColorGreen = "".HtmlStringToColor();
+    public static Color ColorRed = "".HtmlStringToColor();
 }

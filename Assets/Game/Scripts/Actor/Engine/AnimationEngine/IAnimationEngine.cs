@@ -4,7 +4,7 @@ namespace Engine
 {
     public interface IAnimationEngine
     {
-        Actor Owner { get; }
+        ActorBase Owner { get; }
         bool Lock { set; get; }
         string CurrentAnimationName { get; }
         bool IsCurrentAnimationComplete { get; }
@@ -18,7 +18,7 @@ namespace Engine
         bool HasAnimation(string animName);
         bool IsPlaying(string animName);
         bool IsPlaying(int track, string animName);
-        void Init(Actor actor);
+        void Init(ActorBase actor);
         Spine.Animation FindAnimation(string animName);
         Spine.EventData FindEvent(string eventName);
         Spine.Bone FindBone(string boneName);

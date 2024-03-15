@@ -6,9 +6,9 @@ namespace Engine
 {
     public interface IStatusEngine
     {
-        Actor Owner { get; }
+        ActorBase Owner { get; }
         bool Lock { set; get; }
-        void Init(Actor actor);
+        void Init(ActorBase actor);
         void OnUpdate();
         void SetImmune<T>(bool immune) where T : IStatus;
 
@@ -26,22 +26,22 @@ namespace Engine
 
         int CountStatus<T>() where T : IStatus;
 
-        int CountStatus(Type type, Actor source);
+        int CountStatus(Type type, ActorBase source);
 
-        int CountStatus<T>(Actor source) where T : IStatus;
+        int CountStatus<T>(ActorBase source) where T : IStatus;
 
         bool HasStatusWithTag(string tag);
         T GetStatus<T>() where T : IStatus;
 
-        T GetStatus<T>(Actor source) where T : IStatus;
+        T GetStatus<T>(ActorBase source) where T : IStatus;
 
         bool HasStatus<T>() where T : IStatus;
 
-        bool HasStatus<T>(Actor source) where T : IStatus;
+        bool HasStatus<T>(ActorBase source) where T : IStatus;
 
         bool HasStatus(Type type);
 
-        bool HasStatus(Actor source);
+        bool HasStatus(ActorBase source);
         void ClearStatus(IStatus status, bool forced = false);
 
         void ClearAllStatus(bool forced = false);
@@ -50,11 +50,11 @@ namespace Engine
 
         void ClearStatuses<T>(bool forced = false) where T : IStatus;
         void ClearStatuses(Type type, bool forced = false);
-        void ClearStatuses<T>(Actor source, bool forced = false) where T : IStatus;
-        void ClearStatuses(Actor source, bool forced = false);
-        void AddStatuses(Actor source, GameObject[] statuses);
-        IStatus AddStatus(Actor source, GameObject statusPrefab, bool forced = false);
-        IStatus AddStatusWithoutStart(Actor source, GameObject statusPrefab, bool forced = false);
-        bool TryAddStatus(Actor source, GameObject statusPrefab, out IStatus status, bool forced = false);
+        void ClearStatuses<T>(ActorBase source, bool forced = false) where T : IStatus;
+        void ClearStatuses(ActorBase source, bool forced = false);
+        void AddStatuses(ActorBase source, GameObject[] statuses);
+        IStatus AddStatus(ActorBase source, GameObject statusPrefab, bool forced = false);
+        IStatus AddStatusWithoutStart(ActorBase source, GameObject statusPrefab, bool forced = false);
+        bool TryAddStatus(ActorBase source, GameObject statusPrefab, out IStatus status, bool forced = false);
     }
 }

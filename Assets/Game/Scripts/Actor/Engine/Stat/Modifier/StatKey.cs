@@ -28,6 +28,7 @@
         public const string ConsumableHeal = "ConsumableHeal";
         public const string PatrolEarn = "PatrolEarn";
         public const string BossDamage = "BossDamage";
+        public const string ItemPrice = "ItemPrice";
 
         // Weapon
         public const string Projectiles = "Projectiles";

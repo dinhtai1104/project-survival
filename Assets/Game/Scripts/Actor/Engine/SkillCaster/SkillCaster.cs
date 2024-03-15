@@ -16,7 +16,7 @@ namespace Engine
 
         public bool IsLocked { get; set; }
 
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
 
         public ISkill CurrentSkill
         {
@@ -77,7 +77,7 @@ namespace Engine
             }
         }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
             m_SkillQueue = new Queue<ISkill>();

@@ -11,15 +11,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AISafeDistance.asset", menuName = SOUtility.GAME_AI + "AISafeDistance")]
 public class AISafeDistance : BrainDecision
 {
-    public override bool Decide(Actor machine)
+    public override bool Decide(ActorBase machine)
     {
-        Actor actor = machine as Actor;
+        ActorBase actor = machine as ActorBase;
         var keepDistanceState = actor.Fsm.GetState<ActorKeepDistanceState>();
 
         if (keepDistanceState.IsCooldowning)
             return true;
 
-        Actor enemy = keepDistanceState.FindPotentialThreat();
+        ActorBase enemy = keepDistanceState.FindPotentialThreat();
         keepDistanceState.CurrentThreat = enemy;
 
         if (enemy != null)

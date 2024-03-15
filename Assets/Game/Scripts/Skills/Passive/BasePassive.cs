@@ -10,7 +10,7 @@ namespace Assets.Game.Scripts.Skills.Passive
 {
     public class BasePassive : MonoBehaviour, IPassive
     {
-        public Actor Owner { get; set; }
+        public ActorBase Owner { get; set; }
 
         public virtual void Equip()
         {

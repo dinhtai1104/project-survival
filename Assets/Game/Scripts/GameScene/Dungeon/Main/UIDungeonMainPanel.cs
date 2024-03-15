@@ -50,7 +50,7 @@ namespace Assets.Game.Scripts.GameScene.Dungeon.Main
             m_ControlView.gameObject.SetActive(true);
         }
 
-        public void SetupControlView(Engine.Actor actor)
+        public void SetupControlView(Engine.ActorBase actor)
         {
             m_ControlView.Setup(actor);
         }

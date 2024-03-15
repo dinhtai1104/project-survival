@@ -9,10 +9,10 @@ namespace Engine
 {
     public class PassiveEngine : MonoBehaviour, IPassiveEngine
     {
-        private Actor m_Owner;
+        private ActorBase m_Owner;
         private List<IPassive> m_Passives;
 
-        public void Init(Actor owner)
+        public void Init(ActorBase owner)
         {
             m_Passives = new List<IPassive>();
             this.m_Owner = owner;

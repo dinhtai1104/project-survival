@@ -5,9 +5,9 @@ using System;
 using UnityEngine;
 namespace Engine.Weapon
 {
-    public class WeaponActor : Actor
+    public class WeaponActor : ActorBase
     {
-        private Actor m_Owner;
+        private ActorBase m_Owner;
         private WeaponEntity m_WeaponEntity;
 
 
@@ -16,14 +16,14 @@ namespace Engine.Weapon
 
         private Transform m_PlaceHolderWeapon;
         public Transform PlaceHolderWeapon => m_PlaceHolderWeapon;
-        public Actor Owner => m_Owner;
+        public ActorBase Owner => m_Owner;
         public Transform TriggerPoint => m_TriggerPoint;
         public WeaponEntity WpEntity => m_WeaponEntity;
         public ERarity Rarity => WpEntity.Rarity;
 
         private WeaponStatBridge m_BridgeStat;
 
-        public void InitOwner(Actor owner)
+        public void InitOwner(ActorBase owner)
         {
             m_Owner = owner;
         }

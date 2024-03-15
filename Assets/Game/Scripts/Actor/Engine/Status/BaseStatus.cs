@@ -21,8 +21,8 @@ namespace Engine
         private int m_MaxStack;
 
         private Transform m_Trans;
-        private Actor m_Actor;
-        private Actor m_Source;
+        private ActorBase m_Actor;
+        private ActorBase m_Source;
         private bool m_IsExpired;
         private bool m_IsRunning;
         private float m_DurationTimer;
@@ -75,13 +75,13 @@ namespace Engine
         }
 
         [ShowInInspector, ReadOnly]
-        public Actor Actor
+        public ActorBase Actor
         {
             get { return m_Actor; }
         }
 
         [ShowInInspector, ReadOnly]
-        public Actor Source
+        public ActorBase Source
         {
             get { return m_Source; }
         }
@@ -136,12 +136,12 @@ namespace Engine
             End();
         }
 
-        public virtual void SetActor(Actor actor)
+        public virtual void SetActor(ActorBase actor)
         {
             m_Actor = actor;
         }
 
-        public virtual void SetSource(Actor source)
+        public virtual void SetSource(ActorBase source)
         {
             m_Source = source;
         }

@@ -66,6 +66,7 @@ namespace Engine
                     aff = "%";
                     break;
                 case EStatMod.FlatMul:
+                    pre = "x";
                     aff = "";
                     break;
                 case EStatMod.Percent:

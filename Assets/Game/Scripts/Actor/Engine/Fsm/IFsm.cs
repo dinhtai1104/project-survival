@@ -4,8 +4,8 @@ namespace Engine
 {
     public interface IFsm
     {
-        Actor Actor { set; get; }
-        void Init(Actor actor);
+        ActorBase Actor { set; get; }
+        void Init(ActorBase actor);
         void OnUpdate();
         void BackToDefaultState();
         void ChangeToEmptyState();

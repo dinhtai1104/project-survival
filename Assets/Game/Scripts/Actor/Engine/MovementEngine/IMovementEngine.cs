@@ -22,7 +22,7 @@ namespace Engine
         Vector3 CurrentDirection { get; }
         Vector3 CurrentPosition { get; }
 
-        void Init(Actor actor);
+        void Init(ActorBase actor);
 
         void SetBound(Bound2D bound);
 

@@ -7,7 +7,7 @@ namespace Engine
 {
     public class NullHealth : IHealth
     {
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
         public event Action<IHealth> OnValueChanged;
         public bool Initialized { get; set; }
         public float CurrentHealth { get; set; }
@@ -21,7 +21,7 @@ namespace Engine
 
         public bool Invincible { get; set; }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
         }

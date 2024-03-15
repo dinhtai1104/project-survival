@@ -22,7 +22,7 @@ namespace Engine.State.Common
         private float _cooldownTimer;
         private float _durationTimer;
         private float _changeDirTimer;
-        private Actor _target;
+        private ActorBase _target;
         private Vector3 _currentDir;
 
         public float Distance
@@ -37,7 +37,7 @@ namespace Engine.State.Common
             get { return _minDuration; }
         }
 
-        public Actor CurrentThreat
+        public ActorBase CurrentThreat
         {
             set { _target = value; }
             get { return _target; }
@@ -143,19 +143,19 @@ namespace Engine.State.Common
             _currentDir = dir;
         }
 
-        public Actor FindPotentialThreat()
+        public ActorBase FindPotentialThreat()
         {
-            IList<Actor> enemies = Actor.TargetFinder.Enemies;
+            IList<ActorBase> enemies = Actor.TargetFinder.Enemies;
 
             if (enemies.Count == 0)
                 return null;
 
             float minSqrDist = float.MaxValue;
-            Actor target = null;
+            ActorBase target = null;
 
             for (int i = 0; i < enemies.Count; ++i)
             {
-                Actor enemyActor = enemies[i];
+                ActorBase enemyActor = enemies[i];
 
                 if (enemyActor != null && enemyActor != Actor && enemyActor.gameObject.activeInHierarchy)
                 {

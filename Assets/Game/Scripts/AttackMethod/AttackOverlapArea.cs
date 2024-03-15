@@ -5,25 +5,25 @@ using UnityEngine;
 
 public sealed class AttackOverlapArea
 {
-    private Actor m_Actor;
+    private ActorBase m_Actor;
     private Collider2D[] m_Hits;
     private IDamageDealer m_DamageDealer;
 
-    public delegate void HitSuccessDelegate(Actor target, Vector3 hitPoint, bool critical, bool lastHit);
+    public delegate void HitSuccessDelegate(ActorBase target, Vector3 hitPoint, bool critical, bool lastHit);
 
-    public delegate void HitFailedDelegate(Actor target);
+    public delegate void HitFailedDelegate(ActorBase target);
 
     public HitSuccessDelegate OnSuccess;
     public HitFailedDelegate OnFailed;
 
-    public AttackOverlapArea(Actor actor, IDamageDealer damageDealer, int maxTargetNumber)
+    public AttackOverlapArea(ActorBase actor, IDamageDealer damageDealer, int maxTargetNumber)
     {
         m_Actor = actor;
         m_DamageDealer = damageDealer;
         m_Hits = new Collider2D[maxTargetNumber];
     }
 
-    public void SetAttacker(Actor attacker)
+    public void SetAttacker(ActorBase attacker)
     {
         m_Actor = attacker;
     }
@@ -44,7 +44,7 @@ public sealed class AttackOverlapArea
         foreach (var hit in m_Hits)
         {
             if (hit == null) continue;
-            var target = hit.GetComponent<Actor>();
+            var target = hit.GetComponent<ActorBase>();
 
             if (target == null) continue;
 

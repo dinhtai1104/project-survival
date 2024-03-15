@@ -1,4 +1,5 @@
 ﻿using BansheeGz.BGDatabase;
+using Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,25 @@ namespace Assets.Game.Scripts.Core.Data.Database.Buff
             var buff = new BuffEntity(e);
             Dictionary.Add(buff.Id, buff);
             m_LookupBuffByType.Add(buff.Type, buff);
+        }
+
+        public BuffEntity GetBuffByType(string type)
+        {
+            return m_LookupBuffByType[type];
+        }
+
+        public List<BuffEntity> FilterByRarity(ERarity rarity)
+        {
+            var list = new List<BuffEntity>();
+
+            foreach (var entity in Dictionary.Values)
+            {
+                if (entity.Rarity == rarity)
+                {
+                    list.Add(entity);
+                }
+            }
+            return list;
         }
     }
 }

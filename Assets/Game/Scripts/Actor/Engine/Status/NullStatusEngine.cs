@@ -7,7 +7,7 @@ namespace Engine
 {
     public class NullStatusEngine : IStatusEngine
     {
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
 
         public bool Lock
         {
@@ -15,7 +15,7 @@ namespace Engine
             set { }
         }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
         }
@@ -61,12 +61,12 @@ namespace Engine
             return 0;
         }
 
-        public int CountStatus(Type type, Actor source)
+        public int CountStatus(Type type, ActorBase source)
         {
             return 0;
         }
 
-        public int CountStatus<T>(Actor source) where T : IStatus
+        public int CountStatus<T>(ActorBase source) where T : IStatus
         {
             return 0;
         }
@@ -81,7 +81,7 @@ namespace Engine
             return default;
         }
 
-        public T GetStatus<T>(Actor source) where T : IStatus
+        public T GetStatus<T>(ActorBase source) where T : IStatus
         {
             return default;
         }
@@ -91,7 +91,7 @@ namespace Engine
             return false;
         }
 
-        public bool HasStatus<T>(Actor source) where T : IStatus
+        public bool HasStatus<T>(ActorBase source) where T : IStatus
         {
             return false;
         }
@@ -101,7 +101,7 @@ namespace Engine
             return false;
         }
 
-        public bool HasStatus(Actor source)
+        public bool HasStatus(ActorBase source)
         {
             return false;
         }
@@ -126,29 +126,29 @@ namespace Engine
         {
         }
 
-        public void ClearStatuses<T>(Actor source, bool forced = false) where T : IStatus
+        public void ClearStatuses<T>(ActorBase source, bool forced = false) where T : IStatus
         {
         }
 
-        public void ClearStatuses(Actor source, bool forced = false)
+        public void ClearStatuses(ActorBase source, bool forced = false)
         {
         }
 
-        public void AddStatuses(Actor source, GameObject[] statuses)
+        public void AddStatuses(ActorBase source, GameObject[] statuses)
         {
         }
 
-        public IStatus AddStatus(Actor source, GameObject statusPrefab, bool forced = false)
-        {
-            return null;
-        }
-
-        public IStatus AddStatusWithoutStart(Actor source, GameObject statusPrefab, bool forced = false)
+        public IStatus AddStatus(ActorBase source, GameObject statusPrefab, bool forced = false)
         {
             return null;
         }
 
-        public bool TryAddStatus(Actor source, GameObject statusPrefab, out IStatus status, bool forced = false)
+        public IStatus AddStatusWithoutStart(ActorBase source, GameObject statusPrefab, bool forced = false)
+        {
+            return null;
+        }
+
+        public bool TryAddStatus(ActorBase source, GameObject statusPrefab, out IStatus status, bool forced = false)
         {
             status = null;
             return false;

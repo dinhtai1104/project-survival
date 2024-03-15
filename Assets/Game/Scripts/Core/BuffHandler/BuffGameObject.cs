@@ -11,12 +11,12 @@ namespace Assets.Game.Scripts.Core.BuffHandler
 {
     public class BuffGameObject : MonoBehaviour
     {
-        private Actor m_Owner;
+        private ActorBase m_Owner;
         private BuffData m_BuffData;
-        public Actor Owner => m_Owner;
+        public ActorBase Owner => m_Owner;
         public BuffData BuffData => m_BuffData;
 
-        public void Init(Actor owner, BuffData buff)
+        public void Init(ActorBase owner, BuffData buff)
         {
             m_BuffData = buff;
             m_Owner = owner;

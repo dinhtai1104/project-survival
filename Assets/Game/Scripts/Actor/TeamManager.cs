@@ -40,7 +40,7 @@ namespace Framework
             return TeamModel.NullModel;
         }
 
-        public void AddActor(int teamId, Actor actor)
+        public void AddActor(int teamId, ActorBase actor)
         {
             if (!_teams.ContainsKey(teamId))
             {
@@ -62,7 +62,7 @@ namespace Framework
             }
         }
 
-        public void RemoveActor(int teamId, Actor actor)
+        public void RemoveActor(int teamId, ActorBase actor)
         {
             if (!_teams.ContainsKey(teamId))
             {

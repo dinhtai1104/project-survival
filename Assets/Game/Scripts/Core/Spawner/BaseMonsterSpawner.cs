@@ -19,7 +19,7 @@ namespace Framework
         private TeamManager m_TeamManager;
 
         public delegate void CompleteSpawningDelegate();
-        public delegate void SpawningDelegate(Actor actor);
+        public delegate void SpawningDelegate(ActorBase actor);
         public delegate void StartSpawning();
 
         public CompleteSpawningDelegate OnCompleteSpawning;
@@ -114,7 +114,7 @@ namespace Framework
             return null;
         }
 
-        protected abstract void AddToSpawnedActor(Actor actor);
+        protected abstract void AddToSpawnedActor(ActorBase actor);
         public abstract void ClearAll();
         public abstract void Exit();
     }

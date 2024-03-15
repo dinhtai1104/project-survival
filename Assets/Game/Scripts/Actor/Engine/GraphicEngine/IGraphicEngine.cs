@@ -2,8 +2,8 @@
 {
     public interface IGraphicEngine
     {
-        Actor Owner { get; }
-        void Init(Actor actor);
+        ActorBase Owner { get; }
+        void Init(ActorBase actor);
         void SetActiveRenderer(bool active);
         void SetGraphicAlpha(float a);
         void SetFlashAmount(float amount);

@@ -53,7 +53,7 @@ namespace Engine
             get { return false; }
         }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
         }
 

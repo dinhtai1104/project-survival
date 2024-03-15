@@ -2,7 +2,7 @@
 {
     public interface IState
     {
-        Actor Actor { get; set; }
+        ActorBase Actor { get; set; }
         void InitializeStateMachine();
         void Enter();
         void Exit();

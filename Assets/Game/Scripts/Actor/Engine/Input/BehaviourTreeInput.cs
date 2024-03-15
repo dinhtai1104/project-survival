@@ -8,7 +8,7 @@ namespace Engine
     {
         [SerializeField] private BehaviorTree _behaviorTree;
 
-        public override void Init(Actor actor)
+        public override void Init(ActorBase actor)
         {
             base.Init(actor);
             _behaviorTree.SetVariableValue("Actor", actor);

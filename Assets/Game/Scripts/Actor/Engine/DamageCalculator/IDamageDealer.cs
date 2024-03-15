@@ -8,6 +8,6 @@ namespace Engine
     {
         void Init(IStatGroup stat);
         void Release(IStatGroup stat);
-        HitResult DealDamage(Actor attacker, Actor defender);
+        HitResult DealDamage(ActorBase attacker, ActorBase defender);
     }
 }

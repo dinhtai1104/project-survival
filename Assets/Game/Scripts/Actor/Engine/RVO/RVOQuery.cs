@@ -7,9 +7,9 @@ namespace Engine
     public class RVOQuery : MonoBehaviour, IRVO
     {
         public int Id => m_Id;
-        private Actor m_Owner;
+        private ActorBase m_Owner;
         private int m_Id = -1;
-        public void Init(Actor owner)
+        public void Init(ActorBase owner)
         {
             m_Owner = owner;
             Simulator.Instance.delAgent(m_Id);

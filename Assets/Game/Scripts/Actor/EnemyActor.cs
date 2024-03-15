@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Engine
 {
-    public class EnemyActor : Actor
+    public class EnemyActor : ActorBase
     {
         public int MonsterLevel { set; get; }
         public EnemyEntity EntityData { set; get; }

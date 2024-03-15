@@ -22,10 +22,10 @@ namespace Framework
     [System.Serializable]
     public class DungeonEnemySpawner : BaseMonsterSpawner
     {
-        public delegate void BossDieDelegate(Actor boss);
+        public delegate void BossDieDelegate(ActorBase boss);
         public BossDieDelegate OnBossDie;
 
-        [SerializeField] private List<Actor> m_ActorSpawned;
+        [SerializeField] private List<ActorBase> m_ActorSpawned;
         private Dictionary<string, int> m_EnemyAmountEachType;
         private Dictionary<string, int> m_EnemyTypeCap;
 
@@ -45,7 +45,7 @@ namespace Framework
         {
             m_Cts = new CancellationTokenSource();
             m_CoroutineHandlSpawn = new List<CoroutineHandle>();
-            m_ActorSpawned = new List<Actor>();
+            m_ActorSpawned = new List<ActorBase>();
             m_DungeonEntity = dungeonEntity;
             m_CurrentWave = currentWave;
             m_EnemyAmountEachType = new Dictionary<string, int>();
@@ -137,7 +137,7 @@ namespace Framework
             }
         }
 
-        protected override void AddToSpawnedActor(Actor actor)
+        protected override void AddToSpawnedActor(ActorBase actor)
         {
             m_ActorSpawned.Add(actor);
             if (actor.Shared.HasShared(SharedKey.SourceSpawn))

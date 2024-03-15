@@ -37,7 +37,7 @@ public class BulletTriggerCollision : MonoBehaviour
         m_Trans = transform;
     }
 
-    public void OnTrigger(Actor actor)
+    public void OnTrigger(ActorBase actor)
     {
         var attacker = m_Bullet.Owner;
         m_DamageDealer.Init(attacker.Stats);

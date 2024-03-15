@@ -20,7 +20,7 @@ namespace Engine
             }
         }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             m_Health = actor.Health;
             m_Health.OnValueChanged += OnValueChanged;

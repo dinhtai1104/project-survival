@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 public class AIIsInRangeAttack : BrainDecision
 {
-    public override bool Decide(Actor actor)
+    public override bool Decide(ActorBase actor)
     {
         var target = actor.TargetFinder.CurrentTarget;
         if (target == null) return false;

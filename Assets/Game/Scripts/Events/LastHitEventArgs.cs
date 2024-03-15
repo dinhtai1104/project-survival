@@ -10,10 +10,10 @@ namespace Assets.Game.Scripts.Events
 {
     public class LastHitEventArgs : BaseEventArgs<LastHitEventArgs>
     {
-        public Actor m_Killer;
-        public Actor m_Patient;
+        public ActorBase m_Killer;
+        public ActorBase m_Patient;
 
-        public LastHitEventArgs(Actor killer, Actor patient)
+        public LastHitEventArgs(ActorBase killer, ActorBase patient)
         {
             m_Killer = killer;
             m_Patient = patient;

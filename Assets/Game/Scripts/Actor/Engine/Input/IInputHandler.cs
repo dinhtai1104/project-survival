@@ -12,7 +12,7 @@ namespace Engine
         Vector2 JoystickDirection { set; get; }
         float JoystickDirectionScalar { set; get; }
 
-        void Init(Actor actor);
+        void Init(ActorBase actor);
         void OnUpdate();
         void SubscribeControl(EControlCode controlCode, UnityAction action);
         void UnsubscribeControl(EControlCode controlCode, UnityAction action);

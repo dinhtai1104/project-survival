@@ -8,7 +8,7 @@ namespace Engine
 {
     public abstract class BaseHealth : MonoBehaviour, IHealth
     {
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
         public event Action<IHealth> OnValueChanged;
         public bool Initialized { get; set; }
         public abstract float CurrentHealth { get; set; }
@@ -31,7 +31,7 @@ namespace Engine
             CurrentHealth = 0;
         }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
             var damageTypes = Enum.GetValues(typeof(EDamageType)) as EDamageType[];

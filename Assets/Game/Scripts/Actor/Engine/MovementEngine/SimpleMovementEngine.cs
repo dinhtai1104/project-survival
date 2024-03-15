@@ -87,7 +87,7 @@ namespace Engine
 
         public bool ReachBound => ReachBoundBottom || ReachBoundLeft || ReachBoundRight || ReachBoundTop;
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             _trans = transform;
             _graphicTrans = actor.GraphicTrans;

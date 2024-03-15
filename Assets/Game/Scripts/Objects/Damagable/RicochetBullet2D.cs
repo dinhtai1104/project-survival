@@ -11,7 +11,7 @@ namespace Assets.Game.Scripts.DamageObjects
 {
     public class RicochetBullet2D : Bullet2D
     {
-        protected override void OnImpact(Actor target)
+        protected override void OnImpact(ActorBase target)
         {
             base.OnImpact(target);
             // Find Next Target

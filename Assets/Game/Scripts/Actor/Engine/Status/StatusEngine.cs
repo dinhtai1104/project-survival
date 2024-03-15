@@ -11,18 +11,18 @@ namespace Engine
     {
         private List<IStatus> m_Statuses = new List<IStatus>();
         private List<string> m_ImmuneTags = new List<string>();
-        private Action<Actor, Actor, IStatus> m_OnStatusAdded;
+        private Action<ActorBase, ActorBase, IStatus> m_OnStatusAdded;
 
-        public Action<Actor, Actor, IStatus> OnStatusAdded
+        public Action<ActorBase, ActorBase, IStatus> OnStatusAdded
         {
             get => m_OnStatusAdded;
             set => m_OnStatusAdded = value;
         }
 
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
         public bool Lock { get; set; }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
         }
@@ -146,7 +146,7 @@ namespace Engine
             return count;
         }
 
-        public int CountStatus(Type type, Actor source)
+        public int CountStatus(Type type, ActorBase source)
         {
             int count = 0;
             foreach (var status in m_Statuses)
@@ -160,7 +160,7 @@ namespace Engine
             return count;
         }
 
-        public int CountStatus<T>(Actor source) where T : IStatus
+        public int CountStatus<T>(ActorBase source) where T : IStatus
         {
             var type = typeof(T);
             var count = 0;
@@ -198,7 +198,7 @@ namespace Engine
             return default;
         }
 
-        public T GetStatus<T>(Actor source) where T : IStatus
+        public T GetStatus<T>(ActorBase source) where T : IStatus
         {
             var type = typeof(T);
             foreach (var status in m_Statuses)
@@ -225,7 +225,7 @@ namespace Engine
             return false;
         }
 
-        public bool HasStatus<T>(Actor source) where T : IStatus
+        public bool HasStatus<T>(ActorBase source) where T : IStatus
         {
             foreach (var status in m_Statuses)
             {
@@ -251,7 +251,7 @@ namespace Engine
             return false;
         }
 
-        public bool HasStatus(Actor source)
+        public bool HasStatus(ActorBase source)
         {
             foreach (var status in m_Statuses)
             {
@@ -393,7 +393,7 @@ namespace Engine
             }
         }
 
-        public void ClearStatuses<T>(Actor source, bool forced = false) where T : IStatus
+        public void ClearStatuses<T>(ActorBase source, bool forced = false) where T : IStatus
         {
             for (int i = m_Statuses.Count - 1; i >= 0; --i)
             {
@@ -416,7 +416,7 @@ namespace Engine
             }
         }
 
-        public void ClearStatuses(Actor source, bool forced = false)
+        public void ClearStatuses(ActorBase source, bool forced = false)
         {
             for (int i = m_Statuses.Count - 1; i >= 0; --i)
             {
@@ -436,7 +436,7 @@ namespace Engine
             }
         }
 
-        public void AddStatuses(Actor source, GameObject[] statuses)
+        public void AddStatuses(ActorBase source, GameObject[] statuses)
         {
             foreach (var status in statuses)
             {
@@ -444,19 +444,19 @@ namespace Engine
             }
         }
 
-        public IStatus AddStatus(Actor source, GameObject statusPrefab, bool forced = false)
+        public IStatus AddStatus(ActorBase source, GameObject statusPrefab, bool forced = false)
         {
             if (!TryAddStatus(source, statusPrefab, out IStatus status, forced)) return null;
             status?.Begin();
             return status;
         }
 
-        public IStatus AddStatusWithoutStart(Actor source, GameObject statusPrefab, bool forced = false)
+        public IStatus AddStatusWithoutStart(ActorBase source, GameObject statusPrefab, bool forced = false)
         {
             return !TryAddStatus(source, statusPrefab, out IStatus status, forced) ? null : status;
         }
 
-        public bool TryAddStatus(Actor source, GameObject statusPrefab, out IStatus status, bool forced = false)
+        public bool TryAddStatus(ActorBase source, GameObject statusPrefab, out IStatus status, bool forced = false)
         {
             status = null;
 
@@ -494,7 +494,7 @@ namespace Engine
             return false;
         }
 
-        private IStatus CreateStatusInstance(GameObject statusPrefab, Actor source)
+        private IStatus CreateStatusInstance(GameObject statusPrefab, ActorBase source)
         {
             if (Owner == null || Owner.IsDead || Owner.Trans == null) return null;
             var addedStatus = PoolFactory.Spawn(statusPrefab);

@@ -24,16 +24,16 @@ namespace Framework
         private LayerMask _enemyLayerMask;
 
         [SerializeField]
-        private List<Actor> _allies;
+        private List<ActorBase> _allies;
 
         [SerializeField]
-        private List<Actor> _enemies;
+        private List<ActorBase> _enemies;
 
         private readonly HashSet<int> _enemyLookup;
         private readonly HashSet<int> _allyLookUp;
 
-        public IList<Actor> Allies { get { return _allies; } }
-        public IList<Actor> Enemies { get { return _enemies; } }
+        public IList<ActorBase> Allies { get { return _allies; } }
+        public IList<ActorBase> Enemies { get { return _enemies; } }
 
         public int TeamId { get { return _teamId; } }
         public int Layer { get { return _layer; } }
@@ -44,8 +44,8 @@ namespace Framework
         {
             _teamId = teamId;
             _layer = layer;
-            _allies = new List<Actor>();
-            _enemies = new List<Actor>();
+            _allies = new List<ActorBase>();
+            _enemies = new List<ActorBase>();
             _enemyLookup = new HashSet<int>();
             _allyLookUp = new HashSet<int>();
 
@@ -68,22 +68,22 @@ namespace Framework
             _allyLayerMask = _allyLayerMask.AddLayer(teamModel.Layer);
         }
 
-        public void AddAlly(Actor actor)
+        public void AddAlly(ActorBase actor)
         {
             _allies.Add(actor);
         }
 
-        public void RemoveAlly(Actor actor)
+        public void RemoveAlly(ActorBase actor)
         {
             _allies.Remove(actor);
         }
 
-        public void AddEnemy(Actor actor)
+        public void AddEnemy(ActorBase actor)
         {
             _enemies.Add(actor);
         }
 
-        public void RemoveEnemy(Actor actor)
+        public void RemoveEnemy(ActorBase actor)
         {
             _enemies.Remove(actor);
         }

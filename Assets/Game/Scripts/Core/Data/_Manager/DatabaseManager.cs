@@ -11,6 +11,7 @@ using Assets.Game.Scripts.Core.Data.Database.Config;
 using Assets.Game.Scripts.Core.Data.Database.Buff;
 using Assets.Game.Scripts.Core.Data.Database.LevelExp;
 using Assets.Game.Scripts.Core.Data.Database.LevelUpBuff;
+using Assets.Game.Scripts.Core.Data.Database.ShopWave;
 
 public class DatabaseManager : MonoSingleton<DatabaseManager>
 {
@@ -30,6 +31,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
     public LevelExpGameplayTable LevelExpGameplay = new();
     public LevelExpAccountTable LevelExpAccount = new();
     public LevelUpBuffTable LevelUpBuff = new();
+    public ShopWaveConfigTable ShopWaveConfig = new();
 
     public void Init(Transform parent = null)
     {
@@ -58,6 +60,7 @@ public class DatabaseManager : MonoSingleton<DatabaseManager>
         databases.Add(LevelExpAccount);
         databases.Add(LevelExpGameplay);
         databases.Add(LevelUpBuff);
+        databases.Add(ShopWaveConfig);
 
     }
 

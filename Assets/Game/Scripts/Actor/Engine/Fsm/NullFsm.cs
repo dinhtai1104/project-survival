@@ -4,7 +4,7 @@ namespace Engine
 {
     public class NullFsm : IFsm
     {
-        public Actor Actor { set; get; }
+        public ActorBase Actor { set; get; }
 
         public bool AddState(IState state)
         {
@@ -52,7 +52,7 @@ namespace Engine
             return false;
         }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
         }
 

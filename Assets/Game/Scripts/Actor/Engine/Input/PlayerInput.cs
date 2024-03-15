@@ -10,7 +10,7 @@ namespace Engine
 
         public override bool IsHoldingAttackButton => _isHolding;
 
-        public override void Init(Actor actor)
+        public override void Init(ActorBase actor)
         {
             base.Init(actor);
             Architecture.Get<EventMgr>().Subscribe<JoystickMovementStartEventArgs>(OnJoystickMovementStart);

@@ -16,7 +16,7 @@ namespace Engine
 
         [SerializeField] private DecisionOperator[] m_DecisionOperators;
 
-        public override bool Decide(Actor actor)
+        public override bool Decide(ActorBase actor)
         {
             var result = false;
 

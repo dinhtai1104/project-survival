@@ -7,16 +7,16 @@ namespace Engine
 {
     public class NullTargetFinder : ITargetFinder
     {
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
         public ITargetQuery CurrentQuery { get; }
-        public Actor CurrentTarget { get; set; }
+        public ActorBase CurrentTarget { get; set; }
         public bool IsUpdatingTarget { get; set; }
 
-        public IList<Actor> Enemies => new List<Actor>();
+        public IList<ActorBase> Enemies => new List<ActorBase>();
 
-        public IList<Actor> Allies => new List<Actor>();
+        public IList<ActorBase> Allies => new List<ActorBase>();
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
         }

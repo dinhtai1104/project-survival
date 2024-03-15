@@ -45,7 +45,7 @@ namespace Engine
             get { return 0f; }
         }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
         }
 

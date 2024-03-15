@@ -8,7 +8,7 @@ namespace Engine
 {
     public interface IHealth
     {
-        Actor Owner { get; }
+        ActorBase Owner { get; }
         event Action<IHealth> OnValueChanged;
         bool Initialized { set; get; }
         float CurrentHealth { set; get; }
@@ -16,7 +16,7 @@ namespace Engine
         float MinHealth { set; get; }
         float HealthPercentage { get; }
         bool Invincible { set; get; }
-        void Init(Actor actor);
+        void Init(ActorBase actor);
         void Reset();
         void Damage(float damage, EDamageType type);
         void Healing(float amount);

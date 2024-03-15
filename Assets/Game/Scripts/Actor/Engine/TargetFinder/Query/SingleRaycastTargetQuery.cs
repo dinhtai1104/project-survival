@@ -14,7 +14,7 @@ namespace Engine
         [SerializeField] private float m_OriginOffetY = 0.2f;
 
         private ITargetFinder m_Finder;
-        private Actor m_Target;
+        private ActorBase m_Target;
         private RaycastHit2D[] m_HitResults;
 
         public void Init(ITargetFinder finder)
@@ -24,7 +24,7 @@ namespace Engine
             m_RayDistance = 10;
         }
 
-        public Actor GetTarget(IList<Actor> targets)
+        public ActorBase GetTarget(IList<ActorBase> targets)
         {
             if (m_Target != null && !m_Target.IsDead)
             {
@@ -35,7 +35,7 @@ namespace Engine
             return m_Target;
         }
 
-        public void SetTarget(Actor target)
+        public void SetTarget(ActorBase target)
         {
             m_Target = target;
         }
@@ -49,7 +49,7 @@ namespace Engine
             m_Target = null;
         }
 
-        private Actor FindTarget(params Actor[] except)
+        private ActorBase FindTarget(params ActorBase[] except)
         {
             var origin = m_Finder.Owner.Trans.position;
             origin.y += m_OriginOffetY;
@@ -63,7 +63,7 @@ namespace Engine
                 {
                     var rayHit = m_HitResults[i].transform;
                     
-                    if (rayHit.TryGetComponent<Actor>(out m_Target))
+                    if (rayHit.TryGetComponent<ActorBase>(out m_Target))
                     {
                         if (m_Target.IsActivated == false) continue;
                         if (except.IsNotNull() && except.Contains(m_Target)) continue;
@@ -75,7 +75,7 @@ namespace Engine
             return null;
         }
 
-        public Actor GetTarget(IList<Actor> targets, params Actor[] except)
+        public ActorBase GetTarget(IList<ActorBase> targets, params ActorBase[] except)
         {
             if (m_Target != null && !m_Target.IsDead)
             {

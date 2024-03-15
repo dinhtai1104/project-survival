@@ -10,9 +10,9 @@ namespace Events
 {
     public class ActorDieEventArgs : BaseEventArgs<ActorDieEventArgs>
     {
-        public Actor m_Actor;
+        public ActorBase m_Actor;
 
-        public ActorDieEventArgs(Actor actor)
+        public ActorDieEventArgs(ActorBase actor)
         {
             m_Actor = actor;
         }

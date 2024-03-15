@@ -10,7 +10,7 @@ namespace Framework
 {
     public static class FormulaHelper
     {
-        public static float CalculateDamageArmorTaken(Actor attacker, Actor defender, float damage)
+        public static float CalculateDamageArmorTaken(ActorBase attacker, ActorBase defender, float damage)
         {
             var damageTaken = 1f;
             if (defender.Stats.HasStat(StatKey.Armor))

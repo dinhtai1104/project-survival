@@ -10,8 +10,8 @@ namespace Assets.Game.Scripts.Core.BuffHandler
 {
     public interface IBuffEngine
     {
-        Actor Owner { get; }
-        void Init(Actor owner);
+        ActorBase Owner { get; }
+        void Init(ActorBase owner);
         void AddBuff(BuffData buff);
         void Debuff(BuffData buff);
         BuffData GetBuff(int Id);

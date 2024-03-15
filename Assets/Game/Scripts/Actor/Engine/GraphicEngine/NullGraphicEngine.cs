@@ -7,9 +7,9 @@ namespace Engine
 {
     public class NullGraphicEngine : IGraphicEngine
     {
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
         }

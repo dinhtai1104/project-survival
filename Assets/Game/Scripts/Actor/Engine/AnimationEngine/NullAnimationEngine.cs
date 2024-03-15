@@ -10,7 +10,7 @@ namespace Engine
 {
     public class NullAnimationEngine : IAnimationEngine
     {
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
         public bool Lock { get; set; }
 
         public string CurrentAnimationName
@@ -68,7 +68,7 @@ namespace Engine
             return false;
         }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
         }

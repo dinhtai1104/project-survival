@@ -14,10 +14,10 @@ namespace Gameplay
         [SerializeField] private List<WeaponPlaceHolder> m_PlaceHolders;
         private PlayerActor m_Actor;
         private List<WeaponActor> m_ListWeaponCurrent = new List<WeaponActor>();
-        private List<WeaponEntity> m_WeaponInQueue = new List<WeaponEntity>();
-        private List<WeaponEntity> m_WeaponDeleteInQueue = new List<WeaponEntity>();
 
-        public void Init(Actor actor)
+        public List<WeaponActor> ListWeaponCurrent { get => m_ListWeaponCurrent; set => m_ListWeaponCurrent = value; }
+
+        public void Init(ActorBase actor)
         {
             this.m_Actor = actor as PlayerActor;
         }
@@ -50,7 +50,6 @@ namespace Gameplay
 
             // add weapon
             var weaponEntity = evt.m_WeaponEntity;
-            m_WeaponInQueue.Add(weaponEntity);
         }
 
         public void AddWeapon(WeaponActor weapon)

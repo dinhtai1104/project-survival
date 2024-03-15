@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Engine
 {
-    public class Actor : MonoBehaviour
+    public class ActorBase : MonoBehaviour
     {
         [SerializeField] private LayerMask m_EnemyLayerMask;
         [SerializeField] private LayerMask m_AllyLayerMask;

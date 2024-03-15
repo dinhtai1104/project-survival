@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AI_SkillAvailable.asset", menuName = SOUtility.GAME_AI + "AI_SkillAvailable")]
 public class AISkillAvailable : BrainDecision
 {
-    public override bool Decide(Actor actor)
+    public override bool Decide(ActorBase actor)
     {
         return actor.SkillCaster.HasAvailableSkill;
     }

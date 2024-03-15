@@ -23,7 +23,7 @@ namespace Gameplay
         private WeaponFactory m_WeaponFactory;
         public TeamManager TeamManager => m_TeamManager;
 
-        private Actor m_MainPlayer;
+        private ActorBase m_MainPlayer;
         protected PlayerGameplayData m_LocalPlayerData;
         private bool _checkingResult;
         protected bool EndGame => !_checkingResult;
@@ -88,14 +88,14 @@ namespace Gameplay
             }
             (MainPlayer as PlayerActor).WeaponHolder.SetupWeapon(listWea);
         }
-        private void SetupPlayerActor(Actor player)
+        private void SetupPlayerActor(ActorBase player)
         {
             player.Stats.Copy(SceneManager.PlayerData.PlayerStats);
             // Add Passive Here
         }
-        public Actor SpawnPlayerActor()
+        public ActorBase SpawnPlayerActor()
         {
-            var prefab = GetRequestedAsset<GameObject>("player").GetComponent<Actor>();
+            var prefab = GetRequestedAsset<GameObject>("player").GetComponent<ActorBase>();
             var playerActor = PoolFactory.Spawn(prefab, Vector3.zero, Quaternion.identity);
             playerActor.Prepare();
 
@@ -133,7 +133,7 @@ namespace Gameplay
         {
             // Request character
             var path = "Character/" + localPlayerData.Character;
-            RequestAsset<Actor>("main-player", path);
+            RequestAsset<ActorBase>("main-player", path);
 
 
             return UniTask.CompletedTask;

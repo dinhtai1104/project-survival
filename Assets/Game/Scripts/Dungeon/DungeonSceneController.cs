@@ -3,6 +3,7 @@ using Assets.Game.Scripts.Core.Data.Database.Dungeon;
 using Assets.Game.Scripts.Core.SceneMemory.Memory;
 using Assets.Game.Scripts.Events;
 using Assets.Game.Scripts.GameScene.Dungeon.Main;
+using Assets.Game.Scripts.GameScene.ShopWave;
 using Assets.Game.Scripts.Manager;
 using Assets.Game.Scripts.Objects.Loots;
 using Core;
@@ -38,6 +39,7 @@ namespace Assets.Game.Scripts.Dungeon
         private DungeonEntity m_DungeonEntity;
         private TickSystem m_TimeWaveSystem;
         private DungeonGameplaySessionSave m_DungeonSession;
+        private ShopWaveHandler m_ShopWaveHandler;
 
         // Properties in game
         public Bound2D Bound => m_Bound2D;
@@ -60,9 +62,6 @@ namespace Assets.Game.Scripts.Dungeon
         protected override void OnEnter()
         {
             base.OnEnter();
-            Simulator.Instance.setTimeStep(0.25f);
-            Simulator.Instance.setAgentDefaults(5, 15, 3, 3, 3f, 4.0f, new Vector2RVO(0.0f, 0.0f));
-
             IsBossDied = false;
             var mainPanel = ScenePresenter.GetPanel<UIDungeonMainPanel>();
             mainPanel.GetHealthPlayerBar().Init(MainPlayer);
@@ -111,7 +110,7 @@ namespace Assets.Game.Scripts.Dungeon
             }
         }
 
-        private void OnBossDie(Engine.Actor boss)
+        private void OnBossDie(Engine.ActorBase boss)
         {
             IsBossDied = true;
         }
@@ -163,6 +162,7 @@ namespace Assets.Game.Scripts.Dungeon
             GameplayLevelUpHandler.StartTracking();
 
             var loot = new LootObjectUpdater();
+            m_ShopWaveHandler = new ShopWaveHandler(this, MainPlayer);
         }
 
         private void PrepareMapLevel()
@@ -184,6 +184,7 @@ namespace Assets.Game.Scripts.Dungeon
 
         protected virtual void StartWave()
         {
+            m_ShopWaveHandler.SetWave(CurrentWave);
             m_Spawner.StartSpawn(WaveDungeon.DelayStart);
             ScenePresenter.GetPanel<UIDungeonMainPanel>().StartWave(string.Format("Wave {0}/{1}", CurrentWave + 1, MaxWave), LengthWave, true).Forget();
 
@@ -212,11 +213,13 @@ namespace Assets.Game.Scripts.Dungeon
             }
 
             m_Spawner.StartNextWave(2);
-            //CameraController.Instance.SetCameraSize(WaveDungeon.WaveEntity.CameraSize);
+            m_ShopWaveHandler.SetWave(CurrentWave);
 
+            // Reset hp player
             MainPlayer.Health.CurrentHealth = MainPlayer.Health.MaxHealth;
             ScenePresenter.GetPanel<UIDungeonMainPanel>().ShowByTransitions();
 
+            // setup time wave
             var timeThisWave = LengthWave;
             if (timeThisWave != 0)
             {
@@ -234,7 +237,7 @@ namespace Assets.Game.Scripts.Dungeon
         private UniTask ShowLevelUpPanel()
         {
             bool isFinish = false;
-            ScenePresenter.CreateAsync<UIDungeonLevelUpPanel>(AddressableName.UIDungeonLevelUpPanel)
+            ScenePresenter.CreateAsync<UIGameplayLevelUpPanel>(AddressableName.UIGameplayLevelUpPanel)
                    .ContinueWith(panel =>
                    {
                        panel.Show();
@@ -245,14 +248,14 @@ namespace Assets.Game.Scripts.Dungeon
 
         public void ShowShopWavePanel()
         {
-            ScenePresenter.CreateAsync<UIDungeonShopWavePanel>(AddressableName.UIDungeonShopWavePanel)
+            ScenePresenter.CreateAsync<UIGameplayShopWavePanel>(AddressableName.UIGameplayShopWavePanel)
                     .ContinueWith(panel =>
                     {
                         panel.onBeforeDestroy += () =>
                         {
                             StartNextWave().Forget();
                         };
-                        panel.Show();
+                        panel.Show(m_ShopWaveHandler);
                     }).Forget();
         }
 
@@ -266,7 +269,6 @@ namespace Assets.Game.Scripts.Dungeon
             base.Execute();
             if (EndGame) return;
             ScenePresenter.Execute();
-            Simulator.Instance.doStep();
             LootObjectUpdater.Instance.OnUpdate();
 
 #if DEVELOPMENT

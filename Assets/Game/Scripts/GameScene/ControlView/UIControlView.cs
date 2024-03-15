@@ -14,7 +14,7 @@ namespace Assets.Game.Scripts.GameScene.ControlView
     public class UIControlView : MonoBehaviour
     {
         private List<(UIButtonSkill, BaseSkillState)> m_MappingSkillState = new List<(UIButtonSkill, BaseSkillState)>();
-        private Engine.Actor m_MainActor;
+        private Engine.ActorBase m_MainActor;
         [SerializeField] private Joystick m_Joystick;
         [SerializeField] private UIButtonSkill m_DashSkillBtn;
 
@@ -48,7 +48,7 @@ namespace Assets.Game.Scripts.GameScene.ControlView
             m_Joystick.onMoveEnd.RemoveListener(OnMovingEnd);
         }
 
-        public void Setup(Engine.Actor actor)
+        public void Setup(Engine.ActorBase actor)
         {
             this.m_MainActor = actor;
             MappingState<ActorDashState>(m_DashSkillBtn);

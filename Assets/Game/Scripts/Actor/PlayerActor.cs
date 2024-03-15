@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Engine
 {
-    public class PlayerActor : Actor
+    public class PlayerActor : ActorBase
     {
         private IBuffEngine m_BuffEngine;
         public IBuffEngine NullBuffEngine;

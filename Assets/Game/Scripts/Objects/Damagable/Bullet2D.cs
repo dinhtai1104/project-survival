@@ -27,12 +27,12 @@ public class Bullet2D : MonoBehaviour
     [SerializeField] private UnityEvent m_StartBulletEvent;
     [SerializeField] private UnityEvent m_MaxDistanceEvent;
     [SerializeField] private UnityEvent m_HitEvent;
-    [SerializeField] private UnityEvent<Actor> m_HitTargetEvent;
+    [SerializeField] private UnityEvent<ActorBase> m_HitTargetEvent;
     [SerializeField] private UnityEvent m_DespawnEvent;
 
     private Transform m_Firepoint;
     private int m_TargetCount;
-    private Actor m_Owner;
+    private ActorBase m_Owner;
     private bool m_Update;
     private float m_Timer;
     [SerializeField, ReadOnly] private float m_DebugDistance;
@@ -80,10 +80,10 @@ public class Bullet2D : MonoBehaviour
     public UnityEvent MaxDistanceEvent => m_MaxDistanceEvent;
     public UnityEvent HitEvent => m_HitEvent;
     public UnityEvent DespawnEvent => m_DespawnEvent;
-    public Action<Bullet2D, Actor> OnHitTarget;
+    public Action<Bullet2D, ActorBase> OnHitTarget;
 
     [ShowInInspector, ReadOnly]
-    public Actor Owner
+    public ActorBase Owner
     {
         set
         {
@@ -158,7 +158,7 @@ public class Bullet2D : MonoBehaviour
 
         if (m_TargetLayer.Contains(other.gameObject) && m_TargetCount < m_TargetNumber)
         {
-            var target = other.GetComponent<Actor>();
+            var target = other.GetComponent<ActorBase>();
             if (target == null) return;
             if (Time.time - m_DamageLastInvoke < m_DamageInvoke) return;
             if (m_DealDamageOnContact && m_DamageDealer != null)
@@ -241,7 +241,7 @@ public class Bullet2D : MonoBehaviour
         m_Update = true;
     }
 
-    protected virtual void OnImpact(Actor target)
+    protected virtual void OnImpact(ActorBase target)
     {
     }
 

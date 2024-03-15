@@ -15,9 +15,9 @@ namespace Engine
         private readonly TemporaryModifier m_AttackerTempMods = new TemporaryModifier();
         private readonly TemporaryModifier m_DefenderTempMods = new TemporaryModifier();
 
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
         }
@@ -39,7 +39,7 @@ namespace Engine
             return false;
         }
 
-        public HitResult CalculateDamage(Actor defender, Actor attacker, DamageSource source)
+        public HitResult CalculateDamage(ActorBase defender, ActorBase attacker, DamageSource source)
         {
             if (defender.Health.Invincible)
             {
@@ -99,12 +99,12 @@ namespace Engine
             return hitResult;
         }
 
-        private float CalculateRawDamage(DamageSource source, Actor defender)
+        private float CalculateRawDamage(DamageSource source, ActorBase defender)
         {
             return source.Value + defender.Health.MaxHealth * source.DamageHealthPercentage;
         }
 
-        private float CalculatePhysicalDamage(Actor defender, Actor attacker, DamageSource source, out bool success,
+        private float CalculatePhysicalDamage(ActorBase defender, ActorBase attacker, DamageSource source, out bool success,
             out bool crit, out bool hurt,
             out bool evade, out bool block)
         {
@@ -144,7 +144,7 @@ namespace Engine
             return damage;
         }
 
-        private float CalculateMagicDamage(Actor defender, Actor attacker, DamageSource source)
+        private float CalculateMagicDamage(ActorBase defender, ActorBase attacker, DamageSource source)
         {
             var def = defender.Stats;
             var atk = attacker.Stats;

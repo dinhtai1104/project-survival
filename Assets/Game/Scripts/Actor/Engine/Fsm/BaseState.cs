@@ -5,7 +5,7 @@ namespace Engine
 {
     public abstract class BaseState : MonoBehaviour, IState
     {
-        public Actor Actor { set; get; }
+        public ActorBase Actor { set; get; }
         protected virtual void OnEnable()
         {
         }

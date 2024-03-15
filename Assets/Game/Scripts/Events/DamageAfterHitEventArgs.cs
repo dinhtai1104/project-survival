@@ -6,12 +6,12 @@ namespace Assets.Game.Scripts.Events
 {
     public class DamageAfterHitEventArgs : BaseEventArgs<DamageAfterHitEventArgs>
     {
-        public Engine.Actor attacker;
-        public Engine.Actor defender;
+        public Engine.ActorBase attacker;
+        public Engine.ActorBase defender;
         public HitResult hitResult;
         public DamageSource damageSource;
 
-        public DamageAfterHitEventArgs(Engine.Actor attack, Engine.Actor defense, DamageSource source, HitResult hitResult)
+        public DamageAfterHitEventArgs(Engine.ActorBase attack, Engine.ActorBase defense, DamageSource source, HitResult hitResult)
         {
             this.damageSource = source;
             this.attacker = attack;

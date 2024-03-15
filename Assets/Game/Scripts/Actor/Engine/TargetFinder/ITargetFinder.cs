@@ -6,13 +6,13 @@ namespace Engine
 {
     public interface ITargetFinder
     {
-        Actor Owner { get; }
+        ActorBase Owner { get; }
         ITargetQuery CurrentQuery { get; }
-        Actor CurrentTarget { get; set; }
-        IList<Actor> Enemies { get; }
-        IList<Actor> Allies { get; }
+        ActorBase CurrentTarget { get; set; }
+        IList<ActorBase> Enemies { get; }
+        IList<ActorBase> Allies { get; }
         bool IsUpdatingTarget { set; get; }
-        void Init(Actor actor);
+        void Init(ActorBase actor);
         void OnUpdate();
         void UpdateTarget();
         void ForceUpdateTarget();

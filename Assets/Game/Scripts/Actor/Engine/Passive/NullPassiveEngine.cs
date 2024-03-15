@@ -12,7 +12,7 @@ namespace Engine
         {
         }
 
-        public void Init(Actor owner)
+        public void Init(ActorBase owner)
         {
         }
 

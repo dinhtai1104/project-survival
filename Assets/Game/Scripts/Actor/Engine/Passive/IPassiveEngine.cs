@@ -8,7 +8,7 @@ namespace Engine
 {
     public interface IPassiveEngine
     {
-        void Init(Actor owner);
+        void Init(ActorBase owner);
         void OnUpdate();
         void AddPassive(IPassive passive);
         void RemovePassive(IPassive passive);

@@ -12,12 +12,12 @@ namespace Assets.Game.Scripts.Core.BuffHandler
 {
     public class BuffEngine : MonoBehaviour, IBuffEngine
     {
-        private Actor m_Owner;
+        private ActorBase m_Owner;
         private List<BuffData> m_BuffData = new List<BuffData>();
         private List<BuffGameObject> m_BuffInstance = new List<BuffGameObject>();
-        public Actor Owner => m_Owner;
+        public ActorBase Owner => m_Owner;
 
-        public void Init(Actor owner)
+        public void Init(ActorBase owner)
         {
             m_Owner = owner;
         }

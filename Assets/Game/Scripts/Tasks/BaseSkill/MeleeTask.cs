@@ -165,7 +165,7 @@ public class MeleeTask : SkillTask
             {
                 if (hit != default(RaycastHit2D))
                 {
-                    Actor target = hit.collider.GetComponent<Actor>();
+                    ActorBase target = hit.collider.GetComponent<ActorBase>();
 
                     if (target != null)
                     {

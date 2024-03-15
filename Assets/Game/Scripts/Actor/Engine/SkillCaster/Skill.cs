@@ -168,9 +168,9 @@ namespace Engine
             get { return m_OnExit; }
         }
 
-        public Actor Caster { get; private set; }
+        public ActorBase Caster { get; private set; }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Caster = actor;
 

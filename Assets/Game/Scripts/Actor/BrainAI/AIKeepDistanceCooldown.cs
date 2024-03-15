@@ -11,7 +11,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AI_KeepDistanceCooldown.asset", menuName = SOUtility.GAME_AI + "AI_KeepDistanceCooldown")]
 public class AIKeepDistanceCooldown : BrainDecision
 {
-    public override bool Decide(Engine.Actor actor)
+    public override bool Decide(Engine.ActorBase actor)
     {
         if (actor.Fsm.HasState<ActorKeepDistanceState>())
         {

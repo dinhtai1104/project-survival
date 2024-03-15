@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Assets.Game.Scripts.GameScene.ShopWave;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using ExtensionKit;
 using Sirenix.OdinInspector;
@@ -18,11 +19,21 @@ namespace Assets.Game.Scripts.GameScene.Dungeon.ShopWave
         [SerializeField] private AnimationCurve m_RotateFirstCurve;
         [SerializeField] private AnimationCurve m_RotateSecondCurve;
 
+        private ShopWaveItemModel m_Model;
 
-        public void Setup()
+        public void Setup(ShopWaveItemModel model)
         {
+            this.m_Model = model;
             m_PresentObj.SetActive(true);
             m_CardInfoObj.SetGOActive(false);
+
+            SetupInformation().Forget();
+        }
+
+        private async UniTaskVoid SetupInformation()
+        {
+            await m_CardInfoObj.Setup(m_Model);
+            await UniTask.Yield();
         }
 
         [Button]

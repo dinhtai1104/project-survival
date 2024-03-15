@@ -9,7 +9,7 @@ public class AIIsSkillExecuting : BrainDecision
 {
     [SerializeField] private int m_SkillId = -1;
 
-    public override bool Decide(Actor actor)
+    public override bool Decide(ActorBase actor)
     {
         if (m_SkillId != -1)
         {

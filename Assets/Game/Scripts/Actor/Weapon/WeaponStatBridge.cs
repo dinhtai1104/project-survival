@@ -14,7 +14,7 @@ namespace Engine.Weapon
         private IStatGroup m_StatWeapon => m_Weapon.Stats;
         private WeaponEntity m_Entity => m_Weapon.WpEntity;
         // Owner
-        private Actor m_Owner => m_Weapon.Owner;
+        private ActorBase m_Owner => m_Weapon.Owner;
         private IStatGroup m_StatOwner => m_Owner.Stats;
 
         // Modifiers

@@ -10,12 +10,12 @@ using UnityEngine.Events;
 
 public class Explosion2D : MonoBehaviour
 {
-    private Actor m_Owner;
+    private ActorBase m_Owner;
     [SerializeField] private DamageDealer m_DamageDealer;
     [SerializeField] private LayerMask m_TargetLayer;
     [SerializeField] private UnityEvent m_StartExplosion;
     [SerializeField] private UnityEvent m_HitEvent;
-    [SerializeField] private UnityEvent<Actor> m_HitTargetEvent;
+    [SerializeField] private UnityEvent<ActorBase> m_HitTargetEvent;
     [SerializeField] private UnityEvent m_DespawnEvent;
     [SerializeField] private float m_Radius;
     public LayerMask TargetLayer
@@ -40,9 +40,9 @@ public class Explosion2D : MonoBehaviour
 
     public UnityEvent HitEvent => m_HitEvent;
     public UnityEvent DespawnEvent => m_DespawnEvent;
-    public Action<Bullet2D, Actor> OnHitTarget;
+    public Action<Bullet2D, ActorBase> OnHitTarget;
     [ShowInInspector, ReadOnly]
-    public Actor Owner
+    public ActorBase Owner
     {
         set
         {

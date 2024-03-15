@@ -7,7 +7,7 @@ namespace Engine
     public interface ISkillCaster
     {
         bool IsLocked { set; get; }
-        Actor Owner { get; }
+        ActorBase Owner { get; }
         ISkill CurrentSkill { get; }
         IEnumerable<ISkill> ActiveSkills { get; }
         IEnumerable<ISkill> AllSkills { get; }
@@ -15,7 +15,7 @@ namespace Engine
         bool HasAvailableSkill { get; }
         bool IsBusy { get; }
         bool IsExecuting { get; }
-        void Init(Actor actor);
+        void Init(ActorBase actor);
         void OnUpdate();
         ISkill GetSkillById(int id);
         bool AddSkill(ISkill skill);

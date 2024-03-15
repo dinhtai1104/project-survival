@@ -8,7 +8,7 @@ namespace Engine
 {
     public class TargetFinder : SerializedMonoBehaviour, ITargetFinder
     {
-        private IList<Actor> EmptyActors = new List<Actor>();
+        private IList<ActorBase> EmptyActors = new List<ActorBase>();
 
         [SerializeField, Range(0f, 3f)] private float m_ScanTargetPeriod = 0.2f;
 
@@ -17,9 +17,9 @@ namespace Engine
 
         [HideInInspector] public List<ITargetQuery> Queries;
 
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
         public ITargetQuery CurrentQuery { get; private set; }
-        [ShowInInspector, ReadOnly] public Actor CurrentTarget { get; set; }
+        [ShowInInspector, ReadOnly] public ActorBase CurrentTarget { get; set; }
 
         public bool IsUpdatingTarget
         {
@@ -31,26 +31,26 @@ namespace Engine
         private bool m_IsUpdatingTarget;
         private float m_ScanTargetTimer;
 
-        private IList<Actor> _enemies;
-        private IList<Actor> _allies;
+        private IList<ActorBase> _enemies;
+        private IList<ActorBase> _allies;
 
 #if UNITY_EDITOR
-        [SerializeField] private List<Actor> _editorEnemies;
-        [SerializeField] private List<Actor> _editorAllies;
+        [SerializeField] private List<ActorBase> _editorEnemies;
+        [SerializeField] private List<ActorBase> _editorAllies;
 #endif
 
-        public IList<Actor> Enemies
+        public IList<ActorBase> Enemies
         {
             get { return _enemies ?? EmptyActors; }
         }
 
-        public IList<Actor> Allies
+        public IList<ActorBase> Allies
         {
             get { return _allies ?? EmptyActors; }
         }
 
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
             m_IsUpdatingTarget = true;
@@ -81,8 +81,8 @@ namespace Engine
         public void OnUpdate()
         {
 #if UNITY_EDITOR
-            _editorAllies = Allies as List<Actor>;
-            _editorEnemies = Enemies as List<Actor>;
+            _editorAllies = Allies as List<ActorBase>;
+            _editorEnemies = Enemies as List<ActorBase>;
 #endif
 
             if (IsUpdatingTarget)

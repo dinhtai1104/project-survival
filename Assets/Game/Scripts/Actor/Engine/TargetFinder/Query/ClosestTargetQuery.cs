@@ -11,8 +11,8 @@ namespace Engine
         [SerializeField] private string m_TagFilter;
         [SerializeField, Range(0f, 3f)] private float m_Cooldown;
 
-        private Actor m_Actor;
-        private Actor m_Target;
+        private ActorBase m_Actor;
+        private ActorBase m_Target;
         private float m_Timer;
         private bool m_IsCooldown;
 
@@ -27,7 +27,7 @@ namespace Engine
             m_Actor = finder.Owner;
         }
 
-        public Actor GetTarget(IList<Actor> targets)
+        public ActorBase GetTarget(IList<ActorBase> targets)
         {
             if (m_IsCooldown && m_Target != null && m_Target.gameObject.activeInHierarchy)
             {
@@ -39,7 +39,7 @@ namespace Engine
             return m_Target;
         }
 
-        public void SetTarget(Actor target)
+        public void SetTarget(ActorBase target)
         {
             m_Target = target;
         }
@@ -65,14 +65,14 @@ namespace Engine
             }
         }
 
-        private Actor FindClosestEnemy(IList<Actor> enemies, params Actor[] except)
+        private ActorBase FindClosestEnemy(IList<ActorBase> enemies, params ActorBase[] except)
         {
             float minDist = float.MaxValue;
-            Actor target = null;
+            ActorBase target = null;
 
             for (int i = 0; i < enemies.Count; ++i)
             {
-                Actor enemyActor = enemies[i];
+                ActorBase enemyActor = enemies[i];
 
                 if (enemyActor != null && enemyActor.gameObject.activeInHierarchy && !enemyActor.IsDead)
                 {
@@ -92,7 +92,7 @@ namespace Engine
             return target;
         }
 
-        public Actor GetTarget(IList<Actor> targets, params Actor[] except)
+        public ActorBase GetTarget(IList<ActorBase> targets, params ActorBase[] except)
         {
             return FindClosestEnemy(targets, except);
         }

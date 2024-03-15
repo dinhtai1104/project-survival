@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Assets.Game.Scripts.Core.Data.Database.Buff
 {
     [System.Serializable]
-    public class BuffEntity
+    public class BuffEntity : IWeightable
     {
         public int Id;
         public string Type;
@@ -20,6 +20,10 @@ namespace Assets.Game.Scripts.Core.Data.Database.Buff
         public List<ModifierData> ModifierSkill;
         public string PrefabPath;
         public bool IsPrefabBuff => PrefabPath.IsNotNullAndEmpty();
+        private float weight = 0;
+
+        public float Weight => weight;
+        public int Price;
         private BGEntity e;
 
         public BuffEntity()
@@ -32,10 +36,12 @@ namespace Assets.Game.Scripts.Core.Data.Database.Buff
         {
             this.e = e;
             Id = e.Get<int>("Id");
+            Price = e.Get<int>("Price");
             Type = e.Get<string>("Type");
             Enum.TryParse(e.Get<string>("Rarity"), out Rarity);
             LocalizeKey = e.Get<string>("LocalizeKey") ?? "";
             PrefabPath = e.Get<string>("PrefabPath") ?? "";
+            weight = e.Get<float>("Weight");
 
             var dataPassive = e.Get<List<string>>("Modifier_Passive");
             if (dataPassive.IsNotNull())

@@ -10,7 +10,7 @@ namespace Assets.Game.Scripts.Core.BuffHandler
 {
     public class NullBuffEngine : IBuffEngine
     {
-        public Actor Owner => null;
+        public ActorBase Owner => null;
 
         public void AddBuff(BuffData buff)
         {
@@ -30,7 +30,7 @@ namespace Assets.Game.Scripts.Core.BuffHandler
             return new BuffData();
         }
 
-        public void Init(Actor owner)
+        public void Init(ActorBase owner)
         {
         }
 

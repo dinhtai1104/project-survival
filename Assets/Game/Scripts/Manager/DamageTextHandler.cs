@@ -15,7 +15,7 @@ namespace Manager
     {
         //cooldown between get hit, time until reset damage to 0
         public float damageTextCoolDown = 0.1f;
-        public Dictionary<Actor, DamageInfo> dict = new Dictionary<Actor, DamageInfo>();
+        public Dictionary<ActorBase, DamageInfo> dict = new Dictionary<ActorBase, DamageInfo>();
         [ShowInInspector]
         public DamageNumber[] prefabs;
 
@@ -68,9 +68,9 @@ namespace Manager
         public float damage;
         public float lastHitTime;
 
-        private Actor target;
+        private ActorBase target;
 
-        public DamageInfo(Actor target)
+        public DamageInfo(ActorBase target)
         {
             this.target = target;
         }

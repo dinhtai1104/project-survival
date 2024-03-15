@@ -10,12 +10,12 @@ namespace Engine
     {
         [SerializeField] private PositionConstraint m_Constraint;
 
-        private Actor m_Owner;
+        private ActorBase m_Owner;
 
-        public Actor Owner => m_Owner;
+        public ActorBase Owner => m_Owner;
         public PositionConstraint Constraint => m_Constraint;
 
-        public virtual void SetOwner(Actor actor)
+        public virtual void SetOwner(ActorBase actor)
         {
             m_Owner = actor;
         }

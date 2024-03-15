@@ -14,14 +14,14 @@ namespace Engine
         bool Override { get; }
         bool IsExpired { get; }
         bool IsRunning { get; }
-        Actor Actor { get; }
-        Actor Source { get; }
+        ActorBase Actor { get; }
+        ActorBase Source { get; }
         void Begin();
         void Cancel();
         void Stop();
         void OnUpdate(float dt);
-        void SetActor(Actor actor);
-        void SetSource(Actor source);
+        void SetActor(ActorBase actor);
+        void SetSource(ActorBase source);
         IStatus SetDuration(float duration);
         IStatus SetModifierValue(float value);
     }

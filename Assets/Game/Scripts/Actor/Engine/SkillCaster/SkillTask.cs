@@ -9,9 +9,9 @@ namespace Engine
         [SerializeField] protected bool m_CooldownAtBegin;
         [SerializeField] protected bool m_CooldownAtEnd;
         [SerializeField] protected Skill m_Skill;
-        [SerializeField] protected Actor m_Actor;
+        [SerializeField] protected ActorBase m_Actor;
 
-        public Actor Caster
+        public ActorBase Caster
         {
             set { m_Actor = value; }
             get { return m_Actor; }
@@ -38,7 +38,7 @@ namespace Engine
         protected override void Awake()
         {
             base.Awake();
-            if (m_Actor == null) m_Actor = GetComponentInParent<Actor>();
+            if (m_Actor == null) m_Actor = GetComponentInParent<ActorBase>();
             if (m_Skill == null) m_Skill = GetComponentInParent<Skill>();
         }
 

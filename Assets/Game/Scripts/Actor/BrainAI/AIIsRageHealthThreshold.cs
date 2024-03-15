@@ -8,7 +8,7 @@ public class AIIsRageHealthThreshold : BrainDecision
 {
     [SerializeField, Range(0f, 1f)] private float m_RageHealthThreshold = 1.0f;
 
-    public override bool Decide(Actor actor)
+    public override bool Decide(ActorBase actor)
     {
         return actor.Health.HealthPercentage <= m_RageHealthThreshold;
     }

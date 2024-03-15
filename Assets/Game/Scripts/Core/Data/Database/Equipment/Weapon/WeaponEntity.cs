@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon
 {
     [System.Serializable]
-    public class WeaponEntity
+    public class WeaponEntity : IWeightable
     {
         public string PrefabPath;
         public string IdEquipment => Equipment.IdEquipment;
@@ -22,6 +22,8 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon
 
         public EDamageType DamageType;
         public List<EWeaponScaling> WeaponScaling;
+
+        public EWeaponClass WeaponClass;
 
         public float AttackSpeed;
         public float Damage;
@@ -33,6 +35,9 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon
         public int Price;
         public int Unlock;
 
+        public float Weight => Equipment.Weight;
+
+        public List<AttributeStat> MainStats;
         public List<ModifierData> OtherStats;
 
         public List<string> StatShowInUI;
@@ -41,11 +46,13 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon
         {
             WeaponScaling = new List<EWeaponScaling>();
             OtherStats = new List<ModifierData>();
+            MainStats = new List<AttributeStat>();
         }
 
         public WeaponEntity(BGEntity e) : this()
         {
             Enum.TryParse(e.Get<string>("Rarity"), out Rarity);
+            Enum.TryParse(e.Get<string>("Class"), out WeaponClass);
 
             var eqpId = e.Get<string>("IdEquipment");
             PrefabPath = e.Get<string>("PrefabPath");
@@ -60,6 +67,8 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon
             Unlock = e.Get<int>("Unlock");
             StatShowInUI = e.Get<List<string>>("StatUI");
             Price = e.Get<int>("Price");
+
+            SetMainStat();
 
 
             var otherStat = e.Get<List<string>>("OtherStat");
@@ -82,6 +91,16 @@ namespace Assets.Game.Scripts.Core.Data.Database.Equipment.Weapon
                 }
             }
         }
+
+        private void SetMainStat()
+        {
+            MainStats.Add(new AttributeStat(StatKey.Damage, new Stat(Damage)));
+            MainStats.Add(new AttributeStat(StatKey.CritChance, new Stat(CritChance)));
+            MainStats.Add(new AttributeStat(StatKey.Knockback, new Stat(Knockback)));
+            MainStats.Add(new AttributeStat(StatKey.AttackRange, new Stat(RangeAttack)));
+            MainStats.Add(new AttributeStat(StatKey.AttackSpeed, new Stat(AttackSpeed)));
+        }
+
         public bool IsWeaponContainsScaling(EWeaponScaling scale)
         {
             return WeaponScaling.Contains(scale);

@@ -7,7 +7,7 @@ namespace Engine
     public class NullSkillCaster : ISkillCaster
     {
         public bool IsLocked { get; set; }
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
         public ISkill CurrentSkill { get; }
         public IEnumerable<ISkill> ActiveSkills { get; }
         public IEnumerable<ISkill> AllSkills { get; }
@@ -16,7 +16,7 @@ namespace Engine
         public bool IsBusy { get; }
         public bool IsExecuting { get; }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
         }

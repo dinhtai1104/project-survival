@@ -12,11 +12,11 @@ namespace Engine
     public class AnimatorAnimationEngine : MonoBehaviour, IAnimationEngine
     {
         private Animator m_Animator;
-        private Actor m_Owner;
+        private ActorBase m_Owner;
         private float m_AnimationTimeScale = 1.0f;
         private float m_PrevAnimationTimeScale = 0.0f;
         private bool m_IsAnimationPaused = false;
-        public Actor Owner => m_Owner;
+        public ActorBase Owner => m_Owner;
 
         public bool Lock { get; set; }
 
@@ -50,7 +50,7 @@ namespace Engine
             }
         }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             m_Owner = actor;
         }

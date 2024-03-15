@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AI_CompleteAnimation.asset", menuName = SOUtility.GAME_AI + "AI_CompleteAnimation")]
 public class AICompleteAnimation : BrainDecision
 {
-    public override bool Decide(Actor actor)
+    public override bool Decide(ActorBase actor)
     {
         return actor.Animation.IsCurrentAnimationComplete;
     }

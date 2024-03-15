@@ -25,7 +25,7 @@ namespace Engine
         private MaterialPropertyBlock m_PropBlock;
         private Tweener m_FlashColorTween;
 
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
 
         private void Awake()
         {
@@ -41,7 +41,7 @@ namespace Engine
             }
         }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
             m_PropBlock = new MaterialPropertyBlock();

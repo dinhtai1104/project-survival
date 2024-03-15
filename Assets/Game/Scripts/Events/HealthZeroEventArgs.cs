@@ -10,9 +10,9 @@ namespace Events
 {
     public class HealthZeroEventArgs : BaseEventArgs<HealthZeroEventArgs>
     {
-        public Actor m_Actor;
+        public ActorBase m_Actor;
 
-        public HealthZeroEventArgs(Actor actor)
+        public HealthZeroEventArgs(ActorBase actor)
         {
             m_Actor = actor;
         }

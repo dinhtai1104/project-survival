@@ -8,9 +8,9 @@ namespace Engine
 {
     public interface IBrain
     {
-        Actor Owner { get; }
+        ActorBase Owner { get; }
         bool Lock { set; get; }
-        void Init(Actor actor);
+        void Init(ActorBase actor);
         void OnUpdate();
     }
 }

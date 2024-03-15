@@ -12,7 +12,7 @@ public class FacingTargetTask : SkillTask
         base.Begin();
         if (m_Once)
         {
-            Actor target = Caster.TargetFinder.CurrentTarget;
+            ActorBase target = Caster.TargetFinder.CurrentTarget;
             if (target != null)
             {
                 Caster.Movement.LookAt(target.Trans.position);
@@ -27,7 +27,7 @@ public class FacingTargetTask : SkillTask
         base.Run();
         if (!m_Once)
         {
-            Actor target = Caster.TargetFinder.CurrentTarget;
+            ActorBase target = Caster.TargetFinder.CurrentTarget;
             if (target != null)
             {
                 Caster.Movement.LookAt(target.Trans.position);

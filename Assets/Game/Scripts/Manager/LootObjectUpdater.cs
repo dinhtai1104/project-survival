@@ -149,7 +149,9 @@ namespace Assets.Game.Scripts.Manager
         {
             for (int i = m_LootObjects.Count - 1; i >= 0; i--)
             {
+                var loot = m_LootObjects[i];
                 RemoveObject(m_LootObjects[i]);
+                loot.Destroy();
             }
             m_LootCacheObjects.Clear();
         }

@@ -14,15 +14,15 @@ namespace Engine
         private string m_TagFilter;
 
 
-        private Actor m_Actor;
-        private Actor m_Target;
+        private ActorBase m_Actor;
+        private ActorBase m_Target;
 
         public void Init(ITargetFinder finder)
         {
             m_Actor = finder.Owner;
         }
 
-        public Actor GetTarget(IList<Actor> targets)
+        public ActorBase GetTarget(IList<ActorBase> targets)
         {
             if (m_Target != null && m_Target.gameObject.activeInHierarchy)
             {
@@ -33,7 +33,7 @@ namespace Engine
             return m_Target;
         }
 
-        public void SetTarget(Actor target)
+        public void SetTarget(ActorBase target)
         {
             m_Target = target;
         }
@@ -46,9 +46,9 @@ namespace Engine
         {
         }
 
-        private Actor FindEnemy(IList<Actor> enemies, params Actor[] except)
+        private ActorBase FindEnemy(IList<ActorBase> enemies, params ActorBase[] except)
         {
-            Actor target = null;
+            ActorBase target = null;
             for (var i = 0; i < enemies.Count; ++i)
             {
                 var enemyActor = enemies[i];
@@ -64,7 +64,7 @@ namespace Engine
             return target;
         }
 
-        public Actor GetTarget(IList<Actor> targets, params Actor[] except)
+        public ActorBase GetTarget(IList<ActorBase> targets, params ActorBase[] except)
         {
             if (m_Target != null && m_Target.gameObject.activeInHierarchy)
             {

@@ -8,9 +8,9 @@ namespace Engine
 {
     public class ActorStatBridge : IDisposable
     {
-        private readonly Actor m_Actor; 
+        private readonly ActorBase m_Actor; 
 
-        public ActorStatBridge(Actor actor)
+        public ActorStatBridge(ActorBase actor)
         {
             m_Actor = actor;
             IStatGroup stats = m_Actor.Stats;

@@ -6,6 +6,6 @@ namespace Engine
 {
     public abstract class BrainDecision : ScriptableObject
     {
-        public abstract bool Decide(Actor actor);
+        public abstract bool Decide(ActorBase actor);
     }
 }

@@ -38,7 +38,7 @@ namespace Engine
         [ShowInInspector] public virtual Vector2 JoystickDirection { set; get; }
         [ShowInInspector] public virtual float JoystickDirectionScalar { set; get; }
 
-        public virtual void Init(Actor actor)
+        public virtual void Init(ActorBase actor)
         {
             _listenerLookup = new Dictionary<EControlCode, UnityEvent>();
         }

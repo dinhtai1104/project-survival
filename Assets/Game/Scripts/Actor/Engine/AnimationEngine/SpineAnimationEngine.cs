@@ -22,12 +22,12 @@ namespace Engine
         private float m_PrevAnimationTimeScale = 0.0f;
         private bool m_IsAnimationPaused = false;
 
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
         public bool Lock { get; set; }
 
         #region MonoBehaviour Method
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
             m_Animation = GetComponentInChildren<SkeletonAnimation>();

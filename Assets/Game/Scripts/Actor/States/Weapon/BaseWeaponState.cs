@@ -13,7 +13,7 @@ namespace Engine.State.Weapon
     public class BaseWeaponState : BaseState
     {
         public WeaponActor Weapon => Actor as WeaponActor;
-        public Actor Owner => Weapon.Owner;
+        public ActorBase Owner => Weapon.Owner;
         public override void Enter()
         {
             base.Enter();

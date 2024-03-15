@@ -11,9 +11,9 @@ namespace Assets.Game.Scripts.Events
     public class WeaponBuyEventArgs : BaseEventArgs<WeaponBuyEventArgs>
     {
         public WeaponEntity m_WeaponEntity;
-        public Engine.Actor m_Owner;
+        public Engine.ActorBase m_Owner;
 
-        public WeaponBuyEventArgs(WeaponEntity weaponEntity, Engine.Actor owner)
+        public WeaponBuyEventArgs(WeaponEntity weaponEntity, Engine.ActorBase owner)
         {
             m_WeaponEntity = weaponEntity;
             m_Owner = owner;

@@ -10,12 +10,12 @@ namespace Engine
         {
         }
 
-        public Actor GetTarget(IList<Actor> targets)
+        public ActorBase GetTarget(IList<ActorBase> targets)
         {
             return null;
         }
 
-        public void SetTarget(Actor target)
+        public void SetTarget(ActorBase target)
         {
         }
 
@@ -27,7 +27,7 @@ namespace Engine
         {
         }
 
-        public Actor GetTarget(IList<Actor> targets, params Actor[] except)
+        public ActorBase GetTarget(IList<ActorBase> targets, params ActorBase[] except)
         {
             return null;
         }

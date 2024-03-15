@@ -40,7 +40,7 @@ namespace Assets.Game.Scripts.Tasks
         public void TriggerEnter2D(Collider2D collision)
         {
             if (Caster == null) return;
-            var actor = collision.GetComponent<Engine.Actor>();
+            var actor = collision.GetComponent<Engine.ActorBase>();
             if (actor == null) return;
 
             if (m_HitEffect)

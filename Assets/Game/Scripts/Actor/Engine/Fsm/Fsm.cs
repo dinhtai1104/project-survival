@@ -9,7 +9,7 @@ namespace Engine
     public class Fsm : MonoBehaviour, IFsm
     {
         [SerializeField] private Transform statesHolder;
-        public Actor Actor { get; set; }
+        public ActorBase Actor { get; set; }
 
         [SerializeField, ClassImplements(typeof(IState))]
         private ClassTypeReference _startingState;
@@ -29,7 +29,7 @@ namespace Engine
         public bool OnEnter { set; get; }
         public bool OnExit { set; get; }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Actor = actor;
             var allState = statesHolder.GetComponentsInChildren<IState>();

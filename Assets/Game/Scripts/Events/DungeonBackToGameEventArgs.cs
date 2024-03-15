@@ -10,6 +10,6 @@ namespace Assets.Game.Scripts.Events
 {
     public class DungeonBackToGameEventArgs : BaseEventArgs<DungeonBackToGameEventArgs>
     {
-        public Engine.Actor m_Actor;
+        public Engine.ActorBase m_Actor;
     }
 }

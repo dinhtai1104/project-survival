@@ -6,9 +6,9 @@ namespace Engine
 {
     public class NullDamageCalculator : IDamageCalculator
     {
-        public Actor Owner { get; private set; }
+        public ActorBase Owner { get; private set; }
 
-        public void Init(Actor actor)
+        public void Init(ActorBase actor)
         {
             Owner = actor;
         }
@@ -25,7 +25,7 @@ namespace Engine
         {
         }
 
-        public HitResult CalculateDamage(Actor defender, Actor attacker, DamageSource source)
+        public HitResult CalculateDamage(ActorBase defender, ActorBase attacker, DamageSource source)
         {
             return HitResult.FailedResult;
         }

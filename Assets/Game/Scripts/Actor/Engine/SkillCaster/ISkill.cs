@@ -24,8 +24,8 @@ namespace Engine
         float StartingCooldown { set; get; }
         bool CastNoCooldown { set; get; }
         bool IsExecuting { set; get; }
-        Actor Caster { get; }
-        void Init(Actor actor);
+        ActorBase Caster { get; }
+        void Init(ActorBase actor);
         void OnUpdate();
         void ResetCooldown();
         void FasterCooldown(float duration);
