@@ -101,7 +101,7 @@ public class RunningToTargetTask : SkillTask
                 if (Caster.AI) Caster.Movement.LookAt(targetPos);
 
                 var diffVec = targetPos - casterPos;
-                var distX = Mathf.Abs(diffVec.x);
+                var distX = diffVec.magnitude;
                 diffVec.z = 0f;
 
                 if (distX <= m_Range)

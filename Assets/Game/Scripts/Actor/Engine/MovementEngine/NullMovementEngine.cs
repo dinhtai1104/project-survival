@@ -27,6 +27,11 @@ namespace Engine
             get { return true; }
         }
 
+        public bool LockFacing
+        {
+            set { }
+            get { return true; }
+        }
 
         public bool UsingHorizontalBound
         {

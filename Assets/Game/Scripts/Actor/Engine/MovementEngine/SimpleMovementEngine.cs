@@ -45,6 +45,12 @@ namespace Engine
             get { return _lockMovement; }
         }
 
+        public bool LockFacing
+        {
+            set { _lockFacingDirection = value; }
+            get { return _lockFacingDirection; }    
+        }
+
         public bool UsingHorizontalBound
         {
             set { _horizontalBound = value; }
@@ -210,10 +216,10 @@ namespace Engine
 
             // add some noise to hack enemy is in same direction
 
-            float angle = (float)m_random.NextDouble() * 2.0f * (float)Mathf.PI;
-            float dist = (float)m_random.NextDouble() * 0.3f;
-            var noise = dist * new Vector3((float)Mathf.Cos(angle), (float)Mathf.Sin(angle));
-            position += noise;
+            //float angle = (float)m_random.NextDouble() * 2.0f * (float)Mathf.PI;
+            //float dist = (float)m_random.NextDouble() * 0.3f;
+            //var noise = dist * new Vector3((float)Mathf.Cos(angle), (float)Mathf.Sin(angle));
+            //position += noise;
 
             position = Bound(position);
             position.z = 0f;
@@ -240,10 +246,10 @@ namespace Engine
 
             // add some noise to hack enemy is in same direction
 
-            float angle = (float)m_random.NextDouble() * 2.0f * (float)Mathf.PI;
-            float dist = (float)m_random.NextDouble() * 0.3f;
-            var noise = dist * new Vector3((float)Mathf.Cos(angle), (float)Mathf.Sin(angle));
-            direction += noise;
+            //float angle = (float)m_random.NextDouble() * 2.0f * (float)Mathf.PI;
+            //float dist = (float)m_random.NextDouble() * 0.3f;
+            //var noise = dist * new Vector3((float)Mathf.Cos(angle), (float)Mathf.Sin(angle));
+            //direction += noise;
 
             direction.z = 0f;
             CurrentDirection = Vector3.Normalize(direction);

@@ -8,6 +8,7 @@ namespace Engine
         Vector3 FacingDirection { get; }
         Stat Speed { set; get; }
         bool LockMovement { set; get; }
+        bool LockFacing { set; get; }
         bool UsingHorizontalBound { set; get; }
         bool UsingVerticalBound { set; get; }
         bool IsMoving { set; get; }
