@@ -22,6 +22,8 @@ namespace Engine
 
         [SerializeField] private bool m_CannotCrit = false;
 
+        private GameObject m_AttackPoint;
+
         public float Value
         {
             set { m_Damage.BaseValue = value; m_Damage.RecalculateValue(); }
@@ -71,6 +73,12 @@ namespace Engine
         {
             set { m_CannotCrit = value; }
             get { return m_CannotCrit; }
+        }
+
+        public GameObject AttackPoint
+        {
+            get => m_AttackPoint;
+            set => m_AttackPoint = value;
         }
 
         public DamageSource()

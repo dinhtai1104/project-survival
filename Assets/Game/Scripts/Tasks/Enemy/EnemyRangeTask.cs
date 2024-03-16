@@ -26,6 +26,11 @@ namespace Assets.Game.Scripts.Tasks.Enemy
 
         protected override void Attack()
         {
+            var target = Caster.TargetFinder.CurrentTarget;
+            var dir = target.CenterPosition - m_FirePoint.position;
+
+            var quaternionTarget = Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg);
+            m_FirePoint.transform.rotation = quaternionTarget;
             var lowerRotate = m_FirePoint.eulerAngles.z - m_AngleZoneConfig.FloatValue / 2f;
             var angleOffset = m_AngleZoneConfig.FloatValue / m_BulletNumberConfig.IntValue;
             for (int i = 0; i < m_BulletNumberConfig.IntValue; i++)
@@ -38,7 +43,7 @@ namespace Assets.Game.Scripts.Tasks.Enemy
         protected override void SetupBullet(Bullet2D bullet)
         {
             base.SetupBullet(bullet);
-            bullet.TargetNumber = m_Piercing.IntValue;
+            bullet.TargetNumber = m_Piercing.IntValue + 1;
             bullet.PiercingReduce = m_PiercingDamageReduce.FloatValue;
             bullet.SetSpeed(DefaultSpeed);
         }

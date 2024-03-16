@@ -18,7 +18,12 @@ MonoBehaviour:
       _classRef: AIState.ActorDeathState, Assembly-CSharp
     m_FalseState:
       _classRef: 
-  m_GlobalTransitions: []
+  m_GlobalTransitions:
+  - m_Decision: {fileID: 11400000, guid: 0718198e5c42f2e469837731caff8d6f, type: 2}
+    m_TrueState:
+      _classRef: AIState.ActorRandomMovementState, Assembly-CSharp
+    m_FalseState:
+      _classRef: AIState.ActorSkillState, Assembly-CSharp
   m_LocalTransitions:
   - m_State:
       _classRef: AIState.ActorIdleState, Assembly-CSharp
@@ -48,4 +53,4 @@ MonoBehaviour:
       m_TrueState:
         _classRef: AIState.ActorRandomMovementState, Assembly-CSharp
       m_FalseState:
-        _classRef: AIState.ActorSkillState, Assembly-CSharp
+        _classRef: 

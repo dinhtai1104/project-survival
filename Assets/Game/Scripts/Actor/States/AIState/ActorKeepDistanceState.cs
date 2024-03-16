@@ -52,6 +52,7 @@ namespace AIState
             _changeDirTimer = 0f;
             Actor.SkillCaster.InterruptCurrentSkill();
             UpdateDirection();
+            Actor.Animation.Clear();
         }
 
         public override void Execute()

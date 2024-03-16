@@ -21,10 +21,10 @@ namespace ActorState
         public override void Enter()
         {
             base.Enter();
+            Actor.Health.Invincible = true;
             _direction = Actor.Movement.CurrentDirection;
             m_CurrentTimeDash = 0;
         }
-
 
         public override void Execute()
         {
@@ -42,6 +42,7 @@ namespace ActorState
         }
         public override void Exit()
         {
+            Actor.Health.Invincible = false;
             base.Exit();
         }
     }

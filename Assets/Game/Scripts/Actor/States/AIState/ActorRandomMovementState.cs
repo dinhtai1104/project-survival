@@ -24,7 +24,7 @@ namespace AIState
 
         private Vector3 m_Destination = Vector3.zero;
         private float m_RestTimer;
-        private float m_MovingTimer;
+        private float m_MovingTimer; 
         private bool m_ReachTarget;
 
         public bool ReachTaget { get { return m_ReachTarget; } }

@@ -39,13 +39,18 @@ namespace Assets.Game.Scripts.Manager
 
         private void EnemyDiedProcess(EnemyActor enemyActor)
         {
-            var path = AddressableName.LootObject.AddParams("Pickle");
-            var prefab = ResourcesLoader.Load<GameObject>(path);
-            var position = enemyActor.CenterPosition;
-            var p = PoolFactory.Spawn(prefab, position, Quaternion.identity);
-
-            var rd = UnityEngine.Random.insideUnitCircle * 1.5f + (Vector2)position;
-            p.transform.DOMove(rd, 0.5f);
+            if (MathUtils.RollChance(enemyActor.EntityData.PickleRatio))
+            {
+                var path = AddressableName.LootObject.AddParams("Pickle");
+                var prefab = ResourcesLoader.Load<GameObject>(path);
+                var position = enemyActor.CenterPosition;
+                for (int i = 0; i < enemyActor.EntityData.PickleNumber; i++)
+                {
+                    var p = PoolFactory.Spawn(prefab, position, Quaternion.identity);
+                    var rd = UnityEngine.Random.insideUnitCircle * 1.5f + (Vector2)position;
+                    p.transform.DOMove(rd, 0.5f);
+                }
+            }
         }
 
         private void PlayerDiedProcess(PlayerActor playerActor)

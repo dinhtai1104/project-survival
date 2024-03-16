@@ -31,6 +31,7 @@ namespace Engine
         {
             Owner = actor;
             m_Animation = GetComponentInChildren<SkeletonAnimation>();
+            m_Animation.Skeleton.SetColor(Color.white);
         }
 
         public Spine.Animation FindAnimation(string animName)

@@ -179,6 +179,9 @@ public partial class DB_Enemy : BGEntity
 	public System.Single iAttackSpeed => _iAttackSpeed[Index];
 	public System.Collections.Generic.List<System.String> Tags => _Tags[Index];
 	public System.Single AttackRange => _AttackRange[Index];
+	public System.Single Mass => _Mass[Index];
+	public System.Single PickleRatio => _PickleRatio[Index];
+	public System.Int32 PickleNumber => _PickleNumber[Index];
 	private static BansheeGz.BGDatabase.BGFieldEntityName _ufle12jhs77_name;
 	public static BansheeGz.BGDatabase.BGFieldEntityName _name => _ufle12jhs77_name ?? (_ufle12jhs77_name = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldEntityName>(MetaDefault, new BGId(5628759239601722407UL, 11191562407163079553UL), () => _ufle12jhs77_name = null));
 	private static BansheeGz.BGDatabase.BGFieldString _ufle12jhs77_Id;
@@ -205,6 +208,12 @@ public partial class DB_Enemy : BGEntity
 	public static BansheeGz.BGDatabase.BGFieldListString _Tags => _ufle12jhs77_Tags ?? (_ufle12jhs77_Tags = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldListString>(MetaDefault, new BGId(5022514516694601424UL, 16281606801646570140UL), () => _ufle12jhs77_Tags = null));
 	private static BansheeGz.BGDatabase.BGFieldFloat _ufle12jhs77_AttackRange;
 	public static BansheeGz.BGDatabase.BGFieldFloat _AttackRange => _ufle12jhs77_AttackRange ?? (_ufle12jhs77_AttackRange = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldFloat>(MetaDefault, new BGId(5490436642101842478UL, 589637579496802477UL), () => _ufle12jhs77_AttackRange = null));
+	private static BansheeGz.BGDatabase.BGFieldFloat _ufle12jhs77_Mass;
+	public static BansheeGz.BGDatabase.BGFieldFloat _Mass => _ufle12jhs77_Mass ?? (_ufle12jhs77_Mass = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldFloat>(MetaDefault, new BGId(5033038963771442576UL, 5198608729763392659UL), () => _ufle12jhs77_Mass = null));
+	private static BansheeGz.BGDatabase.BGFieldFloat _ufle12jhs77_PickleRatio;
+	public static BansheeGz.BGDatabase.BGFieldFloat _PickleRatio => _ufle12jhs77_PickleRatio ?? (_ufle12jhs77_PickleRatio = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldFloat>(MetaDefault, new BGId(5011381584260399305UL, 15324162248923640508UL), () => _ufle12jhs77_PickleRatio = null));
+	private static BansheeGz.BGDatabase.BGFieldInt _ufle12jhs77_PickleNumber;
+	public static BansheeGz.BGDatabase.BGFieldInt _PickleNumber => _ufle12jhs77_PickleNumber ?? (_ufle12jhs77_PickleNumber = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldInt>(MetaDefault, new BGId(5168234930968313648UL, 4092525081584701855UL), () => _ufle12jhs77_PickleNumber = null));
 	private static readonly DB_Equipment.Factory _factory0_PFS = new DB_Equipment.Factory();
 	private static readonly DB_Dungeon.Factory _factory1_PFS = new DB_Dungeon.Factory();
 	private static readonly DB_Enemy.Factory _factory2_PFS = new DB_Enemy.Factory();

@@ -72,8 +72,16 @@ MonoBehaviour:
   m_IsPassive: 0
   m_AutoCast: 0
   m_Interruptible: 1
-  m_Cooldown: 1
-  m_StartingCooldown: 3
+  m_Cooldown:
+    _baseValue: 0
+    _minValue: 0
+    _maxValue: 3.4028235e+38
+    attributeModifiers: []
+  m_StartingCooldown:
+    _baseValue: 0
+    _minValue: 0
+    _maxValue: 3.4028235e+38
+    attributeModifiers: []
   m_CastingAnimation: 
   m_LockOtherSkills: 1
   m_InvokeCastingSkillManually: 0
@@ -172,6 +180,7 @@ MonoBehaviour:
       m_Type: 0
       m_CannotEvade: 0
       m_CannotHurt: 0
+      m_CannotCrit: 0
     m_ApplyEffect: 1
 --- !u!1 &6504086288770540625
 GameObject:
@@ -320,6 +329,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 1.0887257
       objectReference: {fileID: 0}
+    - target: {fileID: 6381516466356194066, guid: 8d13257c51ca435469d60536afd14dbb, type: 3}
+      propertyPath: m_Brain
+      value: 
+      objectReference: {fileID: 11400000, guid: 54bcb7996d5664a4c86c36872fcc5971, type: 2}
     - target: {fileID: 6381516466356194067, guid: 8d13257c51ca435469d60536afd14dbb, type: 3}
       propertyPath: m_Name
       value: Boss1

@@ -194,7 +194,6 @@ public class Bullet2D : MonoBehaviour
                     m_HitTargetEvent.Invoke(target);
                 }
             }
-
             // Reduce damage when pierce
             m_DamageDealer.DamageSource.AddModifier(new StatModifier(EStatMod.PercentAdd, -PiercingReduce));
 
@@ -225,6 +224,7 @@ public class Bullet2D : MonoBehaviour
             {
                 var eff = PoolFactory.Spawn(m_AppearEffect, Firepoint);
                 eff.transform.rotation = Trans.rotation;
+                eff.transform.position = Firepoint.position;
             }
             else
             {
@@ -265,7 +265,6 @@ public class Bullet2D : MonoBehaviour
         OnHitTarget = null;
         m_DamageDealer.DamageSource.ClearModifiers();
         Movement?.Reset();
-        Firepoint = null;
     }
 
     public virtual void Despawn()

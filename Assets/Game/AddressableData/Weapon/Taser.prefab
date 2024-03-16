@@ -160,7 +160,7 @@ MonoBehaviour:
     _maxValue: 3.4028235e+38
     attributeModifiers: []
   m_StartingCooldown:
-    _baseValue: 0
+    _baseValue: 2
     _minValue: 0
     _maxValue: 3.4028235e+38
     attributeModifiers: []
@@ -252,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7924887141545511704, guid: e9c0a2d584c077842826782d93e74ce8, type: 3}
       propertyPath: m_Name
-      value: Flamethrowers
+      value: Taser
       objectReference: {fileID: 0}
     - target: {fileID: 8761448800729187578, guid: e9c0a2d584c077842826782d93e74ce8, type: 3}
       propertyPath: m_Cooldown._baseValue

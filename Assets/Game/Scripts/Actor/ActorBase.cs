@@ -208,10 +208,10 @@ namespace Engine
             if (!m_IsInitialize) return;
             Movement?.OnUpdate();
             TargetFinder?.OnUpdate();
+            Brain?.OnUpdate();
             Fsm?.OnUpdate();
             Status?.OnUpdate();
             Input?.OnUpdate();
-            Brain?.OnUpdate();
             SkillCaster?.OnUpdate();
             Passive?.OnUpdate();
         }

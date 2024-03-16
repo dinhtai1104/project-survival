@@ -3,6 +3,7 @@ using Core;
 using Engine;
 using Events;
 using ExtensionKit;
+using MoreMountains.Feedbacks;
 using Pool;
 using RVO;
 using Spine;
@@ -14,13 +15,23 @@ namespace AIState
     public class ActorDeathState : BaseState
     {
         [SerializeField] private string m_Animation;
+        [SerializeField] protected float m_Delay = 0f;
+        [SerializeField] private MMF_Player m_Feedback;
+
         private bool isFiredEvent = false;
         private bool IgnoreDeathAnimation => m_Animation.IsNullOrEmpty();
         public override void Enter()
         {
             base.Enter();
             Clear();
-            DeadAnimation();
+            Actor.IsDead = true;
+            m_Feedback?.PlayFeedbacks();
+
+            Timing.CallDelayed(m_Delay, () =>
+            {
+                m_Feedback?.ResetFeedbacks();
+                DeadAnimation();
+            });
         }
 
         protected void Clear()

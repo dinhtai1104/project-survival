@@ -156,6 +156,7 @@ MonoBehaviour:
       m_Type: 0
       m_CannotEvade: 0
       m_CannotHurt: 0
+      m_CannotCrit: 0
     m_ApplyEffect: 1
   m_NoiseAngle: {x: 0, y: 0}
   m_SyncTimeScale: 0
@@ -166,6 +167,11 @@ MonoBehaviour:
   m_OnStartBullet:
     m_PersistentCalls:
       m_Calls: []
+  DefaultSpeed:
+    _baseValue: 10
+    _minValue: 0
+    _maxValue: 3.4028235e+38
+    attributeModifiers: []
 --- !u!1 &8764674386403803599
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,8 +243,16 @@ MonoBehaviour:
   m_IsPassive: 0
   m_AutoCast: 0
   m_Interruptible: 1
-  m_Cooldown: 0.2
-  m_StartingCooldown: 2
+  m_Cooldown:
+    _baseValue: 0
+    _minValue: 0
+    _maxValue: 3.4028235e+38
+    attributeModifiers: []
+  m_StartingCooldown:
+    _baseValue: 2
+    _minValue: 0
+    _maxValue: 3.4028235e+38
+    attributeModifiers: []
   m_CastingAnimation: 
   m_LockOtherSkills: 1
   m_InvokeCastingSkillManually: 0

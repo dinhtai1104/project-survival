@@ -493,7 +493,7 @@ MonoBehaviour:
     _maxValue: 3.4028235e+38
     attributeModifiers: []
   m_StartingCooldown:
-    _baseValue: 0
+    _baseValue: 2
     _minValue: 0
     _maxValue: 3.4028235e+38
     attributeModifiers: []

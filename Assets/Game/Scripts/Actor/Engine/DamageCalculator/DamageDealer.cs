@@ -47,7 +47,6 @@ namespace Engine
            
 
             HitResult hitResult = defender.DamageCalculator.CalculateDamage(defender, attacker, m_Source);
-
             return hitResult;
         }
 

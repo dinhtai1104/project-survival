@@ -25,6 +25,8 @@ namespace Assets.Game.Scripts.Core.Data.Database
         public float iAttackSpeed;
 
         public float Mass;
+        public float PickleRatio;
+        public int PickleNumber;
 
      
         // Monster Tags
@@ -58,7 +60,9 @@ namespace Assets.Game.Scripts.Core.Data.Database
 
             Tags = e.Get<List<string>>("Tags");
 
-            //Mass = e.Get<float>("Mass");
+            Mass = e.Get<float>("Mass");
+            PickleRatio = e.Get<float>("PickleRatio");
+            PickleNumber = e.Get<int>("PickleNumber");
         }
     }
 }

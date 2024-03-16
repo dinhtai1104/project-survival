@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d8291bcf32c6ea40b57c624f161bad1, type: 3}
+  m_Name: AIGroup_CanToRandomMovement
+  m_EditorClassIdentifier: 
+  m_DecisionOperators:
+  - m_Decision: {fileID: 11400000, guid: 6c9b99be434c4ba41a5e324959172d4e, type: 2}
+    m_Operator: 2
+    m_IsNot: 1
+  - m_Decision: {fileID: 11400000, guid: 34631e267bd00ab4a89be294e21d2fd2, type: 2}
+    m_Operator: 0
+    m_IsNot: 1
