@@ -11,7 +11,7 @@ public class RangeTask : SkillTask
 {
     [SerializeField] private string m_Animation;
     [SerializeField] protected Transform m_FirePoint;
-    [SerializeField] private string m_EventName;
+    [SerializeField] private string m_EventName = "attack_tracking";
     [SerializeField] private GameObject m_BulletPrefab;
     [SerializeField] private DamageDealer m_DamageDealer;
     [SerializeField] private Vector2 m_NoiseAngle;

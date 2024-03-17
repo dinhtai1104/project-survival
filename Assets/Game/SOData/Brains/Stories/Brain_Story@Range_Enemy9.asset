@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb8a251686d6004c84681c5b54bd434, type: 3}
+  m_Name: Brain_Story@Range_Enemy9
+  m_EditorClassIdentifier: 
+  m_CoreTransitions:
+  - m_Decision: {fileID: 11400000, guid: 26182bd1f81490c4b88317f423f14590, type: 2}
+    m_TrueState:
+      _classRef: AIState.ActorDeathState, Assembly-CSharp
+    m_FalseState:
+      _classRef: 
+  m_GlobalTransitions:
+  - m_Decision: {fileID: 11400000, guid: 9e143b03fec62d04f9b85df0f8bca49a, type: 2}
+    m_TrueState:
+      _classRef: AIState.ActorKeepDistanceState, Assembly-CSharp
+    m_FalseState:
+      _classRef: 
+  m_LocalTransitions:
+  - m_State:
+      _classRef: AIState.ActorKeepDistanceState, Assembly-CSharp
+    m_Transitions:
+    - m_Decision: {fileID: 11400000, guid: 39897ddcbf498534dae635e8a64544e3, type: 2}
+      m_TrueState:
+        _classRef: AIState.ActorPursuitState, Assembly-CSharp
+      m_FalseState:
+        _classRef: AIState.ActorKeepDistanceState, Assembly-CSharp
+  - m_State:
+      _classRef: AIState.ActorIdleState, Assembly-CSharp
+    m_Transitions:
+    - m_Decision: {fileID: 11400000, guid: ddac92a686ad4bb4996f55402b6f9f5a, type: 2}
+      m_TrueState:
+        _classRef: AIState.ActorSkillState, Assembly-CSharp
+      m_FalseState:
+        _classRef: AIState.ActorPursuitState, Assembly-CSharp
+  - m_State:
+      _classRef: AIState.ActorSkillState, Assembly-CSharp
+    m_Transitions:
+    - m_Decision: {fileID: 11400000, guid: 8f30a24230f685d4b8d98c942112ad94, type: 2}
+      m_TrueState:
+        _classRef: AIState.ActorSkillState, Assembly-CSharp
+      m_FalseState:
+        _classRef: AIState.ActorSkillState, Assembly-CSharp
+    - m_Decision: {fileID: 11400000, guid: f0475f3e35e7d9b449ff331850df56c6, type: 2}
+      m_TrueState:
+        _classRef: AIState.ActorIdleState, Assembly-CSharp
+      m_FalseState:
+        _classRef: AIState.ActorPursuitState, Assembly-CSharp

@@ -238,11 +238,6 @@ namespace Engine
         public void Cast()
         {
             if (!CanCast) return;
-
-            if (!m_InvokeCastingSkillManually) InvokeCastingSkill();
-
-            if (!m_StartCooldownManually) StartCooldown();
-
             IsExecuting = true;
             OnCasting();
         }

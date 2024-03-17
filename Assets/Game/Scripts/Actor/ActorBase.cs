@@ -1,5 +1,6 @@
 using Core;
 using Cysharp.Threading.Tasks;
+using ExtensionKit;
 using Framework;
 using Sirenix.OdinInspector;
 using Spine;
@@ -87,13 +88,13 @@ namespace Engine
         }
 
         public Collider2D Collider => m_Collider;
-        public float Width => m_Width;
-        public float Height => m_Height;
+        public float Width => m_Width * transform.localScale.x;
+        public float Height => m_Height * transform.localScale.y;
         public Transform GraphicTrans => m_GraphicTrans != null ? m_GraphicTrans : m_Trans;
         public Transform HealthTrans => m_HealthTrans != null ? m_HealthTrans : m_Trans;
         public Transform CenterTransform => m_CenterTrans;
-        public virtual Vector3 CenterPosition => GraphicTrans.position + new Vector3(0, m_Height / 2f, 0);
-        public virtual Vector3 TopPosition => GraphicTrans.position + new Vector3(0, m_Height, 0);
+        public virtual Vector3 CenterPosition => GraphicTrans.position + new Vector3(0, Height / 2f, 0);
+        public virtual Vector3 TopPosition => GraphicTrans.position + new Vector3(0, Height, 0);
         public virtual Vector3 BotPosition => GraphicTrans.position;
 
         public virtual Vector3 FrontPosition
@@ -101,7 +102,7 @@ namespace Engine
             get
             {
                 Vector3 frontPos = GraphicTrans.position;
-                frontPos.x += Movement.DirectionSign * m_Width / 2f;
+                frontPos.x += Movement.DirectionSign * Width / 2f;
                 return frontPos;
             }
         }
@@ -111,7 +112,7 @@ namespace Engine
             get
             {
                 Vector3 rearPos = GraphicTrans.position;
-                rearPos.x -= Movement.DirectionSign * m_Width / 2;
+                rearPos.x -= Movement.DirectionSign * Width / 2;
                 return rearPos;
             }
         }

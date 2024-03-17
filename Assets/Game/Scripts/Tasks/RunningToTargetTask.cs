@@ -29,7 +29,10 @@ public class RunningToTargetTask : SkillTask
         base.Begin();
         m_ReachTarget = false;
         m_TimeOutTimer = 0f;
-        Caster.Stats.AddModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier, this);
+        if (m_SpeedMod.AttributeName.IsNotNullAndEmpty())
+        {
+            Caster.Stats.AddModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier, this);
+        }
     }
 
     public override void End()
@@ -40,7 +43,10 @@ public class RunningToTargetTask : SkillTask
         m_Range = Caster.Stats.GetValue(StatKey.AttackRange) + m_RangeOffset;
         if (Caster != null)
         {
-            Caster.Stats.RemoveModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier);
+            if (m_SpeedMod.AttributeName.IsNotNullAndEmpty())
+            {
+                Caster.Stats.RemoveModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier);
+            }
         }
 
         if (m_SyncTimeScale)
@@ -56,7 +62,10 @@ public class RunningToTargetTask : SkillTask
         Caster.Animation.Play(0, m_IdleAnimation);
         if (Caster != null)
         {
-            Caster.Stats.RemoveModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier);
+            if (m_SpeedMod.AttributeName.IsNotNullAndEmpty())
+            {
+                Caster.Stats.RemoveModifier(m_SpeedMod.AttributeName, m_SpeedMod.Modifier);
+            }
         }
 
         IsCompleted = true;

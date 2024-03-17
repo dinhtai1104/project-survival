@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 [System.Serializable]
-public class BindGameConfig
+public class BindConfig
 {
     public string ConfigKey;
     public string DefaultValue;
 
-    public BindGameConfig(string configKey, object defaultValue)
+    public BindConfig(string configKey, object defaultValue)
     {
         ConfigKey = configKey;
         DefaultValue = defaultValue.ToString();
@@ -25,9 +25,9 @@ public class BindGameConfig
         ConfigKey = string.Format(ConfigKey, id);
     }
 
-    public BindGameConfig Clone()
+    public BindConfig Clone()
     {
-        return new BindGameConfig(ConfigKey, DefaultValue);
+        return new BindConfig(ConfigKey, DefaultValue);
     }
 
     // Binding

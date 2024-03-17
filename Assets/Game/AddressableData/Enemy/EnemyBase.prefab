@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 6125780325895451120}
   - component: {fileID: 1669112519572276356}
   - component: {fileID: 2212462223622182495}
+  - component: {fileID: 3915051508204902586}
   m_Layer: 6
   m_Name: State
   m_TagString: Untagged
@@ -683,6 +684,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a93c000a3c2ecde45ad6cf4714992237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnterState:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitState:
+    m_PersistentCalls:
+      m_Calls: []
   m_Animation: 
   m_Loop: 1
 --- !u!114 &8412743041633713011
@@ -697,6 +704,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4733e486934f747b92846d1cf2531e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnterState:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitState:
+    m_PersistentCalls:
+      m_Calls: []
   _runAnimation: move
   _idleAnimation: idle
   _distance: 3
@@ -715,6 +728,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93ec7c8700df22419ed9b245469b9e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnterState:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitState:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6125780325895451120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,7 +746,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbde207e89f8d244b31f7c35444ee26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnterState:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitState:
+    m_PersistentCalls:
+      m_Calls: []
   m_Animation: die
+  m_Delay: 0
+  m_Feedback: {fileID: 0}
 --- !u!114 &1669112519572276356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,6 +767,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1a9adf400335c44bd28d277ebca7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnterState:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitState:
+    m_PersistentCalls:
+      m_Calls: []
   m_RunAnimation: move
   m_IdleAnimation: idle
   m_Global: 1
@@ -764,3 +797,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0644930a9ef644b4c8b8492669326755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnterState:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitState:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3915051508204902586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6381516466670010513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0295948c873b1574285af4db73be030d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnterState:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitState:
+    m_PersistentCalls:
+      m_Calls: []
+  m_MovingAnimation: move
+  m_LoopAnimation: 1
+  m_SyncTimeScale: 1

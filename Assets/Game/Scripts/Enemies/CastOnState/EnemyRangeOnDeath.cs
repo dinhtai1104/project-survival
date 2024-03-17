@@ -18,10 +18,10 @@ namespace Assets.Game.Scripts.Enemies.CastOnState
         public bool IsRandomDirection = false;
 
         private DamageDealer m_DamageDealer = new DamageDealer();
-        [SerializeField] protected BindGameConfig m_BulletVelocityConfig = new("[{0}]Skill_BulletVelocity", "10");
-        [SerializeField] protected BindGameConfig m_BulletDamageConfig = new("[{0}]Skill_BulletDamage", "1");
-        [SerializeField] protected BindGameConfig m_BulletNumberConfig = new("[{0}]Skill_BulletNumber", "1");
-        [SerializeField] protected BindGameConfig m_Delay = new("[{0}]Skill_BulletDelay", "0.1");
+        [SerializeField] protected BindConfig m_BulletVelocityConfig = new("[{0}]Skill_BulletVelocity", "10");
+        [SerializeField] protected BindConfig m_BulletDamageConfig = new("[{0}]Skill_BulletDamage", "1");
+        [SerializeField] protected BindConfig m_BulletNumberConfig = new("[{0}]Skill_BulletNumber", "1");
+        [SerializeField] protected BindConfig m_Delay = new("[{0}]Skill_BulletDelay", "0.1");
 
 
         public void OnEnterState(ActorBase Caster)
