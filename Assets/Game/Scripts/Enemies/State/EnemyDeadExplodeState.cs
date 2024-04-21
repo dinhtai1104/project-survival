@@ -13,8 +13,8 @@ namespace States
     {
         [SerializeField] private string m_Animation;
 
-        [SerializeField] private BindGameConfig m_RadiusExplode = new BindGameConfig("[{0}]DeadExplodeRadius", 3);
-        [SerializeField] private BindGameConfig m_DamageExplode = new BindGameConfig("[{0}]DeadExplodeDamage", 1.2f);
+        [SerializeField] private BindConfig m_RadiusExplode = new BindConfig("[{0}]DeadExplodeRadius", 3);
+        [SerializeField] private BindConfig m_DamageExplode = new BindConfig("[{0}]DeadExplodeDamage", 1.2f);
         [SerializeField] private float m_Delay = 2f;
         [SerializeField] private MMF_Player m_Feedback;
         [SerializeField] private GameObject m_Explode;

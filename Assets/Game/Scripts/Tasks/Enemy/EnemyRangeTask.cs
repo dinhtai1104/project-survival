@@ -4,12 +4,12 @@ namespace Assets.Game.Scripts.Tasks.Enemy
 {
     public class EnemyRangeTask : RangeTask
     {
-        [SerializeField] protected BindGameConfig m_BulletVelocityConfig = new("[{0}]Skill_BulletVelocity", "10");
-        [SerializeField] protected BindGameConfig m_BulletDamageConfig = new("[{0}]Skill_BulletDamage", "1");
-        [SerializeField] protected BindGameConfig m_BulletNumberConfig = new ("[{0}]Skill_BulletNumber", "1");
-        [SerializeField] protected BindGameConfig m_AngleZoneConfig = new("[{0}]Skill_AngleZone", "0");
-        [SerializeField] protected BindGameConfig m_Piercing = new("[{0}]Skill_Piercing", "0");
-        [SerializeField] protected BindGameConfig m_PiercingDamageReduce = new("[{0}]Skill_PiercingDamageReduce", "0.25");
+        [SerializeField] protected BindConfig m_BulletVelocityConfig = new("[{0}]Skill_BulletVelocity", "10");
+        [SerializeField] protected BindConfig m_BulletDamageConfig = new("[{0}]Skill_BulletDamage", "1");
+        [SerializeField] protected BindConfig m_BulletNumberConfig = new ("[{0}]Skill_BulletNumber", "1");
+        [SerializeField] protected BindConfig m_AngleZoneConfig = new("[{0}]Skill_AngleZone", "0");
+        [SerializeField] protected BindConfig m_Piercing = new("[{0}]Skill_Piercing", "0");
+        [SerializeField] protected BindConfig m_PiercingDamageReduce = new("[{0}]Skill_PiercingDamageReduce", "0.25");
 
         public override void Begin()
         {

@@ -11,8 +11,8 @@ namespace Assets.Game.Scripts.Enemies.CastOnState
 {
     public class ExplodeOnDeath : MonoBehaviour, IActionEnterState
     {
-        [SerializeField] private BindGameConfig m_RadiusExplode = new BindGameConfig("[{0}]DeadExplodeRadius", 3);
-        [SerializeField] private BindGameConfig m_DamageExplode = new BindGameConfig("[{0}]DeadExplodeDamage", 1.2f);
+        [SerializeField] private BindConfig m_RadiusExplode = new BindConfig("[{0}]DeadExplodeRadius", 3);
+        [SerializeField] private BindConfig m_DamageExplode = new BindConfig("[{0}]DeadExplodeDamage", 1.2f);
         [SerializeField] private GameObject m_Explode;
 
         [SerializeField] private DamageDealer m_DamageDealer = new DamageDealer();

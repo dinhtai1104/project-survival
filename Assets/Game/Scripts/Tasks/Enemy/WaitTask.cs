@@ -4,7 +4,7 @@ namespace Assets.Game.Scripts.Tasks.Enemy
 {
     public class WaitTask : Engine.Task
     {
-        [SerializeField] private BindGameConfig m_WaitTime;
+        [SerializeField] private BindConfig m_WaitTime;
         private float timeCooldown = 0;
         public override void Begin()
         {

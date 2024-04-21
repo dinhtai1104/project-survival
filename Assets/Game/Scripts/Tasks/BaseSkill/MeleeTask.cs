@@ -15,7 +15,7 @@ public class MeleeTask : SkillTask
     [SerializeField, Range(0f, 10f)] private float m_HitRange;
     [SerializeField, Range(0f, 10f)] private float m_HitRadius = 0.3f;
     [SerializeField, Range(0f, 10f)] private float m_OriginOffsetY = 0.2f;
-    [SerializeField] private string m_EventName;
+    [SerializeField] private string m_EventName = "attack_tracking";
     [SerializeField] private int m_TargetNumber = 1;
     [SerializeField] private bool m_SyncTimeScale;
     [SerializeField] private UnityEvent m_OnAttack;

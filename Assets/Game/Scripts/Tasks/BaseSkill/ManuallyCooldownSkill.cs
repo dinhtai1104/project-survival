@@ -4,7 +4,7 @@ namespace Assets.Game.Scripts.Tasks.BaseSkill
 {
     public class ManuallyCooldownSkill : MultiTaskSkill
     {
-        [SerializeField] protected BindGameConfig m_CooldownConfig = new("[{0}]Skill_Cooldown", 2);
+        [SerializeField] protected BindConfig m_CooldownConfig = new("[{0}]Skill_Cooldown", 2);
 
         protected override void OnInit()
         {

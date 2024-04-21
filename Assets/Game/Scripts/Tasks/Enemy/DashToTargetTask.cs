@@ -6,8 +6,8 @@ namespace Assets.Game.Scripts.Tasks.Enemy
     public class DashToTargetTask : SkillTask
     {
         [SerializeField] private string m_AnimationDash;
-        [SerializeField] private BindGameConfig m_TimeDash = new BindGameConfig("[{0}]TimeDash", 1);
-        [SerializeField] private BindGameConfig m_SpeedMul = new BindGameConfig("[{0}]SpeedMul", 2f);
+        [SerializeField] private BindConfig m_TimeDash = new BindConfig("[{0}]TimeDash", 1);
+        [SerializeField] private BindConfig m_SpeedMul = new BindConfig("[{0}]SpeedMul", 2f);
 
         private StatModifier modifier = new StatModifier();
         private Vector2 m_Direction;
