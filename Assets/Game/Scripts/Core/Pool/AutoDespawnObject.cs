@@ -13,7 +13,11 @@ namespace Pool
         [SerializeField] private float m_TimeLive = 5;
         private void OnEnable()
         {
-            Timing.RunCoroutine(_Killing(), gameObject);
+            Timing.RunCoroutine(_Killing().CancelWith(gameObject), gameObject);
+        }
+        private void OnDisable()
+        {
+            Timing.KillCoroutines(gameObject);
         }
 
         private IEnumerator<float> _Killing()

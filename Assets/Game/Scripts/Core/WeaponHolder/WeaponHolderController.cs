@@ -36,11 +36,11 @@ namespace Gameplay
         //Listen WeaponChange
         private void OnEnable()
         {
-            Architecture.Get<EventMgr>().Subscribe<WeaponBuyEventArgs>(BuyWeaponEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<WeaponBuyEventArgs>(BuyWeaponEventHandler);
         }
         private void OnDisable()
         {
-            Architecture.Get<EventMgr>().Unsubscribe<WeaponBuyEventArgs>(BuyWeaponEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<WeaponBuyEventArgs>(BuyWeaponEventHandler);
         }
 
         private void BuyWeaponEventHandler(object sender, IEventArgs e)

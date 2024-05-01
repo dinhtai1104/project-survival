@@ -13,7 +13,7 @@ namespace Assets.Game.Scripts.Objects.Loots
         public override void Loot()
         {
             base.Loot();
-            Architecture.Get<EventMgr>().Fire(this, new LootEventArgs(Type));
+            GameArchitecture.GetService<IEventMgrService>().Fire(this, new LootEventArgs(Type));
         }
     }
 }

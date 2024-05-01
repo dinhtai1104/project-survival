@@ -1,5 +1,6 @@
 ﻿using Assets.Game.Scripts.Core.SceneMemory.Memory;
 using Assets.Game.Scripts.Dungeon;
+using com.sparkle.core;
 using Core;
 using Cysharp.Threading.Tasks;
 using Engine;
@@ -106,7 +107,7 @@ namespace Gameplay
         {
             var asynchorours = new List<UniTask>();
             WeaponFactory = new WeaponFactory(SceneManager, this);
-            if (!Architecture.Get<ShortTermMemoryService>().RetrieveMemory<LocalPlayerMemory>(out var playerData))
+            if (!GameArchitecture.GetService<IShortTermMemoryService>().RetrieveMemory<LocalPlayerMemory>(out var playerData))
             {
                 playerData = new LocalPlayerMemory(PlayerGameplayData.CreateTest());
             }

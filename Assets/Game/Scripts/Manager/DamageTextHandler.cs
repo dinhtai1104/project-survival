@@ -21,7 +21,7 @@ namespace Manager
 
         private void OnEnable()
         {
-            Architecture.Get<EventMgr>().Subscribe<DamageAfterHitEventArgs>(AttackEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<DamageAfterHitEventArgs>(AttackEventHandler);
         }
 
         private void AttackEventHandler(object sender, IEventArgs e)
@@ -55,7 +55,7 @@ namespace Manager
 
         private void OnDisable()
         {
-            Architecture.Get<EventMgr>().Unsubscribe<DamageAfterHitEventArgs>(AttackEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<DamageAfterHitEventArgs>(AttackEventHandler);
         }
     }
 }

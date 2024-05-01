@@ -51,12 +51,12 @@ namespace Framework
             m_EnemyAmountEachType = new Dictionary<string, int>();
             m_EnemyTypeCap = new Dictionary<string, int>();
 
-            Architecture.Get<EventMgr>().Subscribe<ActorDieEventArgs>(ActorDieEvent);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<ActorDieEventArgs>(ActorDieEvent);
         }
 
         public override void Exit()
         {
-            Architecture.Get<EventMgr>().Unsubscribe<ActorDieEventArgs>(ActorDieEvent);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<ActorDieEventArgs>(ActorDieEvent);
         }
 
         public override void StopSpawn()

@@ -33,6 +33,8 @@ namespace Assets.Game.Scripts.Skills.Passive
         public override void OnUpdate()
         {
             base.OnUpdate();
+            if (Owner == null) return;
+            if (LootObjectUpdater.Instance == null) return;
             var getNearestLootable = LootObjectUpdater.Instance.GetNearest(Owner.CenterPosition, m_PickupRange);
             if (getNearestLootable)
             {

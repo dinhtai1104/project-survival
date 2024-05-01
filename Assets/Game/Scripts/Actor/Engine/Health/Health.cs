@@ -35,7 +35,7 @@ namespace Engine
                     if (Initialized && !m_IsZero)
                     {
                         m_OnHealthZero?.Invoke();
-                        Architecture.Get<EventMgr>().Fire(this, new HealthZeroEventArgs(Owner));
+                        GameArchitecture.GetService<IEventMgrService>().Fire(this, new HealthZeroEventArgs(Owner));
                     }
 
                     m_IsZero = true;
@@ -46,7 +46,7 @@ namespace Engine
                     if (Initialized && !m_IsFull)
                     {
                         m_OnHealthFull?.Invoke();
-                        Architecture.Get<EventMgr>().Fire(this, new HealthFullEventEventArgs(Owner));
+                        GameArchitecture.GetService<IEventMgrService>().Fire(this, new HealthFullEventEventArgs(Owner));
                         //GameCore.Event.Fire(this, HealthFullEventEventArgs.Create(Owner));
                     }
 

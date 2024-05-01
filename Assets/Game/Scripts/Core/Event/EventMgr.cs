@@ -1,10 +1,13 @@
-﻿using System;
+﻿using com.sparkle.core;
+using Cysharp.Threading.Tasks;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core
 {
-    public class EventMgr : Service, IEventMgr
+    [Service(typeof(IEventMgrService))]
+    public class EventMgr : MonoBehaviour, IEventMgrService
     {
         private readonly Dictionary<int, EventHandler<IEventArgs>> m_EventHandlers =
             new Dictionary<int, EventHandler<IEventArgs>>();
@@ -20,6 +23,8 @@ namespace Core
         {
             get { return m_Events.Count; }
         }
+
+        public int Priority => 1;
 
         public bool Check<T>(EventHandler<IEventArgs> handler) where T : IEventArgs
         {
@@ -83,18 +88,16 @@ namespace Core
             HandleEvent(sender, typeof(T).GetHashCode());
         }
 
-        public override void OnDispose()
+        public void OnDispose()
         {
-            base.OnDispose();
             lock (m_Events)
             {
                 m_Events.Clear();
             }
         }
 
-        public override void OnUpdate()
+        public void OnUpdate()
         {
-            base.OnUpdate();
             lock (m_Events)
             {
                 while (m_Events.Count > 0)
@@ -119,6 +122,11 @@ namespace Core
             {
                 eventHandler?.Invoke(sender, null);
             }
+        }
+
+        public UniTask OnInitialize(IArchitecture architecture)
+        {
+            throw new NotImplementedException();
         }
 
         private sealed class Event

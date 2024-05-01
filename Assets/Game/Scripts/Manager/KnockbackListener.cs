@@ -14,11 +14,11 @@ namespace Assets.Game.Scripts.Manager
     {
         private void OnEnable()
         {
-            Architecture.Get<EventMgr>().Subscribe<DamageAfterHitEventArgs>(KnockListener);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<DamageAfterHitEventArgs>(KnockListener);
         }
         private void OnDisable()
         {
-            Architecture.Get<EventMgr>().Unsubscribe<DamageAfterHitEventArgs>(KnockListener);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<DamageAfterHitEventArgs>(KnockListener);
         }
 
         private void KnockListener(object sender, IEventArgs e)

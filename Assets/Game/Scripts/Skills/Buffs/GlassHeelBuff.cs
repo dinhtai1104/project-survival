@@ -20,15 +20,15 @@ namespace Assets.Game.Scripts.Buffs
         protected override void OnInit()
         {
             base.OnInit();
-            Architecture.Get<EventMgr>().Subscribe<DamageAfterHitEventArgs>(DamageAfterHitEventHandler);
-            Architecture.Get<EventMgr>().Subscribe<HealthZeroEventArgs>(HealthZeroEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<DamageAfterHitEventArgs>(DamageAfterHitEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<HealthZeroEventArgs>(HealthZeroEventHandler);
         }
 
         protected override void OnExit()
         {
             base.OnExit();
-            Architecture.Get<EventMgr>().Unsubscribe<DamageAfterHitEventArgs>(DamageAfterHitEventHandler);
-            Architecture.Get<EventMgr>().Unsubscribe<HealthZeroEventArgs>(HealthZeroEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<DamageAfterHitEventArgs>(DamageAfterHitEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<HealthZeroEventArgs>(HealthZeroEventHandler);
         }
 
         private void HealthZeroEventHandler(object sender, IEventArgs e)

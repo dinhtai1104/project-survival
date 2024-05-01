@@ -20,7 +20,7 @@ namespace Assets.Game.Scripts.Buffs
             base.OnInit();
             m_SpeedModifier = new StatModifier(EStatMod.PercentAdd, BuffData.GetValue(StatKey.Speed, DataGame.Data.EModifierBuff.Skill));
             m_DamageBonusModifier = new StatModifier(EStatMod.Flat, BuffData.GetValue(StatKey.DamageBonus, DataGame.Data.EModifierBuff.Skill));
-            Architecture.Get<EventMgr>().Subscribe<WaveBeginEventArgs>(WaveBeginEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<WaveBeginEventArgs>(WaveBeginEventHandler);
         }
 
         private void WaveBeginEventHandler(object sender, IEventArgs e)
@@ -46,7 +46,7 @@ namespace Assets.Game.Scripts.Buffs
         {
             base.OnExit();
             Owner.Stats.RemoveModifiersFromSource(this);
-            Architecture.Get<EventMgr>().Unsubscribe<WaveBeginEventArgs>(WaveBeginEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<WaveBeginEventArgs>(WaveBeginEventHandler);
         }
     }
 }

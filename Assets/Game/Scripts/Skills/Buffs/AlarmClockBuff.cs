@@ -30,16 +30,16 @@ namespace Assets.Game.Scripts.Buffs
             m_ValueModifier = BuffData.GetValue(StatKey.DamageBonus, EModifierBuff.Skill);
             m_MaxValue = BuffData.GetValue(StatKey.Max, EModifierBuff.Skill);
 
-            Architecture.Get<EventMgr>().Subscribe<WaveBeginEventArgs>(WaveBeginEventHandler);
-            Architecture.Get<EventMgr>().Subscribe<WaveEndEventArgs>(WaveEndEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<WaveBeginEventArgs>(WaveBeginEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<WaveEndEventArgs>(WaveEndEventHandler);
         }
 
         protected override void OnExit()
         {
             base.OnExit();
             Owner.Stats.RemoveModifier(StatKey.DamageBonus, m_DamageBonusModifier);
-            Architecture.Get<EventMgr>().Unsubscribe<WaveBeginEventArgs>(WaveBeginEventHandler);
-            Architecture.Get<EventMgr>().Unsubscribe<WaveEndEventArgs>(WaveEndEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<WaveBeginEventArgs>(WaveBeginEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<WaveEndEventArgs>(WaveEndEventHandler);
         }
 
         private void WaveBeginEventHandler(object sender, IEventArgs e)

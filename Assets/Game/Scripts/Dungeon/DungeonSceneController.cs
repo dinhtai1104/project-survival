@@ -81,13 +81,13 @@ namespace Assets.Game.Scripts.Dungeon
         private void SetupEvents()
         {
             m_Spawner.OnBossDie += OnBossDie;
-            Architecture.Get<EventMgr>().Subscribe<LootEventArgs>(LootEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<LootEventArgs>(LootEventHandler);
         }
 
         private void RemoveEvents()
         {
             m_Spawner.OnBossDie -= OnBossDie;
-            Architecture.Get<EventMgr>().Unsubscribe<LootEventArgs>(LootEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<LootEventArgs>(LootEventHandler);
         }
 
         private void RemoveSystem()
@@ -303,19 +303,19 @@ namespace Assets.Game.Scripts.Dungeon
             var uiTask = ScenePresenter.CreateAsync<UIDungeonMainPanel>(AddressableName.UIDungeonMainPanel).AsUniTask();
 
             // Request map data
-            if (!Architecture.Get<ShortTermMemoryService>().HasMemory<DungeonMapSelectionMemory>())
+            if (!GameArchitecture.GetService<IShortTermMemoryService>().HasMemory<DungeonMapSelectionMemory>())
             {
                 // Fallback if adventure map select null
                 var nullDungeon = DataManager.Base.Dungeon.CreateDungeon(0);
 
 
                 var adventureMapFallback = new DungeonMapSelectionMemory(nullDungeon);
-                Architecture.Get<ShortTermMemoryService>().Remember(adventureMapFallback);
+                GameArchitecture.GetService<IShortTermMemoryService>().Remember(adventureMapFallback);
             }
             var synchorousLoading = new List<UniTask>();
 
 
-            var selectMapMemory = Architecture.Get<ShortTermMemoryService>().RetrieveMemory<DungeonMapSelectionMemory>();
+            var selectMapMemory = GameArchitecture.GetService<IShortTermMemoryService>().RetrieveMemory<DungeonMapSelectionMemory>();
             m_DungeonEntity = selectMapMemory.DungeonEntity;
 
             //Request monster

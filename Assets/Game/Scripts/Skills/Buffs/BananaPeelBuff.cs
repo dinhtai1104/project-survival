@@ -25,15 +25,15 @@ namespace Assets.Game.Scripts.Buffs
             m_TimeStayHeal = BuffData.GetValue(StatKey.Time, DataGame.Data.EModifierBuff.Skill);
             m_HealPercent = BuffData.GetValue(StatKey.Hp, DataGame.Data.EModifierBuff.Skill);
 
-            Architecture.Get<EventMgr>().Subscribe<WaveBeginEventArgs>(WaveBeginHandler);
-            Architecture.Get<EventMgr>().Subscribe<WaveEndEventArgs>(WaveEndHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<WaveBeginEventArgs>(WaveBeginHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<WaveEndEventArgs>(WaveEndHandler);
         }
         protected override void OnExit()
         {
             base.OnExit();
 
-            Architecture.Get<EventMgr>().Subscribe<WaveBeginEventArgs>(WaveBeginHandler);
-            Architecture.Get<EventMgr>().Subscribe<WaveEndEventArgs>(WaveEndHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<WaveBeginEventArgs>(WaveBeginHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<WaveEndEventArgs>(WaveEndHandler);
         }
 
         private void WaveBeginHandler(object sender, IEventArgs e)

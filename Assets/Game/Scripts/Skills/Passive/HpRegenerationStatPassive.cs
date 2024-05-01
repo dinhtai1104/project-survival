@@ -40,7 +40,7 @@ namespace Assets.Game.Scripts.Skills.Passive
         public override void UnEquip()
         {
             base.UnEquip();
-            Owner.Stats.AddListener(StatKey.HpRegeneration, OnChangeHpRegeneration);
+            Owner.Stats.RemoveListener(StatKey.HpRegeneration, OnChangeHpRegeneration);
             Owner = null;
         }
 

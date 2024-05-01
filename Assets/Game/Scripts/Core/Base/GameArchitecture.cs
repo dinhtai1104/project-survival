@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using com.sparkle.core;
+using Cysharp.Threading.Tasks;
 using Engine;
 using System;
 using System.Collections.Generic;
@@ -8,31 +9,32 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public class GameArchitecture : Architecture
+    public class GameArchitecture : Architecture<GameArchitecture>
     {
-        protected override void Awake()
+        public new static TService GetService<TService>() where TService : IService
         {
-            base.Awake();
+            return Instance.GetService<TService>();
         }
-        public override async UniTask Init()
+
+        public async UniTask Init()
         {
             await UniTask.Yield();
-            Register(DataManager.Instance);
+          //  Register(DataManager.Instance);
 
             await UniTask.Yield();
-            Register<TaskRunnerMgr>();
+       //     Register<TaskRunnerMgr>();
 
             await UniTask.Yield();
-            Register<EventMgr>();
+        //    Register<EventMgr>();
 
             await UniTask.Yield();
-            DataManager.Save.OnLoaded();
+        //    DataManager.Save.OnLoaded();
 
             await UniTask.Yield();
             DataManager.Save.FixData();
 
             await UniTask.Yield();
-            Register<ShortTermMemoryService>();
+        //    Register<ShortTermMemoryService>();
         }
     }
 }

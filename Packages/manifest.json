@@ -2,6 +2,7 @@
   "dependencies": {
     "com.coffee.softmask-for-ugui": "https://github.com/mob-sakai/SoftMaskForUGUI.git",
     "com.coffee.ui-effect": "https://github.com/mob-sakai/UIEffect.git",
+    "com.sparkle.core": "1.0.0",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.2d.tilemap.extras": "3.1.2",
@@ -50,5 +51,14 @@
     "com.unity.modules.unitywebrequesttexture": "1.0.0",
     "com.unity.modules.unitywebrequestwww": "1.0.0",
     "com.unity.modules.video": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "taind",
+      "url": "http://183.80.51.158:4873",
+      "scopes": [
+        "com.sparkle"
+      ]
+    }
+  ]
 }

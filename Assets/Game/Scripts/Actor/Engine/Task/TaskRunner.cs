@@ -80,7 +80,7 @@ namespace Engine
                 task.Begin();
             }
 
-            Architecture.Get<TaskRunnerMgr>().Subscribe(this);
+            GameArchitecture.GetService<ITaskRunnerMgrService>().Subscribe(this);
         }
 
         public void StopTask()
@@ -104,7 +104,7 @@ namespace Engine
 
             OnComplete?.Invoke();
 
-            Architecture.Get<TaskRunnerMgr>().Unsubscribe(this);
+            GameArchitecture.GetService<ITaskRunnerMgrService>().Unsubscribe(this);
 
             if (m_DeactiveAfterCompletion)
             {

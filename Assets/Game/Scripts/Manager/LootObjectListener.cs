@@ -17,11 +17,11 @@ namespace Assets.Game.Scripts.Manager
     {
         private void OnEnable()
         {
-            Architecture.Get<EventMgr>().Subscribe<LastHitEventArgs>(LastHitEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<LastHitEventArgs>(LastHitEventHandler);
         }
         private void OnDisable()
         {
-            Architecture.Get<EventMgr>().Unsubscribe<LastHitEventArgs>(LastHitEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<LastHitEventArgs>(LastHitEventHandler);
         }
 
         private void LastHitEventHandler(object sender, IEventArgs e)

@@ -13,10 +13,10 @@ namespace Engine
         public override void Init(ActorBase actor)
         {
             base.Init(actor);
-            Architecture.Get<EventMgr>().Subscribe<JoystickMovementStartEventArgs>(OnJoystickMovementStart);
-            Architecture.Get<EventMgr>().Subscribe<JoystickMovementEventArgs>(OnJoystickMovement);
-            Architecture.Get<EventMgr>().Subscribe<JoystickMovementEndEventArgs>(OnJoystickMovementEnd);
-            Architecture.Get<EventMgr>().Subscribe<InputButtonSkillEventArgs>(OnInputButtonSkill);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<JoystickMovementStartEventArgs>(OnJoystickMovementStart);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<JoystickMovementEventArgs>(OnJoystickMovement);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<JoystickMovementEndEventArgs>(OnJoystickMovementEnd);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<InputButtonSkillEventArgs>(OnInputButtonSkill);
         }
 
         protected override void OnDeactivate()
@@ -28,10 +28,10 @@ namespace Engine
 
         public void RemoveAllListener()
         {
-            Architecture.Get<EventMgr>().Unsubscribe<JoystickMovementStartEventArgs>(OnJoystickMovementStart);
-            Architecture.Get<EventMgr>().Unsubscribe<JoystickMovementEventArgs>(OnJoystickMovement);
-            Architecture.Get<EventMgr>().Unsubscribe<JoystickMovementEndEventArgs>(OnJoystickMovementEnd);
-            Architecture.Get<EventMgr>().Unsubscribe<InputButtonSkillEventArgs>(OnInputButtonSkill);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<JoystickMovementStartEventArgs>(OnJoystickMovementStart);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<JoystickMovementEventArgs>(OnJoystickMovement);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<JoystickMovementEndEventArgs>(OnJoystickMovementEnd);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<InputButtonSkillEventArgs>(OnInputButtonSkill);
         }
 
 #if UNITY_EDITOR

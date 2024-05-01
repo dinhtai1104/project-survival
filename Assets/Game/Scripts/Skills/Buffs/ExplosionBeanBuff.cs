@@ -23,7 +23,7 @@ namespace Assets.Game.Scripts.Buffs
             m_ChanceExplode = BuffData.GetValue(StatKey.Random, DataGame.Data.EModifierBuff.Skill);
             m_ExplodeRadius = BuffData.GetValue(StatKey.Range, DataGame.Data.EModifierBuff.Skill);
             m_HealPercentage = BuffData.GetValue(StatKey.Hp, DataGame.Data.EModifierBuff.Skill);
-            Architecture.Get<EventMgr>().Subscribe<LastHitEventArgs>(LastHitEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Subscribe<LastHitEventArgs>(LastHitEventHandler);
 
             m_DamageDealer.Init(Owner.Stats);
             m_DamageDealer.DamageSource.Value = 0;
@@ -36,7 +36,7 @@ namespace Assets.Game.Scripts.Buffs
         protected override void OnExit()
         {
             base.OnExit();
-            Architecture.Get<EventMgr>().Unsubscribe<LastHitEventArgs>(LastHitEventHandler);
+            GameArchitecture.GetService<IEventMgrService>().Unsubscribe<LastHitEventArgs>(LastHitEventHandler);
         }
 
         private void LastHitEventHandler(object sender, IEventArgs e)

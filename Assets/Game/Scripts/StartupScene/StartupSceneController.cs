@@ -16,7 +16,7 @@ namespace Assets.Game.Scripts.StartupScene
     {
         public override async UniTask RequestAssets()
         {
-            await GameArchitecture.Instance.Init();
+            //await GameArchitecture.Instance.Init();
         }
 
         private void Start()

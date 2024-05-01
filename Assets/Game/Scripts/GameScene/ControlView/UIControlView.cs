@@ -56,23 +56,23 @@ namespace Assets.Game.Scripts.GameScene.ControlView
 
         private void OnDash()
         {
-            Architecture.Get<EventMgr>().FireNow(this, m_DashEvent);
+            GameArchitecture.GetService<IEventMgrService>().FireNow(this, m_DashEvent);
         }
 
         private void OnMovingStart()
         {
-            Architecture.Get<EventMgr>().FireNow(this, m_JoystickStartMoveEvent);
+            GameArchitecture.GetService<IEventMgrService>().FireNow(this, m_JoystickStartMoveEvent);
         }
 
         private void OnMoving(Vector2 input)
         {
             (m_JoystickMoveEvent as JoystickMovementEventArgs).m_Direction = input;
-            Architecture.Get<EventMgr>().FireNow(this, m_JoystickMoveEvent);
+            GameArchitecture.GetService<IEventMgrService>().FireNow(this, m_JoystickMoveEvent);
         }
 
         private void OnMovingEnd()
         {
-            Architecture.Get<EventMgr>().FireNow(this, m_JoystickEndMoveEvent);
+            GameArchitecture.GetService<IEventMgrService>().FireNow(this, m_JoystickEndMoveEvent);
         }
 
         public void OnExecute()

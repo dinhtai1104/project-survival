@@ -98,7 +98,7 @@ namespace AIState
         {
             isFiredEvent = true;
             PoolFactory.Despawn(Actor.gameObject);
-            Architecture.Get<EventMgr>().Fire(this, new ActorDieEventArgs(Actor));
+            GameArchitecture.GetService<IEventMgrService>().Fire(this, new ActorDieEventArgs(Actor));
         }
     }
 }

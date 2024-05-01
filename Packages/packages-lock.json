@@ -13,6 +13,32 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.sparkle.core": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.sparkle.foundation": "1.0.0",
+        "com.sparkle.unitask": "2.3.3"
+      },
+      "url": "http://183.80.51.158:4873"
+    },
+    "com.sparkle.foundation": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.sparkle.unitask": "2.3.3"
+      },
+      "url": "http://183.80.51.158:4873"
+    },
+    "com.sparkle.unitask": {
+      "version": "2.3.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "http://183.80.51.158:4873"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
