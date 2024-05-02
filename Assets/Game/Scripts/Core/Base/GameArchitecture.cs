@@ -15,26 +15,5 @@ namespace Core
         {
             return Instance.GetService<TService>();
         }
-
-        public async UniTask Init()
-        {
-            await UniTask.Yield();
-          //  Register(DataManager.Instance);
-
-            await UniTask.Yield();
-       //     Register<TaskRunnerMgr>();
-
-            await UniTask.Yield();
-        //    Register<EventMgr>();
-
-            await UniTask.Yield();
-        //    DataManager.Save.OnLoaded();
-
-            await UniTask.Yield();
-            DataManager.Save.FixData();
-
-            await UniTask.Yield();
-        //    Register<ShortTermMemoryService>();
-        }
     }
 }
