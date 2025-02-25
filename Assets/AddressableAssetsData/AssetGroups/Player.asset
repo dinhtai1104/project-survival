@@ -15,31 +15,36 @@ MonoBehaviour:
   m_GroupName: Player
   m_Data:
     m_SerializedData: []
-  m_GUID: cbc0bf3a30506c844aa66e824b618c83
+  m_GUID: 33035cffdb27cc346b2ec074a938bf42
   m_SerializeEntries:
-  - m_GUID: bc428f16a823fc648b1877b0fe11028d
+  - m_GUID: 3334241fcfad7e947a3fd4ecf101d8a6
     m_Address: Player
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 168552e708db158408de02b85add2543
-    m_Address: Player
+  - m_GUID: 1a61aeecf383ff94696f211fe84b1c0c
+    m_Address: Weapon
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fe7feb1f6b665e54f811474a5c4fa293
-    m_Address: Player
+  - m_GUID: ca12ca8288dc6d24da6c74a904b83ea9
+    m_Address: Buffs
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3acb9465f38a0734395f9210bf98fa9f
-    m_Address: Shadow
+  - m_GUID: 743a1b42dfb67564abd7e29078826ef6
+    m_Address: Loots
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eea95292286b1364b9493c610e80eb67
+    m_Address: Passive
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_Settings: {fileID: 11400000, guid: ea2f668ace2bf36438d4210191fdb9f2, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: ba4235258b4896c448fd92bab7f2df41, type: 2}
-    - {fileID: 11400000, guid: faacbe8931f9182408d2daf0d226f43e, type: 2}
+    - {fileID: 11400000, guid: cf47ff0faf9ab314d8fb55072bc1ed5a, type: 2}
+    - {fileID: 11400000, guid: 1e617fd099aa44a4aaf67d94e2a81283, type: 2}

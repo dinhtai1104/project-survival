@@ -1,0 +1,19 @@
+﻿using Gameplay;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assets.Game.Scripts.Core.SceneMemory.Memory
+{
+    public class LocalPlayerMemory : ISceneMemory
+    {
+        public PlayerGameplayData LocalPlayerData;
+
+        public LocalPlayerMemory(PlayerGameplayData localPlayerData)
+        {
+            LocalPlayerData = localPlayerData;
+        }
+    }
+}

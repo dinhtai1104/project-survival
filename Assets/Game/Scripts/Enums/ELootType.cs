@@ -1,15 +1,13 @@
-﻿public enum ELootType
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assets.Game.Scripts.Enums
 {
-    Null,
-    Resource,
-    Equipment,
-    BuffCard,
-    Fragment,
-    HeroFragment,
-    HeroStone,
-    Hero,
-    Exp,
-    Require,
-    Stat,
-    Buff,
+    public enum ELootType
+    {
+        Resource
+    }
 }

@@ -2,20 +2,24 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FlipBook_Fire_1
   m_Shader: {fileID: -6465566751694194690, guid: 70dc64d661bc1f04b8a1bc571dcd9380, type: 3}
-  m_ShaderKeywords: 
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -43,13 +47,29 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - Vector1_3cf40ad73ee94590b2724928884a58a8: 0
     - Vector1_460589c5d3234b82aba88d6a53695852: 2
     - Vector1_95bab95d626e43ff8c57c176bde7653b: 4
     - Vector1_ba0aee47c0334ad88b108d472684440d: 4
     - Vector1_bf75d9c2586249e98d221f6720c20525: 24
+    - _QueueControl: 0
+    - _QueueOffset: 0
     m_Colors:
     - Color_4ff4a5f8595246c4b1d8b23544646ad0: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 1}
     - Vector2_7e62ef491a124115afb7ce3d3cf99fa9: {r: 0, g: -1, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &5331482874217983543
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7

@@ -1,347 +1,303 @@
-﻿using Cysharp.Threading.Tasks;
-using Game.Damage;
-using Game.Fsm;
-using Game.GameActor.Buff;
-using Game.Skill;
+using Core;
+using Cysharp.Threading.Tasks;
+using ExtensionKit;
+using Framework;
 using Sirenix.OdinInspector;
-using System;
+using Spine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using AI.StateMachine;
-using BehaviorDesigner.Runtime;
-using Game.Pool;
-using Game.AI.State;
 
-namespace Game.GameActor
+namespace Engine
 {
-    public abstract class ActorBase : ObjectBase, ITarget, IDamageDealer
+    public class ActorBase : MonoBehaviour
     {
-        public delegate void OnReviveActor(bool success);
-        public OnReviveActor onRevive;
+        [SerializeField] private LayerMask m_EnemyLayerMask;
+        [SerializeField] private LayerMask m_AllyLayerMask;
+        [SerializeField] private bool m_AI;
+        [SerializeField] private bool m_IsDead;
+        [SerializeField] private float m_Width = 1f;
+        [SerializeField] private float m_Height = 1f;
+        [SerializeField] private Transform m_GraphicTrans;
+        [SerializeField] private Transform m_HealthTrans;
+        [SerializeField] private Rigidbody2D m_RigidBody;
+        [SerializeField] private Collider2D m_Collider;
 
-        //global event for all actor
-        public delegate void OnDie(ActorBase obj, ActorBase attacker);
-        public static OnDie onDie;
-
-        //event for actor
-        public delegate void OnUpdate(ActorBase character);
-        public OnUpdate onUpdate;
-        public delegate void OnActorDie();
-        public OnActorDie onActorDie;
-        public delegate void OnGetHit(DamageSource damageSource, IDamageDealer damageDealer);
-        public OnGetHit onGetHit;
-        public delegate void OnActorSelfDie(ActorBase current);
-        public OnActorSelfDie onSelfDie;
-
-        public Transform healthBarPlace;
+        private Transform m_Trans;
+        private Transform m_CenterTrans;
+        private bool m_IsInitialize = false;
+        private bool m_IsActivated = false;
 
         [ShowInInspector]
-        public float HealPercent => HealthHandler?.GetPercentHealth() ?? 0;
-        public bool IsUseHealBar = true;
+        private IStatGroup m_Stat = new StatGroup();
+        private IStatusEngine m_Status;
+        private IAnimationEngine m_Animation;
+        private IFsm m_Fsm;
+        private IMovementEngine m_Movement;
+        private ITargetFinder m_TargetFinder;
+        private IDamageCalculator m_DamageCalculator;
+        private IHealth m_Health;
+        private IGraphicEngine m_Graphic;
+        private ITagger m_Tagger;
+        private IInputHandler m_Input;
+        private IBrain m_Brain;
+        private ISkillCaster m_SkillCaster;
+        private ISharedEngine m_SharedEngine;
+        private IRVO m_RVO;
+        private IPassiveEngine m_Passive;
 
-        //
+        private static readonly IStatGroup NullStat = new NullStatGroup();
+        private static readonly IStatusEngine NullStatus = new NullStatusEngine();
+        private static readonly IAnimationEngine NullAnimation = new NullAnimationEngine();
+        private static readonly IFsm NullFsm = new NullFsm();
+        private static readonly IMovementEngine NullMovement = new NullMovementEngine();
+        private static readonly ITargetFinder NullTargetFinder = new NullTargetFinder();
+        private static readonly IDamageCalculator NullDamageCalculator = new NullDamageCalculator();
+        private static readonly IHealth NullHealth = new NullHealth();
+        private static readonly IGraphicEngine NullGraphic = new NullGraphicEngine();
+        private static readonly ITagger NullTagger = new NullTagger();
+        private static readonly IInputHandler NullInput = new NullInputHandler();
+        private static readonly IBrain NullBrain = new NullBrain();
+        private static readonly ISkillCaster NullSkillCaster = new NullSkillCaster();
+        private static readonly IRVO NullRVO = new NullRVO();
+        private static readonly IPassiveEngine NullPassive = new NullPassiveEngine();
+        public bool AI
+        {
+            get { return m_AI; }
+            set { m_AI = value; }
+        }
 
-        //handler
-        [ShowInInspector]
-        private HealthHandler healthHandler;
-        private MoveHandler moveHandler;
-        private AttackHandler attackHandler;
-        private AnimationHandler animationHandler;
-        private ObjectSoundHandler soundHandler;
-        private ActorPropertyHandler propertyHandler;
-        private ArmorHandler armorHandler;
-        private DamageHandler damageHandler;
-        private WeaponHandler weaponHandler;
-        private ActorBehaviourHandler behaviourHandler;
-        private BehaviorDesigner.Runtime.Behavior behaviourTree;
-        private DetectTargetHandler sensor;
-        //sound collection of this character
-        public CharacterSoundData soundData;
+        public bool IsDead
+        {
+            set { m_IsDead = value; }
+            get { return m_IsDead; }
+        }
 
+        public UIHealthHud HealthHud { private set; get; }
 
-        #region Services
-        //main stat of this character
-        private IBuffHandler NullBuffHandler = new NullBuffHandler();
-        private IStatusEngine NullStatusEngine = new NullStatusEngine();
-        private IDamageCalculator NullDamageCalculator = new NullDamageCalculator();
-        private IFsm NullFsm = new NullFsm();
-        private IInputHandler NullInput = new NullInput();
-        private ISkillEngine NullSkill = new NullSkillEngine();
-        private IPassiveEngine NullPassive = new NullPassiveEngine();
-        private ITagger NullTagger = new NullTagger();
+        public LayerMask EnemyLayerMask
+        {
+            get => m_EnemyLayerMask;
+            set => m_EnemyLayerMask = value;
+        }
 
-        private IBuffHandler _buff;
-        [ShowInInspector]
-        private IStatGroup stats;
-        private IStatusEngine _status;
-        private IDamageCalculator damageCalculator;
-        private IFsm _fsm;
-        private IInputHandler _inputHandler;
-        private ISkillEngine _skillEngine;
-        private IPassiveEngine _passiveEngine;
-        private ITagger _tagger;
-        public IStatGroup Stats
+        public LayerMask AllyLayerMask
+        {
+            get => m_AllyLayerMask;
+            set => m_AllyLayerMask = value;
+        }
+
+        public Collider2D Collider => m_Collider;
+        public float Width => m_Width * transform.localScale.x;
+        public float Height => m_Height * transform.localScale.y;
+        public Transform GraphicTrans => m_GraphicTrans != null ? m_GraphicTrans : m_Trans;
+        public Transform HealthTrans => m_HealthTrans != null ? m_HealthTrans : m_Trans;
+        public Transform CenterTransform => m_CenterTrans;
+        public virtual Vector3 CenterPosition => GraphicTrans.position + new Vector3(0, Height / 2f, 0);
+        public virtual Vector3 TopPosition => GraphicTrans.position + new Vector3(0, Height, 0);
+        public virtual Vector3 BotPosition => GraphicTrans.position;
+
+        public virtual Vector3 FrontPosition
         {
             get
             {
-                return stats;
-            }
-            set
-            {
-                stats = value;
+                Vector3 frontPos = GraphicTrans.position;
+                frontPos.x += Movement.DirectionSign * Width / 2f;
+                return frontPos;
             }
         }
-        public IBuffHandler BuffHandler => _buff ?? NullBuffHandler;
-        public IStatusEngine StatusEngine => _status ?? NullStatusEngine;
 
-        public HealthHandler HealthHandler { get => healthHandler; set => healthHandler = value; }
-        public MoveHandler MoveHandler { get { if (moveHandler == null) moveHandler = GetComponent<MoveHandler>(); return moveHandler; } }
-        public AttackHandler AttackHandler { get { if (attackHandler == null) attackHandler = GetComponent<AttackHandler>(); return attackHandler; } }
-        public AnimationHandler AnimationHandler { get { if (animationHandler == null) animationHandler = GetComponent<AnimationHandler>(); return animationHandler; } }
-        public DetectTargetHandler Sensor { get { if (sensor == null) sensor = GetComponent<DetectTargetHandler>(); return sensor; } }
-        public ObjectSoundHandler SoundHandler { get { if (soundHandler == null) soundHandler = GetComponentInChildren<ObjectSoundHandler>(); return soundHandler; } }
-        public WeaponHandler WeaponHandler { get { if (weaponHandler == null) weaponHandler = GetComponentInChildren<WeaponHandler>(true); return weaponHandler; } }
-        public ActorBehaviourHandler BehaviourHandler { get { if (behaviourHandler == null) behaviourHandler = GetComponentInChildren<ActorBehaviourHandler>(); return behaviourHandler; } }
-        public ActorPropertyHandler PropertyHandler { get { if (propertyHandler == null) propertyHandler = new ActorPropertyHandler(); return propertyHandler; } }
-        public ArmorHandler ArmorHandler { get { if (armorHandler == null) armorHandler = new ArmorHandler(); return armorHandler; } }
-        public DamageHandler DamageHandler { get
-            {
-                if (!TryGetComponent<DamageHandler>(out damageHandler))
-                {
-                    damageHandler = gameObject.AddComponent<DamageHandler>();
-                }
-                return damageHandler;
-            } }
-
-        public BehaviorDesigner.Runtime.Behavior BehaviourTree { get { if (behaviourTree == null) behaviourTree = GetComponent<BehaviorDesigner.Runtime.BehaviorTree>(); return behaviourTree; } }
-
-
-
-        public IFsm Machine => _fsm ?? NullFsm;
-        public IInputHandler Input => _inputHandler ?? NullInput;
-        public IDamageCalculator DamageCalculator => damageCalculator ?? NullDamageCalculator;
-        public ISkillEngine SkillEngine => _skillEngine ?? NullSkill;
-        public IPassiveEngine PassiveEngine => _passiveEngine ?? NullPassive;
-        public ITagger Tagger => _tagger ?? NullTagger;
-        #endregion
-        protected virtual void OnDisable() { }
-        protected virtual void OnEnable() { }
-        protected virtual void OnDestroy()
+        public virtual Vector3 RearPosition
         {
-            WeaponHandler.Destroy();
-            BehaviourHandler.Destroy();
-        }
-
-        public abstract void SetFacing(float dir);
-        public abstract void SetFacing(ActorBase target);
-        public abstract Vector3 GetPosition();
-        public abstract int GetFacingDirection();
-        public abstract Vector2 GetLookDirection();
-        public abstract Transform GetLookTransform();
-        public abstract Transform GetMidTransform();
-        public abstract Transform GetAimTransform();
-        public abstract Transform GetTransform();
-        public abstract Rigidbody2D GetRigidbody();
-
-        public bool IsActived = false, IsReady = false, IsSilent = false;
-        private ActorBase actorSpawner;
-
-        // create clone of original behaviours
-        protected void PrepareBehaviours()
-        {
-            //Initialize Services
-            _buff = GetComponent<IBuffHandler>();
-            _status = GetComponent<IStatusEngine>();
-            damageCalculator = GetComponent<IDamageCalculator>();
-            _fsm = GetComponent<IFsm>();
-            _inputHandler = GetComponent<IInputHandler>();
-            _skillEngine = GetComponent<ISkillEngine>();
-            _passiveEngine = GetComponent<PassiveEngine>();
-            _tagger = GetComponent<Tagger>();
-
-            BuffHandler.Initialize(this);
-            StatusEngine.Initialize(this);
-            DamageCalculator.Initialize();
-            Machine.Initialize(this);
-            Input.Initialize();
-            SkillEngine.Initialize(this);
-            PassiveEngine.Initialize(this);
-
-
-            if (BehaviourTree != null)
+            get
             {
-                var variable = BehaviourTree.GetVariable("Actor");
-                if (variable != null)
-                {
-                    variable.SetValue(this);
-                }
-                BehaviourTree.DisableBehavior();
+                Vector3 rearPos = GraphicTrans.position;
+                rearPos.x -= Movement.DirectionSign * Width / 2;
+                return rearPos;
             }
-            onActorDie += OnDieEvent;
-            IsActived = false;
-            IsReady = true;
         }
 
-        //actor start behaviours
-        public virtual void StartBehaviours()
+        public Transform Trans => m_Trans;
+        public Rigidbody2D RigidBody => m_RigidBody;
+        public ITagger Tagger => m_Tagger ?? NullTagger;
+        public IStatGroup Stats => m_Stat ?? NullStat;
+        public IStatusEngine Status => m_Status ?? NullStatus;
+        public IAnimationEngine Animation => m_Animation ?? NullAnimation;
+        public IFsm Fsm => m_Fsm ?? NullFsm;
+        public IMovementEngine Movement => m_Movement ?? NullMovement;
+        public ITargetFinder TargetFinder => m_TargetFinder ?? NullTargetFinder;
+        public IDamageCalculator DamageCalculator => m_DamageCalculator ?? NullDamageCalculator;
+        public IHealth Health => m_Health ?? NullHealth;
+        public IGraphicEngine Graphic => m_Graphic ?? NullGraphic;
+        public IInputHandler Input => m_Input ?? NullInput;
+        public IBrain Brain => m_Brain ?? NullBrain;
+        public ISkillCaster SkillCaster => m_SkillCaster ?? NullSkillCaster;
+        public ISharedEngine Shared => m_SharedEngine;
+        public IRVO RVO => m_RVO ?? NullRVO;
+        public IPassiveEngine Passive => m_Passive ?? NullPassive;
+
+
+        [SerializeField] private TeamModel m_TeamModel;
+        public TeamModel TeamModel => m_TeamModel;
+
+        public bool IsInitialize { get => m_IsInitialize; set => m_IsInitialize = value; }
+        public bool IsActivated { get => m_IsActivated; set => m_IsActivated = value; }
+
+        public void Prepare()
         {
-            IsActived = true;
-            BehaviourTree?.EnableBehavior();
-            BehaviourHandler?.StartBehaviours();
-
+            IsDead = false;
         }
-        protected virtual void OnReviveEvent()
+
+        [Button]
+        public virtual void Init(TeamModel teamModel)
         {
+            gameObject.SetActive(true);
+            this.m_TeamModel = teamModel;
+            EnemyLayerMask = teamModel.EnemyLayerMask;
+            AllyLayerMask = teamModel.AllyLayerMask;
+            IsInitialize = true;
+            Animation?.Init(this);
+            Movement?.Init(this);
+            TargetFinder?.Init(this);
+            Fsm?.Init(this);
+            DamageCalculator?.Init(this);
+            Health?.Init(this);
+            Graphic?.Init(this);
+            Status?.Init(this);
+            Input?.Init(this);
+            SkillCaster?.Init(this);
+            Brain?.Init(this);
+            Input.Active = true;
+            Shared.ClearAll();
+            RVO.Init(this);
+            Passive?.Init(this);
+
+            Health.Initialized = false;
+            Brain.Lock = false;
+            Input.Lock = false;
+            SkillCaster.IsLocked = false;
+            Status.Lock = false;
+            Brain.Lock = false;
         }
 
-        private void OnDieEvent()
+        protected virtual void Awake()
         {
-            StatusEngine.ClearAllStatuses();
-            behaviourTree?.DisableBehavior();
-            SkillEngine.InteruptCurrentSkill();
-        }
+            m_Trans = transform;
+            m_CenterTrans = new GameObject("Center").transform;
+            m_CenterTrans.position = CenterPosition;
+            m_CenterTrans.parent = m_Trans;
 
+            m_Animation = GetComponent<IAnimationEngine>();
+            m_Fsm = GetComponent<IFsm>();
+            m_Movement = GetComponent<IMovementEngine>();
+            m_TargetFinder = GetComponent<ITargetFinder>();
+            m_DamageCalculator = GetComponent<IDamageCalculator>();
+            m_Health = GetComponent<IHealth>();
+            m_Graphic = GetComponent<IGraphicEngine>();
+            m_Status = GetComponent<IStatusEngine>();
+            m_Input = GetComponent<IInputHandler>();
+            m_SkillCaster = GetComponent<ISkillCaster>();
+            m_Brain = GetComponent<IBrain>();
+            m_Tagger = GetComponent<ITagger>();
+            m_RVO = GetComponent<IRVO>();
+            m_SharedEngine = new ShareValueEngine();
+            m_Passive = GetComponent<IPassiveEngine>();
+        }
 
         protected virtual void Update()
         {
-            if (!IsActived) return;
-            Machine.Ticks();
-            if (IsDead())
+            if (!m_IsInitialize) return;
+            Movement?.OnUpdate();
+            TargetFinder?.OnUpdate();
+            Brain?.OnUpdate();
+            Fsm?.OnUpdate();
+            Status?.OnUpdate();
+            Input?.OnUpdate();
+            SkillCaster?.OnUpdate();
+            Passive?.OnUpdate();
+        }
+
+
+        protected virtual void OnDestroy()
+        {
+            Animation?.Clear();
+            TargetFinder?.Clear();
+            Stats?.RemoveAllStats();
+            Graphic?.ClearFlashColor();
+            Status?.ClearAllStatus();
+            Reset();
+        }
+
+        public virtual void OnEnable()
+        {
+            if (!IsDead) return;
+            Reset();
+        }
+
+
+        public virtual void OnDisable()
+        {
+            IsDead = true;
+            Brain.Lock = true;
+            Animation.Lock = true;
+            SkillCaster.IsLocked = true;
+            Movement.LockMovement = true;
+            TargetFinder.Clear();
+            SetActiveCollider(false);
+        }
+
+
+        public void SetActiveCollider(bool enable)
+        {
+            if (m_Collider != null) m_Collider.enabled = enable;
+        }
+
+        public void SetColliderTrigger(bool trigger)
+        {
+            if (m_Collider != null) m_Collider.isTrigger = trigger;
+        }
+
+        public virtual void Reset()
+        {
+            IsDead = false;
+            Animation.Lock = false;
+            Movement.LockMovement = false;
+            TargetFinder?.Clear();
+            Graphic?.ClearFlashColor();
+            Graphic?.SetGraphicAlpha(1f);
+            Fsm?.BackToDefaultState();
+            Stats?.ClearAllModifiers();
+            Status?.ClearAllStatus();
+            SetActiveCollider(true);
+        }
+
+        public virtual void Destroy()
+        {
+           
+        }
+
+        [Button]
+        public void SetStat(string stat, float value)
+        {
+            if (Stats.HasStat(stat))
             {
-                Machine.ChangeState<ActorDeadState>();
-                return;
+                Stats.SetBaseValue(stat, value);
+            }
+            else
+            {
+                Stats.AddStat(stat, value);
             }
 
-            SkillEngine.Ticks();
+            Stats.GetStat(stat).RecalculateValue();
+        }
 
-            Input.Ticks();
-            PassiveEngine.Ticks();
-            StatusEngine.Tick(Time.deltaTime);
-            BuffHandler.Ticks();
-        }
-        private void LateUpdate()
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
         {
-            if (!IsActived) return;
-            if (IsDead()) return;
-            StatusEngine.LateTick(Time.deltaTime);
-        }
-#if DEVELOPMENT
-        [Button]
-        public async void AddStatusTest(ActorBase source, EStatus status, object sourceCast)
-        {
-            var statusPrefab = await StatusEngine.AddStatus(source, status, sourceCast);
-            if (statusPrefab != null)
-            {
-                statusPrefab.SetDuration(5);
-            }
-        }
-        [Button]
-        public void DeadForceTest()
-        {
-            var dmgSource = new DamageSource
-            {
-                Attacker = GameController.Instance.GetMainActor(),
-                Defender = this,
-                _damage = new Stat(99999999999)
-            };
-            GetHit(dmgSource, null);
+            var center = transform.position;
+            center += Vector3.up * Height / 2;
+            Gizmos.DrawWireCube(center, new Vector2(Width, Height));
         }
 #endif
-
-        public void DeadForce()
-        {
-            var dmgSource = new DamageSource
-            {
-                Attacker = GameController.Instance.GetMainActor(),
-                Defender = this,
-                _damage = new Stat(GetStatValue(StatKey.Hp))
-            };
-            GetHit(dmgSource, null);
-        }
-
-        public abstract bool GetHit(DamageSource damageSource, IDamageDealer dealer);
-        public float GetHealthPoint()
-        {
-            return HealthHandler.GetHealth();
-        }
-
-        public bool IsDead()
-        {
-            return PropertyHandler.GetProperty(EActorProperty.Dead, 0) == 1;
-        }
-
-        public abstract bool IsThreat();
-        public abstract bool CanFocusOn();
-
-        public void HighLight(bool active)
-        {
-        }
-
-        public abstract ECharacterType GetCharacterType();
-
-        public abstract Vector3 GetDamagePosition();
-
-        //
-        public void SetPosition(Vector3 position)
-        {
-            GetTransform().position = position;
-        }
-        public void SetActive(bool active)
-        {
-            gameObject.SetActive(active);
-            if(HealthHandler!=null)
-            this.HealthHandler.onUpdate?.Invoke(this.HealthHandler);
-        }
-
-
-        public abstract UniTask Revive(Vector3 spawnPosition);
-        public ITarget FindClosetTarget()
-        {
-            return Sensor.CurrentTarget;
-        }
-
-        //
-        private const string QuickHealEffect = "VFX_BuffHeal";
-        private const string HealEffect = "VFX_Player_HealDrone";
-        public virtual void Heal(float health, bool quickEffect = false, string VFX_Id = "")
-        {
-            this.HealthHandler.AddHealth(health);
-            onUpdate?.Invoke(this);
-            Logger.Log("ADDHEALTH:" + health);
-            if (gameObject.activeSelf)
-            {
-                var healAddress = quickEffect ? QuickHealEffect : HealEffect;
-                if (!string.IsNullOrEmpty(VFX_Id))
-                {
-                    healAddress = VFX_Id;
-                }
-                GameObjectSpawner.Instance.Get(healAddress, res =>
-                {
-                    res.GetComponent<HealEffect>().Active(GetPosition(), $"+{(int)health}").SetParent(GetTransform());
-                });
-            }
-        }
-
-        public void Teleport(Vector2 targetPos)
-        {
-            GetTransform().position = targetPos;
-        }
-        public virtual Vector3 GetMidPos()
-        {
-            return GetMidTransform().position;
-        }
-
-        public float GetStatValue(StatKey stat)
-        {
-            return Stats.GetValue(stat);
-        }
-
-        public virtual ActorBase GetActorSpawner() => actorSpawner;
-
-        public void SetActorSpawner(ActorBase caster)
-        {
-            actorSpawner = caster;
-        }
     }
 }
-

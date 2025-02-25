@@ -1,0 +1,2164 @@
+fileFormatVersion: 2
+guid: a6d26c73060b7824b9c6fc1c625fa54e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 51
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 53.947372
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 0
+  flipbookColumns: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1654
+        width: 128
+        height: 77
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03252de6449bd1c49ac430cab11fab66
+      internalID: -535268302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1522
+        width: 85
+        height: 130
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa016c68d0b4324dba9c7d02814a4c9
+      internalID: -1096797987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1390
+        width: 90
+        height: 130
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558d3c7dac074c747859b7920c8e521a
+      internalID: -1744225864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1388
+        width: 8
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d29781156a7d448a2822da5b90b4e4
+      internalID: -346240281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1301
+        width: 78
+        height: 129
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea98173e368594c4bab0ec8bf7498d35
+      internalID: -949501651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1297
+        width: 128
+        height: 90
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb8441f681aee74f839dd50cff5f1fa
+      internalID: 820380623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_6
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1214
+        width: 128
+        height: 84
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f18ea991540484eb07b0a5d1347f2d
+      internalID: 722941694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_7
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1246
+        width: 36
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b888280dcb296da44990dab3bd0bb7aa
+      internalID: -1231513348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1201
+        width: 128
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0221ff5bed7104c83b6c07c6163503
+      internalID: -1200940308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_9
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1292
+        width: 8
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d7fca4c2bec8d4787cb00cb9f603ed
+      internalID: -2015514200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_10
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1227
+        width: 128
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4326d1fd765b37439c5bfe581978fd4
+      internalID: -1923021719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1069
+        width: 96
+        height: 131
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390316e6a7ef28b48b60e8a591a80026
+      internalID: 1349972292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_12
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1082
+        width: 87
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0eca621513c4c419334903ce0bc4c5
+      internalID: -1528067290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_13
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1093
+        width: 83
+        height: 131
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb6cf6c7f2565a45a73c0f40179dbea
+      internalID: -1862039700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_14
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1094
+        width: 130
+        height: 84
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05fd91f1a16e84341b828840c53ecf14
+      internalID: 1531643979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_15
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1105
+        width: 177
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718daa169b933dc4ea20025b1bb6049e
+      internalID: -1786527803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_16
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1064
+        width: 129
+        height: 77
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9dd9de3b804f694e9a3d743d1049386
+      internalID: -752060292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_17
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 1104
+        width: 8
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66bb6a7fec78cc4faecba8d29d235d2
+      internalID: -1542822415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_18
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1104
+        width: 55
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e379a09ae0bd14bb8bdb857a944965
+      internalID: -1286478029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 970
+        width: 128
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c60b88db6d4395e45bc17666d6d2e0e2
+      internalID: -1585848122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_20
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 883
+        width: 358
+        height: 149
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e603666a7ca404f81adc7851cb8304
+      internalID: 1051939634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_21
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 984
+        width: 129
+        height: 94
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09fb426a7b60d34580f50e0c5b386a2
+      internalID: -1348542759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_22
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1000
+        width: 128
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc591b1405c090f48ac863d2c1776c13
+      internalID: -150098827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_23
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 973
+        width: 99
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5b7c3523698d148a87e3e1bdc53705
+      internalID: -385011096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_24
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 972
+        width: 129
+        height: 90
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90dae81b8756424aab1aba95cb4429c
+      internalID: -2074672232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_25
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 972
+        width: 67
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa60354621f9794596648974d4ca39a
+      internalID: 1664791255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_26
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 992
+        width: 24
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a623a10e6759a4f84c722ac60d7bc0
+      internalID: -167410429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_27
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 968
+        width: 8
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04518c8a17f85a843ad2a84965b1ff88
+      internalID: -672655472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_28
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 869
+        width: 129
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29386b2b302687419406f33cf9f897f
+      internalID: 1442564158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_29
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 968
+        width: 8
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c4aed68cfe60f4b8bea88a853d81aa
+      internalID: -183149845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_30
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 728
+        width: 118
+        height: 260
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9021aee40a26541968a145f78e2a94
+      internalID: 2074989686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 859
+        width: 128
+        height: 107
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff66e01d6c3b734eb4a224aa0b90d53
+      internalID: -1812111035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_32
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 868
+        width: 129
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf6f0de137e9b747b2df7f8441ca1bb
+      internalID: -1494364986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_33
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 936
+        width: 4
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3467ce608e9f271489c90967a6100d4b
+      internalID: 1401612277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 752
+        width: 107
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f50da099e465164b904ae25bb354ee2
+      internalID: 1366191136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_35
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 752
+        width: 105
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6c6ac9c139f8e459453fe56eff9b56
+      internalID: 40091182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_36
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 768
+        width: 104
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b34237951e3c6544afc1f9ad34d1fae
+      internalID: -166582855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_37
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 736
+        width: 102
+        height: 130
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf750c475b6be343b6ec0f8b3d3e799
+      internalID: -1416521801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_38
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 737
+        width: 102
+        height: 129
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98bd7ca7871b3c499da297eaea81b3b
+      internalID: 775066178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_39
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 864
+        width: 8
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367f67718a447f346b2e30bd5dc3c8ec
+      internalID: -2135590652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_40
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 737
+        width: 100
+        height: 129
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa06ebf3f9687f44085a6a90caea2f33
+      internalID: -501476759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_41
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 864
+        width: 8
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd93a936fc3eba4cbd81af728fa7d5d
+      internalID: -1447011753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 612
+        width: 128
+        height: 244
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c64ee107a37fb84e92744b0553b25ff
+      internalID: -1045630235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_43
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 792
+        width: 4
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28d3d6aefacc9847aa11e6f45181a52
+      internalID: 1194763686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_44
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 616
+        width: 108
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7655f6b53905bd142852e614fed4039e
+      internalID: -1395828499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_45
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 636
+        width: 136
+        height: 108
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd752dde526895b4c90a21319851bf11
+      internalID: -929530721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_46
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 636
+        width: 104
+        height: 132
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e9a89f493c54f419d39e2be25a8ad2
+      internalID: -2064335577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_47
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 624
+        width: 129
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6955762a1bd7234e80514345c52f84c
+      internalID: -1246066341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_48
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 728
+        width: 8
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058c7c85dc72e6f448bde3d48e4506fb
+      internalID: 1882101873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_49
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 624
+        width: 130
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c749a83d8837245b33d851760bdc28
+      internalID: 1703782958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_50
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 728
+        width: 8
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629ebaa9e17fde74ea9d7e868b86c561
+      internalID: 34582206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_51
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 704
+        width: 8
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c7658bf89446e43bcde8679c1457e2
+      internalID: 1929634596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_52
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 372
+        width: 174
+        height: 352
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148eebff43caab045bc64f0fc1e74459
+      internalID: 648481612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 498
+        width: 128
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe29028d51e7db043bb9e2dbcf1f7558
+      internalID: -58053547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_54
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 504
+        width: 132
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7c6d1aab7c173498661abdd682400b
+      internalID: 573548138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_55
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 504
+        width: 113
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6eeef80ffb5b34a88a30aeffc47078
+      internalID: -1360846519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_56
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 504
+        width: 110
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c2ea42950399d43b2a36c40c5c21f4
+      internalID: 157603446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_57
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 493
+        width: 112
+        height: 129
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65238b3bb85d3514cbe1c66219b30e73
+      internalID: -779095528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_58
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 494
+        width: 108
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbbdfa1483039c1418a4b1f5abafdc44
+      internalID: 1834694918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_59
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 489
+        width: 109
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b340af40b1c7846a8c7bef55f1ebc4
+      internalID: 479535828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368
+        width: 128
+        height: 132
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f1e22f7b832d14d9de3447c335309a
+      internalID: 2080189096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_61
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 389
+        width: 133
+        height: 115
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552122a68e8b01d48899f20cdb98ca5b
+      internalID: -1703258572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_62
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 388
+        width: 128
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06948e693f7325442870f833ea49996d
+      internalID: -786678945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_63
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 376
+        width: 129
+        height: 114
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 050db37bf7496ff429ab530d70173267
+      internalID: 1075390842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_64
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 488
+        width: 8
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51692e1d5221d747a68c0f07d619235
+      internalID: -917022326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7464620bff41a4698100e3995fd37e
+      internalID: 827833577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_66
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 260
+        width: 132
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9ab9e6f3e59c24c90a84634e7dc77a
+      internalID: 1528460708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_67
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 132
+        width: 128
+        height: 254
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a2a7b42e913c947b065734eecb7df5
+      internalID: -15124058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_68
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 264
+        width: 120
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f895facf76717b14195ad24fac8f106f
+      internalID: -1816458421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_69
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 256
+        width: 128
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f22a3913e356a45b4a52eb102cb08f
+      internalID: 1654543333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_70
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 360
+        width: 134
+        height: 116
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d6e7e9b3406394fbd1df267f3f8604
+      internalID: 141007259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_71
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 352
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d6790214c7c054193f8cbf98d37911
+      internalID: -2106817151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_72
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 252
+        width: 128
+        height: 116
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e8cd1f8e9b630468acc06208bd0903
+      internalID: -252077459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_73
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 244
+        width: 128
+        height: 115
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64aeffe81a81a5444bea9f0f392f120f
+      internalID: -387113864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_74
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 304
+        width: 4
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100c57156205780499d913ce0896e279
+      internalID: -2113883970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_75
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 133
+        height: 129
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061b143b45d6cf5468b93840d2e8c4bb
+      internalID: 454761751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_76
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 8
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97092c5ca79fbd84bb265fe839683265
+      internalID: -1093113637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_77
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 128
+        width: 128
+        height: 132
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6688a589ce5f69d469590ad0eaee8c6b
+      internalID: 2123136370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 109
+        width: 127
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8888fd959a2914645a25ea26ced83ba1
+      internalID: -1736947036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_79
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 132
+        width: 128
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f157e225be66b4348b9e72442e0d21d2
+      internalID: -855200958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_80
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 122
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c947d6f75e5e2d747b022323c809a859
+      internalID: -1385623594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_81
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 134
+        width: 125
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07be46a31025998418a458b67f77e244
+      internalID: -1986226373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_82
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 125
+        width: 18
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d5679f4ab4ce04e8e9df1c4d950302
+      internalID: 1857819340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_83
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 121
+        width: 118
+        height: 129
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a790b717344e8c24cb990a5d8bf0f767
+      internalID: 1230914485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 722d7a1b3c50a03428e220bd70d8746a
+      internalID: -495298283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_85
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 127
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c006a95f4f9b6394497dcaea061925a2
+      internalID: -619232948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_86
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 48
+        width: 4
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669861559a010b443913cb3c0641ba7b
+      internalID: -1909883064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_87
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 0
+        width: 123
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96a94b991ccbe245b9169ac132c0907
+      internalID: 788198650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_88
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 0
+        width: 125
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d45c5478a291fd47a7fd2bd2e7fdd3b
+      internalID: -74420996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_89
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 0
+        width: 130
+        height: 118
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74535b0b7a971d42822043b6548131c
+      internalID: -1483515677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_90
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 0
+        width: 130
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17dd933138a34454984df68a0e298dc7
+      internalID: -678466045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_91
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 0
+        width: 99
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 473b96a5b6f4b6f4f9543b8b2244a1a4
+      internalID: -691443314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2c4477a99c22dcf4c8a028ac386c10f7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_0: -535268302
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_1: -1096797987
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_10: -1923021719
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_11: 1349972292
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_12: -1528067290
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_13: -1862039700
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_14: 1531643979
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_15: -1786527803
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_16: -752060292
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_17: -1542822415
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_18: -1286478029
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_19: -1585848122
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_2: -1744225864
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_20: 1051939634
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_21: -1348542759
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_22: -150098827
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_23: -385011096
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_24: -2074672232
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_25: 1664791255
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_26: -167410429
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_27: -672655472
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_28: 1442564158
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_29: -183149845
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_3: -346240281
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_30: 2074989686
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_31: -1812111035
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_32: -1494364986
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_33: 1401612277
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_34: 1366191136
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_35: 40091182
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_36: -166582855
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_37: -1416521801
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_38: 775066178
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_39: -2135590652
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_4: -949501651
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_40: -501476759
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_41: -1447011753
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_42: -1045630235
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_43: 1194763686
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_44: -1395828499
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_45: -929530721
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_46: -2064335577
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_47: -1246066341
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_48: 1882101873
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_49: 1703782958
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_5: 820380623
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_50: 34582206
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_51: 1929634596
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_52: 648481612
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_53: -58053547
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_54: 573548138
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_55: -1360846519
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_56: 157603446
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_57: -779095528
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_58: 1834694918
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_59: 479535828
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_6: 722941694
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_60: 2080189096
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_61: -1703258572
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_62: -786678945
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_63: 1075390842
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_64: -917022326
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_65: 827833577
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_66: 1528460708
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_67: -15124058
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_68: -1816458421
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_69: 1654543333
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_7: -1231513348
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_70: 141007259
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_71: -2106817151
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_72: -252077459
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_73: -387113864
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_74: -2113883970
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_75: 454761751
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_76: -1093113637
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_77: 2123136370
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_78: -1736947036
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_79: -855200958
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_8: -1200940308
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_80: -1385623594
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_81: -1986226373
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_82: 1857819340
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_83: 1230914485
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_84: -495298283
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_85: -619232948
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_86: -1909883064
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_87: 788198650
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_88: -74420996
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_89: -1483515677
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_9: -2015514200
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_90: -678466045
+      sactx-0-1024x2048-ASTC 8x8-Shop Items Atlas-946bc4c6_91: -691443314
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

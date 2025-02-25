@@ -1,0 +1,31 @@
+boss_11_3_combo_3.png
+size:1593,1593
+filter:Linear,Linear
+pma:true
+Layer 12
+bounds:562,1246,825,345
+offsets:2,1,828,347
+Layer 13
+bounds:2,14,664,622
+Layer 14
+bounds:2,638,558,953
+Layer 15
+bounds:562,834,712,410
+Layer 16
+bounds:668,487,345,382
+rotate:90
+Layer 17
+bounds:668,95,390,310
+rotate:90
+Layer 18
+bounds:1052,448,384,315
+rotate:90
+Layer 19
+bounds:1369,596,262,214
+offsets:1,2,264,217
+rotate:90
+Layer 5297 copy
+bounds:1276,860,384,315
+rotate:90
+Layer 5320 copy
+bounds:980,136,390,310

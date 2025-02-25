@@ -18,14 +18,4 @@
         return key;
     }
 
-
-    // Some Common key
-
-    public static string I2_NoticeNotEnough => GetLocalize("Notice/NotEnough") + " ";
-
-
-    public static string GetLocalize(this EHero hero)
-    {
-        return I2Localize.GetLocalize($"Hero_Name/{hero}");
-    }
 }

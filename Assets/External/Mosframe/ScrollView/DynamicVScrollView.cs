@@ -49,23 +49,5 @@
         {
             contentRect.anchoredPosition = new Vector3(0, y, 0);
         }
-
-        public void SetActiveFalseAllExcept(params int[] targetIndex)
-        {
-            foreach (var itemObj in this.containers)
-            {
-                var item = itemObj.GetComponent<IScrollerDynamicScrollView>();
-                if (item == null) continue;
-                var index = item.getIndex();
-                if (!targetIndex.Contains(index))
-                {
-                    item.Active(false);
-                }
-                else
-                {
-                    item.Active(true);
-                }
-            }
-        }
     }
 }

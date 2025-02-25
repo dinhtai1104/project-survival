@@ -135,5 +135,70 @@ namespace GameUtility
 
             return result;
         }
+        public static int RandomWeighted2<T>(this IList<T> weightables) where T : IWeightSecondTable
+        {
+            // Calculate sum of chance
+            var sumChance = 0f;
+
+            foreach (var weightable in weightables)
+            {
+                sumChance += weightable.Weight2;
+            }
+
+            var rand = UnityEngine.Random.Range(0, sumChance);
+            var minRange = 0f;
+            var maxRange = 0f;
+            var result = 0;
+
+            for (int index = 0; index < weightables.Count; ++index)
+            {
+                if (weightables[index].Weight2 <= 0f) continue;
+
+                minRange = maxRange;
+                maxRange = minRange + weightables[index].Weight2;
+
+                if (rand >= minRange && rand <= maxRange)
+                {
+                    result = index;
+                    break;
+                }
+            }
+            return result;
+        }
+        public static T RandomWeighted2<T>(this IList<T> weightables, out int Index) where T : IWeightSecondTable
+        {
+            // Calculate sum of chance
+            var sumChance = 0f;
+
+            foreach (var weightable in weightables)
+            {
+                sumChance += weightable.Weight2;
+            }
+
+            var rand = UnityEngine.Random.Range(0, sumChance);
+            var minRange = 0f;
+            var maxRange = 0f;
+            var result = 0;
+
+            for (int index = 0; index < weightables.Count; ++index)
+            {
+                if (weightables[index].Weight2 <= 0f) continue;
+
+                minRange = maxRange;
+                maxRange = minRange + weightables[index].Weight2;
+
+                if (rand >= minRange && rand <= maxRange)
+                {
+                    result = index;
+                    break;
+                }
+            }
+            Index = result;
+            if (Index >= 0 && Index < weightables.Count)
+            {
+                return weightables[Index];
+            }
+            return weightables[0];
+        }
     }
 }

@@ -15,16 +15,16 @@ MonoBehaviour:
   m_GroupName: Enemy
   m_Data:
     m_SerializedData: []
-  m_GUID: 129130c0aeeba984abb48cb800cc8225
+  m_GUID: 0f0fcdf2e8f692d438dcd9e0c8ee461e
   m_SerializeEntries:
-  - m_GUID: 9bed12c15b549b3419fc3c3b016e51d1
+  - m_GUID: 0a03252daf50254428c9d211d4dd8433
     m_Address: Enemy
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: a844dbc73730db44ebf327076b97cb02, type: 2}
+  m_Settings: {fileID: 11400000, guid: ea2f668ace2bf36438d4210191fdb9f2, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: fa432407afe13b547be0e6b06112d749, type: 2}
-    - {fileID: 11400000, guid: 00bfbb60ded47a6469e380dd4ca61ae8, type: 2}
+    - {fileID: 11400000, guid: f834345567d3d144f85ef805adfd1c6f, type: 2}
+    - {fileID: 11400000, guid: 3126afce87d76624087edbbeb151c76f, type: 2}

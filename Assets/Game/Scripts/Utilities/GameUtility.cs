@@ -1,5 +1,4 @@
-﻿using Game.GameActor;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 namespace GameUtility
 {
@@ -51,12 +50,6 @@ namespace GameUtility
 
         }
 
-        public static float GetAngle(ITarget a, ITarget b)
-        {
-            var dir = b.GetMidTransform().position - a.GetMidTransform().position;
-            dir.Normalize();
-            return Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        }
 
         public static float GetAngle(Vector2 a, Vector2 b)
         {

@@ -1,0 +1,7 @@
+slack_sdk
+pathlib
+PyYAML
+urllib3
+requests
+pydrive
+discord_webhook
