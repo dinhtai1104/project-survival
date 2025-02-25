@@ -1,3 +1,19 @@
+ABOUT PROJECT
+I love create simply architecture system, can scalable for any project
+This project base on game Pickle Pete, , you can search this game, this project start from 3/2024-5/2024, I gapped for a long time, and I will back in soon
+This project contains:
+- Base game RPG for any project, it's clear and simply, scalable like: Attribute System, Equipment/Rune/Socket System, Battle System, Enemy Spawn System, Movement System, Buff,...
+- Dependency Injection for easy use inject any object in scene optimize
+- Database use BG Database, Datasave use SaveGamePro
+- Easy implement new feature as new Services by implement interface ```IService``` from ```com.sparkle.core```
+- Auto create services by interface
+- Event Dispatcher by object by ```IEventMgr```
+- And many feature implement in furture 
+
+
+
+
+I used Jenkins service to build this project, and you can use this service for any project, it's work perfectly
 First import project jenkins into your project
 We need to notice file "CustomBuilder.cs"
 ```c#
